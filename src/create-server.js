@@ -332,11 +332,14 @@ export function createServer() {
     title: 'Audit UI code for AI-generated tells',
     description: `Static taste audit of HTML, CSS, JSX/TSX, Tailwind, Vue or Svelte source. Runs ${kb.detectors.length} detectors for AI-looking patterns (purple gradients, generic fonts, emoji icons, filler copy, missing focus states, transition-all...) plus palette, spacing, radius and type-scale sprawl checks. Returns a 0-100 score and fixes. Run it on every file you create or restyle, then fix high and medium findings.`,
     inputSchema: {
-      code: z.string().max(400000).describe('Full source of one or more files (concatenate with a filename comment between them)'),
+      code: z.string().max(400000).describe('The FULL text of one or more files, pasted in (concatenate with a filename comment between them). This server cannot read your disk, so a path or summary audits nothing.'),
       filename: z.string().optional(),
     },
     annotations: { readOnlyHint: true, openWorldHint: false },
   }, async ({ code, filename }) => {
+    if (code.trim().length < 200 || !/[<{;]/.test(code)) {
+      return text('Nothing to audit: pass the full source text of the file (read it first, then paste its contents into `code`). A path, placeholder or summary cannot be scanned, and scoring it would give a false 100.');
+    }
     const { score, findings } = audit(code, kb.detectors);
     const verdict = score >= 90 ? 'clean' : score >= 75 ? 'decent, fix the highs' : score >= 55 ? 'reads as generated in places' : 'reads as AI-generated';
     const body = findings.slice(0, 20).map((f, i) =>
