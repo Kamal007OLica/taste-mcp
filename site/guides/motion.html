@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motion · Taste MCP</title><meta name="description" content="Condensed from: emilkowalski/skills (https://github.com/emilkowalski/skills): animate, review-animations, improve-animations, find-animation-opportunities, animation-performance, animation-vocabulary, emil-design-eng">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="motion.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="motion.md">Markdown</a>
+<h1>Motion</h1>
+<blockquote>
+<p>Condensed from: emilkowalski/skills (<a href="https://github.com/emilkowalski/skills">https://github.com/emilkowalski/skills</a>): animate, review-animations, improve-animations, find-animation-opportunities, animation-performance, animation-vocabulary, emil-design-eng</p>
+</blockquote>
+<h2>1. Gate: should it animate at all?</h2>
+<table>
+<thead>
+<tr>
+<th>How often seen</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100+/day (shortcuts, ⌘K toggle, tab switch)</td>
+<td>No animation. Instant.</td>
+</tr>
+<tr>
+<td>Tens/day (hover, list nav, row select)</td>
+<td>Near-imperceptible (&lt;150ms, tiny delta) or nothing</td>
+</tr>
+<tr>
+<td>Occasional (modal, drawer, toast, popover)</td>
+<td>Standard animation</td>
+</tr>
+<tr>
+<td>Rare (onboarding, success, empty state, celebration)</td>
+<td>Delight budget lives here</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Keyboard-initiated actions never animate (Raycast has no open/close animation; correct).</li>
+<li>Name the purpose in one word: feedback, spatial consistency, state indication, preventing a jarring change, explanation (marketing only), delight (rare tier only). Can&#39;t name it: don&#39;t build it.</li>
+<li>Data the user reads or acts on (dashboard charts, tables) does not move for style.</li>
+<li>Cheapest tool that works: CSS transition → <code>@starting-style</code> → CSS keyframes (predetermined, stays smooth while page is busy) → WAAPI <code>el.animate()</code> → Motion (springs, layout, exit, gestures). No library for a fade.</li>
+<li>Reuse the codebase&#39;s easing/duration tokens; never fork a parallel set.</li>
+</ul>
+<h2>2. Duration</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Press feedback</td>
+<td>100-160ms</td>
+</tr>
+<tr>
+<td>Tooltip, small popover</td>
+<td>125-200ms</td>
+</tr>
+<tr>
+<td>Dropdown, select, menu</td>
+<td>150-250ms</td>
+</tr>
+<tr>
+<td>Modal</td>
+<td>200-300ms</td>
+</tr>
+<tr>
+<td>Drawer, sheet</td>
+<td>300-500ms or spring</td>
+</tr>
+<tr>
+<td>Stagger step</td>
+<td>30-80ms per item</td>
+</tr>
+<tr>
+<td>Marketing, explanatory</td>
+<td>Longer is fine</td>
+</tr>
+</tbody></table>
+<p>UI stays under 300ms unless it is a drawer or marketing. A 180ms dropdown feels faster than a 400ms one.</p>
+<h2>3. Easing</h2>
+<pre><code class="language-css">:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);     /* enter, exit, default */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); /* moving/morphing on screen */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);  /* iOS-like sheet */
+}
+</code></pre>
+<ul>
+<li>Enter/exit: ease-out. On-screen move: ease-in-out. Hover/color: <code>ease</code>. Progress, marquee, hold-fill: <code>linear</code>.</li>
+<li>Never <code>ease-in</code> on UI: it stalls the first frames, the exact moment the user watches.</li>
+<li>Built-in keywords are too weak for deliberate motion. Need another curve: take one from easing.dev or easings.co; don&#39;t invent or default to <code>cubic-bezier(0.4,0,0.2,1)</code>.</li>
+</ul>
+<h2>4. Springs</h2>
+<p>Use when a pointer/finger drives it, it can be interrupted or reversed, it should feel alive, or it is decorative pointer-tracking.</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Motion config</th>
+<th>Apple terms</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Default settle</td>
+<td><code>{ type: &quot;spring&quot;, bounce: 0, duration: 0.4 }</code></td>
+<td>damping 1.0, response 0.4</td>
+</tr>
+<tr>
+<td>After a flick/throw</td>
+<td><code>{ type: &quot;spring&quot;, bounce: 0.2, duration: 0.4 }</code></td>
+<td>damping 0.8</td>
+</tr>
+<tr>
+<td>Sheet, drawer</td>
+<td><code>{ type: &quot;spring&quot;, bounce: 0.2, duration: 0.3 }</code> + release velocity</td>
+<td>damping 0.8, response 0.3</td>
+</tr>
+<tr>
+<td>Physics form</td>
+<td><code>{ stiffness: 100, damping: 10, mass: 1 }</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Bounce 0.1-0.3 max and only when the gesture carried momentum. A menu that faded in never overshoots. Pointer-follow: <code>useSpring(v, { stiffness: 100, damping: 10 })</code>, not raw mapping.</p>
+<h2>5. Properties and physicality</h2>
+<ul>
+<li>Animate <code>transform</code> + <code>opacity</code>. <code>clip-path</code> is the sanctioned fourth. <code>height</code> only for short accordions. Never <code>width/height/margin/padding/top/left</code>. Animated <code>box-shadow</code> → <code>filter: drop-shadow()</code>.</li>
+<li>Never <code>transition: all</code>; list properties.</li>
+<li>Never <code>scale(0)</code>. Enter from <code>scale(0.95-0.97)</code> + <code>opacity: 0</code>.</li>
+<li>Popovers, dropdowns, tooltips, menus scale from the trigger: <code>transform-origin: var(--transform-origin)</code> (Base UI) or <code>var(--radix-popover-content-transform-origin)</code> (Radix). Modals stay <code>center</code>.</li>
+<li><code>translateY(100%)</code> is relative to the element itself; prefer over px for sheets/toasts.</li>
+<li>Motion <code>x/y/scale</code> shorthands run on the main thread. If the animation plays during route changes or hydration, use <code>animate={{ transform: &quot;translateX(100px)&quot; }}</code>.</li>
+<li>Never drive child transforms through a CSS variable on a parent (style recalc on every descendant). Set <code>transform</code> on the element.</li>
+<li>React: no <code>setState</code> per frame. Write <code>ref.current.style.transform</code> or a motion value.</li>
+<li>Animated blur under 20px (2-5px is enough). <code>will-change: transform</code> only after you see a 1px shift or measured drops.</li>
+<li>Frame budget: 16.7ms at 60Hz, 8ms at 120Hz. Judge on a mid-range phone.</li>
+</ul>
+<h2>6. Enter/exit, interruption, stagger</h2>
+<ul>
+<li>Transitions retarget from the current value; keyframes restart from zero. Anything fired rapidly (toasts, toggles, expand) uses transitions or springs.</li>
+<li>Exit the way it entered (in from bottom, out through bottom).</li>
+<li>Asymmetry: slow where the user decides, snappy where the system answers. Hold-to-delete: 2s linear press, 200ms ease-out release. Exits faster than enters.</li>
+<li>Never lock input mid-transition; start new motion from the on-screen value.</li>
+<li>Stagger is decorative: 30-80ms, never blocks interaction, never on lists seen all day.</li>
+<li>Tooltips: delay the first; once one is open, neighbours open with <code>transition-duration: 0ms</code>.</li>
+<li>Crossfade shows two objects? Add <code>filter: blur(2px)</code> during the swap.</li>
+<li>Scroll reveal: marketing only, fire once (<code>useInView(ref, { once: true, margin: &quot;-100px&quot; })</code>).</li>
+</ul>
+<h2>7. Reduced motion and hover gating (ship with the animation)</h2>
+<pre><code class="language-css">@media (prefers-reduced-motion: reduce) {
+  .panel { transition: opacity 200ms ease; transform: none; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-2px); }
+}
+</code></pre>
+<p>Reduced means fewer and gentler, not zero: keep opacity/color, drop translate, scale, parallax, overshoot. React: <code>const reduce = useReducedMotion()</code>.</p>
+<h2>8. Perceived performance</h2>
+<ul>
+<li>Feedback on <code>:active</code> / <code>pointerdown</code>, never only on <code>click</code>.</li>
+<li>ease-out at 200ms feels faster than ease-in at 200ms.</li>
+<li>A faster-spinning spinner makes the same load feel shorter.</li>
+<li>Skeletons must match the final layout exactly.</li>
+</ul>
+<h2>9. Vocabulary (prompt with the exact word)</h2>
+<p>Origin-aware animation · Scale in vs Pop in (overshoot) · Reveal (clip-path/mask) · Crossfade vs Morph vs Shared element transition vs Layout animation · Direction-aware transition · Stagger · Orchestration · Rubber-banding · Momentum · Velocity handoff · Interruptible animation · Swipe to dismiss · Hold to confirm · Text morph · Number ticker + tabular numbers · Skeleton/shimmer · Perceptual duration · Asymmetric easing · Anticipation · Follow-through.</p>
+<h2>10. Review checklist</h2>
+<p>Block on: animation on a keyboard/100+/day action · <code>ease-in</code> on UI · <code>scale(0)</code> · <code>transition: all</code> · UI &gt;300ms without reason · centered origin on a trigger-anchored popover · keyframes on toasts/toggles · layout-property animation · Motion shorthands on busy pages · parent CSS var driving child transforms · ungated <code>:hover</code> motion · no reduced-motion · symmetric press/release timing · everything entering at once. Fix order: delete → reduce → easing → origin → interruptible → GPU → asymmetry → polish → a11y. Feel-check at 2-5× duration, frame by frame, on a real device, again next day.</p>
+<h2>11. Recipes</h2>
+<p><strong>Button press</strong></p>
+<pre><code class="language-css">.btn { transition: transform 160ms var(--ease-out); }
+.btn:active { transform: scale(0.97); }
+</code></pre>
+<p>Tailwind: <code>transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]</code></p>
+<p><strong>Dropdown from its trigger (Base UI)</strong></p>
+<pre><code class="language-css">.menu {
+  transform-origin: var(--transform-origin);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+.menu[data-starting-style], .menu[data-ending-style] { opacity: 0; transform: scale(0.95); }
+</code></pre>
+<p>Tailwind v4: <code>origin-(--transform-origin) transition duration-200 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 data-[ending-style]:scale-95 data-[ending-style]:opacity-0</code></p>
+<p><strong>Toast enter (prefer Sonner over hand-rolling)</strong></p>
+<pre><code class="language-css">.toast {
+  transition: transform 400ms ease, opacity 400ms ease;
+  @starting-style { opacity: 0; transform: translateY(100%); }
+}
+</code></pre>
+<p>Transitions, not keyframes, so a new toast retargets the stack mid-flight. Exit through the same edge.</p>
+<p><strong>Drawer with flick-to-dismiss</strong></p>
+<pre><code class="language-css">.drawer { transition: transform 500ms var(--ease-drawer); }
+.drawer[data-closed] { transform: translateY(100%); }
+</code></pre>
+<pre><code class="language-js">el.style.transform = `translateY(${dy}px)`;           // during drag, on the element itself
+const v = Math.abs(dy) / (Date.now() - startTime);   // px/ms
+if (dy &gt; THRESHOLD || v &gt; 0.11) close(); else snapBack();
+</code></pre>
+<p>Pointer capture on start, ignore extra touches, rubber-band past the top edge.</p>
+<p><strong>Skeleton shimmer done right</strong></p>
+<pre><code class="language-css">.skel { position: relative; overflow: hidden; background: var(--gray-3); border-radius: inherit; }
+.skel::after {
+  content: &quot;&quot;; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / .35), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .skel::after { animation: none; } }
+</code></pre>
+<p>Shimmer moves via <code>transform</code> (composite only), not <code>background-position</code> (repaints). Same box sizes as the loaded content so nothing shifts.</p>
+<p><strong>Number ticker</strong></p>
+<pre><code class="language-jsx">import NumberFlow from &quot;@number-flow/react&quot;;
+&lt;NumberFlow value={total} format={{ style: &quot;currency&quot;, currency: &quot;USD&quot; }} /&gt;
+</code></pre>
+<p>Always <code>font-variant-numeric: tabular-nums</code> (Tailwind <code>tabular-nums</code>). Never re-render text per frame through state.</p>
+<p><strong>Height auto (accordion)</strong></p>
+<pre><code class="language-jsx">&lt;AnimatePresence initial={false}&gt;
+  {open &amp;&amp; (
+    &lt;motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: &quot;auto&quot;, opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+      style={{ overflow: &quot;hidden&quot; }}
+    /&gt;
+  )}
+&lt;/AnimatePresence&gt;
+</code></pre>
+<p>CSS-only: <code>display: grid; grid-template-rows: 0fr → 1fr</code> with <code>transition: grid-template-rows 200ms var(--ease-out)</code> and <code>min-height: 0</code> on the child, or use the primitive&#39;s measured var (<code>--radix-accordion-content-height</code>). Keep it short: height costs layout every frame.</p>
+<p><strong>Hold to confirm</strong></p>
+<pre><code class="language-css">.fill { clip-path: inset(0 100% 0 0); transition: clip-path 200ms var(--ease-out); }
+.hold:active .fill { clip-path: inset(0 0 0 0); transition: clip-path 2s linear; }
+</code></pre>
+
+<nav class="doc-nav" aria-label="Guides"><a href="layouts.html">← Layouts: page macrostructures</a><a href="gsap-scroll.html">GSAP, Scroll Worlds and WebGL over HTML →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("motion")</code> in the taste MCP.</p></main></body></html>

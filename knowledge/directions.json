@@ -1,0 +1,650 @@
+[
+  {
+    "id": "standfirst-press",
+    "name": "Standfirst Press",
+    "genre": "editorial",
+    "defaultMode": "light",
+    "bestFor": ["newsletter", "media brand", "content-led consumer brand", "publication", "founder blog", "podcast"],
+    "mood": ["printed", "confident", "literate", "contemporary", "inky", "edited"],
+    "avoidFor": ["dense app UI", "kids product", "gaming"],
+    "type": {
+      "display": "Bricolage Grotesque 800, wdth 75 (condensed), opsz 96",
+      "body": "Source Serif 4 400 (standfirst and reading), 600 for lead-ins",
+      "mono": null,
+      "scale": "1.333 ratio, 18px body, h1 clamp(3rem, 6vw + 1rem, 6rem), h2 52px, lead 22px",
+      "tracking": "display -0.01em (condensed heavy: never past -0.015em), body 0, labels 0 sentence case",
+      "googleFonts": "family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap"
+    },
+    "palette": {
+      "bg": "#FAF8F3", "surface": "#F1EEE6", "text": "#16181B", "muted": "#5B5E63", "border": "#DDD8CD", "accent": "#1E7A4C", "accentInk": "#FAF8F3",
+      "dark": { "bg": "#141614", "surface": "#1D201D", "text": "#ECEAE3", "muted": "#A3A69F", "border": "#343833", "accent": "#4CC38A", "accentInk": "#0F1A14" }
+    },
+    "shape": { "radius": "0 everywhere (square corners)", "borders": "one heavy 4px ink rule over 1px hairlines; rules separate, boxes never contain", "shadow": "none" },
+    "spacing": "8px base (4/8/12/16/24/40/64/96/144); sections 144/176px mixed at 1440, 96px under 60rem; prose measure 62ch",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms, no reveal", "character": "still: only state moves (a green underline grows under a link over 220ms)" },
+    "signature": "Condensed 800 grotesk heads over a serif standfirst, separated by a single 4px ink rule: the head, the rule and the standfirst do all the work, no ornament",
+    "layout": ["long-document", "index-first", "quote-led", "photographic"],
+    "doNot": ["round any corner", "use the green on more than ~5% of a screen (links, one button, active nav)", "add cards or drop shadows: paper has none", "italicise one word in a head", "set labels in tracked caps above heads"]
+  },
+  {
+    "id": "morning-broadsheet",
+    "name": "Morning Broadsheet",
+    "genre": "editorial",
+    "defaultMode": "light",
+    "bestFor": ["news product", "research or policy org", "report or annual review", "long-form newsletter", "civic tech"],
+    "mood": ["reported", "sober", "dense", "trustworthy", "old-school", "columnar"],
+    "avoidFor": ["consumer lifestyle", "gaming", "luxury"],
+    "type": {
+      "display": "Zilla Slab 700",
+      "body": "Spectral 400, 18px, italic only in running prose",
+      "mono": "Libre Franklin 600 tabular as agate for listed figures (not mono)",
+      "scale": "1.25 ratio, 18px body, h1 clamp(2.75rem, 5vw + 1rem, 5rem), h2 44-52px, agate 14px",
+      "tracking": "display -0.02em, body 0, agate 0",
+      "googleFonts": "family=Zilla+Slab:wght@500;700&family=Spectral:ital,wght@0,400;0,600;1,400&family=Libre+Franklin:wght@400;600&display=swap"
+    },
+    "palette": {
+      "bg": "#F1EEE6", "surface": "#E8E4DA", "text": "#1C1A17", "muted": "#5A564F", "border": "#CFC9BC", "accent": "#9E3524", "accentInk": "#F7F4EC",
+      "dark": { "bg": "#171513", "surface": "#211E1B", "text": "#EAE5DA", "muted": "#A8A296", "border": "#3A3530", "accent": "#E0775F", "accentInk": "#1A0F0B" }
+    },
+    "shape": { "radius": "0", "borders": "1px column rules between columns, 3px double rule for major breaks, hairline under each story", "shadow": "none" },
+    "spacing": "8px base; dense: sections 96/120px, column gap 32px with a centred 1px rule; 3-column justified text with hyphens:auto at 1440",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms, state only", "character": "still: a link underline thickens on hover, nothing reveals or counts" },
+    "signature": "Justified multi-column body under hairline column rules and a double rule masthead; brick red is a signal that never fills a surface",
+    "layout": ["long-document", "index-first", "stat-led", "conversational-faq"],
+    "doNot": ["fill buttons or bands with the brick red", "justify without hyphens: auto", "use rounded cards or photos in colour (print them grayscale with a caption)", "set more than 3 columns below 1280px"]
+  },
+  {
+    "id": "swiss-field",
+    "name": "Swiss Field",
+    "genre": "modern-minimal",
+    "defaultMode": "light",
+    "bestFor": ["design tool", "agency", "conference", "B2B product with conviction", "architecture firm", "data product"],
+    "mood": ["structured", "bold", "rational", "graphic", "flat", "assured"],
+    "avoidFor": ["cosy consumer", "wellness", "kids"],
+    "type": {
+      "display": "Radio Canada Big 700, sentence case",
+      "body": "Radio Canada 400 / 500",
+      "mono": null,
+      "scale": "1.5 ratio (jumps of 3-4 steps), 16px body, h1 clamp(3.5rem, 8vw, 8rem), h2 56px, figures at poster scale",
+      "tracking": "display -0.035em, line-height 0.95-1.0, body 0",
+      "googleFonts": "family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#FBFBF8", "surface": "#F0F0EC", "text": "#12151F", "muted": "#545966", "border": "#D9DAD6", "accent": "#1D3FD6", "accentInk": "#FBFBF8",
+      "dark": { "bg": "#10131C", "surface": "#181C28", "text": "#F0F1F4", "muted": "#A2A8B6", "border": "#2C3242", "accent": "#7D93FF", "accentInk": "#0C1022" }
+    },
+    "shape": { "radius": "0", "borders": "no strokes: structure comes from column lines and flat colour fields", "shadow": "none" },
+    "spacing": "8px base; 12-col grid, 32px gutters; type hung from column lines; sections 120/176px, white held on purpose",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms", "character": "still: a link turns red, a poster-scale value swaps in place" },
+    "signature": "Full-palette posture: ultramarine floods whole fields (30-50% of a screen), one Swiss red #E2231A (dark mode #FF5A4F) marks the single chosen thing; heads hang from column lines, never centred",
+    "layout": ["bento-grid", "marquee-hero", "catalogue", "map-diagram"],
+    "doNot": ["centre heads", "add borders or shadows to fields", "use the red on more than one element per screen", "use a third colour", "set body text on the ultramarine in grey"]
+  },
+  {
+    "id": "keycap-precision",
+    "name": "Keycap Precision",
+    "genre": "technical",
+    "defaultMode": "light",
+    "bestFor": ["developer tool", "API", "SDK", "infra", "observability", "database", "webhooks"],
+    "mood": ["exact", "engineered", "cool", "tactile", "legible", "calm"],
+    "avoidFor": ["consumer lifestyle", "food", "fashion"],
+    "type": {
+      "display": "Familjen Grotesk 600, line-height 1.02",
+      "body": "IBM Plex Sans 400 / 500",
+      "mono": "JetBrains Mono 400 (code and machine values only)",
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.75rem, 5vw + 1rem, 5.25rem), h2 52px, counts 60px+ in display face",
+      "tracking": "display -0.028em, body 0, labels 0 in Familjen 500 a step smaller (never mono)",
+      "googleFonts": "family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F7F9FB", "surface": "#EEF2F6", "text": "#161D2B", "muted": "#536075", "border": "#DCE2EA", "accent": "#2453D9", "accentInk": "#F7F9FB",
+      "dark": { "bg": "#10141C", "surface": "#171C26", "text": "#E6EAF1", "muted": "#98A3B5", "border": "#283041", "accent": "#7EA2FF", "accentInk": "#0B1020" }
+    },
+    "shape": { "radius": "6px inputs / 8px panels; cut corners (16px bevel) on panels where corner-shape is supported", "borders": "1px hairline edges every surface and splits every row", "shadow": "keys only: 0 3px 0 0 #C3CCD8, 0 6px 8px -4px rgba(22,29,43,.28); cards 0 1px 2px rgba(22,29,43,.06)" },
+    "spacing": "8px base; ASCII/dot field on an 8x16 cell; sections 120/144px; code panels 24-32px padding",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "brisk: keys lift 1px on hover, sink 3px on press in 120ms; connectors draw once" },
+    "signature": "Buttons are keycaps with a real 3px bottom edge; code runs on a graphite panel (#1B2130) with one syntax tint, never a rainbow",
+    "layout": ["workbench", "component-playground", "bento-grid", "split-studio"],
+    "doNot": ["use a warm accent or gradient button", "fake code: snippets must run (use example.com)", "set labels or nav in mono", "put more than one graphite band per page plus one in the hero", "draw a browser chrome around screenshots"]
+  },
+  {
+    "id": "phosphor-shell",
+    "name": "Phosphor Shell",
+    "genre": "technical",
+    "defaultMode": "dark",
+    "bestFor": ["CLI tool", "dotfiles / terminal utility", "open-source dev tool", "security tool", "self-hosted infra"],
+    "mood": ["nocturnal", "terse", "hacker-honest", "monospaced", "focused", "quiet"],
+    "avoidFor": ["non-developer products", "consumer apps", "anything where mono would be costume"],
+    "type": {
+      "display": "Martian Mono 600 at wdth 112.5 (wide heads)",
+      "body": "Martian Mono 400 at wdth 87.5 (narrow text), 15-16px",
+      "mono": "same family: every glyph is mono",
+      "scale": "1.2 ratio, 16px body, h1 clamp(2.25rem, 4vw + 1rem, 4rem), h2 36-40px",
+      "tracking": "display -0.02em, body 0",
+      "googleFonts": "family=Martian+Mono:wdth,wght@75..112.5,300..700&display=swap"
+    },
+    "palette": {
+      "bg": "#F2F5F0", "surface": "#E6EBE3", "text": "#142017", "muted": "#4E5C51", "border": "#CBD4C8", "accent": "#1C7A3A", "accentInk": "#F2F5F0",
+      "dark": { "bg": "#0F1411", "surface": "#161D18", "text": "#D7E4D6", "muted": "#8FA191", "border": "#26302A", "accent": "#7CF29A", "accentInk": "#0B140E" }
+    },
+    "shape": { "radius": "0-2px", "borders": "1px rules in border colour; panels by lightness step (3 steps of ground)", "shadow": "none; no glow on dark" },
+    "spacing": "8px base on a character grid (1ch columns); sections 96/120px; code blocks full container width",
+    "motion": { "easing": "steps(1) for state, cubic-bezier(0.16, 1, 0.3, 1) for the one reveal", "durations": "90/160/300ms", "character": "severe: a session types itself once (22ms/char), caret blinks max 5 beats then solid" },
+    "signature": "The hero IS a real command and its real output, typed once; a dim wash of the phosphor marks added/selected lines like a diff",
+    "layout": ["workbench", "long-document", "conversational-faq", "component-playground"],
+    "doNot": ["add CRT scanlines, flicker or glow", "invent output a command would not print", "loop the typing", "use a second hue besides the phosphor and an error red"]
+  },
+  {
+    "id": "dusk-ledger",
+    "name": "Dusk Ledger",
+    "genre": "modern-minimal",
+    "defaultMode": "light",
+    "bestFor": ["fintech", "banking", "accounting / reconciliation", "payments", "treasury", "invoicing"],
+    "mood": ["calm", "expensive", "unhurried", "precise", "trustworthy", "end-of-day"],
+    "avoidFor": ["kids", "loud consumer", "gaming"],
+    "type": {
+      "display": "Wix Madefor Display 500 (a quiet weight)",
+      "body": "Wix Madefor Text 400 / 500",
+      "mono": "Geist Mono 400 for amounts in tables (or tabular-nums in body)",
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.75rem, 4.5vw + 1rem, 4.75rem), h2 48px, hero figure 72-96px tabular",
+      "tracking": "display -0.025em, figures 0 with tabular-nums, body 0",
+      "googleFonts": "family=Wix+Madefor+Display:wght@500;600&family=Wix+Madefor+Text:wght@400;500&family=Geist+Mono:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F6F4EF", "surface": "#FDFCFA", "text": "#171B26", "muted": "#575D6B", "border": "#DFDBD2", "accent": "#4152C9", "accentInk": "#FDFCFA",
+      "dark": { "bg": "#161A24", "surface": "#1E2330", "text": "#E9EBF0", "muted": "#A2A8B8", "border": "#2E3445", "accent": "#A9B4FF", "accentInk": "#141833" }
+    },
+    "shape": { "radius": "10px panels / 8px inputs / 999px segmented controls", "borders": "1px hairlines; tables with horizontal rules only", "shadow": "0 1px 2px rgba(23,27,38,.05); one product panel may be smoked (surface at 88% + 1px lighter top edge)" },
+    "spacing": "8px base; sections 120/144px; table rows 56-64px; amounts right-aligned to the decimal",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "140/260/520ms", "character": "calm: product rows rise once staggered 40ms; bars grow from their feet when seen" },
+    "signature": "A real photograph of land at dusk behind the hero with the product in one smoked panel beside the head; apricot #F2A66B (as a fill with ink text; #A65A1C as text in light mode) is reserved for the single 'needs attention' state",
+    "layout": ["stat-led", "workbench", "feature-stack", "conversational-faq"],
+    "doNot": ["use green-up/red-down as the only signal", "show trend arrows or figures nobody gave", "stack 4 KPI cards as the hero", "go neon on dark", "use backdrop-blur on more than the one product panel"]
+  },
+  {
+    "id": "instrument-panel",
+    "name": "Instrument Panel",
+    "genre": "technical",
+    "defaultMode": "light",
+    "bestFor": ["B2B dashboard", "admin", "analytics", "ops console", "internal tool", "CRM screen"],
+    "mood": ["dense", "neutral", "careful", "legible", "instrumented", "unflashy"],
+    "avoidFor": ["marketing landing hero", "brand storytelling"],
+    "type": {
+      "display": "Host Grotesk 600 (page titles 24-28px, never fluid)",
+      "body": "Host Grotesk 400 / 500, 14px in tables, 16px in forms and prose",
+      "mono": "Atkinson Hyperlegible Mono 400 for measured values, IDs, timestamps",
+      "scale": "1.125-1.2 fixed app scale: 12/14/16/18/22/28px, no clamp()",
+      "tracking": "titles -0.015em, table heads 0 sentence case (never caps), body 0",
+      "googleFonts": "family=Host+Grotesk:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F4F5F7", "surface": "#FDFDFE", "text": "#15181D", "muted": "#59606B", "border": "#DADDE2", "accent": "#A35200", "accentInk": "#FFFDF8",
+      "dark": { "bg": "#15171B", "surface": "#1D2025", "text": "#E6E8EB", "muted": "#9DA3AD", "border": "#2D3138", "accent": "#F2A93B", "accentInk": "#1A1204" }
+    },
+    "shape": { "radius": "4px inputs / 6px panels", "borders": "1px borders on panels; tables use row rules only, no outer box", "shadow": "none; dark mode elevation is +3% lightness per level" },
+    "spacing": "4px base (4/8/12/16/24/32); controls 32-40px with 44px hit area; panel padding 16-24px; region gap 24px",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "100/190ms only", "character": "brisk: values change when their source does, nothing orchestrated, no load reveal" },
+    "signature": "Amber means a person acted, cool blue #3E6FB0 (dark mode #7FA6E0) means an instrument measured: two meanings on one neutral graphite/grey ground, and the one object the tool is known by (the queue, the ledger, the timeline) leads the screen",
+    "layout": ["app-screen", "workbench", "map-diagram", "stat-led"],
+    "doNot": ["open with a greeting over 4 stat cards", "use cards where a table fits", "draw only the full state (also loading skeleton, empty, error)", "add a sidebar for fewer than ~7 destinations", "put icons in coloured coins"]
+  },
+  {
+    "id": "stationery-desk",
+    "name": "Stationery Desk",
+    "genre": "modern-minimal",
+    "defaultMode": "light",
+    "bestFor": ["SMB SaaS", "invoicing", "scheduling", "HR / onboarding", "small-business tools", "freelancer tools"],
+    "mood": ["warm", "plain-spoken", "human", "tidy", "tactile", "friendly"],
+    "avoidFor": ["dev infra", "luxury", "after-dark products"],
+    "type": {
+      "display": "Rethink Sans 700",
+      "body": "Rethink Sans 400 / 500 (one family)",
+      "mono": "Geist Mono 400 for figures and amounts",
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.75rem, 5vw + 1rem, 5rem), h2 48-52px",
+      "tracking": "display -0.03em, body 0",
+      "googleFonts": "family=Rethink+Sans:wght@400;500;700&family=Geist+Mono:wght@400&display=swap"
+    },
+    "palette": {
+      "bg": "#F7F4F1", "surface": "#FFFDFB", "text": "#1F1B19", "muted": "#625B56", "border": "#E2DCD6", "accent": "#C0412A", "accentInk": "#FFF9F5",
+      "dark": { "bg": "#1A1716", "surface": "#24201E", "text": "#EFE9E4", "muted": "#ABA29B", "border": "#3A3431", "accent": "#FF8A70", "accentInk": "#2A0E07" }
+    },
+    "shape": { "radius": "12px cards / 10px inputs / 999px chips", "borders": "1px warm hairlines; records drawn as paper sheets with real edges", "shadow": "letterpress: 0 1px 0 rgba(31,27,25,.06), 0 2px 6px -2px rgba(31,27,25,.10) (no border under it)" },
+    "spacing": "8px base; sections 120/144px; cards 32px padding; split heroes 6fr/5fr",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "calm: the product's one job plays once on the desk (~6s), then stills; paused off-screen" },
+    "signature": "Records are stationery (sheets, envelopes, index cards lit from the left) and coral is pressed into the stock only for the one 'settled' state (paid, booked, done)",
+    "layout": ["workbench", "narrative-workflow", "split-studio", "conversational-faq"],
+    "doNot": ["pair this with a high-contrast serif (that is the cream-serif-clay AI look)", "spread coral past one control and one state per screen", "make it skeuomorphic toy-like (no stitching, no leather)", "use 3 icon feature tiles"]
+  },
+  {
+    "id": "lamplit-console",
+    "name": "Lamplit Console",
+    "genre": "atmospheric",
+    "defaultMode": "dark",
+    "bestFor": ["AI product", "LLM tool", "writing assistant", "research agent", "model playground"],
+    "mood": ["literary", "engineered", "quietly lit", "nocturnal", "intelligent", "warm-on-cool"],
+    "avoidFor": ["kids", "food", "high-energy consumer"],
+    "type": {
+      "display": "Newsreader 400 at opsz 72, set all lowercase, one step larger than usual",
+      "body": "Geist 400 / 500",
+      "mono": "Geist Mono 400 for streamed output, prompts and code",
+      "scale": "1.25 ratio, 16px body, h1 clamp(3rem, 5.5vw + 1rem, 6rem), h2 56px",
+      "tracking": "display -0.02em lowercase, body 0",
+      "googleFonts": "family=Newsreader:opsz,wght@6..72,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"
+    },
+    "palette": {
+      "bg": "#F6F4F8", "surface": "#EEEBF2", "text": "#1A1622", "muted": "#5D5768", "border": "#DCD7E3", "accent": "#7A4F0E", "accentInk": "#FBF8F2",
+      "dark": { "bg": "#15121C", "surface": "#1E1A27", "text": "#F1EEF5", "muted": "#A69FB3", "border": "#312B3D", "accent": "#E2B04A", "accentInk": "#1E1503" }
+    },
+    "shape": { "radius": "12px wells / 999px hairline pills for controls", "borders": "1px hairline wells, faint blueprint grid behind the product only", "shadow": "none; elevation by lightness steps" },
+    "spacing": "8px base; sections 144/176px; the product panel 7 of 12 columns, 560px+ tall",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "one reveal: a streamed answer types once and the verb's underline draws in; otherwise state only" },
+    "signature": "The product is the picture: a real prompt and a real streamed answer in the hero; warmth rationed to molten brass and one rose verb (#E68FA6 dark, #A8385A light) on a cool violet-black",
+    "layout": ["workbench", "feature-stack", "marquee-hero", "conversational-faq"],
+    "doNot": ["put an orb, sparkle icon or glowing gradient blob anywhere", "use purple-to-blue gradients", "add glass cards", "animate breathing light or ambient loops", "write 'unlock', 'supercharge' or 'AI-powered' copy"]
+  },
+  {
+    "id": "midnight-instrument",
+    "name": "Midnight Instrument",
+    "genre": "atmospheric",
+    "defaultMode": "dark",
+    "bestFor": ["video tool", "music / audio app", "generative media", "streaming", "film studio", "night-time consumer app"],
+    "mood": ["cinematic", "cold", "calm", "nocturnal", "spacious", "filmic"],
+    "avoidFor": ["daytime consumer health", "kids", "accounting"],
+    "type": {
+      "display": "Mona Sans 300 at wdth 125 (expanded, like film titles)",
+      "body": "Mona Sans 400 at wdth 100",
+      "mono": null,
+      "scale": "1.25 ratio, 16px body, h1 clamp(3rem, 6vw + 1rem, 6rem), h2 52px",
+      "tracking": "display -0.01em (expanded light), body 0",
+      "googleFonts": "family=Mona+Sans:wdth,wght@75..125,200..900&display=swap"
+    },
+    "palette": {
+      "bg": "#F3F6FA", "surface": "#E8EEF5", "text": "#0F1A2C", "muted": "#4F5D73", "border": "#D3DCE7", "accent": "#0B63B8", "accentInk": "#F3F6FA",
+      "dark": { "bg": "#0E1626", "surface": "#152036", "text": "#E8EEF8", "muted": "#9AA9C2", "border": "#22304A", "accent": "#4DB2FF", "accentInk": "#04121F" }
+    },
+    "shape": { "radius": "0-4px, square-cut", "borders": "surfaces in lightness steps of the blue, hairlines rare", "shadow": "none" },
+    "spacing": "8px base; sections 144/176px; Poster hero 92-100dvh",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "140/260/520ms", "character": "calm: one settle, hero text 0.6 to 1 opacity over 520ms from visible; hover steps a surface one lightness up" },
+    "signature": "Midnight blue to every edge (no black), photographs treated as moonlight (shadows in the ground's blue, highlights in the ink), expanded-light titles like a film credit",
+    "layout": ["marquee-hero", "feature-stack", "photographic", "workbench"],
+    "doNot": ["use pure black or neon", "add frosted glass", "slide or loop anything", "light sections inside the dark build", "add a second hue besides azure"]
+  },
+  {
+    "id": "safelight",
+    "name": "Safelight",
+    "genre": "atmospheric",
+    "defaultMode": "dark",
+    "bestFor": ["photographer portfolio", "film / documentary", "gallery", "camera or print lab", "visual creator"],
+    "mood": ["dark-room", "archival", "quiet", "grainy", "exacting", "monochrome"],
+    "avoidFor": ["SaaS", "kids", "products without photographs"],
+    "type": {
+      "display": "Sofia Sans Extra Condensed 200-300, uppercase hairline capitals",
+      "body": "Barlow 400 / 500, 16-17px",
+      "mono": null,
+      "scale": "1.333 ratio, 17px body, h1 clamp(4rem, 10vw, 9rem) line-height 1.0, h2 64px",
+      "tracking": "display +0.01em caps (line-height >= 1.0), controls max 0.04em, body 0",
+      "googleFonts": "family=Sofia+Sans+Extra+Condensed:wght@200;300;600&family=Barlow:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F4F1EC", "surface": "#EAE5DD", "text": "#1C1814", "muted": "#5E574E", "border": "#D6CFC4", "accent": "#9C5B0B", "accentInk": "#FBF7F0",
+      "dark": { "bg": "#15120F", "surface": "#1E1A16", "text": "#EEE8DE", "muted": "#A69D90", "border": "#332D27", "accent": "#E8A23A", "accentInk": "#1B1003" }
+    },
+    "shape": { "radius": "0", "borders": "hairlines only; photographs are plates on the ground, no frames", "shadow": "none; fine light grain (2-3% opacity) on the ground" },
+    "spacing": "8px base; sections 120/176px; plates up to 10 of 12 columns",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "still as a print: a photograph may rise once from the ground over 420ms; a linked plate's number turns amber on hover" },
+    "signature": "Black-and-white photographs printed deeper than a warm-black ground (so they sit as objects), with one amber safelight colour for links and the plate number",
+    "layout": ["photographic", "portfolio-grid", "index-first", "marquee-hero"],
+    "doNot": ["add film-strip or sprocket-hole costume", "use pure #000 ground", "colour photographs", "use more than 45% of the page as photographs below the hero", "track caps labels at small sizes"]
+  },
+  {
+    "id": "slow-light",
+    "name": "Slow Light",
+    "genre": "organic",
+    "defaultMode": "light",
+    "bestFor": ["consumer wellness", "sleep / meditation app", "journaling", "breathwork", "therapy booking"],
+    "mood": ["hushed", "slow", "soft", "well-made", "breathing", "unhurried"],
+    "avoidFor": ["dev tools", "news", "loud commerce"],
+    "type": {
+      "display": "Albert Sans 300, upright and tight",
+      "body": "Figtree 400 in a soft grey ink, 17px",
+      "mono": null,
+      "scale": "1.25 ratio, 17px body, h1 clamp(2.75rem, 5vw + 1rem, 5rem), h2 48px",
+      "tracking": "display -0.03em, body 0, line-height 1.65",
+      "googleFonts": "family=Albert+Sans:wght@300;400&family=Figtree:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#FAF8F4", "surface": "#F2EFE9", "text": "#1E2229", "muted": "#5E636B", "border": "#E1DDD5", "accent": "#1F6F78", "accentInk": "#FAF8F4",
+      "dark": { "bg": "#11141C", "surface": "#191D27", "text": "#E7E9EE", "muted": "#9EA4B0", "border": "#2A2F3B", "accent": "#6CC7CF", "accentInk": "#0A1A1C" }
+    },
+    "shape": { "radius": "16px cards / 999px controls", "borders": "hairline rules instead of boxes", "shadow": "none or 0 1px 2px rgba(30,34,41,.05)" },
+    "spacing": "8px base; generous: sections 144/176px, 40px card padding, max 70 words per screen",
+    "motion": { "easing": "cubic-bezier(0.65, 0, 0.35, 1)", "durations": "160/300/600ms", "character": "slow and breathing: levels ease, never jump; one ambient canvas at 8s+ per cycle, paused off-screen" },
+    "signature": "Light-weight tight heads over a machined control that really sets something (a timer, a level, a sound mix), with the hour drawn as slow light behind it; dark mode is the night version of the same page",
+    "layout": ["marquee-hero", "feature-stack", "letter", "quote-led"],
+    "doNot": ["draw stars, moons or lotus illustrations", "use sage-green-and-beige wellness cliché", "use bouncy easing", "run more than one loop", "write 'journey' or 'elevate' copy"]
+  },
+  {
+    "id": "daylight-dose",
+    "name": "Daylight Dose",
+    "genre": "modern-minimal",
+    "defaultMode": "light",
+    "bestFor": ["consumer health", "medication / care app", "telehealth", "family coordination", "clinic booking"],
+    "mood": ["trustworthy", "exact", "unhurried", "domestic", "clear", "kind"],
+    "avoidFor": ["gaming", "nightlife", "luxury"],
+    "type": {
+      "display": "Schibsted Grotesk 600",
+      "body": "Instrument Sans 400 / 500",
+      "mono": "DM Mono 400 for times and doses only, set like a pharmacy label",
+      "scale": "1.25 ratio, 17px body (older readers), h1 clamp(2.75rem, 5vw + 1rem, 5rem), h2 48px",
+      "tracking": "display -0.025em, body 0",
+      "googleFonts": "family=Schibsted+Grotesk:wght@500;600&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#FAF9F4", "surface": "#F1F0E8", "text": "#14211B", "muted": "#56615A", "border": "#DEDDD3", "accent": "#0B7A4B", "accentInk": "#FAF9F4",
+      "dark": { "bg": "#121814", "surface": "#1A221D", "text": "#E5ECE7", "muted": "#9CA9A1", "border": "#2B352F", "accent": "#5CD69A", "accentInk": "#07170F" }
+    },
+    "shape": { "radius": "14px tinted bands / 12px moulded controls", "borders": "soft tinted plastic bands instead of borders", "shadow": "0 1px 2px rgba(20,33,27,.06), inset 0 1px 0 rgba(255,255,255,.6)" },
+    "spacing": "8px base; controls 48-52px (coarse pointers, older users); sections 120/144px",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "140/260/520ms", "character": "calm: once in view a label rises and a tick lands; window light drifts over 90s, paused off-screen" },
+    "signature": "Doses and times set in DM Mono like a pharmacy label inside translucent tinted bands (like a pill organiser); one pharmacy green does every signal",
+    "layout": ["narrative-workflow", "split-studio", "conversational-faq", "workbench"],
+    "doNot": ["use clinical blue-white hospital styling", "use stock doctor photos", "rely on red/green alone for taken/missed", "put mono on anything but times and doses", "show invented outcome statistics"]
+  },
+  {
+    "id": "cut-paper",
+    "name": "Cut Paper",
+    "genre": "playful",
+    "defaultMode": "light",
+    "bestFor": ["kids app", "early education / literacy", "family product", "classroom tool", "learning game"],
+    "mood": ["handmade", "cheerful", "tactile", "warm", "readable", "bright"],
+    "avoidFor": ["enterprise", "finance", "luxury"],
+    "type": {
+      "display": "Grandstander 800",
+      "body": "Andika 400 / 700 (built for beginning readers: single-storey a and g), 18px",
+      "mono": null,
+      "scale": "1.25 ratio, 18px body, line-height 1.6, h1 clamp(3rem, 6vw + 1rem, 5.5rem), h2 48px",
+      "tracking": "display -0.01em, body 0",
+      "googleFonts": "family=Grandstander:wght@600;800&family=Andika:wght@400;700&display=swap"
+    },
+    "palette": {
+      "bg": "#FBF7E9", "surface": "#FFFDF5", "text": "#1B2340", "muted": "#565C73", "border": "#E6DFC8", "accent": "#CDE85A", "accentInk": "#1B2340",
+      "dark": { "bg": "#161A2B", "surface": "#1F2438", "text": "#F3F0E2", "muted": "#A9ADBF", "border": "#343A52", "accent": "#D4EE6A", "accentInk": "#182010" }
+    },
+    "shape": { "radius": "14px cards / 12px controls; one torn paper edge per page", "borders": "none; sheets of paper with a pale fibre core where torn", "shadow": "card stock: 0 4px 0 0 #1B2340 on buttons (press to 1px), 0 2px 0 rgba(27,35,64,.12) on cards" },
+    "spacing": "8px base; chunky: controls 52-56px, 24px gaps, sections 96/120px",
+    "motion": { "easing": "spring cubic-bezier(0.34, 1.56, 0.64, 1) on the primary only; snap cubic-bezier(0.22, 1, 0.36, 1) elsewhere", "durations": "120/220/420ms", "character": "playful: one word pops in its accent and a sprout grows; never scale() bounces on everything" },
+    "signature": "Full palette with jobs: pear #CDE85A = action (ink text), blue #2F5BD3 = links (dark mode #8FA8FF), coral #F0624D = one loud moment (fill with ink text), mint = growth; all on grained cream cut paper",
+    "layout": ["narrative-workflow", "bento-grid", "conversational-faq", "catalogue"],
+    "doNot": ["use Comic-style faces", "use emoji as icons", "draw mascots or clip-art illustrations", "set pear text on cream (pear is a fill with ink text and a 2px ink edge; contrast 1.3:1 on bg)", "bounce more than the primary and one moment"]
+  },
+  {
+    "id": "night-cabinet",
+    "name": "Night Cabinet",
+    "genre": "playful",
+    "defaultMode": "dark",
+    "bestFor": ["indie game", "game studio", "esports / community", "hackathon", "launch party", "retro hardware"],
+    "mood": ["loud", "late-night", "arcade", "physical", "nostalgic", "punchy"],
+    "avoidFor": ["healthcare", "finance", "B2B"],
+    "type": {
+      "display": "Bungee 400 capitals, RGB split by 1-2px text-shadow on the hero line only",
+      "body": "Chivo 400 / 600",
+      "mono": "Silkscreen 400 for scores, timers and figures (pixel outlier, one role)",
+      "scale": "1.333 ratio, 16px body, h1 clamp(3rem, 7vw, 7rem) line-height 1.0, h2 52px",
+      "tracking": "display +0.01em, controls max 0.04em caps, body 0",
+      "googleFonts": "family=Bungee&family=Chivo:wght@400;600&family=Silkscreen&display=swap"
+    },
+    "palette": {
+      "bg": "#F6F1F8", "surface": "#ECE3F0", "text": "#1E1226", "muted": "#5F516A", "border": "#DCCFE2", "accent": "#B8460F", "accentInk": "#FFF7F2",
+      "dark": { "bg": "#1C1124", "surface": "#28182F", "text": "#EFE6F7", "muted": "#AE9CBD", "border": "#3E2A49", "accent": "#FF7A2E", "accentInk": "#1C0B02" }
+    },
+    "shape": { "radius": "0-4px", "borders": "2px ink edges on controls", "shadow": "hard offset 4px 4px 0 0 #0B0610, pressed to 1px 1px on :active" },
+    "spacing": "8px base; sections 96/120px; key art Poster hero 92-100dvh",
+    "motion": { "easing": "steps(1) for cursor/selection, cubic-bezier(0.16, 1, 0.3, 1) for press", "durations": "90/160/300ms", "character": "severe press physics; a cursor row lights in one frame, no fades" },
+    "signature": "Aubergine CRT ground with two inks taking turns like two players: ember #FF7A2E and acid #C6FF3D (acid is a fill with ink text only); key art or trailer is the hero, store buttons right under the head",
+    "layout": ["marquee-hero", "photographic", "ecosystem-index", "feature-stack"],
+    "doNot": ["go synthwave (no purple-pink gradients, no grid horizon)", "draw pixel-art props", "add CRT flicker", "use more than two signal inks", "make the page longer than 5-6 blocks"]
+  },
+  {
+    "id": "die-cut-sticker",
+    "name": "Die-Cut Sticker",
+    "genre": "playful",
+    "defaultMode": "light",
+    "bestFor": ["Gen Z consumer app", "creator tool", "community", "merch / print shop", "social product"],
+    "mood": ["loud", "handmade", "cheeky", "printed", "bright", "collectible"],
+    "avoidFor": ["healthcare", "legal / finance", "luxury"],
+    "type": {
+      "display": "Bowlby One SC 400 (small caps by design)",
+      "body": "Sofia Sans 400 / 600",
+      "mono": null,
+      "scale": "1.333 ratio, 16px body, h1 clamp(3rem, 7vw, 7rem) line-height 1.02, h2 52px",
+      "tracking": "display 0, body 0",
+      "googleFonts": "family=Bowlby+One+SC&family=Sofia+Sans:wght@400;600;800&display=swap"
+    },
+    "palette": {
+      "bg": "#F8F4EC", "surface": "#FFFDF8", "text": "#1D1A17", "muted": "#5E5850", "border": "#DED6C8", "accent": "#EE4C84", "accentInk": "#1D1A17",
+      "dark": { "bg": "#1A1714", "surface": "#25211D", "text": "#F4EEE4", "muted": "#ADA597", "border": "#3A342E", "accent": "#FF5C8F", "accentInk": "#1A0710" }
+    },
+    "shape": { "radius": "16px raised surfaces / 999px controls", "borders": "4px white die-cut border around every raised surface", "shadow": "hard offset 4px 4px 0 0 #1D1A17 (no blur)" },
+    "spacing": "8px base; sections 96/120px; tiles 24-32px padding",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms", "character": "sticker physics: hover lifts a clickable sticker 2px and turns it 1deg; press pushes it onto its shadow" },
+    "signature": "Every raised surface is a die-cut sticker: thick white edge on a hard ink offset, filled flat in hot pink #EE4C84 or lime #B8E62E, always with ink #1D1A17 type (never white on pink)",
+    "layout": ["bento-grid", "catalogue", "ecosystem-index", "marquee-hero"],
+    "doNot": ["blur shadows", "tint fills (they are solid)", "stamp sticker pills on every element", "rotate non-interactive things", "use pastel versions of the inks"]
+  },
+  {
+    "id": "raw-poster",
+    "name": "Raw Poster",
+    "genre": "brutalist",
+    "defaultMode": "light",
+    "bestFor": ["dev tool with attitude", "agency", "indie launch", "open-source project", "campaign site", "zine"],
+    "mood": ["raw", "engineered", "blunt", "gridded", "loud", "honest"],
+    "avoidFor": ["healthcare", "luxury", "wellness"],
+    "type": {
+      "display": "Libre Franklin 900, uppercase",
+      "body": "Libre Franklin 400 / 600 (one family)",
+      "mono": null,
+      "scale": "1.414 ratio, 16px body, h1 clamp(3.5rem, 9vw, 9rem) line-height 1.0, h2 56-64px",
+      "tracking": "display -0.02em (caps, line-height >= 1.0 when it can wrap), body 0",
+      "googleFonts": "family=Libre+Franklin:wght@400;600;900&display=swap"
+    },
+    "palette": {
+      "bg": "#FAFAF5", "surface": "#F0F0E8", "text": "#121210", "muted": "#4F4F49", "border": "#121210", "accent": "#E4F33A", "accentInk": "#121210",
+      "dark": { "bg": "#121210", "surface": "#1C1C19", "text": "#F3F3EC", "muted": "#ABABA2", "border": "#F3F3EC", "accent": "#E4F33A", "accentInk": "#121210" }
+    },
+    "shape": { "radius": "0", "borders": "3px ink rules; cells share their rules so the grid is drawn, not implied", "shadow": "none" },
+    "spacing": "8px base; boxed cells 24-40px padding; sections join edge to edge at the rule (no gaps) or 120px open air",
+    "motion": { "easing": "steps(1)", "durations": "0-120ms, state flips in one frame", "character": "nothing glides: a cell inverts to ink or fills yellow under its ink on hover" },
+    "signature": "A drawn grid of 3px rules with one word or number set huge inside a box as the ornament; acid yellow only ever fills (never text on paper)",
+    "layout": ["manifesto", "bento-grid", "index-first", "stat-led"],
+    "doNot": ["set yellow text on the light ground (fails contrast: yellow is a fill)", "round anything", "add soft shadows or gradients", "use default system fonts as 'brutal'", "go dark-hacker by default"]
+  },
+  {
+    "id": "fighting-red",
+    "name": "Fighting Red",
+    "genre": "editorial",
+    "defaultMode": "dark",
+    "bestFor": ["cause / advocacy", "repositioning launch", "conference / event", "union / campaign", "studio beliefs page"],
+    "mood": ["polemical", "declarative", "urgent", "printed", "stark", "committed"],
+    "avoidFor": ["checkout", "product tour", "healthcare"],
+    "type": {
+      "display": "Anton 400 capitals at poster size, leaded tight",
+      "body": "Public Sans 400 / 600, quiet, 17px",
+      "mono": null,
+      "scale": "1.5 ratio, 17px body, h1 clamp(4rem, 10vw, 9rem) line-height 1.0, claims 40-56px",
+      "tracking": "display 0 (condensed), line-height 1.0-1.04, body 0",
+      "googleFonts": "family=Anton&family=Public+Sans:wght@400;600&display=swap"
+    },
+    "palette": {
+      "bg": "#F4EFE6", "surface": "#EAE3D7", "text": "#1A1511", "muted": "#5C544B", "border": "#D3CABC", "accent": "#C8241B", "accentInk": "#FBF6EE",
+      "dark": { "bg": "#17130F", "surface": "#211C17", "text": "#F2ECE2", "muted": "#ABA396", "border": "#3A322A", "accent": "#E5352B", "accentInk": "#1A0604" }
+    },
+    "shape": { "radius": "0", "borders": "hairlines plus one heavy 12px ink bar per page", "shadow": "none" },
+    "spacing": "8px base; sections change paper edge to edge (bleed-ink / bleed-paper), 120px padding",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "420ms once", "character": "one clip reveal: the hero head wipes upward once via clip-path inset(), never a soft fade" },
+    "signature": "Poster-size caps against a small quiet body; red is spent once per screen (the one action, or one red word in the hero only, stamped as the theme's exception)",
+    "layout": ["manifesto", "marquee-hero", "quote-led", "stat-led"],
+    "doNot": ["pulse or animate the red", "use red on more than one element per screen", "invent statistics to sound urgent", "tilt every head (one -2deg tilt max)"]
+  },
+  {
+    "id": "oat-and-leaf",
+    "name": "Oat & Leaf",
+    "genre": "organic",
+    "defaultMode": "light",
+    "bestFor": ["farm / food producer", "climate or sustainability", "gardening", "local services", "grocery co-op", "outdoor brand"],
+    "mood": ["seasonal", "honest", "grounded", "daylit", "green", "rooted"],
+    "avoidFor": ["dev infra", "nightlife", "fintech"],
+    "type": {
+      "display": "Vollkorn 600 with old-style figures (font-variant-numeric: oldstyle-nums)",
+      "body": "Hanken Grotesk 400 / 500, 17px",
+      "mono": null,
+      "scale": "1.25 ratio, 17px body, h1 clamp(2.75rem, 5vw + 1rem, 5.25rem), h2 52px",
+      "tracking": "display -0.015em, body 0",
+      "googleFonts": "family=Vollkorn:wght@500;600&family=Hanken+Grotesk:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F5F2E8", "surface": "#ECE8DB", "text": "#1B2A1F", "muted": "#55614F", "border": "#D8D3C2", "accent": "#2D7A3A", "accentInk": "#F5F2E8",
+      "dark": { "bg": "#131A15", "surface": "#1B241D", "text": "#E9EDE2", "muted": "#A1AB9C", "border": "#2C372E", "accent": "#8BD07A", "accentInk": "#0E1A0C" }
+    },
+    "shape": { "radius": "4px", "borders": "hairlines; soft moss (#DDE5D2) or clay (#EBDDCF) tinted wells, nothing boxed", "shadow": "none" },
+    "spacing": "8px base; sections 120/144/176 mixed; photographs 4:5 portrait or 3:2 landscape, never cropped tiny",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms", "character": "still: a pill darkens one step, an underline grows" },
+    "signature": "Every neutral leans green and the produce keeps its true daylight colour; a seasonal table (what is ready now) set in Vollkorn old-style figures",
+    "layout": ["photographic", "catalogue", "long-document", "narrative-workflow"],
+    "doNot": ["draw leaves, sprigs or veg illustrations", "use sage-and-slate wellness styling", "use a terracotta accent with a serif (AI cream-serif-clay look)", "desaturate food photos"]
+  },
+  {
+    "id": "limewash-atelier",
+    "name": "Limewash Atelier",
+    "genre": "luxury",
+    "defaultMode": "light",
+    "bestFor": ["fashion", "fragrance / beauty", "boutique hotel", "jewellery", "architecture", "furniture / homeware"],
+    "mood": ["still", "luminous", "considered", "expensive", "crafted", "hushed"],
+    "avoidFor": ["SaaS", "kids", "discount commerce"],
+    "type": {
+      "display": "Bodoni Moda 400 at opsz 96 (razor hairlines)",
+      "body": "Jost 400 / 500, 16-17px, line-height 1.65",
+      "mono": null,
+      "scale": "1.333 ratio, 16px body, h1 clamp(3rem, 6vw + 1rem, 6.5rem) line-height 1.05, h2 56px",
+      "tracking": "display -0.02em, body +0.005em",
+      "googleFonts": "family=Bodoni+Moda:opsz,wght@6..96,400..500&family=Jost:wght@400;500&display=swap"
+    },
+    "palette": {
+      "bg": "#F3EFE8", "surface": "#EAE4DA", "text": "#2A2019", "muted": "#6A5E53", "border": "#D9D1C4", "accent": "#34465A", "accentInk": "#F3EFE8",
+      "dark": { "bg": "#171411", "surface": "#201C18", "text": "#EDE6DB", "muted": "#ACA294", "border": "#352F29", "accent": "#A9BCD1", "accentInk": "#121A24" }
+    },
+    "shape": { "radius": "2px", "borders": "1px hairlines; prints matted with a 24-32px mat of surface colour", "shadow": "cards only: 0 1px 2px rgba(42,32,25,.06)" },
+    "spacing": "8px base; airy: sections 144/176/208px; product photos 4:5 at 520px+ tall",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "160/300/600ms", "character": "calm: fade in after fonts load; sample strips unfurl once over 600ms" },
+    "signature": "Matted, warm-daylight product prints on limewash paper; one cool slate signal nearly as dark as the umber ink (luxury through restraint, never gold)",
+    "layout": ["photographic", "catalogue", "letter", "marquee-hero"],
+    "doNot": ["use gold or a terracotta accent", "put text over product photos", "use more than one filled button", "add sale badges, countdowns or urgency", "use italic display flourishes on single words"]
+  },
+  {
+    "id": "proof-sheet",
+    "name": "Proof Sheet",
+    "genre": "editorial",
+    "defaultMode": "light",
+    "bestFor": ["design studio", "creator / designer portfolio", "freelancer", "brand identity agency", "case-study site"],
+    "mood": ["crafted", "in-progress", "precise", "visible-system", "studio", "confident"],
+    "avoidFor": ["consumer health", "kids", "fintech"],
+    "type": {
+      "display": "Hedvig Letters Serif 400 (opsz 24)",
+      "body": "Geist 400 / 500",
+      "mono": "Geist Mono 400 for redline measurements only",
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.75rem, 5vw + 1rem, 5.25rem), h2 52px",
+      "tracking": "display -0.02em, body 0",
+      "googleFonts": "family=Hedvig+Letters+Serif:opsz@12..24&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"
+    },
+    "palette": {
+      "bg": "#F6F7F8", "surface": "#ECEEF0", "text": "#161B26", "muted": "#565D69", "border": "#D8DCE1", "accent": "#C24A12", "accentInk": "#FFF8F3",
+      "dark": { "bg": "#12151C", "surface": "#1A1E27", "text": "#E9ECF1", "muted": "#9EA5B2", "border": "#2A303C", "accent": "#FF7A3D", "accentInk": "#1A0A02" }
+    },
+    "shape": { "radius": "0", "borders": "8px L-shaped crop marks at the corners of every printed piece; 1px cadmium construction guides and clear-space boxes", "shadow": "none; faint ink dot grid (24px) and fine grain on the ground" },
+    "spacing": "8px base; sections 120/144px; work shown at 8-12 columns",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "guides draw in once along their length; state changes at 220ms" },
+    "signature": "The work photographed in true colour inside crop marks, with cadmium orange redlines showing the system (metric guides, clear space): the studio's process is the ornament",
+    "layout": ["portfolio-grid", "split-studio", "index-first", "type-specimen"],
+    "doNot": ["show work as tiny thumbnails", "add rotated vertical labels, scroll cues or city/weather strips", "use a '01 / 06' counter on tiles", "invent client logos or awards"]
+  },
+  {
+    "id": "cyanotype",
+    "name": "Cyanotype",
+    "genre": "technical",
+    "defaultMode": "dark",
+    "bestFor": ["hardware", "robotics", "deep tech / climate tech", "engineering firm", "aerospace", "manufacturing"],
+    "mood": ["drafted", "technical", "precise", "blueprint", "engineered", "monochrome"],
+    "avoidFor": ["consumer lifestyle", "food", "kids"],
+    "type": {
+      "display": "Chakra Petch 600, uppercase drafted capitals",
+      "body": "IBM Plex Sans 400 / 500",
+      "mono": "IBM Plex Mono 400 for measurements with units (12 mm, 4.2 kN)",
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.5rem, 4.5vw + 1rem, 4.75rem) line-height 1.04, h2 44px",
+      "tracking": "display +0.01em caps, body 0",
+      "googleFonts": "family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap"
+    },
+    "palette": {
+      "bg": "#F3F6FA", "surface": "#E7EDF5", "text": "#0F2747", "muted": "#4A5D78", "border": "#C9D5E5", "accent": "#1D4E9E", "accentInk": "#F3F6FA",
+      "dark": { "bg": "#173A6A", "surface": "#1E4479", "text": "#F2F6FB", "muted": "#C3D2E6", "border": "#5C7BA6", "accent": "#EAF1FA", "accentInk": "#133260" }
+    },
+    "shape": { "radius": "0", "borders": "square double keylines (1px, 3px gap, 1px) instead of cards; dimension strings with end ticks", "shadow": "none" },
+    "spacing": "8px base on a visible 8px drafting grid; sections 120/144px",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220/420ms", "character": "static, drafted: one dimension line draws itself once (scaleX from its left tick over 420ms)" },
+    "signature": "Drenched Prussian-blue sheet where the white line is the only signal; photographs printed as cyanotypes (blue shadows, white highlights) and every figure carries its unit",
+    "layout": ["map-diagram", "stat-led", "narrative-workflow", "workbench"],
+    "doNot": ["add a second colour", "use full-colour photos", "draw decorative grids with nothing measured on them", "use rounded cards or soft shadows"]
+  },
+  {
+    "id": "counter-notice",
+    "name": "Counter Notice",
+    "genre": "modern-minimal",
+    "defaultMode": "light",
+    "bestFor": ["marketplace", "directory / listings", "community library", "local services index", "job board", "classifieds"],
+    "mood": ["plain", "competent", "kind", "scannable", "local", "useful"],
+    "avoidFor": ["luxury", "storytelling brand", "gaming"],
+    "type": {
+      "display": "Epilogue 700",
+      "body": "Epilogue 400 / 500 (one family)",
+      "mono": null,
+      "scale": "1.25 ratio, 16px body, h1 clamp(2.5rem, 4.5vw + 1rem, 4.5rem), h2 44px, listing title 20px",
+      "tracking": "display -0.03em, body 0",
+      "googleFonts": "family=Epilogue:wght@400;500;700&display=swap"
+    },
+    "palette": {
+      "bg": "#FDFDFC", "surface": "#F3F3F1", "text": "#111111", "muted": "#575757", "border": "#E0E0DD", "accent": "#0A7A78", "accentInk": "#FDFDFC",
+      "dark": { "bg": "#141414", "surface": "#1D1D1C", "text": "#EDEDEB", "muted": "#A3A3A0", "border": "#31312F", "accent": "#52CFC6", "accentInk": "#062220" }
+    },
+    "shape": { "radius": "6px listings / 999px state pills", "borders": "hairline rows; state pills outlined in 1px", "shadow": "none" },
+    "spacing": "8px base; dense lists: rows 64-88px, filters inline above results; sections 96/120px",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120ms", "character": "still: a filter applies as you type (250ms debounce), a pill changes state on click" },
+    "signature": "A black with no hue on white, and one teal that means 'in / open / available': the listings themselves (with real facts in columns) are the page",
+    "layout": ["ecosystem-index", "index-first", "catalogue", "conversational-faq"],
+    "doNot": ["show fake listings with real-looking prices or names", "use the teal for anything but availability and the primary", "hide filters in a sidebar on desktop by reflex", "add counters or marquees"]
+  },
+  {
+    "id": "market-stall",
+    "name": "Market Stall",
+    "genre": "playful",
+    "defaultMode": "dark",
+    "bestFor": ["DTC food / drink", "grocery delivery", "juice / snack brand", "farmers market app", "restaurant ordering"],
+    "mood": ["juicy", "cheerful", "bold", "fresh", "generous", "sunny"],
+    "avoidFor": ["B2B", "fintech", "healthcare"],
+    "type": {
+      "display": "Gabarito 800 (heads and prices)",
+      "body": "Manrope 500, 17px",
+      "mono": null,
+      "scale": "1.333 ratio, 17px body, h1 clamp(3rem, 7vw, 7rem), price figures 96-144px",
+      "tracking": "display -0.02em, body 0",
+      "googleFonts": "family=Gabarito:wght@600;800&family=Manrope:wght@400;500;700&display=swap"
+    },
+    "palette": {
+      "bg": "#F7F3EA", "surface": "#FFFDF7", "text": "#17321F", "muted": "#4E6352", "border": "#E2DCCB", "accent": "#F49A6C", "accentInk": "#2A1408",
+      "dark": { "bg": "#173D27", "surface": "#1F4A30", "text": "#FBF6EC", "muted": "#C4D3C4", "border": "#2E5E40", "accent": "#FFAE84", "accentInk": "#2A1408" }
+    },
+    "shape": { "radius": "20px tiles / 999px controls", "borders": "none; tiles a step lighter or deeper than the green", "shadow": "none" },
+    "spacing": "8px base; sections 96/120px; tiles 32px padding; product photos close and bright, 1:1 or 4:5",
+    "motion": { "easing": "cubic-bezier(0.16, 1, 0.3, 1)", "durations": "120/220ms", "character": "quick, state only: a control presses 1px, a chosen tile rings at 220ms" },
+    "signature": "Drenched forest-green ground (#173D27) to every edge with fruit photographed bright and close as the colour; a price or a day set huge in Gabarito; juicy peach controls",
+    "layout": ["catalogue", "photographic", "bento-grid", "conversational-faq"],
+    "doNot": ["draw fruit illustrations", "put grey text on the green", "add a second accent hue", "use more than one photograph-led section in a row", "use peach as text or as a borderless button on the cream light mode (fill only, 2px #17321F edge)"]
+  }
+]

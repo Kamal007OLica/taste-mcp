@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Layout and spacing · Taste MCP</title><meta name="description" content="Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design (https://github.com/nexu-io/open-design), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="layout-spacing.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="layout-spacing.md">Markdown</a>
+<h1>Layout and spacing</h1>
+<blockquote>
+<p>Condensed from: Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<h2>Spacing scale (4px base)</h2>
+<pre><code class="language-css">:root{
+  --space-3xs:2px; --space-2xs:4px; --space-xs:8px; --space-sm:12px; --space-md:16px;
+  --space-lg:24px; --space-xl:40px; --space-2xl:64px; --space-3xl:96px; --space-4xl:144px;
+}
+</code></pre>
+<ul>
+<li>Every length comes from a token. Max 3 optical nudges off the scale per page.</li>
+<li><code>gap</code> for siblings; <code>margin</code> only to break flow.</li>
+<li>Proximity: 8-12px inside a group, 32-48px between groups. Uniform spacing everywhere = nothing is grouped.</li>
+<li>A heading gets ≥2x more space above than below.</li>
+<li>The gap between sections is clearly larger (≥1.5x) than any gap inside one.</li>
+</ul>
+<h2>Section rhythm (marketing pages)</h2>
+<table>
+<thead>
+<tr>
+<th>Viewport</th>
+<th>Gap between sections (last line to first line)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Desktop ≥60rem</td>
+<td>120-240px (study median ~240)</td>
+</tr>
+<tr>
+<td>Tablet 40-60rem</td>
+<td>80-120px</td>
+</tr>
+<tr>
+<td>Phone &lt;40rem</td>
+<td>56-112px</td>
+</tr>
+</tbody></table>
+<ul>
+<li>A change of ground colour lets the gap shrink ~20%.</li>
+<li>More than 40% of a screen of plain ground between sections is a hole. No stretch taller than 50vh may hold nothing.</li>
+<li>Vary gaps on long pages: one ≥1.5x the base, another ≤1.2x. Identical padding on every section reads as a template.</li>
+<li><code>min-height: 100vh</code> only for a section that truly fills the screen, never a footer or lone heading. Use <code>dvh</code>.</li>
+<li>Content is present on first paint; reveals move what is already there, never leave bare ground while text fades in.</li>
+</ul>
+<h2>Frame and margins</h2>
+<ul>
+<li>Left and right margins equal at every width. Strong sites: tight, median ~28px at 1440.</li>
+<li>Marketing margin: <code>--margin: clamp(1rem, 2.2vw, 2rem)</code> (16-32px); never under 16px, phone 16-20px.</li>
+<li>Nav sits on the same margins as the content.</li>
+<li>Don&#39;t reflex-wrap pages in <code>max-width:1200px; margin:auto</code>. Let type, images and colour fields run full width; constrain only running text by <code>ch</code>. Cap at ~1760-1920px on ultra-wide.</li>
+<li>Docs, apps and long reading use a centred column: 1100-1250px for data pages, 60-75ch for prose.</li>
+<li>Bleeds start from a margin and never move it.</li>
+</ul>
+<h2>Grid</h2>
+<pre><code class="language-css">.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  column-gap:clamp(.75rem,1.4vw,1.5rem);}
+</code></pre>
+<ul>
+<li>One grid and one gutter per page; every left edge lands on a column line.</li>
+<li>2-3 anchor lines per page (e.g. margin, 1/3, 42%). Hero headline, section heads, price and footer reuse them. Six anchors = nothing decided.</li>
+<li>Grid arithmetic must close; write the sum (<code>3×372 + 2×17 = 1152</code>, <code>12×77 + 11×16 = 1100</code>).</li>
+<li>Column count comes from item count: 4 items → 4 columns. No orphans (3+3, never 5+1); let a lone card span.</li>
+<li>Cards sharing a row share a bottom edge. Balance contents first; else <code>align-items:start</code> and pin only a footer action. A blank band &gt;40px inside a card is a hole.</li>
+<li>Tables ≤5 columns or lists ≤6 rows: max ~760px at 1440, paired with another block.</li>
+<li>CSS Grid for the page, flexbox inside components. Shrinking flex children get <code>min-width:0</code>; icons/images <code>flex-shrink:0</code>.</li>
+<li>Never draw the grid (no visible column lines, crosshairs, crop marks).</li>
+</ul>
+<h2>Composition</h2>
+<ul>
+<li>One dominant thing per screen. One primary entry point per region; two co-primaries = pick one.</li>
+<li>Asymmetry inside the frame, never in the margins: anchor text off-centre (a third, 42%) and answer it with something on the far side.</li>
+<li>Centring is a decision: one axis, one element, wide flanks, once per page. Not a centred stack of heading + paragraph + two buttons (39% of studied heroes centred; 52% on weak sites).</li>
+<li>Text in one half → the other half holds the section&#39;s picture, a list, a figure or a second column. Never plain ground.</li>
+<li>First screen: one <code>h1</code> (≤2 lines) saying what this is + the action. An empty block ≥28% of the first screen reads as a hole.</li>
+<li>A void is &quot;placed&quot; only when something closes it: the picture, display type spanning it, a tone step, a colour field. Else remove it or enlarge the main element.</li>
+<li>Neighbouring sections never share a layout; a shape used 3 times is the template showing. Alternate dense/sparse, image/type, light/dark.</li>
+<li>Break the system once, on purpose (one centred line, one inverted section).</li>
+<li>No rows of identical icon cards (1% of top sites vs 28% of weak). Repeated modules only for real archives (menu, schedule, index).</li>
+<li>Navigation: wordmark + 3-5 links + 1 action, ≤10% of first-screen height (bar 56-80px). Fixed nav must never cover content.</li>
+</ul>
+<h2>Density by product type</h2>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Body</th>
+<th>Row pitch</th>
+<th>Card padding</th>
+<th>Gaps</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Marketing / brand</td>
+<td>17-19px</td>
+<td>n/a</td>
+<td>24-40px</td>
+<td>sections 120-240px</td>
+</tr>
+<tr>
+<td>Editorial</td>
+<td>17-20px</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>rhythm alternates compression/release</td>
+</tr>
+<tr>
+<td>App, sparse (6-25 data points: homes, settings)</td>
+<td>14-16px</td>
+<td>56-92px</td>
+<td>20-24px</td>
+<td>card gap 16-24</td>
+</tr>
+<tr>
+<td>App, medium (25-50: analytics, lists)</td>
+<td>14px</td>
+<td>44-56px</td>
+<td>16-24px</td>
+<td>card gap 16</td>
+</tr>
+<tr>
+<td>App, dense (~120: monitoring, research)</td>
+<td>13px</td>
+<td>list 28px, table 42px</td>
+<td>32px</td>
+<td>64px between bands, generous outer gutters</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Density = row pitch + padding + type size moved together. Never shrink type while keeping padding.</li>
+<li>Spacing scale by density: spacious 24-96px, standard 16-64px, dense 8-32px.</li>
+<li>App defaults: page pad 24px, card gap 16px, card pad 20px, control height 32-36px, table row 44-48px, nav row 32-34px.</li>
+<li>One gap value both horizontally and vertically on an app screen (mixed 12/16 or 20/24 is flagged).</li>
+</ul>
+<h2>App shell numbers</h2>
+<ul>
+<li>Labelled sidebar 224-240px (range 210-292); icon rail 50-60px with tooltips and accessible names.</li>
+<li>Top bar 44-52px, or 64px with a 1px rule; only if it holds search, switcher or object name.</li>
+<li>Canvas: side padding 24-40px, content 1100-1312px, title 20-36px below canvas top.</li>
+<li>Right rail: <code>grid-template-columns: 1fr 384px; gap: 24px</code>, aligned to the first card, only for a stable secondary stream.</li>
+<li>One left edge from header to last row; one right edge per card for right-aligned figures.</li>
+</ul>
+<h2>Radius</h2>
+<ul>
+<li>Bimodal: tight 4-8px or soft 16-24px; avoid 11-12px. Decide once; controls follow cards (6px with tight, pill with soft).</li>
+<li>Buttons: square (0-2px, 52% of top sites) or full pill. The 9-16px &quot;soft&quot; radius is the weak-site default.</li>
+<li>Nested: <code>inner = outer - padding</code> (min 2px). Max 3 panel radii per screen. Media: square or one radius for all.</li>
+</ul>
+<h2>Layering</h2>
+<p>z-index scale: base 1, raised 10, dropdown 100, sticky 200, sticky-nav 300, modal 400, toast 500, tooltip 600. Use <code>overflow-x: clip</code> (not <code>hidden</code>) so <code>sticky</code> keeps working.</p>
+<h2>Container queries</h2>
+<p>Use media queries for page layout; container queries for components whose layout depends on their own box (cards, widgets, sidebars, settings rows).</p>
+<pre><code class="language-css">.card-slot{container-type:inline-size;}
+.card{display:grid;gap:12px;}
+@container (min-width:28rem){
+  .card{grid-template-columns:120px 1fr;gap:16px;}
+  .card h3{font-size:clamp(1rem,.8rem + 2cqi,1.375rem);}
+}
+</code></pre>
+<ul>
+<li>Settings rows: label column (~450px: 16px/500 title + 14px muted description) beside a panel (~700px); below ~560px container width stack label → 10px → field → 26px to next pair.</li>
+<li>Never leave a label column empty beside a tall panel (a 250px void is flagged); put help or a summary there.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="color.html">← Color</a><a href="layouts.html">Layouts: page macrostructures →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("layout-spacing")</code> in the taste MCP.</p></main></body></html>

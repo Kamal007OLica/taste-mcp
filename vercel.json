@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node scripts/build-kb.mjs",
+  "outputDirectory": "public",
+  "functions": {
+    "api/mcp.js": {
+      "maxDuration": 20
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://kamal007olica.github.io/taste-mcp/",
+      "permanent": false
+    }
+  ]
+}

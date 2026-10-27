@@ -1,0 +1,45 @@
+{
+  "name": "taste-mcp",
+  "version": "1.0.0",
+  "description": "One MCP link that gives your coding agent design taste. Condensed from 14 open-source design repos.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "taste-mcp": "bin/stdio.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "api"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:kb": "node scripts/build-kb.mjs",
+    "dev": "node scripts/dev.mjs",
+    "test": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "marked": "18.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamal007OLica/taste-mcp.git"
+  },
+  "homepage": "https://kamal007olica.github.io/taste-mcp/",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "design",
+    "ui",
+    "claude-code",
+    "codex",
+    "design-system",
+    "taste"
+  ]
+}

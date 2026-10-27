@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GSAP, Scroll Worlds and WebGL over HTML · Taste MCP</title><meta name="description" content="Condensed from: greensock/gsap-skills (https://github.com/greensock/gsap-skills), oso95/scroll-world (https://github.com/oso95/scroll-world), DavidHDev/canvas-ui (https://github.com/DavidHDev/canvas-ui)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="gsap-scroll.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="gsap-scroll.md">Markdown</a>
+<h1>GSAP, Scroll Worlds and WebGL over HTML</h1>
+<blockquote>
+<p>Condensed from: greensock/gsap-skills (<a href="https://github.com/greensock/gsap-skills">https://github.com/greensock/gsap-skills</a>), oso95/scroll-world (<a href="https://github.com/oso95/scroll-world">https://github.com/oso95/scroll-world</a>), DavidHDev/canvas-ui (<a href="https://github.com/DavidHDev/canvas-ui">https://github.com/DavidHDev/canvas-ui</a>)</p>
+</blockquote>
+<h2>When GSAP</h2>
+<ul>
+<li>For: timelines with runtime control (pause, seek, reverse), scroll-linked motion, SVG draw/morph, split-text, FLIP layout changes. If the project already uses another library, keep it.</li>
+<li>Simple UI transitions stay in CSS (motion.md). GSAP runs on rAF: best for storytelling and marketing, not micro-interactions.</li>
+<li>All plugins are free in the public <code>gsap</code> package. Never add an <code>.npmrc</code> token or private registry.</li>
+</ul>
+<h2>Core rules</h2>
+<ul>
+<li>Durations in seconds. Transform aliases (<code>x, y, xPercent, yPercent, scale, rotation, rotationX</code>), never <code>left/top/width/height</code>.</li>
+<li>Fade with <code>autoAlpha</code> (hidden at 0, so invisible elements stop eating clicks).</li>
+<li>Eases: <code>power2.out</code> / <code>power3.out</code> for entrances, <code>power2.inOut</code> for on-screen moves, <code>&quot;none&quot;</code> for scrub. Exact UI curve: <code>CustomEase.create(&quot;ui-out&quot;, &quot;0.23,1,0.32,1&quot;)</code>.</li>
+<li>Multiple <code>from()</code>/<code>fromTo()</code> on the same prop: <code>immediateRender: false</code> on the later ones.</li>
+<li>Retriggered tweens: <code>overwrite: &quot;auto&quot;</code>. Pointer followers: <code>gsap.quickTo(el, &quot;x&quot;, { duration: 0.4, ease: &quot;power3&quot; })</code>.</li>
+<li>Hand control back to CSS after: <code>clearProps: &quot;transform&quot;</code>.</li>
+<li>Responsive and accessible: <code>gsap.matchMedia()</code> with <code>{ isDesktop: &quot;(min-width: 800px)&quot;, reduceMotion: &quot;(prefers-reduced-motion: reduce)&quot; }</code>; skip or zero-duration when <code>reduceMotion</code>. Don&#39;t nest <code>gsap.context()</code> inside it.</li>
+</ul>
+<h2>Timelines</h2>
+<ul>
+<li>Sequence with a timeline, never chained <code>delay</code>. Shared <code>defaults: { duration, ease }</code> on the timeline; <code>addLabel()</code> for readable choreography.</li>
+<li>Position: <code>0</code> absolute, <code>&quot;+=0.2&quot;</code> gap, <code>&quot;-=0.1&quot;</code> overlap, <code>&quot;&lt;&quot;</code> with previous start, <code>&quot;&gt;&quot;</code> after previous end, <code>&quot;label+=0.3&quot;</code>.</li>
+</ul>
+<h2>ScrollTrigger</h2>
+<ul>
+<li><code>gsap.registerPlugin(ScrollTrigger)</code> once, at module level.</li>
+<li>ScrollTrigger goes on a timeline or top-level tween only, never on a child tween, never nested.</li>
+<li><code>start/end</code>: <code>&quot;triggerEdge viewportEdge&quot;</code> (<code>&quot;top top&quot;</code>, <code>&quot;bottom 80%&quot;</code>), <code>&quot;+=100%&quot;</code>, <code>clamp(top bottom)</code>.</li>
+<li><code>scrub: true</code> (locked) or <code>scrub: 1</code> (1s catch-up, smoother). Use scrub OR <code>toggleActions</code>, not both.</li>
+<li><code>pin: true</code>: animate the pinned element&#39;s children, not the pinned element. Keep <code>pinSpacing</code> on.</li>
+<li>Create triggers top-to-bottom, or set <code>refreshPriority</code>. Call <code>ScrollTrigger.refresh()</code> after fonts, images or async content (resize is automatic).</li>
+<li><code>snap: { snapTo: &quot;labels&quot;, duration: 0.3, ease: &quot;power1.inOut&quot; }</code>.</li>
+<li>List reveals: <code>gsap.set(&quot;.card&quot;, { autoAlpha: 0, y: 16 })</code>, then <code>ScrollTrigger.batch(&quot;.card&quot;, { start: &quot;top 85%&quot;, once: true, onEnter: els =&gt; gsap.to(els, { autoAlpha: 1, y: 0, stagger: 0.08 }) })</code>.</li>
+<li>Third-party smooth scroll: <code>scrollerProxy()</code> plus calling <code>ScrollTrigger.update</code> on its scroll event.</li>
+</ul>
+<pre><code class="language-js">// Pinned, scrubbed story section
+const tl = gsap.timeline({
+  defaults: { ease: &quot;none&quot; },
+  scrollTrigger: { trigger: &quot;.story&quot;, start: &quot;top top&quot;, end: &quot;+=2000&quot;, pin: true, scrub: 1 },
+});
+tl.from(&quot;.story h2&quot;, { yPercent: 40, autoAlpha: 0 })
+  .to(&quot;.story .device&quot;, { rotationY: -18, scale: 1.1 }, &quot;&lt;&quot;)
+  .to(&quot;.story .caption&quot;, { autoAlpha: 1 }, &quot;&gt;-0.2&quot;);
+
+// Fake horizontal scroll: ease MUST be &quot;none&quot;
+const track = document.querySelector(&quot;.track&quot;);
+const dist = () =&gt; track.scrollWidth - window.innerWidth;
+const h = gsap.to(track, {
+  x: () =&gt; -dist(), ease: &quot;none&quot;,
+  scrollTrigger: { trigger: &quot;.h-wrap&quot;, pin: true, scrub: 1, end: () =&gt; &quot;+=&quot; + dist(), invalidateOnRefresh: true },
+});
+gsap.from(&quot;.panel-2 img&quot;, { scale: 0.9, scrollTrigger: { containerAnimation: h, trigger: &quot;.panel-2&quot;, start: &quot;left center&quot; } });
+</code></pre>
+<p><code>containerAnimation</code> triggers cannot pin or snap.</p>
+<h2>React and frameworks</h2>
+<pre><code class="language-jsx">gsap.registerPlugin(useGSAP, ScrollTrigger); // outside the component
+const root = useRef(null);
+const { contextSafe } = useGSAP(() =&gt; {
+  gsap.from(&quot;.item&quot;, { autoAlpha: 0, y: 16, stagger: 0.06 });
+}, { scope: root, dependencies: [items.length], revertOnUpdate: true });
+const onClick = contextSafe(() =&gt; gsap.to(&quot;.badge&quot;, { scale: 1.1 }));
+</code></pre>
+<ul>
+<li>Always pass <code>scope</code>. Wrap handler-created tweens in <code>contextSafe</code>; remove listeners in the returned cleanup.</li>
+<li>Without <code>@gsap/react</code>: <code>const ctx = gsap.context(() =&gt; {...}, ref); return () =&gt; ctx.revert();</code>. Vue/Svelte: same, in <code>onMounted</code> / <code>onUnmounted</code>.</li>
+<li>No GSAP during SSR. Revert SplitText on unmount.</li>
+</ul>
+<h2>Plugins worth knowing</h2>
+<ul>
+<li><strong>Flip</strong>: <code>Flip.getState(&quot;.item&quot;)</code> → change DOM → <code>Flip.from(state, { duration: 0.5, ease: &quot;power2.inOut&quot; })</code>.</li>
+<li><strong>Draggable + InertiaPlugin</strong>: <code>{ type: &quot;x,y&quot;, bounds, inertia: true, edgeResistance: 0.65 }</code>. <strong>Observer</strong>: swipe/wheel section changers.</li>
+<li><strong>SplitText</strong>: <code>{ type: &quot;lines&quot;, mask: &quot;lines&quot;, autoSplit: true, onSplit: s =&gt; gsap.from(s.lines, { yPercent: 100, stagger: 0.05 }) }</code>; return the tween; keep <code>aria: &quot;auto&quot;</code>; no <code>text-wrap: balance</code>.</li>
+<li>DrawSVG, MorphSVG, MotionPath, ScrambleText, ScrollTo for set pieces. GSDevTools never ships.</li>
+</ul>
+<h2>Performance and common mistakes</h2>
+<ul>
+<li><code>will-change</code> only on animating elements; <code>stagger</code> over N tweens; kill off-screen work; pin only what needs it; test scrub on a low-end phone.</li>
+<li>Mistakes: ScrollTrigger on a nested tween; <code>scrub</code> + <code>toggleActions</code>; eased horizontal scroll; animating the pinned element; no <code>refresh()</code> after images load; no cleanup in SPAs; <code>markers</code> left on.</li>
+</ul>
+<h2>Scroll World: brand to 3D scroll landing</h2>
+<ul>
+<li><strong>What it builds</strong>: a scroll-scrubbed &quot;fly through the world&quot; hero. N AI isometric diorama stills (one shared style preamble) → N camera dive clips → N-1 connectors → a vanilla JS engine mapping scroll to <code>video.currentTime</code>. Apple product-page technique, pre-rendered video, no WebGL.</li>
+<li><strong>Pipeline</strong>: interview (subject, 4-6 brand hex values, art direction, camera style, 5-7 scenes with eyebrow/headline/line/tags, mobile 9:16 opt-in, budget) → stills (gpt_image_2 via Higgsfield or Codex) → clips (Seedance 2.0 via Monid, Higgsfield fallback) → encode → mount → headless seam QA.</li>
+<li><strong>Rules for any scrubbed-video page</strong>:<ul>
+<li>Seams frame-identical: connector endpoints are the real last/first frames extracted from neighbouring clips, never the stills. One video model per chain.</li>
+<li>Forward-then-back camera at a seam reads as a rewind; realistic worlds use one continuous forward take.</li>
+<li>Play clips from Blob object URLs (hosts without byte ranges pin <code>seekable</code> to <code>[0,0]</code>).</li>
+<li>Encode native res, <code>-crf 20 -g 8 -an -movflags +faststart</code>. Phones: native 9:16, 720 wide, <code>-g 4</code>, crf 23.</li>
+<li>Never set <code>currentTime</code> while <code>seeking</code>; still as poster until first paint; prime muted video on first touch (iOS); ignore height-only resizes on touch; reduced motion → stills.</li>
+<li>Pacing: more scroll on hero/finale, <code>linger ≤ 0.6</code> so the camera settles while copy peaks.</li>
+</ul>
+</li>
+<li><strong>Worth it</strong> for a launch/brand hero with a real story and budget (about $27 of video for 6 scenes at 1080p, plus stills). <strong>Not</strong> for product UI, docs, content-heavy or SEO-critical pages.</li>
+</ul>
+<h2>Canvas UI: WebGL over live HTML</h2>
+<ul>
+<li><strong>How it works</strong>: wraps your subtree in <code>&lt;canvas layoutsubtree&gt;</code>; Chrome&#39;s experimental HTML-in-Canvas (<code>drawElementImage()</code>) paints the live DOM into a texture for WebGL2 or WebGPU, and a shader distorts it. Text stays selectable, links clickable. Elsewhere (Safari, Firefox, Chrome without flag/origin trial) it falls back to a GPU overlay; without WebGL2, content renders unchanged. Engines pause when hidden or off-screen and ignore pointer input under reduced motion.</li>
+<li><strong>Install</strong>: <code>npx shadcn@latest add @canvas-ui/liquid-react</code> (swap name, framework, add <code>-webgpu</code>). Source lands in <code>components/canvasui/</code>.</li>
+<li><strong>Effects</strong>:<ul>
+<li>Fluid: Liquid (pointer fluid sim), Ripple (water rings per click), Cloth (page ripples like fabric), Droplets (rain running down), Bubble (metaball trailing cursor), Displacement (grid pushed by cursor).</li>
+<li>Energy: Blaze (sparks, smoke, heat haze), Flame Wrap (fire border), Force Field (shield with click shockwaves), Laser (beam reveals content on scroll).</li>
+<li>Optics: Glass (crystal lens follows cursor), Frost (ice melts under cursor), Magnify (scanner lens with HUD), Bend (page folds like a cube face), Peel (peels to a second layer), Clouds (mist parted by cursor).</li>
+<li>Retro: VHS (tape wave, chroma bleed), Glitch (RGB tearing), Retro Dither (pixelating lens), Asciify (ASCII lens), Decrypt Reveal (cipher text at cursor), Glyph Rain (falling glyphs), ASCII Sweep (glyph band swaps content).</li>
+<li>Particles: Particle Reveal (particles merge into UI), Particle Scroll (sand reassembles on scroll), Shatter (3D refracting shards), Grid (3D tiles ripple), Hex Float (hex tiles lift), Canvas (drag wet paint).</li>
+<li>3D objects from GLB/SVG/image, work in every browser: ASCII Object, Glass Object (dispersion), Particle Object, Dithered Object (1-bit), Liquid Object, Ink Object (hand-pressed ink).</li>
+</ul>
+</li>
+<li><strong>Reach for it</strong>: one signature moment on a hero, launch, 404 or portfolio.</li>
+<li><strong>Gimmicky when</strong>: it wraps daily-use UI, distorts text being read, effects stack, or content depends on it. One effect per page, outside the reading path, Safari fallback checked. MIT + Commons Clause (don&#39;t resell components).</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="motion.html">← Motion</a><a href="components.html">Animated Components, Used With Taste →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("gsap-scroll")</code> in the taste MCP.</p></main></body></html>

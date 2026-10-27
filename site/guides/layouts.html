@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Layouts: page macrostructures · Taste MCP</title><meta name="description" content="Condensed from: Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="layouts.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="layouts.md">Markdown</a>
+<h1>Layouts: page macrostructures</h1>
+<blockquote>
+<p>Condensed from: Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<p>Design the page from its job first (what the visitor came to do: sign up, buy, book, hire, subscribe, try), then name the shape. Never default to hero, three features, CTA band, footer. Numbers assume 1440 x 900, 12 columns, 1312px container (64px gutters), 32px column gap. &quot;Screen&quot; = 900px.</p>
+<h2>Pick by domain (choose the one least like your last build)</h2>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Candidates</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SaaS / platform / B2B</td>
+<td>bento-grid, workbench, stat-led</td>
+</tr>
+<tr>
+<td>Dev tool, API, CLI, docs</td>
+<td>workbench, long-document, component-playground</td>
+</tr>
+<tr>
+<td>Fintech</td>
+<td>stat-led, workbench, long-document</td>
+</tr>
+<tr>
+<td>Shop / DTC</td>
+<td>catalogue, photographic, bento-grid</td>
+</tr>
+<tr>
+<td>Studio / portfolio</td>
+<td>portfolio-grid, split-studio, index-first</td>
+</tr>
+<tr>
+<td>Personal / founder</td>
+<td>long-document, letter, index-first</td>
+</tr>
+<tr>
+<td>Cause / event</td>
+<td>manifesto, quote-led, marquee-hero</td>
+</tr>
+<tr>
+<td>Marketplace / community</td>
+<td>ecosystem-index, index-first, catalogue</td>
+</tr>
+<tr>
+<td>Dashboard / admin</td>
+<td>app-screen</td>
+</tr>
+</tbody></table>
+<h2>The shapes</h2>
+<p><strong>bento-grid</strong>: many equal entry points (feature-rich SaaS). Skeleton: hero (1 screen, grid&#39;s first row visible inside it) &gt; 6-9 tiles, mixed spans (8+4 over 4+4+4), rows 280-360px, one lead tile &gt; spec table &gt; pricing &gt; FAQ &gt; footer. Hero: head on cols 1-7, outlined action. Avoid: equal tiles, icon-over-heading cards, one-idea pages.</p>
+<p><strong>long-document</strong>: philosophy, case study, founder post. Skeleton: corridor hero &gt; continuous prose, 60-65ch, line-height 1.65+, inline bold run-in heads &gt; one inline image at measure &gt; colophon footer. Hero: one column, link inside the first paragraph is the action. Avoid: transactional pages.</p>
+<p><strong>marquee-hero</strong>: the brand or person is the message. Skeleton: poster fold with type clamp(4rem, 10vw, 9rem) &gt; thick rule or paper change &gt; rows/grid of work &gt; footer. Hero: statement fills the fold; sentence and one action small at its foot. Avoid: products needing explanation in 5 seconds.</p>
+<p><strong>stat-led</strong>: the user gave a real number. Skeleton: figure hero &gt; 2-4 sections each anchored by a supporting figure or chart &gt; qualifier rows &gt; close. Hero: figure at graphic scale plus a worded headline saying what it means; tabular nums. Avoid: any invented or derived number.</p>
+<p><strong>workbench</strong>: the product UI is the pitch. Skeleton: stage hero (capture on cols 6-12, 560px+) &gt; 3-5 captures, each a figure with a one-fact caption &gt; pricing &gt; band close; optional sticky bar after capture 3. Hero: real screenshot, no device or browser chrome. Avoid: service businesses.</p>
+<p><strong>conversational-faq</strong>: scepticism, regulated or educational fields. Skeleton: hero asks the first question &gt; 6-10 question heads (real <code>?</code>), 1-2 short paragraph answers, hairlines between &gt; one outlined CTA. Hero: the question is the h1. Avoid: as the only shape on a launch page.</p>
+<p><strong>manifesto</strong>: sell a belief before a product. Skeleton: poster hero in caps &gt; 4-6 one-claim sections, paper changes between &gt; one solid action at the foot. Hero: declaration plus the action in the fold. Avoid: checkout, tours.</p>
+<p><strong>photographic</strong>: hospitality, fashion, food, places. Skeleton: full-bleed poster photo &gt; alternating photo band / material section (menu rows, hours table, statement), photos at most 45% of page &gt; close on the job (booking, address). Hero: head and sentence on a small paper plate at the image base. Avoid: two photo sections in a row; subjects with nothing to photograph.</p>
+<p><strong>quote-led</strong>: a real, supplied customer quote. Skeleton: quote as statement at display-s with attribution &gt; more supplied quotes as rows &gt; quiet feature list &gt; close. Avoid: writing or paraphrasing quotes.</p>
+<p><strong>specimen</strong>: only type, publishing, a journal or press. Skeleton: large serif phrase &gt; asymmetric spans (narrow margin column for dates and notes, wide content) &gt; hairline rules &gt; typographic link CTA. Avoid: any other prompt (most-copied look).</p>
+<p><strong>catalogue</strong>: variants of one thing (SKUs, palettes, fonts). Skeleton: one-line head &gt; uniform grid 3-5 per row, each card image, name, price, action &gt; footer. Hero: products start above the fold. Avoid: products with hierarchy; empty image frames.</p>
+<p><strong>letter</strong>: founder note, pivot, appeal. Skeleton: salutation (1.5-2x body) &gt; 50ch prose &gt; signature &gt; letter close footer. Avoid: commerce.</p>
+<p><strong>index-first</strong>: docs hubs, archives, link pages. Skeleton: short hero-size head plus one line &gt; 6-20 hairline rows with facts in columns, filter row above, lead row larger. Avoid: hard sells.</p>
+<p><strong>narrative-workflow</strong>: a real sequence of use. Skeleton: hero &gt; 3-5 stages, number inside the h2 or a real <code>&lt;ol&gt;</code>, each with a different full-size object (capture, timer, table) &gt; action again. Avoid: three stages with identical visuals (reads as three features).</p>
+<p><strong>split-studio</strong>: every claim wants proof beside it. Skeleton: 3-5 split rows, proof keeps one side, ratios vary (7/5, 6/6, 5/7 weights), one lead row. Avoid: zigzag (mirror once max), photo brands.</p>
+<p><strong>feature-stack</strong>: premium paced story. Skeleton: per section a sticky left pane (head, action) plus 3-6 scrolling captures right; unpins under 60rem. Avoid: mobile-first audiences without a fallback.</p>
+<p><strong>type-specimen</strong>: a custom typeface is the product. Skeleton: the face at several sizes &gt; body size, italics, language coverage, OpenType features, each captioned below &gt; buy action. Avoid: off-the-shelf fonts.</p>
+<p><strong>portfolio-grid</strong>: studios where work is the product. Skeleton: one short line &gt; filter row &gt; project grid (same size or slight variation) &gt; contact. Avoid: products; blank thumbnails (set projects in type instead).</p>
+<p><strong>map-diagram</strong>: system maps, floor plans, flows. Skeleton: orientation head plus action &gt; one large SVG map with legend and hover states (real data) &gt; supporting rows. Avoid: decorative maps; under 60rem collapse to an ordered list.</p>
+<p><strong>ecosystem-index</strong>: marketplaces and communities. Skeleton: positioning line &gt; 3-5 rails or grids (featured, latest, by category, by people), each with its own h2 and a &quot;See all&quot; link. Avoid: single products; fake listings.</p>
+<p><strong>component-playground</strong>: design systems, snippet libraries. Skeleton: category h2s &gt; preview plus code blocks, framework tabs, Copy button (label flips to &quot;Copied&quot; 2.5s). Avoid: marketing pages; mono outside code.</p>
+<p><strong>app-screen</strong> (dashboards, admin, settings): no hero, no fold, no word budget. Top bar unless 7+ destinations earn a sidebar. Lead with the one object the tool is known by (queue, ledger, timeline), tables before cards, controls 32-40px with 44px hit area, fixed 1.125-1.2 type scale, every data region drawn in loading, empty, error and full states, filters in the URL. Avoid: greeting over four KPI cards.</p>
+<h2>Hero anatomy</h2>
+<ul>
+<li>Exactly one screen at 1440 x 900; next section starts between y 760 and 900.</li>
+<li>Content: h1 of 7 words or fewer (50 chars), one sentence of 12 words or fewer at lead size (21px), one or two actions (one filled, one quiet going elsewhere). All visible at 1280 x 800.</li>
+<li>Postures: Settled (6/6 split), Stage (text 5 cols, visual 7 cols at 60-75% screen height, may bleed off edge), Banner (50-60% height, docs), Ledge (head resting at base), Corridor (one 44ch column), Poster (full-bleed photo 92-100dvh), Counter (the action is the visual: buy box, booking times), Index (the list is the visual).</li>
+<li>Space below content = 1.0 to 1.5x space above; no more than 160px dead band above the fold.</li>
+<li>Visual: 6-7 columns, 520px+ tall, centre within 60px of the text block, 48-120px gap. Use the real product, user photo, or type at full scale. Never a gradient blob, empty box, drawn illustration or eyebrow pill.</li>
+<li>Use <code>dvh</code>/<code>svh</code>, never <code>vh</code>. One entrance, 400-800ms total, from visible.</li>
+</ul>
+<h2>Section rhythm</h2>
+<ul>
+<li>6-9 sections including hero and footer (5 on thin prompts); 450 visible words max; about 80 words per 900px window.</li>
+<li>Section gaps 120 / 144 / 176px mixed (80-120 under 60rem, 56-96 under 40rem); a band of changed paper takes 120px padding. Never one gap everywhere.</li>
+<li>Section head h2 at 48-56px (never under 40px), 6 words or fewer, 16-24px to its one lead line, 48-64px to the body.</li>
+<li>Every body has mass: visual 360px+ tall, or 3-4 items across, or 3+ rows across 10 columns, or a statement at h2 size. Widest row reaches 10 of 12 columns.</li>
+<li>Use 3-6 different compositions; never the same twice in a row. Follow a dense section (grid, table, bento) with a quiet one (statement, showcase).</li>
+<li>Vary dividers by seam: whitespace, hairline, tinted well, card (border or shadow, never both). Never a card inside a card.</li>
+<li>Photos cover 25-33% of the page below the hero (45% on photographic or portfolio shapes).</li>
+<li>End on the job (booking, buy box, download, next date), never an email band by default. Footer 200-400px.</li>
+<li>Squint test: blur the words; each section still has a shape and the page alternates heavy and light.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="layout-spacing.html">← Layout and spacing</a><a href="motion.html">Motion →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("layouts")</code> in the taste MCP.</p></main></body></html>

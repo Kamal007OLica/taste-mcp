@@ -1,0 +1,27 @@
+# Taste MCP
+
+> Design taste for coding agents, condensed from 14 open-source design repos. Add the MCP (https://agent-taste.vercel.app/mcp) or read the guides below before building UI.
+
+## Guides
+- [Core taste rules](https://kamal007olica.github.io/taste-mcp/guides/core.md)
+- [How a tasteful build runs](https://kamal007olica.github.io/taste-mcp/guides/workflow.md)
+- [The AI-UI tells and their fixes](https://kamal007olica.github.io/taste-mcp/guides/anti-slop.md)
+- [Typography](https://kamal007olica.github.io/taste-mcp/guides/typography.md)
+- [Color](https://kamal007olica.github.io/taste-mcp/guides/color.md)
+- [Layout and spacing](https://kamal007olica.github.io/taste-mcp/guides/layout-spacing.md)
+- [Layouts: page macrostructures](https://kamal007olica.github.io/taste-mcp/guides/layouts.md)
+- [Motion](https://kamal007olica.github.io/taste-mcp/guides/motion.md)
+- [GSAP, Scroll Worlds and WebGL over HTML](https://kamal007olica.github.io/taste-mcp/guides/gsap-scroll.md)
+- [Animated Components, Used With Taste](https://kamal007olica.github.io/taste-mcp/guides/components.md)
+- [States and accessibility](https://kamal007olica.github.io/taste-mcp/guides/states-accessibility.md)
+- [Responsive and mobile](https://kamal007olica.github.io/taste-mcp/guides/responsive-mobile.md)
+- [Native Feel](https://kamal007olica.github.io/taste-mcp/guides/native-feel.md)
+- [Dark mode and data viz](https://kamal007olica.github.io/taste-mcp/guides/dark-mode-dataviz.md)
+- [Imagery, icons and texture](https://kamal007olica.github.io/taste-mcp/guides/imagery-texture.md)
+- [Copy](https://kamal007olica.github.io/taste-mcp/guides/copy.md)
+- [DESIGN.md, the Design Brief Agents Can Read](https://kamal007olica.github.io/taste-mcp/guides/design-md.md)
+- [Dimensional Drawing](https://kamal007olica.github.io/taste-mcp/guides/dimensional-drawing.md)
+- [Pre-ship visual review](https://kamal007olica.github.io/taste-mcp/guides/review.md)
+
+## Full text
+- [taste.md](https://kamal007olica.github.io/taste-mcp/taste.md): every guide in one file

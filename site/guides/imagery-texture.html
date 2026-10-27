@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imagery, icons and texture · Taste MCP</title><meta name="description" content="Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Hallmark (https://github.com/Nutlope/hallmark), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="imagery-texture.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="imagery-texture.md">Markdown</a>
+<h1>Imagery, icons and texture</h1>
+<blockquote>
+<p>Condensed from: Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>)</p>
+</blockquote>
+<h2>Decide what imagery exists (first that fits wins)</h2>
+<ol>
+<li>The user&#39;s own photos, footage, screenshots.</li>
+<li>Screenshots captured from the running product (1440×900 and 390×844 at 2x).</li>
+<li>The product built in HTML at true size.</li>
+<li>Openly licensed real photos of the subject&#39;s world (Wikimedia Commons, museums), credited; never URLs from memory.</li>
+<li>The subject drawn in code (last resort).</li>
+<li>Type and colour alone, on purpose.</li>
+</ol>
+<p>Generated images only on request. Top-scored pages carry a median 37 images, weak ones 5.</p>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>What leads</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Place, food, object, craft, event</td>
+<td>Photographs. Hero photo is the largest thing on screen 1: full-bleed, or 60-75% of screen height</td>
+</tr>
+<tr>
+<td>Software, SaaS, dev tool</td>
+<td>The product&#39;s interface. Max 1-2 context photos, each passing the deletion test (remove it, a fact is lost)</td>
+</tr>
+<tr>
+<td>Docs, API, CLI, manifesto</td>
+<td>Type and code; at most one full-bleed photo band</td>
+</tr>
+</tbody></table>
+<h2>Showing software</h2>
+<ul>
+<li>Real screen: real labels, numbers that add up, one row selected. Crop to one panel, row or control.</li>
+<li>No browser chrome, traffic lights, laptop or phone frames (a plain rounded rectangle only for phone apps).</li>
+<li>Legible at displayed size, never upscaled. No real names, emails, tokens, paths or debug overlays. Grey bars for text are worse than no image.</li>
+</ul>
+<h2>Photographs: size, count, crop</h2>
+<ul>
+<li>Big or nothing: ≥6 of 12 columns and ≥440px tall, or full-bleed.</li>
+<li>A picture leads its screen (≥60%) or stays small (&lt;10%).</li>
+<li>6-12 pictures per page (min 4); ~30-40% of scrolled area; ≥1 screen in 4 has none.</li>
+<li>3-5 placements per page, never the same in neighbouring sections. Best-scoring: split (picture 42-50% or two-thirds width, full height, touching the viewport edge), picture held while text scrolls, uneven mosaic, inset frame growing to full screen, cut-out on a flat field. 3D galleries score lower.</li>
+<li>Two ratios cover ≥75% of pictures: 4:5 portrait, 16:9 or 3:2 landscape, 1:1 detail.</li>
+<li>Square corners (94% of studied pictures). If rounded, one radius for all (≤4-5px, or 12px in card-style UI).</li>
+<li><code>object-fit: cover</code> + per-image <code>object-position</code>. Let images touch edges. Max one overlap per screen, 40-80px.</li>
+<li>No frames, borders, shadows, tilted polaroids. Captions: one factual line, small, muted, under the image.</li>
+<li>No stock faces as customers, team or testimonials.</li>
+</ul>
+<h2>Treatment (one for the whole page)</h2>
+<ul>
+<li>Default: untouched; choose images whose light agrees.</li>
+<li>Greyscale set: <code>filter: grayscale(1) contrast(1.05)</code> on every image or none.</li>
+<li>White studio product on a light field: <code>mix-blend-mode: multiply</code>.</li>
+<li>Dark page: <code>filter: brightness(.85) contrast(1.05)</code> so edges sink.</li>
+<li>Never: brand-colour washes, blur, vignettes, glow copies.</li>
+</ul>
+<h2>Text over photos</h2>
+<ul>
+<li>Only display text, one line, one action, on the calm area (sky, shadow side), ≥32px from edges. Body copy goes beside or under.</li>
+<li>Scrim from ink or black behind the text side only: 35-65% gradient, or a solid 40-55% block. Never coloured overlays.</li>
+<li>Measure contrast at the text&#39;s position: 4.5:1, or 3:1 at ≥24px. Fixed nav over photos gets a solid band.</li>
+</ul>
+<h2>Delivery</h2>
+<ul>
+<li>Serve 2x CSS width, capped ~2400px; hero/full-bleed sources ≥2400px on the long side.</li>
+<li><code>srcset</code> with <code>w</code> descriptors + accurate <code>sizes</code> (<code>50vw</code> half, <code>100vw</code> full-bleed); <code>&lt;picture&gt;</code> for portrait phone crops.</li>
+<li>Always <code>width</code>/<code>height</code> or <code>aspect-ratio</code> (CLS). WebP/AVIF.</li>
+<li>Hero image is the LCP: <code>fetchpriority=&quot;high&quot;</code>, never <code>loading=&quot;lazy&quot;</code>. Everything else lazy.</li>
+<li>Video: <code>muted loop playsinline</code> + <code>poster</code>, 5-15s, paused off-screen, pause control if looping past 5s, 1280×720 under ~2MB per 10s (WebM then MP4). One moving picture per screen.</li>
+<li>Credit CC BY / BY-SA photos in one footer line.</li>
+</ul>
+<h2>Drawing (only when no honest picture exists)</h2>
+<ul>
+<li>Draw the subject&#39;s own things (the stool&#39;s legs, the shop&#39;s enamel sign, the invoice the tool produces). Unnameable = decoration: cut it.</li>
+<li>One graphic language: flat fills, one stroke weight or none, one curve vocabulary, the palette&#39;s real colours.</li>
+<li>Three levels of detail: big shapes, describing shapes, small rewards (a maker&#39;s mark, a hinge). Light via flat tone steps, not gradients.</li>
+<li>Draw large (hero, full band); scattered doodles read as filler.</li>
+<li>Never: unDraw, Humaaans, Storyset, isometric scenes, 3D blobs, people-at-laptops line art, abstract floating shapes.</li>
+</ul>
+<h2>Icons</h2>
+<ul>
+<li>One library per product: Lucide default; Phosphor or Heroicons if the project uses them. One style (outline) per hierarchy level; never mix filled and outline at one level.</li>
+<li>Stroke 1.5px (14 of 16 studied apps) or 2px, consistent.</li>
+<li>Sizes on the set&#39;s grid: 16, 20, 24, 32 (24 viewBox at 24px, never scaled to 19). Nav 16-20px; inline 14-16px; 8-10px gap to label.</li>
+<li><code>currentColor</code>, grey by default (light nav ~<code>#454545</code> to <code>#73737f</code>); align to the first line of multi-line text.</li>
+<li>Never in coloured circles or tinted squares (0 of 23 studied apps). Never emoji.</li>
+<li>Icon-only buttons: <code>aria-label</code> + tooltip, ≥44px hit area. Decorative icons: <code>aria-hidden=&quot;true&quot;</code>. Meaningful icons: 3:1 contrast.</li>
+</ul>
+<h2>Logos</h2>
+<ul>
+<li>User&#39;s own only, monochrome, one treatment per row, 32-48px tall (20-28px in footer). Even splits (3+3, never 5+1).</li>
+<li>Simple Icons (<code>https://cdn.simpleicons.org/&lt;slug&gt;/&lt;hex&gt;</code>) only for platforms the page names. Never an invented logo wall.</li>
+</ul>
+<h2>Texture and grain</h2>
+<p>Default: none, especially on modern-minimal pages and app UI. Use only when the brand&#39;s lineage is print (risograph, letterpress, film, ticket stock).</p>
+<ul>
+<li>One artifact family per page (grain, halftone, misregistration, scanline or deckle).</li>
+<li>Opacity: ≤0.08 page-wide, ≤0.15 inside one plate or card, ≤0.05 (or none) under body text. Low-frequency fibre wash (<code>baseFrequency</code> ≤0.02) may reach 0.12.</li>
+<li>Never animated. <code>pointer-events:none; aria-hidden=&quot;true&quot;</code>. Pure CSS or a data-URI SVG, no image requests.</li>
+<li>Grain: <code>::after</code> overlay, <code>background-size:200px</code>, SVG <code>feTurbulence type=fractalNoise baseFrequency=0.85 numOctaves=2</code> + <code>feColorMatrix values=&quot;0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -4&quot;</code> for discrete specks. Dark grounds: RGB rows <code>0 0 0 0 1</code> (white specks).</li>
+<li>Halftone: <code>radial-gradient(var(--ink) 1.5px, transparent 1.5px)</code> on a 12px grid, plates only, never under type.</li>
+<li>Misregistration: one hero word, 1-3px offset echoes in two spot inks, never every heading.</li>
+<li>Measure contrast on the textured result.</li>
+</ul>
+<h2>Backgrounds</h2>
+<ul>
+<li>Flat ground, a tone-step surface, or a full colour field per section.</li>
+<li>Banned: gradient blobs, orbs, aurora, dot grids, wave dividers, floating shapes, starfields, visible grid lines, glass/backdrop-blur panels, glowing borders.</li>
+</ul>
+<h2>Placeholders that aren&#39;t lorem or grey boxes</h2>
+<ul>
+<li>Image slot: <code>data-slot=&quot;hero&quot;</code>, <code>data-alt=&quot;Baker shaping loaves at 4am&quot;</code>, real <code>aspect-ratio</code>, filled with a credited photo or the built product. A slot showing only its wash is an empty picture. No visible &quot;Your image here&quot; labels.</li>
+<li>Missing fact (venue, date, price): a muted text slot with a dashed outline, &quot;Venue to be announced&quot;, max 2 per page. Never an invented value.</li>
+<li>Max 4 slots in a row; no empty frames for things without pictures (set a team list in type).</li>
+<li>Real-density sample text (each room named, with a rate). RTL prototypes use real Arabic or Hebrew.</li>
+<li>No photo of a person: initials on a neutral disc.</li>
+<li>Counts: set the number, never a row of identical marks.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="dark-mode-dataviz.html">← Dark mode and data viz</a><a href="copy.html">Copy →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("imagery-texture")</code> in the taste MCP.</p></main></body></html>

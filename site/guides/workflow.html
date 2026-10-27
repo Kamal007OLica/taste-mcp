@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How a tasteful build runs · Taste MCP</title><meta name="description" content="Condensed from: Impeccable (https://github.com/pbakaus/impeccable), Taste Skill (https://github.com/Leonxlnx/taste-skill), Hallmark (https://github.com/Nutlope/hallmark), Open Design (https://github.com/nexu-io/open-design)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="workflow.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="workflow.md">Markdown</a>
+<h1>How a tasteful build runs</h1>
+<blockquote>
+<p>Condensed from: Impeccable (<a href="https://github.com/pbakaus/impeccable">https://github.com/pbakaus/impeccable</a>), Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>)</p>
+</blockquote>
+<p>Brief → context → direction → build → critique → polish → ship check.</p>
+<h2>0. Name the mode (decides how much ambition)</h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Surfaces</th>
+<th>Ambition shows as</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Persuade</td>
+<td>landing, pricing, campaign</td>
+<td>bold, committed world; real imagery</td>
+</tr>
+<tr>
+<td>Operate</td>
+<td>app, dashboard, settings, admin</td>
+<td>precision, scanability, familiar patterns</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>docs, articles, changelog</td>
+<td>measure, structure, wayfinding</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>portfolio, gallery, showcase</td>
+<td>the artifact leads, UI recedes</td>
+</tr>
+</tbody></table>
+<p>Choose by surface: a dev tool&#39;s landing page is Persuade.</p>
+<h2>1. Brief</h2>
+<ul>
+<li>Ask 2-3 questions per round, 1-2 rounds max: who arrives and in what state; the one primary action; what is uniquely true here; what real content, proof and assets exist; which states matter (empty, error, loading, overflow); what must stay untouched.</li>
+<li>Never ask for CSS values or style menus; assert the likely reading and invite correction.</li>
+<li>Output 3-5 bullets: job + audience, outcome + proof, scope, states, constraints. Confirm, then build.</li>
+</ul>
+<h2>2. Context files</h2>
+<ul>
+<li><strong>PRODUCT.md</strong> (durable truth): users, purpose, positioning, operating context, constraints, brand commitments, evidence on hand plus explicit absences that must not be fabricated. No visual decisions.</li>
+<li><strong>DESIGN.md</strong> (visual system, Google design.md format: YAML tokens + prose; tokens normative). A missing DESIGN.md does not mean greenfield: if the code has a coherent identity, document it before extending it.</li>
+<li>Refinement preserves the incumbent look; redesign replaces it, never polishes it.</li>
+</ul>
+<h2>3. Direction</h2>
+<ul>
+<li>Colour strategy before colours: Restrained (tinted neutrals + 1 accent), Committed (one saturated colour on 30-60% of the surface), Full palette (3-4 named roles), Drenched (the surface is the colour).</li>
+<li>Light or dark from one sentence of physical scene (who, where, what light), never from category.</li>
+<li>Faces from the subject&#39;s world. A pick from the reflex list (Fraunces, Playfair, Space Grotesk, Inter-as-display, DM Sans, Outfit, Plus Jakarta Sans, Instrument Sans) needs a reason no other face satisfies.</li>
+<li>Self-check: if someone could guess the look from the category alone, or from category plus the avoid list, rework. Known ruts: cream + serif + terracotta; near-black + neon + glow; hairlines + italic serif + mono labels; flat ink + hard offset shadows.</li>
+<li>80/20: proven patterns plus one bold move, product-specific microcopy, one memorable micro-interaction, one insider detail.</li>
+<li>First viewport is a thesis: show the mechanism working. Memory test: what would a visitor describe an hour later?</li>
+<li>Write a ~150-word direction contract: world, first viewport, visitor path, signature interaction, honest risk.</li>
+</ul>
+<h2>4. Build</h2>
+<ul>
+<li>Read <code>anti-slop.md</code> immediately before editing UI. Real content at full density; prove, don&#39;t claim; author assets, never substitute chrome (gradients, glass, icon tiles) for missing content.</li>
+<li>Pre-emit critique (Hallmark): score Philosophy, Hierarchy, Execution, Specificity, Restraint, Variety 1-5; revise anything under 3 before writing code.</li>
+<li>Run <code>detectors.json</code> after every UI edit; fix mechanical hits immediately.</li>
+</ul>
+<h2>5. Critique (fresh eyes, on screenshots)</h2>
+<ul>
+<li>Settle animations; capture desktop, mobile and the user&#39;s viewport. Judge pictures, not code.</li>
+<li>Passes: 1 s and 5 s glance (one focal answer); squint (2-3 masses); cover the logo (could a competitor use it?); count left edges (2-3); section gap &gt; any inner gap; headline ≥3× body, ≤5 sizes; accent on one action; images doing jobs; layout word per section (no repeats); phone is its own composition; nothing covers text; one live thing.</li>
+<li>Score: design 40%, usability 30%, creativity 20%, content 10%. Caps: any eyebrow, decorative gradient, 01/02/03 or resting shadow → ≤6.5; placeholder → content ≤5. Nielsen 10 heuristics 0-4 (real UIs land 20-32/40).</li>
+<li>Run design review and detector scan independently (separate subagents) so findings don&#39;t anchor judgment.</li>
+<li>Fix order: idea → hierarchy → composition → type → imagery → colour → detail → motion. 2-3 rounds max; stop when a stranger would notice nothing; report scores under 7.5 honestly.</li>
+</ul>
+<h2>6. Polish and ship check</h2>
+<ul>
+<li>Triage: broken tasks and inaccessible paths → missing states → flow/hierarchy/system drift → visual/motion → code cleanup.</li>
+<li>Ship gate: all states; contrast 4.5:1 / 3:1; visible instant focus; keyboard path; targets ≥24px (aim 44); reduced-motion path; no horizontal scroll 320-1920px; no console errors or layout shift; detectors clean or waived with a page-specific reason. Nothing ships with an open floor-level failure.</li>
+</ul>
+<h2>Impeccable&#39;s 24 commands by phase</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Command</th>
+<th>Does</th>
+<th>Reach for it when</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Context</td>
+<td><code>init</code></td>
+<td>writes PRODUCT.md from repo + short interview</td>
+<td>first run on any project</td>
+</tr>
+<tr>
+<td>Context</td>
+<td><code>document</code></td>
+<td>generates DESIGN.md from existing code</td>
+<td>coherent UI exists, no DESIGN.md</td>
+</tr>
+<tr>
+<td>Context</td>
+<td><code>extract</code></td>
+<td>promotes patterns used 3+ times into tokens/components</td>
+<td>repeated hard-coded values</td>
+</tr>
+<tr>
+<td>Brief</td>
+<td><code>shape</code></td>
+<td>discovery interview → confirmed brief, no code</td>
+<td>new surface or feature is ambiguous</td>
+</tr>
+<tr>
+<td>Build</td>
+<td><code>craft</code></td>
+<td>deprecated alias for a normal new-work build</td>
+<td>(just ask for the surface)</td>
+</tr>
+<tr>
+<td>Build</td>
+<td><code>overdrive</code></td>
+<td>proposes 2-3 ambitious technical directions, builds the chosen one</td>
+<td>a moment should feel extraordinary</td>
+</tr>
+<tr>
+<td>Iterate</td>
+<td><code>live</code></td>
+<td>pick elements in the browser, cycle variants</td>
+<td>dev server running, visual tuning</td>
+</tr>
+<tr>
+<td>Iterate</td>
+<td><code>generate</code></td>
+<td>N variants of a named element in the live browser</td>
+<td>&quot;give me 3 hero options&quot;</td>
+</tr>
+<tr>
+<td>Evaluate</td>
+<td><code>critique</code></td>
+<td>design review: specificity verdict, heuristics, personas</td>
+<td>before polishing, after a build</td>
+</tr>
+<tr>
+<td>Evaluate</td>
+<td><code>audit</code></td>
+<td>scored a11y/perf/theming/responsive/integrity report, no fixes</td>
+<td>pre-release technical check</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>typeset</code></td>
+<td>fonts, roles, scale, measure</td>
+<td>type feels default or flat</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>layout</code></td>
+<td>spacing rhythm, grouping, structure</td>
+<td>sections feel samey or cramped</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>colorize</code></td>
+<td>strategic colour roles, contrast</td>
+<td>UI is gray or colour lacks meaning</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>animate</code></td>
+<td>one focal motion + feedback, reduced-motion path</td>
+<td>static or motion is scattered</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>clarify</code></td>
+<td>rewrites labels, errors, microcopy</td>
+<td>copy is vague or generic</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>adapt</code></td>
+<td>rethinks for other devices/inputs</td>
+<td>mobile or touch is an afterthought</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>harden</code></td>
+<td>long text, i18n, errors, offline, 1000+ items</td>
+<td>before real users and data</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>onboard</code></td>
+<td>first-run, empty states, path to first value</td>
+<td>activation or empty screens</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td><code>optimize</code></td>
+<td>measures and fixes LCP/INP/CLS, bundle, jank</td>
+<td>it feels slow</td>
+</tr>
+<tr>
+<td>Tune</td>
+<td><code>bolder</code></td>
+<td>amplifies one section with the system&#39;s own moves</td>
+<td>safe or bland</td>
+</tr>
+<tr>
+<td>Tune</td>
+<td><code>quieter</code></td>
+<td>reduces saturation, weight, motion, noise</td>
+<td>loud or overstimulating</td>
+</tr>
+<tr>
+<td>Tune</td>
+<td><code>distill</code></td>
+<td>strips to one primary goal per screen</td>
+<td>cluttered or feature-creep</td>
+</tr>
+<tr>
+<td>Tune</td>
+<td><code>delight</code></td>
+<td>one humane, product-specific moment</td>
+<td>functional but lifeless</td>
+</tr>
+<tr>
+<td>Ship</td>
+<td><code>polish</code></td>
+<td>final consistency, states and system alignment pass</td>
+<td>before shipping</td>
+</tr>
+</tbody></table>
+<h2>Commands you can emulate by asking</h2>
+<table>
+<thead>
+<tr>
+<th>Ask the agent</th>
+<th>It should</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&quot;Shape this first&quot;</td>
+<td>ask 2-3 questions, return a 3-5 bullet brief, write no code</td>
+</tr>
+<tr>
+<td>&quot;Critique this page&quot;</td>
+<td>screenshot desktop + mobile, run passes + scores, list top 3 fixes with evidence</td>
+</tr>
+<tr>
+<td>&quot;Run the slop check&quot;</td>
+<td>apply <code>detectors.json</code> to changed files, fix or justify each hit</td>
+</tr>
+<tr>
+<td>&quot;Audit it&quot;</td>
+<td>score a11y, performance, theming, responsive, integrity 0-4 each (/20), tag P0-P3</td>
+</tr>
+<tr>
+<td>&quot;Make it bolder / quieter&quot;</td>
+<td>change only the named target, reusing the system&#39;s own type, colour and motif</td>
+</tr>
+<tr>
+<td>&quot;Distill it&quot;</td>
+<td>cut to one primary action per screen, ≤4 options per decision point</td>
+</tr>
+<tr>
+<td>&quot;Harden it&quot;</td>
+<td>test long, empty, RTL, error, slow and permission states; add the missing ones</td>
+</tr>
+<tr>
+<td>&quot;Polish it&quot;</td>
+<td>triage in the order above, then run the ship gate</td>
+</tr>
+</tbody></table>
+
+<nav class="doc-nav" aria-label="Guides"><a href="core.html">← Core taste rules</a><a href="anti-slop.html">The AI-UI tells and their fixes →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("workflow")</code> in the taste MCP.</p></main></body></html>

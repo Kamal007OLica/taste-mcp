@@ -1,0 +1,6381 @@
+[
+  {
+    "name": "Animated Content",
+    "slug": "animated-content",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Scroll-triggered wrapper that slides, blurs, tilts or wipes content and its children into view.",
+    "tags": [
+      "scroll",
+      "reveal",
+      "entrance",
+      "wrapper",
+      "stagger",
+      "section"
+    ],
+    "install": "npx shadcn@latest add @react-bits/AnimatedContent-TS-TW",
+    "docs": "https://reactbits.dev/animations/animated-content",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "Safe default for section entrances; keep travel small and durations under 600ms."
+  },
+  {
+    "name": "Blob Cursor",
+    "slug": "blob-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Liquid-metal 3D blob replaces the cursor, stretching with movement and splashing into droplets on click.",
+    "tags": [
+      "cursor",
+      "blob",
+      "liquid",
+      "3d",
+      "chrome",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BlobCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/blob-cursor",
+    "deps": [
+      "three"
+    ],
+    "tasteNote": "Custom cursors cost usability; keep to portfolios or playful brand pages, never dashboards."
+  },
+  {
+    "name": "Click Spark",
+    "slug": "click-spark",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Emits a small burst of sparks, dots or stars from every click point.",
+    "tags": [
+      "click",
+      "feedback",
+      "sparks",
+      "particles",
+      "micro-interaction",
+      "delight"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ClickSpark-TS-TW",
+    "docs": "https://reactbits.dev/animations/click-spark",
+    "deps": [],
+    "tasteNote": "Scope it to one celebratory button rather than the whole page."
+  },
+  {
+    "name": "Crosshair",
+    "slug": "crosshair",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Crosshair cursor with live coordinates that snaps to and measures links and buttons.",
+    "tags": [
+      "cursor",
+      "crosshair",
+      "technical",
+      "hud",
+      "coordinates",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Crosshair-TS-TW",
+    "docs": "https://reactbits.dev/animations/crosshair",
+    "deps": [],
+    "tasteNote": "Fits engineering or design-tool brands; reads as noise elsewhere."
+  },
+  {
+    "name": "Cubes",
+    "slug": "cubes",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Grid of outlined 3D cubes that turn toward the pointer and ripple on click.",
+    "tags": [
+      "3d",
+      "cubes",
+      "grid",
+      "cursor",
+      "hero",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Cubes-TS-TW",
+    "docs": "https://reactbits.dev/animations/cubes",
+    "deps": []
+  },
+  {
+    "name": "Electric Border",
+    "slug": "electric-border",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Crackling current wraps an element's border and sparks toward the cursor.",
+    "tags": [
+      "border",
+      "electric",
+      "glow",
+      "card",
+      "highlight",
+      "energy"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ElectricBorder-TS-TW",
+    "docs": "https://reactbits.dev/animations/electric-border",
+    "deps": [],
+    "tasteNote": "Loud by design; one highlighted card or pricing tier at most."
+  },
+  {
+    "name": "Fade Content",
+    "slug": "fade-content",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Scroll wrapper fading content in from blur, grayscale, grain, mist or pixel blocks.",
+    "tags": [
+      "scroll",
+      "fade",
+      "reveal",
+      "entrance",
+      "wrapper",
+      "blur"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FadeContent-TS-TW",
+    "docs": "https://reactbits.dev/animations/fade-content",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "The plain fade is the tasteful choice; exotic variants suit editorial pages."
+  },
+  {
+    "name": "Glare Hover",
+    "slug": "glare-hover",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Glossy light streak sweeps across an element in the pointer's direction.",
+    "tags": [
+      "hover",
+      "glare",
+      "shine",
+      "card",
+      "button",
+      "gloss"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlareHover-TS-TW",
+    "docs": "https://reactbits.dev/animations/glare-hover",
+    "deps": [],
+    "tasteNote": "Subtle on product cards; skip on text-heavy blocks."
+  },
+  {
+    "name": "Gradual Blur",
+    "slug": "gradual-blur",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Progressive edge blur for headers, footers and scroll areas, optionally fading to a color.",
+    "tags": [
+      "blur",
+      "edge",
+      "fade",
+      "scroll",
+      "header",
+      "mask",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GradualBlur-TS-TW",
+    "docs": "https://reactbits.dev/animations/gradual-blur",
+    "deps": [],
+    "tasteNote": "Quietly premium; great for sticky headers and carousel edges."
+  },
+  {
+    "name": "Crystalized Ball",
+    "slug": "crystalized-ball",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Glass orb with a crackling electric rim and glowing dust swirling with the cursor.",
+    "tags": [
+      "orb",
+      "glass",
+      "electric",
+      "particles",
+      "webgl",
+      "hero",
+      "ai"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CrystalizedBall-TS-TW",
+    "docs": "https://reactbits.dev/animations/crystalized-ball",
+    "deps": [
+      "ogl"
+    ],
+    "tasteNote": "Works as an AI assistant avatar or single hero focal point."
+  },
+  {
+    "name": "Electric Logo",
+    "slug": "electric-logo",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Animates a logo outline as live lightning with arcs jumping off its edges.",
+    "tags": [
+      "logo",
+      "lightning",
+      "electric",
+      "outline",
+      "webgl",
+      "brand",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ElectricLogo-TS-TW",
+    "docs": "https://reactbits.dev/animations/electric-logo",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Dither Veil",
+    "slug": "dither-veil",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "A 1-bit dithered photo that the cursor burns through to reveal full color.",
+    "tags": [
+      "dither",
+      "image",
+      "reveal",
+      "cursor",
+      "retro",
+      "photo",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DitherVeil-TS-TW",
+    "docs": "https://reactbits.dev/animations/dither-veil",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Glow Cursor",
+    "slug": "glow-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Soft light pours from the cursor, drifting and cooling as it fades.",
+    "tags": [
+      "cursor",
+      "glow",
+      "light",
+      "trail",
+      "ambient",
+      "dark"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlowCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/glow-cursor",
+    "deps": []
+  },
+  {
+    "name": "Ghost Cursor",
+    "slug": "ghost-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Glowing smoke ghost follows the pointer and curls away as it rises.",
+    "tags": [
+      "cursor",
+      "smoke",
+      "ghost",
+      "trail",
+      "glow",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GhostCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/ghost-cursor",
+    "deps": [],
+    "tasteNote": "Novelty for game or seasonal sites, not product UI."
+  },
+  {
+    "name": "Image Trail",
+    "slug": "image-trail",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Spawns a trail of images behind the moving cursor, with several variants.",
+    "tags": [
+      "cursor",
+      "image",
+      "trail",
+      "gallery",
+      "portfolio",
+      "hover"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ImageTrail-TS-TW",
+    "docs": "https://reactbits.dev/animations/image-trail",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "Classic agency-portfolio move; only earns its place with strong photography."
+  },
+  {
+    "name": "Logo Loop",
+    "slug": "logo-loop",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Seamless infinite marquee of brand or tech logos that pauses on hover.",
+    "tags": [
+      "logo-cloud",
+      "marquee",
+      "logos",
+      "social-proof",
+      "loop",
+      "partners"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LogoLoop-TS-TW",
+    "docs": "https://reactbits.dev/animations/logo-loop",
+    "deps": [],
+    "tasteNote": "Tasteful logo rail; keep logos monochrome and the speed slow."
+  },
+  {
+    "name": "Magnet",
+    "slug": "magnet",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Wrapper that pulls an element toward the cursor and springs it back.",
+    "tags": [
+      "magnetic",
+      "cursor",
+      "hover",
+      "button",
+      "spring",
+      "micro-interaction"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Magnet-TS-TW",
+    "docs": "https://reactbits.dev/animations/magnet",
+    "deps": [],
+    "tasteNote": "Low strength on a CTA feels premium; strong pulls feel broken."
+  },
+  {
+    "name": "Meta Balls",
+    "slug": "meta-balls",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Liquid metaballs that merge and split, with a cursor blob pushing through them.",
+    "tags": [
+      "metaballs",
+      "liquid",
+      "blob",
+      "cursor",
+      "webgl",
+      "background"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MetaBalls-TS-TW",
+    "docs": "https://reactbits.dev/animations/meta-balls",
+    "deps": []
+  },
+  {
+    "name": "Strands",
+    "slug": "strands",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Spectral strands twist inside a frosted glass orb, like a voice assistant.",
+    "tags": [
+      "orb",
+      "ai",
+      "voice",
+      "glass",
+      "siri",
+      "glow",
+      "assistant"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Strands-TS-TW",
+    "docs": "https://reactbits.dev/animations/strands",
+    "deps": [],
+    "tasteNote": "Ideal for AI or voice listening states; pointless as decoration."
+  },
+  {
+    "name": "Metallic Paint",
+    "slug": "metallic-paint",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Flowing liquid-chrome shader applied over a logo or text shape.",
+    "tags": [
+      "chrome",
+      "metal",
+      "logo",
+      "shader",
+      "liquid",
+      "brand",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MetallicPaint-TS-TW",
+    "docs": "https://reactbits.dev/animations/metallic-paint",
+    "deps": []
+  },
+  {
+    "name": "Noise",
+    "slug": "noise",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Film grain overlay ranging from fine 35mm grain to dust, paper and static.",
+    "tags": [
+      "grain",
+      "noise",
+      "texture",
+      "overlay",
+      "film",
+      "background"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Noise-TS-TW",
+    "docs": "https://reactbits.dev/animations/noise",
+    "deps": [],
+    "tasteNote": "Barely visible grain adds warmth to flat gradients; keep opacity low."
+  },
+  {
+    "name": "Pixel Trail",
+    "slug": "pixel-trail",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Glossy pixels melt into a gooey trail behind the cursor.",
+    "tags": [
+      "cursor",
+      "pixel",
+      "trail",
+      "goo",
+      "retro",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelTrail-TS-TW",
+    "docs": "https://reactbits.dev/animations/pixel-trail",
+    "deps": []
+  },
+  {
+    "name": "Pixel Transition",
+    "slug": "pixel-transition",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Retro pixel dissolve covers a card, swaps the content beneath, then clears.",
+    "tags": [
+      "pixel",
+      "transition",
+      "hover",
+      "card",
+      "retro",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelTransition-TS-TW",
+    "docs": "https://reactbits.dev/animations/pixel-transition",
+    "deps": []
+  },
+  {
+    "name": "Pixel Swap",
+    "slug": "pixel-swap",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "New content builds in pixel by pixel in a springy wave from the cursor's entry point.",
+    "tags": [
+      "pixel",
+      "swap",
+      "hover",
+      "reveal",
+      "image",
+      "transition"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelSwap-TS-TW",
+    "docs": "https://reactbits.dev/animations/pixel-swap",
+    "deps": []
+  },
+  {
+    "name": "Ribbons",
+    "slug": "ribbons",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Springy ribbon trails follow the cursor in several shapes.",
+    "tags": [
+      "cursor",
+      "ribbons",
+      "trail",
+      "playful",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Ribbons-TS-TW",
+    "docs": "https://reactbits.dev/animations/ribbons",
+    "deps": []
+  },
+  {
+    "name": "Shape Blur",
+    "slug": "shape-blur",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "A crisp logo or shape drifts out of focus under the pointer like a lens.",
+    "tags": [
+      "blur",
+      "logo",
+      "shape",
+      "hover",
+      "lens",
+      "focus"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ShapeBlur-TS-TW",
+    "docs": "https://reactbits.dev/animations/shape-blur",
+    "deps": []
+  },
+  {
+    "name": "Splash Cursor",
+    "slug": "splash-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Fluid simulation trails the cursor in swirling ink and splashes on click.",
+    "tags": [
+      "cursor",
+      "fluid",
+      "ink",
+      "splash",
+      "webgl",
+      "simulation"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SplashCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/splash-cursor",
+    "deps": [],
+    "tasteNote": "Heavy and distracting; avoid anywhere people need to read."
+  },
+  {
+    "name": "Star Border",
+    "slug": "star-border",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "A twinkling star travels the outline of a button or card, trailing light.",
+    "tags": [
+      "border",
+      "star",
+      "button",
+      "glow",
+      "cta",
+      "outline"
+    ],
+    "install": "npx shadcn@latest add @react-bits/StarBorder-TS-TW",
+    "docs": "https://reactbits.dev/animations/star-border",
+    "deps": [],
+    "tasteNote": "Nice on a single primary CTA; slow it down."
+  },
+  {
+    "name": "Sticker Peel",
+    "slug": "sticker-peel",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Die-cut sticker you can peel, drag and throw, in gloss, matte or holographic.",
+    "tags": [
+      "sticker",
+      "peel",
+      "drag",
+      "playful",
+      "badge",
+      "holographic"
+    ],
+    "install": "npx shadcn@latest add @react-bits/StickerPeel-TS-TW",
+    "docs": "https://reactbits.dev/animations/sticker-peel",
+    "deps": []
+  },
+  {
+    "name": "Target Cursor",
+    "slug": "target-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Reticle cursor whose corner brackets snap around hovered targets.",
+    "tags": [
+      "cursor",
+      "reticle",
+      "target",
+      "hover",
+      "gaming",
+      "technical"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TargetCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/target-cursor",
+    "deps": []
+  },
+  {
+    "name": "Laser Flow",
+    "slug": "laser-flow",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "A beam of light splashes onto content and pours over its corners.",
+    "tags": [
+      "laser",
+      "light",
+      "beam",
+      "hero",
+      "glow",
+      "dark"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LaserFlow-TS-TW",
+    "docs": "https://reactbits.dev/animations/laser-flow",
+    "deps": []
+  },
+  {
+    "name": "Antigravity",
+    "slug": "antigravity",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Particle field lifting into a glowing ring around the cursor, bursting on click.",
+    "tags": [
+      "background",
+      "particles",
+      "ring",
+      "cursor",
+      "ai",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Antigravity-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/antigravity",
+    "deps": []
+  },
+  {
+    "name": "Orbit Images",
+    "slug": "orbit-images",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Images orbit along a customizable SVG path.",
+    "tags": [
+      "orbit",
+      "images",
+      "path",
+      "loop",
+      "integrations",
+      "avatars"
+    ],
+    "install": "npx shadcn@latest add @react-bits/OrbitImages-TS-TW",
+    "docs": "https://reactbits.dev/animations/orbit-images",
+    "deps": []
+  },
+  {
+    "name": "ASCII Text",
+    "slug": "ascii-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Waving ASCII-rendered text that tilts toward the pointer and scrambles on hover.",
+    "tags": [
+      "ascii",
+      "text",
+      "3d",
+      "retro",
+      "hero",
+      "terminal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ASCIIText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/ascii-text",
+    "deps": []
+  },
+  {
+    "name": "Blur Text",
+    "slug": "blur-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Text resolves from blurred to sharp for a soft-focus entrance.",
+    "tags": [
+      "text",
+      "blur",
+      "reveal",
+      "entrance",
+      "heading",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BlurText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/blur-text",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "One of the most tasteful heading entrances; keep it quick."
+  },
+  {
+    "name": "Circular Text",
+    "slug": "circular-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Arranges characters around a circle with optional spinning.",
+    "tags": [
+      "circular",
+      "text",
+      "badge",
+      "rotate",
+      "stamp",
+      "seal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CircularText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/circular-text",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Count Up",
+    "slug": "count-up",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Animated counter rising to a value, with formatting and decimals.",
+    "tags": [
+      "number",
+      "counter",
+      "stats",
+      "metrics",
+      "count",
+      "kpi"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CountUp-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/count-up",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Good for stat rows; trigger once when scrolled into view."
+  },
+  {
+    "name": "Curved Loop",
+    "slug": "curved-loop",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Looping text flowing along a custom curve that you can drag.",
+    "tags": [
+      "marquee",
+      "text",
+      "curve",
+      "loop",
+      "banner",
+      "drag"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CurvedLoop-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/curved-loop",
+    "deps": []
+  },
+  {
+    "name": "Decrypted Text",
+    "slug": "decrypted-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Cycles random glyphs before resolving into the real text.",
+    "tags": [
+      "text",
+      "decrypt",
+      "scramble",
+      "hacker",
+      "reveal",
+      "technical"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DecryptedText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/decrypted-text",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Fine for dev-tool or security brands; turns cliche fast."
+  },
+  {
+    "name": "Falling Text",
+    "slug": "falling-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Text breaks into physics-driven letters that pile up and can be thrown.",
+    "tags": [
+      "text",
+      "physics",
+      "falling",
+      "playful",
+      "interactive",
+      "letters"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FallingText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/falling-text",
+    "deps": [
+      "matter-js"
+    ]
+  },
+  {
+    "name": "Fuzzy Text",
+    "slug": "fuzzy-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Vibrating fuzzy text whose intensity responds to hover.",
+    "tags": [
+      "text",
+      "fuzzy",
+      "glitch",
+      "404",
+      "noise",
+      "retro"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FuzzyText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/fuzzy-text",
+    "deps": [],
+    "tasteNote": "Fun on 404 pages, wrong for headlines that must be read."
+  },
+  {
+    "name": "Glitch Text",
+    "slug": "glitch-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "RGB-split glitch distortion with jitter on text.",
+    "tags": [
+      "text",
+      "glitch",
+      "rgb",
+      "cyberpunk",
+      "distortion",
+      "404"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlitchText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/glitch-text",
+    "deps": []
+  },
+  {
+    "name": "Gradient Text",
+    "slug": "gradient-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Animated gradient inside text: sliding sweep, drifting mesh or conic fan.",
+    "tags": [
+      "text",
+      "gradient",
+      "heading",
+      "color",
+      "hero",
+      "accent"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GradientText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/gradient-text",
+    "deps": [],
+    "tasteNote": "Use on one or two words, not whole headlines."
+  },
+  {
+    "name": "Rotating Text",
+    "slug": "rotating-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Cycles through phrases with 3D flip or rotate transitions.",
+    "tags": [
+      "text",
+      "rotate",
+      "words",
+      "hero",
+      "headline",
+      "cycle"
+    ],
+    "install": "npx shadcn@latest add @react-bits/RotatingText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/rotating-text",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Classic hero swap pattern; three to five short words."
+  },
+  {
+    "name": "Scrambled Text",
+    "slug": "scrambled-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Characters near the cursor scramble and distort.",
+    "tags": [
+      "text",
+      "scramble",
+      "cursor",
+      "hover",
+      "technical"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrambledText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/scrambled-text",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Scroll Float",
+    "slug": "scroll-float",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Letters float and shift with scroll for a parallax heading reveal.",
+    "tags": [
+      "text",
+      "scroll",
+      "parallax",
+      "float",
+      "heading",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrollFloat-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/scroll-float",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Scroll Reveal",
+    "slug": "scroll-reveal",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Text unblurs and fades in progressively as you scroll.",
+    "tags": [
+      "text",
+      "scroll",
+      "reveal",
+      "blur",
+      "paragraph",
+      "storytelling"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrollReveal-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/scroll-reveal",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "Good for one manifesto paragraph; never on body copy."
+  },
+  {
+    "name": "Scroll Velocity",
+    "slug": "scroll-velocity",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Text marquee whose speed and skew follow scroll velocity.",
+    "tags": [
+      "marquee",
+      "text",
+      "scroll",
+      "velocity",
+      "banner",
+      "loop"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrollVelocity-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/scroll-velocity",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Shiny Text",
+    "slug": "shiny-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "A sheen of light sweeps across text, from soft bands to chrome reflections.",
+    "tags": [
+      "text",
+      "shine",
+      "shimmer",
+      "badge",
+      "label",
+      "highlight"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ShinyText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/shiny-text",
+    "deps": [],
+    "tasteNote": "Subtle on small eyebrow labels or badges; tacky on long text."
+  },
+  {
+    "name": "Split Text",
+    "slug": "split-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Splits text into characters, words or lines for a staggered entrance.",
+    "tags": [
+      "text",
+      "split",
+      "stagger",
+      "hero",
+      "heading",
+      "reveal",
+      "entrance"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SplitText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/split-text",
+    "deps": [
+      "gsap",
+      "@gsap/react"
+    ],
+    "tasteNote": "Best default hero headline entrance; animate words or lines for long text."
+  },
+  {
+    "name": "Text Cursor",
+    "slug": "text-cursor",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Stamps copies of text or emoji trailing the cursor.",
+    "tags": [
+      "cursor",
+      "text",
+      "emoji",
+      "trail",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TextCursor-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/text-cursor",
+    "deps": []
+  },
+  {
+    "name": "Text Pressure",
+    "slug": "text-pressure",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Variable-font letters stretch and gain weight based on pointer proximity.",
+    "tags": [
+      "text",
+      "variable-font",
+      "pressure",
+      "interactive",
+      "hero",
+      "typography"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TextPressure-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/text-pressure",
+    "deps": []
+  },
+  {
+    "name": "Text Type",
+    "slug": "text-type",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Typewriter effect with blinking caret and adjustable typing cadence.",
+    "tags": [
+      "typewriter",
+      "text",
+      "typing",
+      "caret",
+      "hero",
+      "terminal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TextType-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/text-type",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "Keep it to one line; never make users wait to read the CTA."
+  },
+  {
+    "name": "True Focus",
+    "slug": "true-focus",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Steps a sharp focus frame through words while blurring the rest.",
+    "tags": [
+      "text",
+      "focus",
+      "blur",
+      "words",
+      "heading",
+      "highlight"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TrueFocus-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/true-focus",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Variable Proximity",
+    "slug": "variable-proximity",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Letters vary font weight continuously with pointer distance.",
+    "tags": [
+      "text",
+      "variable-font",
+      "proximity",
+      "hover",
+      "typography"
+    ],
+    "install": "npx shadcn@latest add @react-bits/VariableProximity-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/variable-proximity",
+    "deps": []
+  },
+  {
+    "name": "Shuffle",
+    "slug": "shuffle",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Characters shuffle like a slot machine before settling into the text.",
+    "tags": [
+      "text",
+      "shuffle",
+      "reveal",
+      "slot",
+      "entrance",
+      "hover"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Shuffle-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/shuffle",
+    "deps": [
+      "gsap",
+      "@gsap/react"
+    ]
+  },
+  {
+    "name": "Particle Text",
+    "slug": "particle-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Text assembles from drifting particles that can scatter and reform.",
+    "tags": [
+      "text",
+      "particles",
+      "assemble",
+      "hero",
+      "canvas"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ParticleText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/particle-text",
+    "deps": []
+  },
+  {
+    "name": "Split Flap Text",
+    "slug": "split-flap-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Mechanical split-flap board clacking between phrases.",
+    "tags": [
+      "text",
+      "split-flap",
+      "board",
+      "retro",
+      "rotate",
+      "travel"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SplitFlapText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/split-flap-text",
+    "deps": [],
+    "tasteNote": "Great for travel, transit or time-based content."
+  },
+  {
+    "name": "Warp Text",
+    "slug": "warp-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "WebGL warp bending and refracting text around the pointer.",
+    "tags": [
+      "text",
+      "warp",
+      "webgl",
+      "distortion",
+      "hero",
+      "refraction"
+    ],
+    "install": "npx shadcn@latest add @react-bits/WarpText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/warp-text",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Tech Text",
+    "slug": "tech-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Wordmark letters turn into dashed vector paths under the cursor.",
+    "tags": [
+      "text",
+      "wordmark",
+      "vector",
+      "hover",
+      "technical",
+      "logo"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TechText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/tech-text",
+    "deps": []
+  },
+  {
+    "name": "Stroke Text",
+    "slug": "stroke-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Outlined letterforms draw themselves on, then flood with fill.",
+    "tags": [
+      "text",
+      "stroke",
+      "outline",
+      "draw",
+      "heading",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/StrokeText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/stroke-text",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Depth Text",
+    "slug": "depth-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Layered extruded type that parallaxes against the pointer.",
+    "tags": [
+      "text",
+      "3d",
+      "depth",
+      "extrude",
+      "parallax",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DepthText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/depth-text",
+    "deps": []
+  },
+  {
+    "name": "Fold Text",
+    "slug": "fold-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Lines unfold into place like creased paper opening flat.",
+    "tags": [
+      "text",
+      "fold",
+      "paper",
+      "reveal",
+      "editorial",
+      "entrance"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FoldText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/fold-text",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Echo Text",
+    "slug": "echo-text",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Ghost copies trail behind text and converge into a single word.",
+    "tags": [
+      "text",
+      "echo",
+      "ghost",
+      "trail",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/EchoText-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/echo-text",
+    "deps": []
+  },
+  {
+    "name": "Masked Heading",
+    "slug": "masked-heading",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Headline with a drifting color mesh or image showing through, revealed word by word.",
+    "tags": [
+      "heading",
+      "mask",
+      "image",
+      "gradient",
+      "hero",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MaskedHeading-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/masked-heading",
+    "deps": [
+      "gsap"
+    ],
+    "tasteNote": "Editorial and premium for a single hero headline."
+  },
+  {
+    "name": "Text Loop",
+    "slug": "text-loop",
+    "library": "react-bits",
+    "category": "text-animations",
+    "description": "Seamless text marquee flowing along curved SVG paths.",
+    "tags": [
+      "marquee",
+      "text",
+      "curve",
+      "loop",
+      "svg",
+      "banner"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TextLoop-TS-TW",
+    "docs": "https://reactbits.dev/text-animations/text-loop",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Animated List",
+    "slug": "animated-list",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Scrolling list with rows springing in, gliding selection and keyboard support.",
+    "tags": [
+      "list",
+      "select",
+      "keyboard",
+      "scroll",
+      "menu",
+      "spring"
+    ],
+    "install": "npx shadcn@latest add @react-bits/AnimatedList-TS-TW",
+    "docs": "https://reactbits.dev/components/animated-list",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Bounce Cards",
+    "slug": "bounce-cards",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Fan of photo cards that bounce in and spread apart on hover.",
+    "tags": [
+      "cards",
+      "photos",
+      "fan",
+      "bounce",
+      "gallery",
+      "hover"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BounceCards-TS-TW",
+    "docs": "https://reactbits.dev/components/bounce-cards",
+    "deps": []
+  },
+  {
+    "name": "Bubble Menu",
+    "slug": "bubble-menu",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Floating circular menu that expands into staggered bubble items.",
+    "tags": [
+      "menu",
+      "navigation",
+      "bubble",
+      "mobile",
+      "overlay",
+      "stagger"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BubbleMenu-TS-TW",
+    "docs": "https://reactbits.dev/components/bubble-menu",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Card Nav",
+    "slug": "card-nav",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Navigation bar that springs open into a row of link cards.",
+    "tags": [
+      "navigation",
+      "navbar",
+      "cards",
+      "menu",
+      "header",
+      "dropdown"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CardNav-TS-TW",
+    "docs": "https://reactbits.dev/components/card-nav",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Card Swap",
+    "slug": "card-swap",
+    "library": "react-bits",
+    "category": "components",
+    "description": "3D card stack that sends the front card to the back on a timer or fling.",
+    "tags": [
+      "cards",
+      "stack",
+      "3d",
+      "carousel",
+      "features",
+      "autoplay"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CardSwap-TS-TW",
+    "docs": "https://reactbits.dev/components/card-swap",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Good feature showcase beside a hero; keep three to five cards."
+  },
+  {
+    "name": "Carousel",
+    "slug": "carousel",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Swipeable card carousel with five transitions and an autoplay timer.",
+    "tags": [
+      "carousel",
+      "slider",
+      "swipe",
+      "cards",
+      "gallery",
+      "onboarding"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Carousel-TS-TW",
+    "docs": "https://reactbits.dev/components/carousel",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Chroma Grid",
+    "slug": "chroma-grid",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Grayscale photo cards where a cursor spotlight brings back color.",
+    "tags": [
+      "grid",
+      "team",
+      "cards",
+      "spotlight",
+      "photos",
+      "hover"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ChromaGrid-TS-TW",
+    "docs": "https://reactbits.dev/components/chroma-grid",
+    "deps": [],
+    "tasteNote": "Nice team or portfolio grid; needs consistent photography."
+  },
+  {
+    "name": "Holo Card",
+    "slug": "holo-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Trading card with holographic foil and glitter that shimmers as it tilts.",
+    "tags": [
+      "card",
+      "holographic",
+      "foil",
+      "tilt",
+      "collectible",
+      "3d"
+    ],
+    "install": "npx shadcn@latest add @react-bits/HoloCard-TS-TW",
+    "docs": "https://reactbits.dev/components/holo-card",
+    "deps": []
+  },
+  {
+    "name": "Circular Carousel",
+    "slug": "circular-carousel",
+    "library": "react-bits",
+    "category": "components",
+    "description": "3D ring of bendable image cards with momentum drag and snapping.",
+    "tags": [
+      "carousel",
+      "3d",
+      "ring",
+      "gallery",
+      "drag",
+      "images"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CircularCarousel-TS-TW",
+    "docs": "https://reactbits.dev/components/circular-carousel",
+    "deps": []
+  },
+  {
+    "name": "Flex Carousel",
+    "slug": "flex-carousel",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Infinite image row flowing through liquid glass at its edges.",
+    "tags": [
+      "carousel",
+      "images",
+      "glass",
+      "infinite",
+      "webgl",
+      "gallery"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FlexCarousel-TS-TW",
+    "docs": "https://reactbits.dev/components/flex-carousel",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Depth Carousel",
+    "slug": "depth-carousel",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Cards recede along a 3D rail with drag, keyboard and auto-advance.",
+    "tags": [
+      "carousel",
+      "3d",
+      "depth",
+      "cards",
+      "slider",
+      "drag"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DepthCarousel-TS-TW",
+    "docs": "https://reactbits.dev/components/depth-carousel",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Accordion Gallery",
+    "slug": "accordion-gallery",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Panels expand on hover or focus to reveal parallax images and captions.",
+    "tags": [
+      "gallery",
+      "accordion",
+      "images",
+      "hover",
+      "panels",
+      "portfolio"
+    ],
+    "install": "npx shadcn@latest add @react-bits/AccordionGallery-TS-TW",
+    "docs": "https://reactbits.dev/components/accordion-gallery",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Morph Slider",
+    "slug": "morph-slider",
+    "library": "react-bits",
+    "category": "components",
+    "description": "WebGL image slider melting between slides with a displacement transition.",
+    "tags": [
+      "slider",
+      "images",
+      "webgl",
+      "transition",
+      "displacement",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MorphSlider-TS-TW",
+    "docs": "https://reactbits.dev/components/morph-slider",
+    "deps": [
+      "ogl",
+      "gsap"
+    ]
+  },
+  {
+    "name": "Drift Wall",
+    "slug": "drift-wall",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Endless perspective wall of tiles drifting past and lifting on hover.",
+    "tags": [
+      "wall",
+      "tiles",
+      "perspective",
+      "gallery",
+      "infinite",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DriftWall-TS-TW",
+    "docs": "https://reactbits.dev/components/drift-wall",
+    "deps": []
+  },
+  {
+    "name": "Circular Gallery",
+    "slug": "circular-gallery",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Curved draggable image gallery whose cards open to the full image.",
+    "tags": [
+      "gallery",
+      "curved",
+      "images",
+      "drag",
+      "carousel",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CircularGallery-TS-TW",
+    "docs": "https://reactbits.dev/components/circular-gallery",
+    "deps": []
+  },
+  {
+    "name": "Counter",
+    "slug": "counter",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Odometer-style rolling digits with currency, separators and locales.",
+    "tags": [
+      "number",
+      "counter",
+      "odometer",
+      "stats",
+      "price",
+      "metrics"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Counter-TS-TW",
+    "docs": "https://reactbits.dev/components/counter",
+    "deps": [],
+    "tasteNote": "Tasteful for prices and live metrics."
+  },
+  {
+    "name": "Decay Card",
+    "slug": "decay-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Image card that tears and melts as the pointer moves, then reforms.",
+    "tags": [
+      "card",
+      "image",
+      "distortion",
+      "hover",
+      "glitch",
+      "decay"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DecayCard-TS-TW",
+    "docs": "https://reactbits.dev/components/decay-card",
+    "deps": []
+  },
+  {
+    "name": "Dock",
+    "slug": "dock",
+    "library": "react-bits",
+    "category": "components",
+    "description": "macOS-style dock with magnification, launch bounce, badges and context menus.",
+    "tags": [
+      "dock",
+      "macos",
+      "navigation",
+      "icons",
+      "magnify",
+      "toolbar"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Dock-TS-TW",
+    "docs": "https://reactbits.dev/components/dock",
+    "deps": [],
+    "tasteNote": "Fits app-like portfolios; poor as primary site navigation."
+  },
+  {
+    "name": "Dome Gallery",
+    "slug": "dome-gallery",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Images projected onto an immersive draggable 3D dome.",
+    "tags": [
+      "gallery",
+      "3d",
+      "dome",
+      "images",
+      "immersive",
+      "drag"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DomeGallery-TS-TW",
+    "docs": "https://reactbits.dev/components/dome-gallery",
+    "deps": [
+      "@use-gesture/react"
+    ]
+  },
+  {
+    "name": "Elastic Slider",
+    "slug": "elastic-slider",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Range slider that swells under the cursor and stretches past its ends.",
+    "tags": [
+      "slider",
+      "range",
+      "input",
+      "elastic",
+      "volume",
+      "form"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ElasticSlider-TS-TW",
+    "docs": "https://reactbits.dev/components/elastic-slider",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Flowing Menu",
+    "slug": "flowing-menu",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Full-height menu where a liquid band glides between rows revealing marquees.",
+    "tags": [
+      "menu",
+      "navigation",
+      "fullscreen",
+      "marquee",
+      "hover",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FlowingMenu-TS-TW",
+    "docs": "https://reactbits.dev/components/flowing-menu",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Agency-style full-screen nav; overkill for apps."
+  },
+  {
+    "name": "Fluid Glass",
+    "slug": "fluid-glass",
+    "library": "react-bits",
+    "category": "components",
+    "description": "3D glass object refracting your headline or media and morphing between shapes.",
+    "tags": [
+      "glass",
+      "3d",
+      "refraction",
+      "hero",
+      "lens",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FluidGlass-TS-TW",
+    "docs": "https://reactbits.dev/components/fluid-glass",
+    "deps": []
+  },
+  {
+    "name": "Flying Posters",
+    "slug": "flying-posters",
+    "library": "react-bits",
+    "category": "components",
+    "description": "3D posters twist and flip through an endless scroll column.",
+    "tags": [
+      "posters",
+      "3d",
+      "scroll",
+      "gallery",
+      "images",
+      "infinite"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FlyingPosters-TS-TW",
+    "docs": "https://reactbits.dev/components/flying-posters",
+    "deps": []
+  },
+  {
+    "name": "Folder",
+    "slug": "folder",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Folder that opens its flap or swings like a book, with pages you can pick.",
+    "tags": [
+      "folder",
+      "files",
+      "icon",
+      "hover",
+      "playful",
+      "documents"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Folder-TS-TW",
+    "docs": "https://reactbits.dev/components/folder",
+    "deps": []
+  },
+  {
+    "name": "Glass Icons",
+    "slug": "glass-icons",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Liquid-glass icon tiles that bend the color behind them.",
+    "tags": [
+      "icons",
+      "glass",
+      "app-grid",
+      "social",
+      "dock",
+      "liquid-glass"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlassIcons-TS-TW",
+    "docs": "https://reactbits.dev/components/glass-icons",
+    "deps": []
+  },
+  {
+    "name": "Glass Surface",
+    "slug": "glass-surface",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Apple-style liquid glass panel refracting whatever sits behind it.",
+    "tags": [
+      "glass",
+      "liquid-glass",
+      "panel",
+      "navbar",
+      "refraction",
+      "apple"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlassSurface-TS-TW",
+    "docs": "https://reactbits.dev/components/glass-surface",
+    "deps": [],
+    "tasteNote": "Use for a floating nav or toolbar over imagery; check text contrast."
+  },
+  {
+    "name": "Gooey Nav",
+    "slug": "gooey-nav",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Nav bar whose active pill flows like goo to the selected item.",
+    "tags": [
+      "navigation",
+      "tabs",
+      "goo",
+      "pill",
+      "navbar",
+      "active"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GooeyNav-TS-TW",
+    "docs": "https://reactbits.dev/components/gooey-nav",
+    "deps": []
+  },
+  {
+    "name": "Infinite Spiral",
+    "slug": "infinite-spiral",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Endlessly looping 3D helix of images.",
+    "tags": [
+      "3d",
+      "spiral",
+      "images",
+      "gallery",
+      "loop",
+      "helix"
+    ],
+    "install": "npx shadcn@latest add @react-bits/InfiniteSpiral-TS-TW",
+    "docs": "https://reactbits.dev/components/infinite-spiral",
+    "deps": []
+  },
+  {
+    "name": "Infinite Menu",
+    "slug": "infinite-menu",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Draggable sphere of image tiles that snaps the nearest forward with its title.",
+    "tags": [
+      "menu",
+      "sphere",
+      "3d",
+      "images",
+      "drag",
+      "portfolio"
+    ],
+    "install": "npx shadcn@latest add @react-bits/InfiniteMenu-TS-TW",
+    "docs": "https://reactbits.dev/components/infinite-menu",
+    "deps": []
+  },
+  {
+    "name": "Lanyard",
+    "slug": "lanyard",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Swinging 3D badge on a stretchy lanyard you can drag, throw and flip.",
+    "tags": [
+      "badge",
+      "3d",
+      "lanyard",
+      "physics",
+      "conference",
+      "about"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Lanyard-TS-TW",
+    "docs": "https://reactbits.dev/components/lanyard",
+    "deps": [
+      "three"
+    ],
+    "tasteNote": "Memorable on event or about pages; heavy three.js payload."
+  },
+  {
+    "name": "Magic Bento",
+    "slug": "magic-bento",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Bento grid of feature cards with live artwork, cursor edge light and click waves.",
+    "tags": [
+      "bento",
+      "grid",
+      "features",
+      "cards",
+      "glow",
+      "spotlight"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MagicBento-TS-TW",
+    "docs": "https://reactbits.dev/components/magic-bento",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Strong feature section; tone the glow down so content leads."
+  },
+  {
+    "name": "Masonry",
+    "slug": "masonry",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Responsive masonry gallery that springs in, reflows and opens a lightbox.",
+    "tags": [
+      "masonry",
+      "gallery",
+      "images",
+      "grid",
+      "lightbox",
+      "portfolio"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Masonry-TS-TW",
+    "docs": "https://reactbits.dev/components/masonry",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Model Viewer",
+    "slug": "model-viewer",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Self-framing 3D model viewer floating over a soft shadow.",
+    "tags": [
+      "3d",
+      "model",
+      "glb",
+      "product",
+      "viewer",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ModelViewer-TS-TW",
+    "docs": "https://reactbits.dev/components/model-viewer",
+    "deps": [
+      "@react-three/fiber",
+      "@react-three/drei",
+      "three"
+    ]
+  },
+  {
+    "name": "Pill Nav",
+    "slug": "pill-nav",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Pill navigation where a fill rises through hovered links and an active dot slides.",
+    "tags": [
+      "navigation",
+      "pill",
+      "navbar",
+      "hover",
+      "links",
+      "header"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PillNav-TS-TW",
+    "docs": "https://reactbits.dev/components/pill-nav",
+    "deps": []
+  },
+  {
+    "name": "Pixel Card",
+    "slug": "pixel-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Card that fills with twinkling pixels on hover, from the center or cursor.",
+    "tags": [
+      "card",
+      "pixel",
+      "hover",
+      "twinkle",
+      "retro"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelCard-TS-TW",
+    "docs": "https://reactbits.dev/components/pixel-card",
+    "deps": []
+  },
+  {
+    "name": "Profile Card",
+    "slug": "profile-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Framed profile card tilting toward the cursor with holographic foil.",
+    "tags": [
+      "profile",
+      "card",
+      "tilt",
+      "holographic",
+      "team",
+      "avatar"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ProfileCard-TS-TW",
+    "docs": "https://reactbits.dev/components/profile-card",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Scroll Stack",
+    "slug": "scroll-stack",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Cards pin and stack as you scroll, settling into a dimmed deck.",
+    "tags": [
+      "scroll",
+      "stack",
+      "cards",
+      "pin",
+      "features",
+      "storytelling"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrollStack-TS-TW",
+    "docs": "https://reactbits.dev/components/scroll-stack",
+    "deps": [],
+    "tasteNote": "Great for step-by-step feature stories; keep the deck short."
+  },
+  {
+    "name": "Spotlight Card",
+    "slug": "spotlight-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Card with a soft pointer-following spotlight that also reaches nearby cards.",
+    "tags": [
+      "card",
+      "spotlight",
+      "hover",
+      "glow",
+      "features",
+      "grid"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SpotlightCard-TS-TW",
+    "docs": "https://reactbits.dev/components/spotlight-card",
+    "deps": [],
+    "tasteNote": "Subtle and tasteful on dark feature grids."
+  },
+  {
+    "name": "Border Glow",
+    "slug": "border-glow",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Mesh-gradient border glow that follows cursor direction and brightens near edges.",
+    "tags": [
+      "border",
+      "glow",
+      "gradient",
+      "card",
+      "hover",
+      "highlight"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BorderGlow-TS-TW",
+    "docs": "https://reactbits.dev/components/border-glow",
+    "deps": []
+  },
+  {
+    "name": "Line Sidebar",
+    "slug": "line-sidebar",
+    "library": "react-bits",
+    "category": "components",
+    "description": "List navigation whose items shift and highlight by cursor proximity.",
+    "tags": [
+      "sidebar",
+      "navigation",
+      "list",
+      "hover",
+      "toc",
+      "proximity"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LineSidebar-TS-TW",
+    "docs": "https://reactbits.dev/components/line-sidebar",
+    "deps": []
+  },
+  {
+    "name": "Option Wheel",
+    "slug": "option-wheel",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Curved picker wheel that spins with scroll, drag or arrow keys.",
+    "tags": [
+      "picker",
+      "wheel",
+      "select",
+      "input",
+      "ios",
+      "form"
+    ],
+    "install": "npx shadcn@latest add @react-bits/OptionWheel-TS-TW",
+    "docs": "https://reactbits.dev/components/option-wheel",
+    "deps": []
+  },
+  {
+    "name": "Specular Button",
+    "slug": "specular-button",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Glass button with a specular edge highlight that glides toward the cursor.",
+    "tags": [
+      "button",
+      "glass",
+      "cta",
+      "specular",
+      "hover",
+      "premium"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SpecularButton-TS-TW",
+    "docs": "https://reactbits.dev/components/specular-button",
+    "deps": []
+  },
+  {
+    "name": "Elastic Mesh",
+    "slug": "elastic-mesh",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Turns text or a logo into a puffy inflated shape you can poke and stretch.",
+    "tags": [
+      "inflate",
+      "jelly",
+      "logo",
+      "text",
+      "3d",
+      "interactive",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ElasticMesh-TS-TW",
+    "docs": "https://reactbits.dev/animations/elastic-mesh",
+    "deps": []
+  },
+  {
+    "name": "Ripple Distortion",
+    "slug": "ripple-distortion",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Pointer-driven water displacement warps content and leaves a fading wake.",
+    "tags": [
+      "ripple",
+      "water",
+      "distortion",
+      "image",
+      "hover",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/RippleDistortion-TS-TW",
+    "docs": "https://reactbits.dev/animations/ripple-distortion",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Swarm Cursor",
+    "slug": "swarm-cursor",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Particle swarm flows after the cursor and curls around hovered buttons.",
+    "tags": [
+      "cursor",
+      "particles",
+      "swarm",
+      "trail",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SwarmCursor-TS-TW",
+    "docs": "https://reactbits.dev/animations/swarm-cursor",
+    "deps": []
+  },
+  {
+    "name": "Halftone Reveal",
+    "slug": "halftone-reveal",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Halftone print of an image whose dots swell into the real photo under the cursor.",
+    "tags": [
+      "halftone",
+      "image",
+      "reveal",
+      "print",
+      "editorial",
+      "hover"
+    ],
+    "install": "npx shadcn@latest add @react-bits/HalftoneReveal-TS-TW",
+    "docs": "https://reactbits.dev/animations/halftone-reveal",
+    "deps": [],
+    "tasteNote": "Editorial and tasteful on hero imagery."
+  },
+  {
+    "name": "Scroll Expand",
+    "slug": "scroll-expand",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Rounded media frame grows to full bleed as it scrolls through the viewport.",
+    "tags": [
+      "scroll",
+      "video",
+      "media",
+      "expand",
+      "hero",
+      "full-bleed"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrollExpand-TS-TW",
+    "docs": "https://reactbits.dev/animations/scroll-expand",
+    "deps": [],
+    "tasteNote": "Strong for a product video reveal; one per page."
+  },
+  {
+    "name": "Cursor Grid",
+    "slug": "cursor-grid",
+    "library": "react-bits",
+    "category": "animations",
+    "description": "Grid cells light up and fade behind the cursor, with click pulses.",
+    "tags": [
+      "grid",
+      "cursor",
+      "hover",
+      "background",
+      "tiles",
+      "glow"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CursorGrid-TS-TW",
+    "docs": "https://reactbits.dev/animations/cursor-grid",
+    "deps": []
+  },
+  {
+    "name": "Curved Input",
+    "slug": "curved-input",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Arc-shaped input whose text, caret and submit button follow the curve.",
+    "tags": [
+      "input",
+      "curved",
+      "form",
+      "search",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CurvedInput-TS-TW",
+    "docs": "https://reactbits.dev/components/curved-input",
+    "deps": []
+  },
+  {
+    "name": "Stack",
+    "slug": "stack",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Draggable card pile you flick through, with thrown cards tucking underneath.",
+    "tags": [
+      "cards",
+      "stack",
+      "drag",
+      "swipe",
+      "photos",
+      "gallery"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Stack-TS-TW",
+    "docs": "https://reactbits.dev/components/stack",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Stepper",
+    "slug": "stepper",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Multi-step flow with a gliding step indicator and spring transitions.",
+    "tags": [
+      "stepper",
+      "steps",
+      "onboarding",
+      "form",
+      "wizard",
+      "progress"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Stepper-TS-TW",
+    "docs": "https://reactbits.dev/components/stepper",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Tilted Card",
+    "slug": "tilted-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "3D card tilting toward the cursor with glare, shadow, floating layers and a flip side.",
+    "tags": [
+      "card",
+      "tilt",
+      "3d",
+      "hover",
+      "glare",
+      "product"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TiltedCard-TS-TW",
+    "docs": "https://reactbits.dev/components/tilted-card",
+    "deps": []
+  },
+  {
+    "name": "Staggered Menu",
+    "slug": "staggered-menu",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Menu whose items animate in with a stagger on open and close.",
+    "tags": [
+      "menu",
+      "navigation",
+      "stagger",
+      "overlay",
+      "mobile",
+      "fullscreen"
+    ],
+    "install": "npx shadcn@latest add @react-bits/StaggeredMenu-TS-TW",
+    "docs": "https://reactbits.dev/components/staggered-menu",
+    "deps": [
+      "gsap"
+    ]
+  },
+  {
+    "name": "Reflective Card",
+    "slug": "reflective-card",
+    "library": "react-bits",
+    "category": "components",
+    "description": "Metal ID card reflecting the camera or a video and catching light as it tilts.",
+    "tags": [
+      "card",
+      "metal",
+      "reflection",
+      "camera",
+      "id",
+      "3d"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ReflectiveCard-TS-TW",
+    "docs": "https://reactbits.dev/components/reflective-card",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Webcam mode needs consent; the video mode is the safer default."
+  },
+  {
+    "name": "Pattern Waves",
+    "slug": "pattern-waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Lit halftone surface of dots, lines or glyphs rippling like draped silk.",
+    "tags": [
+      "background",
+      "halftone",
+      "waves",
+      "pattern",
+      "webgl",
+      "dots"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PatternWaves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/pattern-waves",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Micro Slats",
+    "slug": "micro-slats",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Wall of tiny slats rolling like a sea in perspective, with glinting crests.",
+    "tags": [
+      "background",
+      "slats",
+      "waves",
+      "perspective",
+      "webgl",
+      "sea"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MicroSlats-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/micro-slats",
+    "deps": [
+      "ogl"
+    ]
+  },
+  {
+    "name": "Shape Waves",
+    "slug": "shape-waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Field of geometric shapes brightening and growing along rolling waves.",
+    "tags": [
+      "background",
+      "shapes",
+      "waves",
+      "geometric",
+      "webgpu"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ShapeWaves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/shape-waves",
+    "deps": [
+      "vgpu"
+    ]
+  },
+  {
+    "name": "Aero Shards",
+    "slug": "aero-shards",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glass shard ribbons streaming through layered depth, catching light on their edges.",
+    "tags": [
+      "background",
+      "glass",
+      "shards",
+      "ribbons",
+      "3d",
+      "webgpu"
+    ],
+    "install": "npx shadcn@latest add @react-bits/AeroShards-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/aero-shards",
+    "deps": [
+      "vgpu"
+    ]
+  },
+  {
+    "name": "Ghost Fibers",
+    "slug": "ghost-fibers",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glowing fiber ribbons twist and drift with soft depth of field.",
+    "tags": [
+      "background",
+      "fibers",
+      "glow",
+      "ribbons",
+      "dark",
+      "depth"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GhostFibers-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/ghost-fibers",
+    "deps": []
+  },
+  {
+    "name": "Aurora",
+    "slug": "aurora",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Calm aurora gradient flowing across the top of the page toward the cursor.",
+    "tags": [
+      "background",
+      "aurora",
+      "gradient",
+      "hero",
+      "soft",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Aurora-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/aurora",
+    "deps": [],
+    "tasteNote": "Among the most tasteful hero backgrounds; keep colors near the brand palette."
+  },
+  {
+    "name": "Balatro",
+    "slug": "balatro",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Swirling pixelated paint shader inspired by Balatro, stirred by cursor and clicks.",
+    "tags": [
+      "background",
+      "psychedelic",
+      "paint",
+      "pixel",
+      "game",
+      "swirl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Balatro-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/balatro",
+    "deps": [],
+    "tasteNote": "Game and playful brands only."
+  },
+  {
+    "name": "Ballpit",
+    "slug": "ballpit",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Physics ball pit you can shove, grab, throw and blast apart.",
+    "tags": [
+      "background",
+      "physics",
+      "balls",
+      "3d",
+      "playful",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Ballpit-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/ballpit",
+    "deps": []
+  },
+  {
+    "name": "Beams",
+    "slug": "beams",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glossy light ribbons rippling in the dark, lit by a cursor-following light.",
+    "tags": [
+      "background",
+      "beams",
+      "light",
+      "dark",
+      "hero",
+      "ribbons"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Beams-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/beams",
+    "deps": []
+  },
+  {
+    "name": "Color Bends",
+    "slug": "color-bends",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Vivid flowing color bands bending smoothly across the surface.",
+    "tags": [
+      "background",
+      "gradient",
+      "color",
+      "flow",
+      "three",
+      "vibrant"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ColorBends-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/color-bends",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "CRT Warp",
+    "slug": "crt-warp",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Blocky plasma on a curved CRT with scanlines, phosphor mask and power-on intro.",
+    "tags": [
+      "background",
+      "crt",
+      "retro",
+      "scanlines",
+      "plasma",
+      "80s"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CRTWarp-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/crt-warp",
+    "deps": []
+  },
+  {
+    "name": "Dark Veil",
+    "slug": "dark-veil",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Silky veil of light drifting in darkness and bending around the cursor.",
+    "tags": [
+      "background",
+      "dark",
+      "veil",
+      "light",
+      "hero",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DarkVeil-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/dark-veil",
+    "deps": [],
+    "tasteNote": "Moody and restrained; good behind white headline text."
+  },
+  {
+    "name": "Dither",
+    "slug": "dither",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Retro dithered waves with Bayer, halftone, line and noise patterns plus cursor trails.",
+    "tags": [
+      "background",
+      "dither",
+      "retro",
+      "pixel",
+      "waves",
+      "1-bit"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Dither-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/dither",
+    "deps": []
+  },
+  {
+    "name": "Dot Field",
+    "slug": "dot-field",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Gradient dot field seen through a cursor lens that magnifies, pinches or swirls.",
+    "tags": [
+      "background",
+      "dots",
+      "lens",
+      "gradient",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DotField-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/dot-field",
+    "deps": []
+  },
+  {
+    "name": "Dot Grid",
+    "slug": "dot-grid",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Springy dot grid that the cursor drags through like jelly, with click shockwaves.",
+    "tags": [
+      "background",
+      "dots",
+      "grid",
+      "spring",
+      "interactive",
+      "subtle"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DotGrid-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/dot-grid",
+    "deps": [],
+    "tasteNote": "Low-key interactive texture that does not fight content."
+  },
+  {
+    "name": "Faulty Terminal",
+    "slug": "faulty-terminal",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Flickering CRT terminal of glowing glyphs with phosphor trails and click glitches.",
+    "tags": [
+      "background",
+      "terminal",
+      "crt",
+      "glyphs",
+      "hacker",
+      "retro"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FaultyTerminal-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/faulty-terminal",
+    "deps": []
+  },
+  {
+    "name": "Galaxy",
+    "slug": "galaxy",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Endless flight through a twinkling starfield with warp jumps.",
+    "tags": [
+      "background",
+      "stars",
+      "space",
+      "galaxy",
+      "starfield",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Galaxy-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/galaxy",
+    "deps": []
+  },
+  {
+    "name": "Gradient Blinds",
+    "slug": "gradient-blinds",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Satin gradient blinds that sway and turn toward a cursor spotlight.",
+    "tags": [
+      "background",
+      "gradient",
+      "blinds",
+      "spotlight",
+      "satin",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GradientBlinds-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/gradient-blinds",
+    "deps": []
+  },
+  {
+    "name": "Lightfall",
+    "slug": "lightfall",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Light streaks fall down a curved tunnel and stretch into warp trails on hold.",
+    "tags": [
+      "background",
+      "light",
+      "streaks",
+      "tunnel",
+      "warp",
+      "speed"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Lightfall-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/lightfall",
+    "deps": []
+  },
+  {
+    "name": "Flux Lines",
+    "slug": "flux-lines",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glowing flux lines trace a churning magnetic fluid that the cursor curls.",
+    "tags": [
+      "background",
+      "lines",
+      "magnetic",
+      "fluid",
+      "glow",
+      "dark"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FluxLines-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/flux-lines",
+    "deps": []
+  },
+  {
+    "name": "Ferrofluid",
+    "slug": "ferrofluid",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glossy magnetic fluid with rolling spike swells and a cursor-raised crown.",
+    "tags": [
+      "background",
+      "ferrofluid",
+      "liquid",
+      "metal",
+      "3d",
+      "dark"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Ferrofluid-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/ferrofluid",
+    "deps": []
+  },
+  {
+    "name": "Molten Metal",
+    "slug": "molten-metal",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Swirling caustic filaments with white-hot cores that heat up under the cursor.",
+    "tags": [
+      "background",
+      "caustics",
+      "molten",
+      "metal",
+      "fire",
+      "glow"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MoltenMetal-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/molten-metal",
+    "deps": []
+  },
+  {
+    "name": "Gradient Waves",
+    "slug": "gradient-waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Lit satin waves roll in from a hazy horizon toward a cursor light.",
+    "tags": [
+      "background",
+      "gradient",
+      "waves",
+      "satin",
+      "horizon",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GradientWaves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/gradient-waves",
+    "deps": []
+  },
+  {
+    "name": "Web Threads",
+    "slug": "web-threads",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glowing threads woven through luminous pinch points that react to the cursor.",
+    "tags": [
+      "background",
+      "threads",
+      "network",
+      "glow",
+      "web",
+      "connections"
+    ],
+    "install": "npx shadcn@latest add @react-bits/WebThreads-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/web-threads",
+    "deps": []
+  },
+  {
+    "name": "Topography",
+    "slug": "topography",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "3D landscape of glowing contour lines rising under the cursor.",
+    "tags": [
+      "background",
+      "topography",
+      "contour",
+      "3d",
+      "map",
+      "lines"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Topography-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/topography",
+    "deps": [],
+    "tasteNote": "Fits data, outdoor or mapping products; elegant at low contrast."
+  },
+  {
+    "name": "Light Tunnel",
+    "slug": "light-tunnel",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Fibre-optic tunnel with comets of light racing into depth.",
+    "tags": [
+      "background",
+      "tunnel",
+      "light",
+      "speed",
+      "3d",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LightTunnel-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/light-tunnel",
+    "deps": []
+  },
+  {
+    "name": "Sliced Waves",
+    "slug": "sliced-waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Waves of colored light sliced into glowing bars, with a cursor-following focus.",
+    "tags": [
+      "background",
+      "waves",
+      "bars",
+      "light",
+      "depth",
+      "color"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SlicedWaves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/sliced-waves",
+    "deps": []
+  },
+  {
+    "name": "Acid Squares",
+    "slug": "acid-squares",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Rolling field of glossy squares under two drifting colored lights.",
+    "tags": [
+      "background",
+      "squares",
+      "grid",
+      "glossy",
+      "color",
+      "waves"
+    ],
+    "install": "npx shadcn@latest add @react-bits/AcidSquares-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/acid-squares",
+    "deps": []
+  },
+  {
+    "name": "Scanner",
+    "slug": "scanner",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Interference lines swept by a scan beam, with CRT finish and click pings.",
+    "tags": [
+      "background",
+      "scanner",
+      "crt",
+      "lines",
+      "technical",
+      "radar"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Scanner-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/scanner",
+    "deps": []
+  },
+  {
+    "name": "Gradient ASCII",
+    "slug": "gradient-ascii",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Soft gradient glows drawn in ASCII characters that scramble near the cursor.",
+    "tags": [
+      "background",
+      "ascii",
+      "gradient",
+      "text",
+      "retro",
+      "terminal"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GradientASCII-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/gradient-ascii",
+    "deps": []
+  },
+  {
+    "name": "Grainient",
+    "slug": "grainient",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Flowing grainy gradient you can stir with the cursor.",
+    "tags": [
+      "background",
+      "gradient",
+      "grain",
+      "mesh",
+      "soft",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Grainient-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/grainient",
+    "deps": [],
+    "tasteNote": "Warm and modern hero backdrop when colors stay muted."
+  },
+  {
+    "name": "Grid Scan",
+    "slug": "grid-scan",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "3D grid room swept by a scanning light that follows your view.",
+    "tags": [
+      "background",
+      "grid",
+      "3d",
+      "scan",
+      "technical",
+      "sci-fi"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GridScan-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/grid-scan",
+    "deps": []
+  },
+  {
+    "name": "Grid Distortion",
+    "slug": "grid-distortion",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Image background that breaks into displaced grid blocks under the cursor.",
+    "tags": [
+      "background",
+      "image",
+      "grid",
+      "distortion",
+      "hover",
+      "webgl"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GridDistortion-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/grid-distortion",
+    "deps": []
+  },
+  {
+    "name": "Grid Motion",
+    "slug": "grid-motion",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Tilted wall of drifting tiles sliding with the pointer.",
+    "tags": [
+      "background",
+      "grid",
+      "tiles",
+      "images",
+      "motion",
+      "perspective"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GridMotion-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/grid-motion",
+    "deps": []
+  },
+  {
+    "name": "Hyperspeed",
+    "slug": "hyperspeed",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Night highway of glowing light trails that warps into hyperspace on hold.",
+    "tags": [
+      "background",
+      "highway",
+      "lights",
+      "speed",
+      "3d",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Hyperspeed-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/hyperspeed",
+    "deps": [
+      "three"
+    ],
+    "tasteNote": "Spectacle with a heavy three.js scene; best for launch or event pages."
+  },
+  {
+    "name": "Iridescence",
+    "slug": "iridescence",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Liquid iridescent surface with shifting folds you can stir.",
+    "tags": [
+      "background",
+      "iridescent",
+      "liquid",
+      "holographic",
+      "gradient"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Iridescence-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/iridescence",
+    "deps": []
+  },
+  {
+    "name": "Letter Glitch",
+    "slug": "letter-glitch",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Field of colored letters that flicker and scramble, torn apart by clicks.",
+    "tags": [
+      "background",
+      "letters",
+      "glitch",
+      "matrix",
+      "hacker",
+      "text"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LetterGlitch-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/letter-glitch",
+    "deps": []
+  },
+  {
+    "name": "Light Rays",
+    "slug": "light-rays",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Volumetric light rays from any edge, steered by the cursor.",
+    "tags": [
+      "background",
+      "light",
+      "rays",
+      "volumetric",
+      "hero",
+      "god-rays"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LightRays-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/light-rays",
+    "deps": [],
+    "tasteNote": "Soft top-down rays frame a hero well; keep intensity low."
+  },
+  {
+    "name": "Lightning",
+    "slug": "lightning",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Branching lightning that bends toward the cursor and strikes on click.",
+    "tags": [
+      "background",
+      "lightning",
+      "electric",
+      "storm",
+      "energy",
+      "dark"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Lightning-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/lightning",
+    "deps": []
+  },
+  {
+    "name": "Line Waves",
+    "slug": "line-waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Fine lines flowing in silky waves with a drifting band of light.",
+    "tags": [
+      "background",
+      "lines",
+      "waves",
+      "silk",
+      "minimal",
+      "elegant"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LineWaves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/line-waves",
+    "deps": [],
+    "tasteNote": "Minimal and elegant on light or dark themes."
+  },
+  {
+    "name": "Evil Eye",
+    "slug": "evil-eye",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Procedural eye shader with animated iris, slit pupil and fiery glow.",
+    "tags": [
+      "background",
+      "eye",
+      "shader",
+      "fire",
+      "dark",
+      "mystic"
+    ],
+    "install": "npx shadcn@latest add @react-bits/EvilEye-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/evil-eye",
+    "deps": [
+      "ogl"
+    ],
+    "tasteNote": "Niche novelty; not listed in the site sidebar."
+  },
+  {
+    "name": "Radar",
+    "slug": "radar",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Radar scope whose sweep leaves phosphor afterglow and picks up contacts.",
+    "tags": [
+      "background",
+      "radar",
+      "sweep",
+      "technical",
+      "security",
+      "hud"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Radar-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/radar",
+    "deps": []
+  },
+  {
+    "name": "Soft Aurora",
+    "slug": "soft-aurora",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Soft aurora borealis shader built on 3D noise and cosine palettes.",
+    "tags": [
+      "background",
+      "aurora",
+      "gradient",
+      "soft",
+      "ambient",
+      "noise"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SoftAurora-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/soft-aurora",
+    "deps": []
+  },
+  {
+    "name": "Magic Rings",
+    "slug": "magic-rings",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glowing rings pulse outward and swell toward the cursor.",
+    "tags": [
+      "background",
+      "rings",
+      "pulse",
+      "glow",
+      "circles",
+      "ai"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MagicRings-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/magic-rings",
+    "deps": []
+  },
+  {
+    "name": "Liquid Chrome",
+    "slug": "liquid-chrome",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Liquid chrome ribbons swirl in a dark pool and ripple under the cursor.",
+    "tags": [
+      "background",
+      "chrome",
+      "liquid",
+      "metal",
+      "dark",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LiquidChrome-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/liquid-chrome",
+    "deps": []
+  },
+  {
+    "name": "Orb",
+    "slug": "orb",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Breathing ring of swirling color with an orbiting light that reaches for the cursor.",
+    "tags": [
+      "background",
+      "orb",
+      "ai",
+      "glow",
+      "ring",
+      "assistant"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Orb-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/orb",
+    "deps": [],
+    "tasteNote": "Classic AI-product hero orb; center it behind minimal text."
+  },
+  {
+    "name": "Particles",
+    "slug": "particles",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Drifting 3D particle field with glow, twinkle and constellation lines.",
+    "tags": [
+      "background",
+      "particles",
+      "stars",
+      "constellation",
+      "3d",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Particles-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/particles",
+    "deps": []
+  },
+  {
+    "name": "Pixel Blast",
+    "slug": "pixel-blast",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Dithered pixel clouds that shimmer under the cursor, with ripples and a floor.",
+    "tags": [
+      "background",
+      "pixel",
+      "dither",
+      "clouds",
+      "retro",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelBlast-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/pixel-blast",
+    "deps": []
+  },
+  {
+    "name": "Plasma",
+    "slug": "plasma",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Satin folds of light twisting slowly in the dark toward the cursor.",
+    "tags": [
+      "background",
+      "plasma",
+      "satin",
+      "light",
+      "dark",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Plasma-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/plasma",
+    "deps": []
+  },
+  {
+    "name": "Plasma Wave",
+    "slug": "plasma-wave",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Two curling plasma ribbons with soft glow and white-hot cores.",
+    "tags": [
+      "background",
+      "plasma",
+      "waves",
+      "glow",
+      "ribbons",
+      "energy"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PlasmaWave-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/plasma-wave",
+    "deps": []
+  },
+  {
+    "name": "Prism",
+    "slug": "prism",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Rotating prism of glowing spectral light with configurable shape and colors.",
+    "tags": [
+      "background",
+      "prism",
+      "spectrum",
+      "light",
+      "3d",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Prism-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/prism",
+    "deps": []
+  },
+  {
+    "name": "Prismatic Burst",
+    "slug": "prismatic-burst",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Prismatic light rays lean toward the cursor and pulse outward on click.",
+    "tags": [
+      "background",
+      "rays",
+      "prismatic",
+      "burst",
+      "light",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PrismaticBurst-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/prismatic-burst",
+    "deps": []
+  },
+  {
+    "name": "Ripple Grid",
+    "slug": "ripple-grid",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Grid lines ripple like water and light up as waves pass.",
+    "tags": [
+      "background",
+      "grid",
+      "ripple",
+      "waves",
+      "lines",
+      "technical"
+    ],
+    "install": "npx shadcn@latest add @react-bits/RippleGrid-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/ripple-grid",
+    "deps": []
+  },
+  {
+    "name": "Silk",
+    "slug": "silk",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Flowing glossy satin folds that turn toward the cursor.",
+    "tags": [
+      "background",
+      "silk",
+      "satin",
+      "fabric",
+      "luxury",
+      "soft"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Silk-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/silk",
+    "deps": [],
+    "tasteNote": "Luxurious and calm; suits fashion or premium brands."
+  },
+  {
+    "name": "Side Rays",
+    "slug": "side-rays",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Shafts of light fan in from a corner or side and shimmer slowly.",
+    "tags": [
+      "background",
+      "light",
+      "rays",
+      "corner",
+      "ambient",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SideRays-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/side-rays",
+    "deps": []
+  },
+  {
+    "name": "Shape Grid",
+    "slug": "shape-grid",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Drifting grid of shapes that lights up under the cursor with rainbow trails.",
+    "tags": [
+      "background",
+      "grid",
+      "shapes",
+      "hover",
+      "perspective"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ShapeGrid-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/shape-grid",
+    "deps": []
+  },
+  {
+    "name": "Threads",
+    "slug": "threads",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Flowing threads that fray and part around the cursor.",
+    "tags": [
+      "background",
+      "threads",
+      "lines",
+      "flow",
+      "minimal",
+      "contour"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Threads-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/threads",
+    "deps": []
+  },
+  {
+    "name": "Waves",
+    "slug": "waves",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Dense flowing lines sway like silk and bend around the cursor.",
+    "tags": [
+      "background",
+      "lines",
+      "waves",
+      "minimal",
+      "interactive",
+      "subtle"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Waves-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/waves",
+    "deps": []
+  },
+  {
+    "name": "Magnet Lines",
+    "slug": "magnet-lines",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Grid of line segments that swing toward the cursor like compass needles.",
+    "tags": [
+      "background",
+      "lines",
+      "magnetic",
+      "cursor",
+      "grid",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @react-bits/MagnetLines-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/magnet-lines",
+    "deps": []
+  },
+  {
+    "name": "Liquid Ether",
+    "slug": "liquid-ether",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Glowing fluid swirling under the cursor, colored by flow speed.",
+    "tags": [
+      "background",
+      "fluid",
+      "liquid",
+      "simulation",
+      "glow",
+      "colorful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LiquidEther-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/liquid-ether",
+    "deps": []
+  },
+  {
+    "name": "Floating Lines",
+    "slug": "floating-lines",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Ribbons of fine glowing lines drift in waves and part around the cursor.",
+    "tags": [
+      "background",
+      "lines",
+      "waves",
+      "glow",
+      "ribbons",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FloatingLines-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/floating-lines",
+    "deps": []
+  },
+  {
+    "name": "Light Pillar",
+    "slug": "light-pillar",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Swirling pillar of light that ignites on load and surges on click.",
+    "tags": [
+      "background",
+      "light",
+      "pillar",
+      "glow",
+      "hero",
+      "beam"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LightPillar-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/light-pillar",
+    "deps": []
+  },
+  {
+    "name": "Pixel Snow",
+    "slug": "pixel-snow",
+    "library": "react-bits",
+    "category": "backgrounds",
+    "description": "Layered pixel-art snowflakes drifting down, brushed aside by the cursor.",
+    "tags": [
+      "background",
+      "snow",
+      "pixel",
+      "winter",
+      "seasonal",
+      "retro"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PixelSnow-TS-TW",
+    "docs": "https://reactbits.dev/backgrounds/pixel-snow",
+    "deps": []
+  },
+  {
+    "name": "Squish Switch",
+    "slug": "squish-switch",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Toggle whose thumb stretches with speed and squashes against the ends.",
+    "tags": [
+      "switch",
+      "toggle",
+      "form",
+      "spring",
+      "micro-interaction",
+      "settings"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SquishSwitch-TS-TW",
+    "docs": "https://reactbits.dev/micro/squish-switch",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Hold Button",
+    "slug": "hold-button",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Hold-to-confirm button with a rising liquid fill that resets if released.",
+    "tags": [
+      "button",
+      "hold",
+      "confirm",
+      "destructive",
+      "form",
+      "progress"
+    ],
+    "install": "npx shadcn@latest add @react-bits/HoldButton-TS-TW",
+    "docs": "https://reactbits.dev/micro/hold-button",
+    "deps": [],
+    "tasteNote": "Right pattern for destructive actions; pair with a text hint."
+  },
+  {
+    "name": "Peek Rating",
+    "slug": "peek-rating",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Star rating where stars lift toward the pointer and pop on commit.",
+    "tags": [
+      "rating",
+      "stars",
+      "review",
+      "form",
+      "input",
+      "feedback"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PeekRating-TS-TW",
+    "docs": "https://reactbits.dev/micro/peek-rating",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Spring Check",
+    "slug": "spring-check",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Checkbox row that fills, draws a tick and strikes the label on one spring.",
+    "tags": [
+      "checkbox",
+      "todo",
+      "form",
+      "tick",
+      "spring",
+      "list"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SpringCheck-TS-TW",
+    "docs": "https://reactbits.dev/micro/spring-check",
+    "deps": [
+      "motion",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Pulse Heart",
+    "slug": "pulse-heart",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Like button that contracts, flips color and pulses as the count ticks.",
+    "tags": [
+      "like",
+      "heart",
+      "button",
+      "social",
+      "counter",
+      "feedback"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PulseHeart-TS-TW",
+    "docs": "https://reactbits.dev/micro/pulse-heart",
+    "deps": [
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Rubber Segment",
+    "slug": "rubber-segment",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Segmented control with a rubbery thumb stretching between options.",
+    "tags": [
+      "segmented",
+      "tabs",
+      "toggle",
+      "control",
+      "spring",
+      "filter"
+    ],
+    "install": "npx shadcn@latest add @react-bits/RubberSegment-TS-TW",
+    "docs": "https://reactbits.dev/micro/rubber-segment",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Slide Commit",
+    "slug": "slide-commit",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Slide-to-confirm handle that spins while working and becomes a done pill.",
+    "tags": [
+      "slider",
+      "confirm",
+      "button",
+      "payment",
+      "action",
+      "progress"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SlideCommit-TS-TW",
+    "docs": "https://reactbits.dev/micro/slide-commit",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Warm Tooltip",
+    "slug": "warm-tooltip",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Tooltip group that delays the first tip, then opens siblings instantly.",
+    "tags": [
+      "tooltip",
+      "hover",
+      "toolbar",
+      "hint",
+      "ux",
+      "delay"
+    ],
+    "install": "npx shadcn@latest add @react-bits/WarmTooltip-TS-TW",
+    "docs": "https://reactbits.dev/micro/warm-tooltip",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Pure UX polish; invisible when done right, always tasteful."
+  },
+  {
+    "name": "Fuse Button",
+    "slug": "fuse-button",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Action button whose done state offers undo on a burning fuse timer.",
+    "tags": [
+      "button",
+      "undo",
+      "timer",
+      "action",
+      "toast",
+      "confirm"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FuseButton-TS-TW",
+    "docs": "https://reactbits.dev/micro/fuse-button",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Scrub Field",
+    "slug": "scrub-field",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Number chip you drag to scrub, with rubber-band limits and click to type.",
+    "tags": [
+      "input",
+      "number",
+      "scrub",
+      "drag",
+      "design-tool",
+      "form"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ScrubField-TS-TW",
+    "docs": "https://reactbits.dev/micro/scrub-field",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Lattice Loader",
+    "slug": "lattice-loader",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Agent status row with a lattice of pulsing cells beside a live stopwatch.",
+    "tags": [
+      "loader",
+      "ai",
+      "agent",
+      "status",
+      "progress",
+      "timer"
+    ],
+    "install": "npx shadcn@latest add @react-bits/LatticeLoader-TS-TW",
+    "docs": "https://reactbits.dev/micro/lattice-loader",
+    "deps": []
+  },
+  {
+    "name": "Dodge Field",
+    "slug": "dodge-field",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Wrapper that makes a child dodge the pointer before gliding home.",
+    "tags": [
+      "hover",
+      "dodge",
+      "playful",
+      "wrapper",
+      "easter-egg"
+    ],
+    "install": "npx shadcn@latest add @react-bits/DodgeField-TS-TW",
+    "docs": "https://reactbits.dev/micro/dodge-field",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Code Slots",
+    "slug": "code-slots",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "One-time code input with springing digits, paste and SMS autofill.",
+    "tags": [
+      "otp",
+      "input",
+      "code",
+      "auth",
+      "verification",
+      "form"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CodeSlots-TS-TW",
+    "docs": "https://reactbits.dev/micro/code-slots",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Delightful on auth flows; never sacrifice paste or autofill."
+  },
+  {
+    "name": "Wake Slider",
+    "slug": "wake-slider",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Thumbless slider of thin bars where drag speed raises a wake.",
+    "tags": [
+      "slider",
+      "range",
+      "input",
+      "bars",
+      "volume"
+    ],
+    "install": "npx shadcn@latest add @react-bits/WakeSlider-TS-TW",
+    "docs": "https://reactbits.dev/micro/wake-slider",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Comet Dial",
+    "slug": "comet-dial",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Tick-ring dial you rotate, with a comet streaking behind the lit head.",
+    "tags": [
+      "dial",
+      "knob",
+      "input",
+      "rotate",
+      "audio",
+      "control"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CometDial-TS-TW",
+    "docs": "https://reactbits.dev/micro/comet-dial",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Jelly Radio",
+    "slug": "jelly-radio",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Radio chips where the chosen one swells and nudges its neighbors.",
+    "tags": [
+      "radio",
+      "chips",
+      "select",
+      "form",
+      "spring",
+      "options"
+    ],
+    "install": "npx shadcn@latest add @react-bits/JellyRadio-TS-TW",
+    "docs": "https://reactbits.dev/micro/jelly-radio",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Swipe Row",
+    "slug": "swipe-row",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "List row that swipes open to reveal actions and deletes on a full swipe.",
+    "tags": [
+      "swipe",
+      "list",
+      "row",
+      "mobile",
+      "delete",
+      "actions"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SwipeRow-TS-TW",
+    "docs": "https://reactbits.dev/micro/swipe-row",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Glide Select",
+    "slug": "glide-select",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Select chip whose menu pops from its corner with a gliding highlight.",
+    "tags": [
+      "select",
+      "dropdown",
+      "menu",
+      "form",
+      "chip",
+      "input"
+    ],
+    "install": "npx shadcn@latest add @react-bits/GlideSelect-TS-TW",
+    "docs": "https://reactbits.dev/micro/glide-select",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Status Mark",
+    "slug": "status-mark",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Task status glyph morphing from idle ring to progress arc to check.",
+    "tags": [
+      "status",
+      "progress",
+      "check",
+      "agent",
+      "task",
+      "icon"
+    ],
+    "install": "npx shadcn@latest add @react-bits/StatusMark-TS-TW",
+    "docs": "https://reactbits.dev/micro/status-mark",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Call Chip",
+    "slug": "call-chip",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Tool-call chip with a wiping fill and timer, ending green or shaking red.",
+    "tags": [
+      "ai",
+      "tool-call",
+      "chip",
+      "status",
+      "agent",
+      "timer"
+    ],
+    "install": "npx shadcn@latest add @react-bits/CallChip-TS-TW",
+    "docs": "https://reactbits.dev/micro/call-chip",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Bell Toggle",
+    "slug": "bell-toggle",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Pill toggle that rings a bell and crossfades its label.",
+    "tags": [
+      "toggle",
+      "notification",
+      "bell",
+      "subscribe",
+      "pill",
+      "button"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BellToggle-TS-TW",
+    "docs": "https://reactbits.dev/micro/bell-toggle",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Sling Button",
+    "slug": "sling-button",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Send button you pull back like a slingshot and release to fire.",
+    "tags": [
+      "button",
+      "send",
+      "slingshot",
+      "playful",
+      "chat",
+      "drag"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SlingButton-TS-TW",
+    "docs": "https://reactbits.dev/micro/sling-button",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Swipe Toast",
+    "slug": "swipe-toast",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Toast dismissed by swiping down, with a fuse showing time left.",
+    "tags": [
+      "toast",
+      "notification",
+      "swipe",
+      "timer",
+      "alert",
+      "mobile"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SwipeToast-TS-TW",
+    "docs": "https://reactbits.dev/micro/swipe-toast",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Prompt Bar",
+    "slug": "prompt-bar",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Chat composer with mentions, slash commands, model picker, dictation and attachments.",
+    "tags": [
+      "chat",
+      "prompt",
+      "input",
+      "ai",
+      "composer",
+      "commands"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PromptBar-TS-TW",
+    "docs": "https://reactbits.dev/micro/prompt-bar",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ],
+    "tasteNote": "Solid base for AI chat UIs; strip features you do not ship."
+  },
+  {
+    "name": "Slosh Gauge",
+    "slug": "slosh-gauge",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Tank gauge whose liquid sloshes and splashes as the value changes.",
+    "tags": [
+      "gauge",
+      "progress",
+      "liquid",
+      "meter",
+      "storage",
+      "fill"
+    ],
+    "install": "npx shadcn@latest add @react-bits/SloshGauge-TS-TW",
+    "docs": "https://reactbits.dev/micro/slosh-gauge",
+    "deps": []
+  },
+  {
+    "name": "Voice Pill",
+    "slug": "voice-pill",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Mic button that swells into a capsule of live equalizer bars and a timer.",
+    "tags": [
+      "voice",
+      "mic",
+      "recording",
+      "audio",
+      "ai",
+      "button"
+    ],
+    "install": "npx shadcn@latest add @react-bits/VoicePill-TS-TW",
+    "docs": "https://reactbits.dev/micro/voice-pill",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Thought Line",
+    "slug": "thought-line",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Reasoning trace header with a live clock that folds steps into one line.",
+    "tags": [
+      "ai",
+      "reasoning",
+      "thinking",
+      "trace",
+      "agent",
+      "chat"
+    ],
+    "install": "npx shadcn@latest add @react-bits/ThoughtLine-TS-TW",
+    "docs": "https://reactbits.dev/micro/thought-line",
+    "deps": [
+      "motion",
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Refine Frame",
+    "slug": "refine-frame",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Media frame stepping an image through generation stages without layout shift.",
+    "tags": [
+      "ai",
+      "image",
+      "generation",
+      "loading",
+      "frame",
+      "progress"
+    ],
+    "install": "npx shadcn@latest add @react-bits/RefineFrame-TS-TW",
+    "docs": "https://reactbits.dev/micro/refine-frame",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Folder Float",
+    "slug": "folder-float",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Folder whose notes spring out into a floating cloud on hover or press.",
+    "tags": [
+      "folder",
+      "files",
+      "hover",
+      "physics",
+      "playful",
+      "notes"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FolderFloat-TS-TW",
+    "docs": "https://reactbits.dev/micro/folder-float",
+    "deps": [
+      "matter-js"
+    ]
+  },
+  {
+    "name": "Branched Menu",
+    "slug": "branched-menu",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Collapsible menu branching sections off a trunk, tracing a line to your pick.",
+    "tags": [
+      "menu",
+      "tree",
+      "sidebar",
+      "navigation",
+      "collapsible",
+      "docs"
+    ],
+    "install": "npx shadcn@latest add @react-bits/BranchedMenu-TS-TW",
+    "docs": "https://reactbits.dev/micro/branched-menu",
+    "deps": [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons"
+    ]
+  },
+  {
+    "name": "Flip Card",
+    "slug": "flip-card",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Two-sided card flipping in 3D on click, drag or flick.",
+    "tags": [
+      "card",
+      "flip",
+      "3d",
+      "two-sided",
+      "pricing",
+      "quiz"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FlipCard-TS-TW",
+    "docs": "https://reactbits.dev/micro/flip-card",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Tear Ticket",
+    "slug": "tear-ticket",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Ticket with a perforated stub you tear off by hand.",
+    "tags": [
+      "ticket",
+      "tear",
+      "event",
+      "coupon",
+      "playful",
+      "confirmation"
+    ],
+    "install": "npx shadcn@latest add @react-bits/TearTicket-TS-TW",
+    "docs": "https://reactbits.dev/micro/tear-ticket",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Paper Crumple",
+    "slug": "paper-crumple",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Image crumples into a textured 3D sheet while held and dragged.",
+    "tags": [
+      "paper",
+      "crumple",
+      "3d",
+      "image",
+      "delete",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/PaperCrumple-TS-TW",
+    "docs": "https://reactbits.dev/micro/paper-crumple",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "Shredder",
+    "slug": "shredder",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "List with a shredder at the bottom that cuts dragged rows into strips.",
+    "tags": [
+      "delete",
+      "list",
+      "shredder",
+      "drag",
+      "playful",
+      "trash"
+    ],
+    "install": "npx shadcn@latest add @react-bits/Shredder-TS-TW",
+    "docs": "https://reactbits.dev/micro/shredder",
+    "deps": []
+  },
+  {
+    "name": "Flying Button",
+    "slug": "flying-button",
+    "library": "react-bits",
+    "category": "micro",
+    "description": "Button that fires thrusters on hover and lifts off on a smoke plume.",
+    "tags": [
+      "button",
+      "rocket",
+      "launch",
+      "cta",
+      "smoke",
+      "playful"
+    ],
+    "install": "npx shadcn@latest add @react-bits/FlyingButton-TS-TW",
+    "docs": "https://reactbits.dev/micro/flying-button",
+    "deps": [],
+    "tasteNote": "Launch-day gimmick; fine once, tiring as a permanent CTA."
+  },
+  {
+    "name": "Magic Card",
+    "slug": "magic-card",
+    "library": "magic-ui",
+    "category": "cards",
+    "description": "Card with a spotlight gradient that tracks the cursor and lights its border.",
+    "tags": [
+      "card",
+      "spotlight",
+      "hover",
+      "border",
+      "glow",
+      "features"
+    ],
+    "install": "npx shadcn@latest add @magicui/magic-card",
+    "docs": "https://magicui.design/docs/components/magic-card",
+    "deps": [
+      "motion",
+      "next-themes"
+    ],
+    "tasteNote": "Tasteful default for feature grids, especially on dark themes."
+  },
+  {
+    "name": "Android",
+    "slug": "android",
+    "library": "magic-ui",
+    "category": "device-mocks",
+    "description": "Android phone frame mockup for app screenshots or video.",
+    "tags": [
+      "mockup",
+      "android",
+      "phone",
+      "device",
+      "screenshot",
+      "app"
+    ],
+    "install": "npx shadcn@latest add @magicui/android",
+    "docs": "https://magicui.design/docs/components/android",
+    "deps": []
+  },
+  {
+    "name": "Warp Background",
+    "slug": "warp-background",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Container with a time-warp perspective grid of moving beams behind its content.",
+    "tags": [
+      "background",
+      "warp",
+      "grid",
+      "perspective",
+      "card",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/warp-background",
+    "docs": "https://magicui.design/docs/components/warp-background",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Line Shadow Text",
+    "slug": "line-shadow-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Text with an animated diagonal-line shadow sliding behind it.",
+    "tags": [
+      "text",
+      "shadow",
+      "lines",
+      "heading",
+      "retro",
+      "accent"
+    ],
+    "install": "npx shadcn@latest add @magicui/line-shadow-text",
+    "docs": "https://magicui.design/docs/components/line-shadow-text",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Aurora Text",
+    "slug": "aurora-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Text filled with a slowly shifting aurora gradient.",
+    "tags": [
+      "text",
+      "gradient",
+      "aurora",
+      "heading",
+      "hero",
+      "color"
+    ],
+    "install": "npx shadcn@latest add @magicui/aurora-text",
+    "docs": "https://magicui.design/docs/components/aurora-text",
+    "deps": [],
+    "tasteNote": "Use on a key word inside the headline, not the whole line."
+  },
+  {
+    "name": "Morphing Text",
+    "slug": "morphing-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Morphs between words with a gooey blurred crossfade.",
+    "tags": [
+      "text",
+      "morph",
+      "words",
+      "rotate",
+      "hero",
+      "blur"
+    ],
+    "install": "npx shadcn@latest add @magicui/morphing-text",
+    "docs": "https://magicui.design/docs/components/morphing-text",
+    "deps": []
+  },
+  {
+    "name": "Scroll Progress",
+    "slug": "scroll-progress",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Thin bar pinned to the top of the page tracking reading progress.",
+    "tags": [
+      "scroll",
+      "progress",
+      "reading",
+      "bar",
+      "blog",
+      "indicator"
+    ],
+    "install": "npx shadcn@latest add @magicui/scroll-progress",
+    "docs": "https://magicui.design/docs/components/scroll-progress",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Useful on long articles; pointless on short landing pages."
+  },
+  {
+    "name": "Lens",
+    "slug": "lens",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Hover magnifier lens that zooms into images, video or any element.",
+    "tags": [
+      "zoom",
+      "lens",
+      "magnify",
+      "image",
+      "hover",
+      "product"
+    ],
+    "install": "npx shadcn@latest add @magicui/lens",
+    "docs": "https://magicui.design/docs/components/lens",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Pointer",
+    "slug": "pointer",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Replaces the cursor with a custom animated pointer inside a container.",
+    "tags": [
+      "cursor",
+      "pointer",
+      "hover",
+      "custom",
+      "card"
+    ],
+    "install": "npx shadcn@latest add @magicui/pointer",
+    "docs": "https://magicui.design/docs/components/pointer",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "slug": "smooth-cursor",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Physics-based custom cursor that follows the mouse with spring easing.",
+    "tags": [
+      "cursor",
+      "smooth",
+      "spring",
+      "custom",
+      "portfolio"
+    ],
+    "install": "npx shadcn@latest add @magicui/smooth-cursor",
+    "docs": "https://magicui.design/docs/components/smooth-cursor",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Custom cursors suit portfolios; avoid in forms and apps."
+  },
+  {
+    "name": "Progressive Blur",
+    "slug": "progressive-blur",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Stacked blur layers that fade content at the edges of a scroll area.",
+    "tags": [
+      "blur",
+      "edge",
+      "fade",
+      "scroll",
+      "list",
+      "mask"
+    ],
+    "install": "npx shadcn@latest add @magicui/progressive-blur",
+    "docs": "https://magicui.design/docs/components/progressive-blur",
+    "deps": [],
+    "tasteNote": "Quietly premium for scroll containers and image captions."
+  },
+  {
+    "name": "Neon Gradient Card",
+    "slug": "neon-gradient-card",
+    "library": "magic-ui",
+    "category": "cards",
+    "description": "Card wrapped in a glowing animated neon gradient border.",
+    "tags": [
+      "card",
+      "neon",
+      "gradient",
+      "border",
+      "glow",
+      "highlight"
+    ],
+    "install": "npx shadcn@latest add @magicui/neon-gradient-card",
+    "docs": "https://magicui.design/docs/components/neon-gradient-card",
+    "deps": [],
+    "tasteNote": "Loud; reserve for one featured plan or promo."
+  },
+  {
+    "name": "Noise Texture",
+    "slug": "noise-texture",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG fractal noise overlay for subtle grain texture.",
+    "tags": [
+      "noise",
+      "grain",
+      "texture",
+      "overlay",
+      "background",
+      "svg"
+    ],
+    "install": "npx shadcn@latest add @magicui/noise-texture",
+    "docs": "https://magicui.design/docs/components/noise-texture",
+    "deps": [],
+    "tasteNote": "Low-opacity grain makes flat gradients feel printed."
+  },
+  {
+    "name": "Meteors",
+    "slug": "meteors",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Diagonal meteor streaks falling across a container.",
+    "tags": [
+      "meteors",
+      "background",
+      "card",
+      "stars",
+      "space",
+      "animation"
+    ],
+    "install": "npx shadcn@latest add @magicui/meteors",
+    "docs": "https://magicui.design/docs/components/meteors",
+    "deps": []
+  },
+  {
+    "name": "Grid Pattern",
+    "slug": "grid-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Customizable SVG grid-line background with optional highlighted squares.",
+    "tags": [
+      "background",
+      "grid",
+      "pattern",
+      "svg",
+      "subtle",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/grid-pattern",
+    "docs": "https://magicui.design/docs/components/grid-pattern",
+    "deps": [],
+    "tasteNote": "Pair with a radial mask so the grid fades out; reliably tasteful."
+  },
+  {
+    "name": "Hexagon Pattern",
+    "slug": "hexagon-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG hexagon tile background pattern.",
+    "tags": [
+      "background",
+      "hexagon",
+      "pattern",
+      "svg",
+      "honeycomb",
+      "subtle"
+    ],
+    "install": "npx shadcn@latest add @magicui/hexagon-pattern",
+    "docs": "https://magicui.design/docs/components/hexagon-pattern",
+    "deps": []
+  },
+  {
+    "name": "Striped Pattern",
+    "slug": "striped-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG diagonal stripe background pattern.",
+    "tags": [
+      "background",
+      "stripes",
+      "pattern",
+      "svg",
+      "diagonal",
+      "subtle"
+    ],
+    "install": "npx shadcn@latest add @magicui/striped-pattern",
+    "docs": "https://magicui.design/docs/components/striped-pattern",
+    "deps": []
+  },
+  {
+    "name": "Interactive Grid Pattern",
+    "slug": "interactive-grid-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG grid whose squares highlight as the cursor passes over them.",
+    "tags": [
+      "background",
+      "grid",
+      "interactive",
+      "hover",
+      "svg",
+      "squares"
+    ],
+    "install": "npx shadcn@latest add @magicui/interactive-grid-pattern",
+    "docs": "https://magicui.design/docs/components/interactive-grid-pattern",
+    "deps": []
+  },
+  {
+    "name": "Dot Pattern",
+    "slug": "dot-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG dot-matrix background, optionally glowing and animated.",
+    "tags": [
+      "background",
+      "dots",
+      "pattern",
+      "svg",
+      "subtle",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/dot-pattern",
+    "docs": "https://magicui.design/docs/components/dot-pattern",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Masked dot grid behind a hero is calm and modern."
+  },
+  {
+    "name": "Flickering Grid",
+    "slug": "flickering-grid",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Canvas grid of small squares flickering randomly in opacity.",
+    "tags": [
+      "background",
+      "grid",
+      "flicker",
+      "squares",
+      "canvas",
+      "technical"
+    ],
+    "install": "npx shadcn@latest add @magicui/flickering-grid",
+    "docs": "https://magicui.design/docs/components/flickering-grid",
+    "deps": []
+  },
+  {
+    "name": "Hero Video Dialog",
+    "slug": "hero-video-dialog",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Hero video thumbnail with play button that opens an animated video modal.",
+    "tags": [
+      "video",
+      "hero",
+      "modal",
+      "dialog",
+      "demo",
+      "play"
+    ],
+    "install": "npx shadcn@latest add @magicui/hero-video-dialog",
+    "docs": "https://magicui.design/docs/components/hero-video-dialog",
+    "deps": [
+      "motion",
+      "lucide-react"
+    ],
+    "tasteNote": "Clean way to put a product demo inside a hero."
+  },
+  {
+    "name": "Code Comparison",
+    "slug": "code-comparison",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Side-by-side before and after code snippets with syntax highlighting.",
+    "tags": [
+      "code",
+      "diff",
+      "comparison",
+      "syntax",
+      "developer",
+      "docs"
+    ],
+    "install": "npx shadcn@latest add @magicui/code-comparison",
+    "docs": "https://magicui.design/docs/components/code-comparison",
+    "deps": [
+      "shiki",
+      "next-themes",
+      "@shikijs/transformers",
+      "lucide-react"
+    ]
+  },
+  {
+    "name": "Marquee",
+    "slug": "marquee",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Infinite horizontal or vertical scroller for logos, testimonials or images.",
+    "tags": [
+      "marquee",
+      "logo-cloud",
+      "testimonials",
+      "scroll",
+      "loop",
+      "social-proof"
+    ],
+    "install": "npx shadcn@latest add @magicui/marquee",
+    "docs": "https://magicui.design/docs/components/marquee",
+    "deps": [],
+    "tasteNote": "The standard logo or testimonial rail; add edge fades and pause on hover."
+  },
+  {
+    "name": "Globe",
+    "slug": "globe",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Interactive auto-rotating WebGL globe with location markers.",
+    "tags": [
+      "globe",
+      "3d",
+      "world",
+      "map",
+      "webgl",
+      "hero",
+      "global"
+    ],
+    "install": "npx shadcn@latest add @magicui/globe",
+    "docs": "https://magicui.design/docs/components/globe",
+    "deps": [
+      "cobe",
+      "motion"
+    ],
+    "tasteNote": "Signals global reach; lazy load it when below the fold."
+  },
+  {
+    "name": "Glyph Matrix",
+    "slug": "glyph-matrix",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Canvas grid of softly shifting glyphs in a theme-aware color.",
+    "tags": [
+      "background",
+      "glyphs",
+      "matrix",
+      "canvas",
+      "text",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @magicui/glyph-matrix",
+    "docs": "https://magicui.design/docs/components/glyph-matrix",
+    "deps": []
+  },
+  {
+    "name": "Glare Hover",
+    "slug": "glare-hover",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Diagonal glare sweeps across an element on hover, pure CSS.",
+    "tags": [
+      "hover",
+      "glare",
+      "shine",
+      "card",
+      "css",
+      "gloss"
+    ],
+    "install": "npx shadcn@latest add @magicui/glare-hover",
+    "docs": "https://magicui.design/docs/components/glare-hover",
+    "deps": []
+  },
+  {
+    "name": "Shimmer Button",
+    "slug": "shimmer-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button with a shimmering light traveling around its border.",
+    "tags": [
+      "button",
+      "cta",
+      "shimmer",
+      "border",
+      "glow"
+    ],
+    "install": "npx shadcn@latest add @magicui/shimmer-button",
+    "docs": "https://magicui.design/docs/components/shimmer-button",
+    "deps": [],
+    "tasteNote": "Use for one primary CTA, never a whole row of buttons."
+  },
+  {
+    "name": "Tweet Card",
+    "slug": "tweet-card",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Embedded tweet card showing author, handle, avatar and text.",
+    "tags": [
+      "tweet",
+      "testimonial",
+      "social-proof",
+      "twitter",
+      "x",
+      "card"
+    ],
+    "install": "npx shadcn@latest add @magicui/tweet-card",
+    "docs": "https://magicui.design/docs/components/tweet-card",
+    "deps": [
+      "react-tweet"
+    ]
+  },
+  {
+    "name": "Client Tweet Card",
+    "slug": "client-tweet-card",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Client-rendered variant of the tweet card for setups without server components.",
+    "tags": [
+      "tweet",
+      "testimonial",
+      "social-proof",
+      "twitter",
+      "client",
+      "card"
+    ],
+    "install": "npx shadcn@latest add @magicui/client-tweet-card",
+    "docs": "https://magicui.design/docs/components/tweet-card",
+    "deps": [
+      "react-tweet"
+    ]
+  },
+  {
+    "name": "Bento Grid",
+    "slug": "bento-grid",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Bento layout of feature cards with icons, descriptions and hover call to action.",
+    "tags": [
+      "bento",
+      "grid",
+      "features",
+      "cards",
+      "layout",
+      "landing"
+    ],
+    "install": "npx shadcn@latest add @magicui/bento-grid",
+    "docs": "https://magicui.design/docs/components/bento-grid",
+    "deps": [
+      "@radix-ui/react-icons"
+    ],
+    "tasteNote": "Strong feature-section skeleton; vary card sizes deliberately."
+  },
+  {
+    "name": "Particles",
+    "slug": "particles",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Canvas particle field that drifts and reacts to the mouse.",
+    "tags": [
+      "particles",
+      "background",
+      "canvas",
+      "stars",
+      "interactive",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @magicui/particles",
+    "docs": "https://magicui.design/docs/components/particles",
+    "deps": []
+  },
+  {
+    "name": "Number Ticker",
+    "slug": "number-ticker",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Counts a number up or down to a target value when it enters view.",
+    "tags": [
+      "number",
+      "counter",
+      "stats",
+      "metrics",
+      "ticker",
+      "kpi"
+    ],
+    "install": "npx shadcn@latest add @magicui/number-ticker",
+    "docs": "https://magicui.design/docs/components/number-ticker",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Best way to animate stat rows; keep the duration short."
+  },
+  {
+    "name": "Ripple",
+    "slug": "ripple",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Concentric expanding rings that emphasize the element in front.",
+    "tags": [
+      "background",
+      "ripple",
+      "rings",
+      "circles",
+      "pulse",
+      "emphasis"
+    ],
+    "install": "npx shadcn@latest add @magicui/ripple",
+    "docs": "https://magicui.design/docs/components/ripple",
+    "deps": []
+  },
+  {
+    "name": "Retro Grid",
+    "slug": "retro-grid",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Synthwave perspective grid scrolling toward the horizon.",
+    "tags": [
+      "background",
+      "grid",
+      "retro",
+      "synthwave",
+      "perspective",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/retro-grid",
+    "docs": "https://magicui.design/docs/components/retro-grid",
+    "deps": []
+  },
+  {
+    "name": "Animated List",
+    "slug": "animated-list",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "List revealing items one by one, like incoming notifications.",
+    "tags": [
+      "list",
+      "notifications",
+      "feed",
+      "stagger",
+      "activity",
+      "landing"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-list",
+    "docs": "https://magicui.design/docs/components/animated-list",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Animated Shiny Text",
+    "slug": "animated-shiny-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Light glare panning across text for a shimmering label.",
+    "tags": [
+      "text",
+      "shine",
+      "shimmer",
+      "badge",
+      "announcement",
+      "eyebrow"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-shiny-text",
+    "docs": "https://magicui.design/docs/components/animated-shiny-text",
+    "deps": [],
+    "tasteNote": "Ideal for the small announcement pill above a hero headline."
+  },
+  {
+    "name": "Animated Grid Pattern",
+    "slug": "animated-grid-pattern",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "SVG grid with squares fading in and out at random.",
+    "tags": [
+      "background",
+      "grid",
+      "animated",
+      "squares",
+      "svg",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-grid-pattern",
+    "docs": "https://magicui.design/docs/components/animated-grid-pattern",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Border Beam",
+    "slug": "border-beam",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "A beam of light runs along a container's border.",
+    "tags": [
+      "border",
+      "beam",
+      "glow",
+      "card",
+      "highlight",
+      "cta"
+    ],
+    "install": "npx shadcn@latest add @magicui/border-beam",
+    "docs": "https://magicui.design/docs/components/border-beam",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Elegant on one featured card or input; use a slow duration."
+  },
+  {
+    "name": "Animated Beam",
+    "slug": "animated-beam",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Light beams travel curved paths between elements, ideal for integration diagrams.",
+    "tags": [
+      "beam",
+      "integrations",
+      "diagram",
+      "connections",
+      "flow",
+      "svg"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-beam",
+    "docs": "https://magicui.design/docs/components/animated-beam",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Best tool for an integrations section showing what connects to what."
+  },
+  {
+    "name": "Text Reveal",
+    "slug": "text-reveal",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Words brighten from dim to full as you scroll through a paragraph.",
+    "tags": [
+      "text",
+      "scroll",
+      "reveal",
+      "paragraph",
+      "storytelling",
+      "manifesto"
+    ],
+    "install": "npx shadcn@latest add @magicui/text-reveal",
+    "docs": "https://magicui.design/docs/components/text-reveal",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Dia Text Reveal",
+    "slug": "dia-text-reveal",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "A color band sweeps across text with a gradient shine, then settles.",
+    "tags": [
+      "text",
+      "reveal",
+      "gradient",
+      "sweep",
+      "heading",
+      "shine"
+    ],
+    "install": "npx shadcn@latest add @magicui/dia-text-reveal",
+    "docs": "https://magicui.design/docs/components/dia-text-reveal",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Hyper Text",
+    "slug": "hyper-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Scrambles letters before revealing the final word.",
+    "tags": [
+      "text",
+      "scramble",
+      "reveal",
+      "hover",
+      "technical",
+      "heading"
+    ],
+    "install": "npx shadcn@latest add @magicui/hyper-text",
+    "docs": "https://magicui.design/docs/components/hyper-text",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Animated Gradient Text",
+    "slug": "animated-gradient-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Text with an animated gradient cycling through colors.",
+    "tags": [
+      "text",
+      "gradient",
+      "animated",
+      "badge",
+      "heading",
+      "color"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-gradient-text",
+    "docs": "https://magicui.design/docs/components/animated-gradient-text",
+    "deps": []
+  },
+  {
+    "name": "Orbiting Circles",
+    "slug": "orbiting-circles",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Icons orbiting along concentric circular paths around a center.",
+    "tags": [
+      "orbit",
+      "icons",
+      "integrations",
+      "circles",
+      "hero",
+      "logos"
+    ],
+    "install": "npx shadcn@latest add @magicui/orbiting-circles",
+    "docs": "https://magicui.design/docs/components/orbiting-circles",
+    "deps": []
+  },
+  {
+    "name": "Dock",
+    "slug": "dock",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "macOS-style dock with icon magnification on hover.",
+    "tags": [
+      "dock",
+      "macos",
+      "navigation",
+      "icons",
+      "magnify",
+      "toolbar"
+    ],
+    "install": "npx shadcn@latest add @magicui/dock",
+    "docs": "https://magicui.design/docs/components/dock",
+    "deps": [
+      "motion",
+      "class-variance-authority"
+    ]
+  },
+  {
+    "name": "Word Rotate",
+    "slug": "word-rotate",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Vertically rotates through a list of words.",
+    "tags": [
+      "text",
+      "rotate",
+      "words",
+      "hero",
+      "headline",
+      "cycle"
+    ],
+    "install": "npx shadcn@latest add @magicui/word-rotate",
+    "docs": "https://magicui.design/docs/components/word-rotate",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Avatar Circles",
+    "slug": "avatar-circles",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Overlapping avatar stack with an extra-count bubble.",
+    "tags": [
+      "avatars",
+      "users",
+      "social-proof",
+      "stack",
+      "community",
+      "team"
+    ],
+    "install": "npx shadcn@latest add @magicui/avatar-circles",
+    "docs": "https://magicui.design/docs/components/avatar-circles",
+    "deps": [],
+    "tasteNote": "Compact social proof next to a CTA."
+  },
+  {
+    "name": "Typing Animation",
+    "slug": "typing-animation",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Types text out character by character with a caret.",
+    "tags": [
+      "typewriter",
+      "text",
+      "typing",
+      "caret",
+      "terminal",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @magicui/typing-animation",
+    "docs": "https://magicui.design/docs/components/typing-animation",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Sparkles Text",
+    "slug": "sparkles-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Text surrounded by twinkling sparkle stars.",
+    "tags": [
+      "text",
+      "sparkles",
+      "stars",
+      "highlight",
+      "playful",
+      "heading"
+    ],
+    "install": "npx shadcn@latest add @magicui/sparkles-text",
+    "docs": "https://magicui.design/docs/components/sparkles-text",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Playful; one word at most."
+  },
+  {
+    "name": "Spinning Text",
+    "slug": "spinning-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Text arranged in a circle that spins continuously.",
+    "tags": [
+      "text",
+      "circular",
+      "spin",
+      "badge",
+      "stamp",
+      "rotate"
+    ],
+    "install": "npx shadcn@latest add @magicui/spinning-text",
+    "docs": "https://magicui.design/docs/components/spinning-text",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Comic Text",
+    "slug": "comic-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Bold comic-book style text that pops in with halftone flair.",
+    "tags": [
+      "text",
+      "comic",
+      "pop",
+      "playful",
+      "heading",
+      "halftone"
+    ],
+    "install": "npx shadcn@latest add @magicui/comic-text",
+    "docs": "https://magicui.design/docs/components/comic-text",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Icon Cloud",
+    "slug": "icon-cloud",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Interactive 3D sphere of rotating icons or images.",
+    "tags": [
+      "icons",
+      "cloud",
+      "3d",
+      "sphere",
+      "tech-stack",
+      "skills"
+    ],
+    "install": "npx shadcn@latest add @magicui/icon-cloud",
+    "docs": "https://magicui.design/docs/components/icon-cloud",
+    "deps": [
+      "lucide-react"
+    ]
+  },
+  {
+    "name": "Text Animate",
+    "slug": "text-animate",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Animates text in by character, word or line with fade, blur, slide or scale presets.",
+    "tags": [
+      "text",
+      "animate",
+      "stagger",
+      "entrance",
+      "blur",
+      "heading"
+    ],
+    "install": "npx shadcn@latest add @magicui/text-animate",
+    "docs": "https://magicui.design/docs/components/text-animate",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Versatile default; pick one preset and reuse it site-wide."
+  },
+  {
+    "name": "Scroll Based Velocity",
+    "slug": "scroll-based-velocity",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Rows of text scrolling faster as the page scroll speeds up.",
+    "tags": [
+      "marquee",
+      "text",
+      "scroll",
+      "velocity",
+      "banner",
+      "loop"
+    ],
+    "install": "npx shadcn@latest add @magicui/scroll-based-velocity",
+    "docs": "https://magicui.design/docs/components/scroll-based-velocity",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Shiny Button",
+    "slug": "shiny-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button with a moving shine that adapts to light and dark modes.",
+    "tags": [
+      "button",
+      "cta",
+      "shine",
+      "gloss",
+      "dark-mode"
+    ],
+    "install": "npx shadcn@latest add @magicui/shiny-button",
+    "docs": "https://magicui.design/docs/components/shiny-button",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Shine Border",
+    "slug": "shine-border",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Animated gradient shine moving around a container border.",
+    "tags": [
+      "border",
+      "shine",
+      "gradient",
+      "card",
+      "glow",
+      "highlight"
+    ],
+    "install": "npx shadcn@latest add @magicui/shine-border",
+    "docs": "https://magicui.design/docs/components/shine-border",
+    "deps": []
+  },
+  {
+    "name": "Animated Circular Progress Bar",
+    "slug": "animated-circular-progress-bar",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Circular gauge that animates to a percentage value.",
+    "tags": [
+      "progress",
+      "circular",
+      "gauge",
+      "percentage",
+      "stats",
+      "dashboard"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-circular-progress-bar",
+    "docs": "https://magicui.design/docs/components/animated-circular-progress-bar",
+    "deps": []
+  },
+  {
+    "name": "Confetti",
+    "slug": "confetti",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Fires canvas confetti bursts on demand or click.",
+    "tags": [
+      "confetti",
+      "celebration",
+      "success",
+      "click",
+      "delight",
+      "canvas"
+    ],
+    "install": "npx shadcn@latest add @magicui/confetti",
+    "docs": "https://magicui.design/docs/components/confetti",
+    "deps": [
+      "canvas-confetti"
+    ],
+    "tasteNote": "Reserve for genuine success moments like signup or purchase."
+  },
+  {
+    "name": "Cool Mode",
+    "slug": "cool-mode",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Bursts particles or images out of an element on click.",
+    "tags": [
+      "particles",
+      "click",
+      "button",
+      "playful",
+      "burst",
+      "emoji"
+    ],
+    "install": "npx shadcn@latest add @magicui/cool-mode",
+    "docs": "https://magicui.design/docs/components/cool-mode",
+    "deps": []
+  },
+  {
+    "name": "Pulsating Button",
+    "slug": "pulsating-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button with a pulsing ring that draws attention.",
+    "tags": [
+      "button",
+      "cta",
+      "pulse",
+      "attention",
+      "ring"
+    ],
+    "install": "npx shadcn@latest add @magicui/pulsating-button",
+    "docs": "https://magicui.design/docs/components/pulsating-button",
+    "deps": [],
+    "tasteNote": "An endless pulse nags; stop it after a few cycles."
+  },
+  {
+    "name": "Ripple Button",
+    "slug": "ripple-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button emitting a ripple from the click point.",
+    "tags": [
+      "button",
+      "ripple",
+      "click",
+      "material",
+      "feedback"
+    ],
+    "install": "npx shadcn@latest add @magicui/ripple-button",
+    "docs": "https://magicui.design/docs/components/ripple-button",
+    "deps": []
+  },
+  {
+    "name": "File Tree",
+    "slug": "file-tree",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "Collapsible file and folder tree for showing directory structures.",
+    "tags": [
+      "file-tree",
+      "folders",
+      "docs",
+      "developer",
+      "sidebar",
+      "code"
+    ],
+    "install": "npx shadcn@latest add @magicui/file-tree",
+    "docs": "https://magicui.design/docs/components/file-tree",
+    "deps": [
+      "@radix-ui/react-accordion",
+      "lucide-react"
+    ]
+  },
+  {
+    "name": "Blur Fade",
+    "slug": "blur-fade",
+    "library": "magic-ui",
+    "category": "animations",
+    "description": "Fades and unblurs content into view, with delays for staggering.",
+    "tags": [
+      "blur",
+      "fade",
+      "entrance",
+      "stagger",
+      "section",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @magicui/blur-fade",
+    "docs": "https://magicui.design/docs/components/blur-fade",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Quiet, reliable entrance for any section; stagger by 0.04 to 0.1s."
+  },
+  {
+    "name": "Safari",
+    "slug": "safari",
+    "library": "magic-ui",
+    "category": "device-mocks",
+    "description": "Safari browser window mockup framing a screenshot or video.",
+    "tags": [
+      "mockup",
+      "browser",
+      "safari",
+      "screenshot",
+      "hero",
+      "device"
+    ],
+    "install": "npx shadcn@latest add @magicui/safari",
+    "docs": "https://magicui.design/docs/components/safari",
+    "deps": []
+  },
+  {
+    "name": "iPhone",
+    "slug": "iphone",
+    "library": "magic-ui",
+    "category": "device-mocks",
+    "description": "iPhone frame mockup for app screenshots or video.",
+    "tags": [
+      "mockup",
+      "iphone",
+      "phone",
+      "device",
+      "app",
+      "screenshot"
+    ],
+    "install": "npx shadcn@latest add @magicui/iphone",
+    "docs": "https://magicui.design/docs/components/iphone",
+    "deps": []
+  },
+  {
+    "name": "Rainbow Button",
+    "slug": "rainbow-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button with an animated rainbow gradient glow.",
+    "tags": [
+      "button",
+      "rainbow",
+      "gradient",
+      "cta",
+      "glow"
+    ],
+    "install": "npx shadcn@latest add @magicui/rainbow-button",
+    "docs": "https://magicui.design/docs/components/rainbow-button",
+    "deps": [
+      "@radix-ui/react-slot",
+      "class-variance-authority"
+    ],
+    "tasteNote": "Very loud; only for playful brands or a single launch CTA."
+  },
+  {
+    "slug": "interactive-hover-button",
+    "library": "magic-ui",
+    "category": "buttons",
+    "description": "Button that slides in an arrow and inverts color on hover.",
+    "tags": [
+      "button",
+      "hover",
+      "arrow",
+      "cta",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @magicui/interactive-hover-button",
+    "docs": "https://magicui.design/docs/components/interactive-hover-button",
+    "deps": [
+      "lucide-react"
+    ]
+  },
+  {
+    "name": "Terminal",
+    "slug": "terminal",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "macOS terminal window animating typed commands and output.",
+    "tags": [
+      "terminal",
+      "cli",
+      "code",
+      "developer",
+      "install",
+      "typing"
+    ],
+    "install": "npx shadcn@latest add @magicui/terminal",
+    "docs": "https://magicui.design/docs/components/terminal",
+    "deps": [
+      "motion"
+    ],
+    "tasteNote": "Perfect for showing an install command or CLI demo."
+  },
+  {
+    "name": "Video Text",
+    "slug": "video-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Large text used as a mask over a playing video.",
+    "tags": [
+      "text",
+      "video",
+      "mask",
+      "hero",
+      "heading",
+      "cinematic"
+    ],
+    "install": "npx shadcn@latest add @magicui/video-text",
+    "docs": "https://magicui.design/docs/components/video-text",
+    "deps": []
+  },
+  {
+    "name": "Pixel Image",
+    "slug": "pixel-image",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Image revealed from a pixelated grid into full resolution.",
+    "tags": [
+      "image",
+      "pixel",
+      "reveal",
+      "grid",
+      "retro",
+      "entrance"
+    ],
+    "install": "npx shadcn@latest add @magicui/pixel-image",
+    "docs": "https://magicui.design/docs/components/pixel-image",
+    "deps": []
+  },
+  {
+    "name": "Highlighter",
+    "slug": "highlighter",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Hand-drawn marker highlight, underline or circle annotation on inline text.",
+    "tags": [
+      "text",
+      "highlight",
+      "marker",
+      "annotation",
+      "underline",
+      "emphasis"
+    ],
+    "install": "npx shadcn@latest add @magicui/highlighter",
+    "docs": "https://magicui.design/docs/components/highlighter",
+    "deps": [
+      "motion",
+      "rough-notation"
+    ],
+    "tasteNote": "Human and tasteful for one key phrase per section."
+  },
+  {
+    "name": "Theme Toggler",
+    "slug": "animated-theme-toggler",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Theme toggle animated with View Transitions clip-path reveals.",
+    "tags": [
+      "theme",
+      "dark-mode",
+      "toggle",
+      "view-transitions",
+      "button",
+      "switch"
+    ],
+    "install": "npx shadcn@latest add @magicui/animated-theme-toggler",
+    "docs": "https://magicui.design/docs/components/animated-theme-toggler",
+    "deps": [
+      "lucide-react"
+    ]
+  },
+  {
+    "name": "Light Rays",
+    "slug": "light-rays",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Animated light rays shining down from above.",
+    "tags": [
+      "background",
+      "light",
+      "rays",
+      "hero",
+      "ambient",
+      "god-rays"
+    ],
+    "install": "npx shadcn@latest add @magicui/light-rays",
+    "docs": "https://magicui.design/docs/components/light-rays",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Dotted Map",
+    "slug": "dotted-map",
+    "library": "magic-ui",
+    "category": "components",
+    "description": "SVG dotted world map with optional location markers.",
+    "tags": [
+      "map",
+      "world",
+      "dots",
+      "global",
+      "locations",
+      "svg"
+    ],
+    "install": "npx shadcn@latest add @magicui/dotted-map",
+    "docs": "https://magicui.design/docs/components/dotted-map",
+    "deps": [
+      "svg-dotted-map"
+    ]
+  },
+  {
+    "name": "Backlight",
+    "slug": "backlight",
+    "library": "magic-ui",
+    "category": "effects",
+    "description": "Soft blurred glow behind images, video or SVGs, drawn from their own colors.",
+    "tags": [
+      "glow",
+      "backlight",
+      "image",
+      "video",
+      "ambient",
+      "shadow"
+    ],
+    "install": "npx shadcn@latest add @magicui/backlight",
+    "docs": "https://magicui.design/docs/components/backlight",
+    "deps": []
+  },
+  {
+    "name": "Kinetic Text",
+    "slug": "kinetic-text",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Letters shift font weight as the cursor hovers over them.",
+    "tags": [
+      "text",
+      "variable-font",
+      "weight",
+      "hover",
+      "typography",
+      "interactive"
+    ],
+    "install": "npx shadcn@latest add @magicui/kinetic-text",
+    "docs": "https://magicui.design/docs/components/kinetic-text",
+    "deps": []
+  },
+  {
+    "name": "Text 3D Flip",
+    "slug": "text-3d-flip",
+    "library": "magic-ui",
+    "category": "text-animations",
+    "description": "Letters flip in 3D with a stagger on hover.",
+    "tags": [
+      "text",
+      "3d",
+      "flip",
+      "hover",
+      "stagger",
+      "button"
+    ],
+    "install": "npx shadcn@latest add @magicui/text-3d-flip",
+    "docs": "https://magicui.design/docs/components/text-3d-flip",
+    "deps": [
+      "motion"
+    ]
+  },
+  {
+    "name": "Floating 3D Particles",
+    "slug": "floating-3d-particles",
+    "library": "magic-ui",
+    "category": "backgrounds",
+    "description": "Canvas pseudo-3D particle field rotating and drifting with depth.",
+    "tags": [
+      "background",
+      "particles",
+      "3d",
+      "canvas",
+      "depth",
+      "ambient"
+    ],
+    "install": "npx shadcn@latest add @magicui/floating-3d-particles",
+    "docs": "https://magicui.design/docs/components/floating-3d-particles",
+    "deps": []
+  },
+  {
+    "name": "ASCII Object",
+    "slug": "ascii-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Renders a GLB, SVG or image in a studio scene as shape-matched ASCII.",
+    "tags": [
+      "3d",
+      "ascii",
+      "model",
+      "glb",
+      "svg",
+      "logo",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/ascii-object-react",
+    "docs": "https://canvasui.dev/docs/components/ascii-object",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "ASCII Sweep",
+    "slug": "ascii-sweep",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "A glowing ASCII band sweeps across text lines, swapping one panel for another.",
+    "tags": [
+      "ascii",
+      "transition",
+      "swap",
+      "text",
+      "sweep",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/ascii-sweep-react",
+    "docs": "https://canvasui.dev/docs/components/ascii-sweep",
+    "deps": [],
+    "tasteNote": "Tasteful content swap for dev-tool brands; keep sweeps infrequent."
+  },
+  {
+    "name": "Asciify",
+    "slug": "asciify",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Cursor lens redrawing the page beneath it as ASCII characters.",
+    "tags": [
+      "ascii",
+      "lens",
+      "cursor",
+      "retro",
+      "terminal",
+      "text"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/asciify-react",
+    "docs": "https://canvasui.dev/docs/components/asciify",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Bend",
+    "slug": "bend",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Folds the page's top and bottom over virtual edges, like scrolling a cube face.",
+    "tags": [
+      "bend",
+      "scroll",
+      "3d",
+      "fold",
+      "cube",
+      "page"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/bend-react",
+    "docs": "https://canvasui.dev/docs/components/bend",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Grid",
+    "slug": "grid",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page split into 3D tiles rippling in waves around the cursor.",
+    "tags": [
+      "grid",
+      "tiles",
+      "3d",
+      "ripple",
+      "cursor",
+      "page"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/grid-react",
+    "docs": "https://canvasui.dev/docs/components/grid",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Blaze",
+    "slug": "blaze",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Sparks, smoke and heat haze rising over the live page.",
+    "tags": [
+      "fire",
+      "sparks",
+      "smoke",
+      "heat",
+      "overlay",
+      "energy"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/blaze-react",
+    "docs": "https://canvasui.dev/docs/components/blaze",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Bubble",
+    "slug": "bubble",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Glassy metaball droplet trails the cursor, refracting the page under it.",
+    "tags": [
+      "bubble",
+      "metaballs",
+      "glass",
+      "cursor",
+      "refraction",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/bubble-react",
+    "docs": "https://canvasui.dev/docs/components/bubble",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Canvas",
+    "slug": "canvas",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page painted on woven artist canvas; the cursor drags ridges of wet paint.",
+    "tags": [
+      "paint",
+      "canvas",
+      "texture",
+      "art",
+      "halftone",
+      "cursor"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/canvas-react",
+    "docs": "https://canvasui.dev/docs/components/canvas",
+    "deps": [],
+    "tasteNote": "Lovely for art or craft brands; keep text large so it stays legible."
+  },
+  {
+    "name": "Cloth",
+    "slug": "cloth",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Hangs the live page on wind-blown fabric that ripples with cursor strokes.",
+    "tags": [
+      "cloth",
+      "fabric",
+      "wind",
+      "overlay",
+      "page",
+      "fluid"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/cloth-react",
+    "docs": "https://canvasui.dev/docs/components/cloth",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Clouds",
+    "slug": "clouds",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Theme-aware mist that blurs the page and parts with cursor wind.",
+    "tags": [
+      "clouds",
+      "fog",
+      "mist",
+      "blur",
+      "cursor",
+      "reveal"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/clouds-react",
+    "docs": "https://canvasui.dev/docs/components/clouds",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Decrypt Reveal",
+    "slug": "decrypt-reveal",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page shown as ASCII cipher text that decrypts into real UI near the cursor.",
+    "tags": [
+      "ascii",
+      "decrypt",
+      "cipher",
+      "reveal",
+      "hacker",
+      "cursor"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/decrypt-reveal-react",
+    "docs": "https://canvasui.dev/docs/components/decrypt-reveal",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Liquid",
+    "slug": "liquid",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "GPU fluid simulation swirling over your live, clickable page.",
+    "tags": [
+      "fluid",
+      "liquid",
+      "overlay",
+      "cursor",
+      "page",
+      "webgl",
+      "html-in-canvas"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/liquid-react",
+    "docs": "https://canvasui.dev/docs/components/liquid",
+    "deps": [],
+    "tasteNote": "Hero-only spectacle; wrap one section, not the whole app."
+  },
+  {
+    "name": "Magnify",
+    "slug": "magnify",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Sci-fi scanner lens magnifying the page inside a HUD reticle.",
+    "tags": [
+      "magnify",
+      "lens",
+      "hud",
+      "scanner",
+      "sci-fi",
+      "zoom"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/magnify-react",
+    "docs": "https://canvasui.dev/docs/components/magnify",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Dithered Object",
+    "slug": "dithered-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Renders a model, SVG or image through a 1-bit dither.",
+    "tags": [
+      "3d",
+      "dither",
+      "model",
+      "1-bit",
+      "retro",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/dithered-object-react",
+    "docs": "https://canvasui.dev/docs/components/dithered-object",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "Displacement",
+    "slug": "displacement",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Grid displacement pushes the page away from the cursor with color fringing and grain.",
+    "tags": [
+      "displacement",
+      "grid",
+      "cursor",
+      "distortion",
+      "chromatic",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/displacement-react",
+    "docs": "https://canvasui.dev/docs/components/displacement",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Droplets",
+    "slug": "droplets",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Rain droplets run down the screen and refract the page beneath.",
+    "tags": [
+      "rain",
+      "droplets",
+      "water",
+      "weather",
+      "overlay",
+      "refraction"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/droplets-react",
+    "docs": "https://canvasui.dev/docs/components/droplets",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Flame Wrap",
+    "slug": "flame-wrap",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Wraps any element in a border of fire with sparks and heat shimmer.",
+    "tags": [
+      "fire",
+      "border",
+      "flame",
+      "card",
+      "highlight",
+      "energy"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/flame-wrap-react",
+    "docs": "https://canvasui.dev/docs/components/flame-wrap",
+    "deps": [],
+    "tasteNote": "Gaming or event promos only; overpowering in product UI."
+  },
+  {
+    "name": "Force Field",
+    "slug": "force-field",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Energy-shield lattice over the page; clicks fire refracting shockwaves.",
+    "tags": [
+      "shield",
+      "energy",
+      "shockwave",
+      "sci-fi",
+      "click",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/force-field-react",
+    "docs": "https://canvasui.dev/docs/components/force-field",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Particle Object",
+    "slug": "particle-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Rebuilds a model, SVG or image from particles that scatter and spring back.",
+    "tags": [
+      "3d",
+      "particles",
+      "model",
+      "logo",
+      "cursor",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/particle-object-react",
+    "docs": "https://canvasui.dev/docs/components/particle-object",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "Particle Reveal",
+    "slug": "particle-reveal",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page rendered as fine dust that resolves into crisp UI around the cursor.",
+    "tags": [
+      "particles",
+      "dust",
+      "reveal",
+      "cursor",
+      "page",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/particle-reveal-react",
+    "docs": "https://canvasui.dev/docs/components/particle-reveal",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Particle Scroll",
+    "slug": "particle-scroll",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Content below a line dissolves into sand that reassembles as you scroll.",
+    "tags": [
+      "particles",
+      "sand",
+      "scroll",
+      "reveal",
+      "dissolve",
+      "page"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/particle-scroll-react",
+    "docs": "https://canvasui.dev/docs/components/particle-scroll",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Peel",
+    "slug": "peel",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Peels the page back from an edge as the cursor nears, revealing a second layer.",
+    "tags": [
+      "peel",
+      "reveal",
+      "hover",
+      "page-curl",
+      "layer",
+      "surprise"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/peel-react",
+    "docs": "https://canvasui.dev/docs/components/peel",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Glitch",
+    "slug": "glitch",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Broadcast glitch bursts slice the page with RGB splits, then settle.",
+    "tags": [
+      "glitch",
+      "rgb",
+      "broadcast",
+      "distortion",
+      "retro",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/glitch-react",
+    "docs": "https://canvasui.dev/docs/components/glitch",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Glyph Rain",
+    "slug": "glyph-rain",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Glowing glyph streams rain over the page, lighting it as they fall.",
+    "tags": [
+      "matrix",
+      "glyphs",
+      "rain",
+      "glow",
+      "hacker",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/glyph-rain-react",
+    "docs": "https://canvasui.dev/docs/components/glyph-rain",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Frost",
+    "slug": "frost",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Frozen ice pane over the page that melts under the cursor and refreezes.",
+    "tags": [
+      "frost",
+      "ice",
+      "glass",
+      "cursor",
+      "reveal",
+      "winter"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/frost-react",
+    "docs": "https://canvasui.dev/docs/components/frost",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Hex Float",
+    "slug": "hex-float",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page mapped onto floating beveled hex tiles that rise toward the cursor.",
+    "tags": [
+      "hexagon",
+      "tiles",
+      "3d",
+      "float",
+      "perspective",
+      "page"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/hex-float-react",
+    "docs": "https://canvasui.dev/docs/components/hex-float",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Ink Object",
+    "slug": "ink-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Renders a model, SVG or image as rough hand-pressed ink strokes.",
+    "tags": [
+      "3d",
+      "ink",
+      "model",
+      "print",
+      "illustration",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/ink-object-react",
+    "docs": "https://canvasui.dev/docs/components/ink-object",
+    "deps": [
+      "three"
+    ]
+  },
+  {
+    "name": "Retro Dither",
+    "slug": "retro-dither",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Dither lens that pixelates and quantizes the page around the cursor.",
+    "tags": [
+      "dither",
+      "pixel",
+      "lens",
+      "retro",
+      "cursor",
+      "1-bit"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/retro-dither-react",
+    "docs": "https://canvasui.dev/docs/components/retro-dither",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Ripple",
+    "slug": "ripple",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Water ripples spread from each click and refract the live page.",
+    "tags": [
+      "ripple",
+      "water",
+      "click",
+      "refraction",
+      "overlay",
+      "fluid"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/ripple-react",
+    "docs": "https://canvasui.dev/docs/components/ripple",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Shatter",
+    "slug": "shatter",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Page breaks into 3D glass shards that lift and refract around the cursor.",
+    "tags": [
+      "shatter",
+      "glass",
+      "shards",
+      "3d",
+      "cursor",
+      "refraction"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/shatter-react",
+    "docs": "https://canvasui.dev/docs/components/shatter",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "VHS",
+    "slug": "vhs",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Worn VHS playback over the page with tape wave, chroma bleed and grain.",
+    "tags": [
+      "vhs",
+      "retro",
+      "tape",
+      "grain",
+      "glitch",
+      "80s"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/vhs-react",
+    "docs": "https://canvasui.dev/docs/components/vhs",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Laser",
+    "slug": "laser",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "A laser line near the viewport bottom prints content in as you scroll.",
+    "tags": [
+      "laser",
+      "scroll",
+      "reveal",
+      "beam",
+      "sci-fi",
+      "overlay"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/laser-react",
+    "docs": "https://canvasui.dev/docs/components/laser",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Glass",
+    "slug": "glass",
+    "library": "canvas-ui",
+    "category": "effects",
+    "description": "Cursor-following glass lens refracting the page and zooming over targets.",
+    "tags": [
+      "glass",
+      "lens",
+      "refraction",
+      "cursor",
+      "zoom",
+      "crystal-ball"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/glass-react",
+    "docs": "https://canvasui.dev/docs/components/glass",
+    "deps": [],
+    "tasteNote": "Full effect needs Chromium HTML-in-canvas; other browsers get a GPU overlay fallback."
+  },
+  {
+    "name": "Glass Object",
+    "slug": "glass-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Turns a 3D model, SVG or image into floating liquid glass with dispersion.",
+    "tags": [
+      "3d",
+      "glass",
+      "model",
+      "logo",
+      "refraction",
+      "three",
+      "hero"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/glass-object-react",
+    "docs": "https://canvasui.dev/docs/components/glass-object",
+    "deps": [
+      "three"
+    ],
+    "tasteNote": "Premium hero mark when fed your own logo SVG."
+  },
+  {
+    "name": "Liquid Object",
+    "slug": "liquid-object",
+    "library": "canvas-ui",
+    "category": "3d",
+    "description": "Drags a model, SVG or image through swirling liquid with chromatic fringes.",
+    "tags": [
+      "3d",
+      "liquid",
+      "model",
+      "chromatic",
+      "cursor",
+      "three"
+    ],
+    "install": "npx shadcn@latest add @canvas-ui/liquid-object-react",
+    "docs": "https://canvasui.dev/docs/components/liquid-object",
+    "deps": [
+      "three"
+    ]
+  }
+]

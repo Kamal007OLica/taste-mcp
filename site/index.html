@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taste MCP: give your coding agent design taste</title>
+<meta name="description" content="One MCP link that condenses 14 of the most-starred design repos into rules, art directions, an AI-slop audit and a component finder that Claude Code and Codex follow while they build.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2efe7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Taste MCP">
+<meta property="og:description" content="One MCP link that gives Claude Code and Codex design taste, condensed from 14 open-source design repos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kamal007olica.github.io/taste-mcp/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" type="text/markdown" href="taste.md" title="All guides as Markdown">
+</head>
+<body>
+<a class="skip" href="#install">Skip to install</a>
+
+<header class="top">
+  <a class="mark" href="./" aria-label="Taste MCP home"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="6" width="10" height="10" rx="2.5" fill="var(--accent)"/></svg><span>taste</span></a>
+  <nav aria-label="Primary">
+    <a href="#demo">Demo</a>
+    <a href="#tools">Tools</a>
+    <a href="#sources">Sources</a>
+    <a href="#guides">Guides</a>
+    <a class="gh" href="https://github.com/Kamal007OLica/taste-mcp">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Give your agent taste.</h1>
+    <p class="lede">An MCP server for Claude Code, Codex and Cursor. One link condenses 14 of the most-starred design repos into rules, art directions, an AI-slop audit and a component finder. Your agent follows them while it builds, so the first draft stops looking generated.</p>
+
+    <div class="install" id="install">
+      <div class="tabs" role="tablist" aria-label="Client">
+        <button role="tab" aria-selected="true" data-tab="claude">Claude Code</button>
+        <button role="tab" aria-selected="false" data-tab="codex">Codex</button>
+        <button role="tab" aria-selected="false" data-tab="cursor">Cursor</button>
+        <button role="tab" aria-selected="false" data-tab="desktop">Claude app</button>
+        <button role="tab" aria-selected="false" data-tab="vscode">VS Code</button>
+        <button role="tab" aria-selected="false" data-tab="local">Local</button>
+      </div>
+      <div class="cmd" role="tabpanel">
+        <pre><code id="cmd-text">claude mcp add --scope user --transport http taste https://agent-taste.vercel.app/mcp</code></pre>
+        <button class="copy" data-copy="#cmd-text" type="button">Copy</button>
+      </div>
+      <p class="cmd-note" id="cmd-note">Run it once in your terminal. Every Claude Code session in every project then starts with the taste rules loaded.</p>
+      <p class="link-line">The link itself: <code id="mcp-url">https://agent-taste.vercel.app/mcp</code> <button class="copy small" data-copy="#mcp-url" type="button">Copy link</button></p>
+    </div>
+  </section>
+
+  <section class="demo" id="demo" aria-labelledby="demo-title">
+    <div class="section-head">
+      <h2 id="demo-title">Same prompt, one link apart.</h2>
+      <p><em>Default</em> is what an agent ships on its own. <em>With taste</em> is the same hero after the MCP's brief, a direction and an audit pass. Switch directions underneath to restyle it with the real tokens <code>pick_direction</code> returns.</p>
+    </div>
+
+    <div class="compare" id="compare">
+      <figure class="pane-fig">
+        <figcaption>Default</figcaption>
+<!-- taste-ignore-start: the deliberately generic demo pane -->
+<!--pane:before-->
+        <div class="pane before">
+        <div class="b-inner">
+          <span class="b-badge">✨ AI-Powered Platform</span>
+          <h3 class="b-title">Unlock the Power of Seamless Invoicing 🚀</h3>
+          <p class="b-sub">Elevate your workflow with our cutting-edge, AI-driven platform. Revolutionize the way you get paid.</p>
+          <div class="b-ctas"><a class="b-btn primary" href="#demo">Get Started</a><a class="b-btn ghost" href="#demo">Learn More</a></div>
+          <div class="b-cards">
+            <div class="b-card"><span>⚡</span><b>Lightning Fast</b><small>Blazing fast performance</small></div>
+            <div class="b-card"><span>🔒</span><b>Secure</b><small>Enterprise-grade security</small></div>
+            <div class="b-card"><span>📈</span><b>Scalable</b><small>Grows with your business</small></div>
+          </div>
+        </div>
+        <span class="score bad" data-score="before">audit_ui <b>--</b>/100</span>
+        </div>
+<!--/pane:before-->
+<!-- taste-ignore-end -->
+      </figure>
+
+      <figure class="pane-fig">
+        <figcaption>With taste, in <b class="cap-dir">Stationery Desk</b></figcaption>
+<!--pane:after-->
+        <div class="pane after" id="after">
+        <div class="a-nav"><span class="a-logo">Penny</span><span class="a-navlinks"><a href="#demo">Pricing</a><a href="#demo">Sign in</a></span></div>
+        <div class="a-inner">
+          <div class="a-copy">
+            <h3 class="a-title">Send the invoice before the client forgets the work.</h3>
+            <p class="a-sub">Turn a tracked week into a clean invoice in two clicks. Penny follows up on late payments politely, so you never have to.</p>
+            <div class="a-ctas"><a class="a-btn" href="#demo">Create your first invoice</a><a class="a-link" href="#demo">See a sample invoice</a></div>
+          </div>
+          <div class="a-invoice" role="img" aria-label="Sample invoice">
+            <div class="a-inv-head"><span>Invoice 0142</span><span class="a-chip">Paid in 4 days</span></div>
+            <p class="a-client">Studio Oro, Chennai</p>
+            <table>
+              <tr><td>Brand workshop</td><td>6 h</td><td>₹54,000</td></tr>
+              <tr><td>Logo refinements</td><td>3 h</td><td>₹27,000</td></tr>
+              <tr><td>Type licensing</td><td></td><td>₹8,400</td></tr>
+              <tr class="total"><td>Total</td><td></td><td>₹89,400</td></tr>
+            </table>
+          </div>
+        </div>
+        <span class="score good" data-score="after">audit_ui <b>--</b>/100</span>
+        </div>
+<!--/pane:after-->
+      </figure>
+    </div>
+
+    <div class="rail-wrap">
+      <p class="rail-label" id="rail-label">Direction: <b id="dir-name">loading</b> <span id="dir-sig"></span></p>
+      <div class="rail" id="rail" role="radiogroup" aria-labelledby="rail-label"></div>
+    </div>
+    <p class="fineprint">Penny is a made-up product for this demo. Scores are real: both panes are run through <code>audit_ui</code> when the site builds.</p>
+  </section>
+
+  <section class="flow" aria-labelledby="flow-title">
+    <div class="section-head">
+      <h2 id="flow-title">What changes after you paste it.</h2>
+      <p>The server's instructions join your agent's context the moment it connects. When a task touches UI, it runs the loop on its own.</p>
+    </div>
+    <ol class="session" aria-label="Example Claude Code session">
+      <li class="you"><span class="who">you</span><p>Build the landing page for Penny, invoicing for freelancers. Next.js and Tailwind.</p></li>
+      <li><span class="who">taste_brief</span><p>Surface: landing. Product type: invoicing and finance, so trust, clarity and real numbers. Suggested direction plus two alternatives, the 25 rules, and the section order for this category.</p></li>
+      <li><span class="who">pick_direction</span><p>Commits to one direction: fonts, light and dark tokens checked to WCAG AA, radius, motion curve, and the one signature move.</p></li>
+      <li><span class="who">write_design_md</span><p>Saves <code>DESIGN.md</code> at the repo root, so tomorrow's session builds in the same style.</p></li>
+      <li class="agent"><span class="who">builds</span><p>Writes <code>app/page.tsx</code> with the tokens, real copy and every state.</p></li>
+      <!-- taste-ignore-start: names the findings -->
+      <li><span class="who">audit_ui</span><p><b class="num">62</b>/100. Gradient headline text, <code>transition-all</code>, three identical feature cards, off-grid spacing.</p></li>
+      <!-- taste-ignore-end -->
+      <li class="agent"><span class="who">fixes</span><p>Reworks the three findings, screenshots at 390 and 1440px, checks against the review guide.</p></li>
+      <li><span class="who">audit_ui</span><p><b class="num">94</b>/100. Reports the direction it chose and why.</p></li>
+    </ol>
+  </section>
+
+  <section class="tools" id="tools" aria-labelledby="tools-title">
+    <div class="section-head">
+      <h2 id="tools-title">Nine tools, three prompts.</h2>
+      <p>Your agent calls these on its own. You can also run the prompts as slash commands: <code>/mcp__taste__design</code>, <code>/mcp__taste__critique</code>, <code>/mcp__taste__polish</code>.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="index">
+        <thead><tr><th scope="col">Tool</th><th scope="col">What it gives your agent</th></tr></thead>
+        <tbody>
+          <tr><td><code>taste_brief</code></td><td>The starting brief for any UI task: direction, what this product category needs, the non-negotiables, surface and stack notes, and the build loop.</td></tr>
+          <tr><td><code>pick_direction</code></td><td><!--count:directions-->24<!--/count--> art directions with real fonts, contrast-checked light and dark tokens, shape, motion and a signature move.</td></tr>
+          <tr><td><code>write_design_md</code></td><td>A <code>DESIGN.md</code> in Google's format so the taste persists across sessions, agents and teammates.</td></tr>
+          <tr><td><code>audit_ui</code></td><td><!--count:detectors-->55<!--/count--> detectors for AI-looking code plus palette, spacing, radius and type-scale sprawl checks, scored out of 100, with a fix for each finding.</td></tr>
+          <tr><td><code>find_components</code></td><td><!--count:components-->331<!--/count--> components from React Bits, Magic UI and Canvas UI, with the exact install command.</td></tr>
+          <tr><td><code>search_design_db</code></td><td>UI UX Pro Max's database: product types, styles, palettes, font pairings, landing patterns, UX rules, plus per-framework rules for 22 stacks.</td></tr>
+          <tr><td><code>get_brand_reference</code></td><td><!--count:brands-->84<!--/count--> real product design systems (Linear, Stripe, Vercel and more) as DESIGN.md, to study rather than copy.</td></tr>
+          <tr><td><code>get_guide</code></td><td><!--count:guides-->19<!--/count--> condensed guides, from typography to motion to the pre-ship review.</td></tr>
+          <tr><td><code>list_sources</code></td><td>Where every rule came from, and how to install the original when you want the full depth.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sources" id="sources" aria-labelledby="sources-title">
+    <div class="section-head">
+      <h2 id="sources-title">Condensed from fourteen repos.</h2>
+      <p>Read, deduplicated and rewritten as terse rules with numbers. Each one is credited, and each is worth installing on its own when you need more depth.</p>
+    </div>
+    <ol class="src-list">
+<!--sources:start-->
+      <li><span class="src-n">1</span><span class="src-name"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">UI/UX Pro Max Skill</a></span><span class="src-gives">A searchable design database: 190+ product types mapped to styles, landing patterns and palettes, 70+ font pairings, 100+ UX rules and per-framework guidance. Bundled here and searchable with search_design_db.</span><span class="src-meta">★ 140.6k · MIT</span></li>
+      <li><span class="src-n">2</span><span class="src-name"><a href="https://github.com/VoltAgent/awesome-design-md">Awesome DESIGN.md</a></span><span class="src-gives">70+ DESIGN.md files that document real products' design systems (Linear, Stripe, Vercel...). Fetched live by get_brand_reference.</span><span class="src-meta">★ 123.6k · MIT</span></li>
+      <li><span class="src-n">3</span><span class="src-name"><a href="https://github.com/nexu-io/open-design">Open Design</a></span><span class="src-gives">A local design workspace for agents (prototypes, sites, decks) plus a craft library: typography, colour, accessibility, state coverage, anti-slop rules. Its craft rules are condensed into the foundation guides.</span><span class="src-meta">★ 104.1k · Apache-2.0</span></li>
+      <li><span class="src-n">4</span><span class="src-name"><a href="https://github.com/Leonxlnx/taste-skill">Taste Skill</a></span><span class="src-gives">Art direction, references and a visual check in the browser: tells, type, colour, layout, copy and critique references. Condensed into anti-slop and the foundation guides.</span><span class="src-meta">★ 102.7k · MIT</span></li>
+      <li><span class="src-n">5</span><span class="src-name"><a href="https://github.com/pbakaus/impeccable">Impeccable</a></span><span class="src-gives">Rules and commands to spot AI-looking UI and fix it, with a detector engine. Its patterns power audit_ui and the workflow guide.</span><span class="src-meta">★ 88.4k · Apache-2.0</span></li>
+      <li><span class="src-n">6</span><span class="src-name"><a href="https://github.com/DavidHDev/react-bits">React Bits</a></span><span class="src-gives">215+ animated React components (text, backgrounds, effects). Searchable with find_components.</span><span class="src-meta">★ 50.2k · MIT + Commons Clause</span></li>
+      <li><span class="src-n">7</span><span class="src-name"><a href="https://github.com/emilkowalski/skills">Skills for Designers and Engineers</a></span><span class="src-gives">Emil Kowalski's skills for animation and small UI details: easing, durations, origin-aware motion, edge cases. Condensed into motion and native-feel.</span><span class="src-meta">★ 49.7k · MIT</span></li>
+      <li><span class="src-n">8</span><span class="src-name"><a href="https://github.com/Nutlope/hallmark">Hallmark</a></span><span class="src-gives">Deals one of 48 themes, picks from 21 page shapes and runs hard checks in a real browser so pages don't look machine-made. Its themes, shapes and gates shape pick_direction, layouts and review.</span><span class="src-meta">★ 35k · MIT</span></li>
+      <li><span class="src-n">9</span><span class="src-name"><a href="https://github.com/google-labs-code/design.md">Google DESIGN.md</a></span><span class="src-gives">One file that describes a whole design system for agents, with a linter. write_design_md emits it.</span><span class="src-meta">★ 28.5k · Apache-2.0</span></li>
+      <li><span class="src-n">10</span><span class="src-name"><a href="https://github.com/magicuidesign/magicui">Magic UI</a></span><span class="src-gives">Animated components and effects you copy into your app via shadcn. Searchable with find_components.</span><span class="src-meta">★ 22.9k · MIT</span></li>
+      <li><span class="src-n">11</span><span class="src-name"><a href="https://github.com/greensock/gsap-skills">GSAP Skills</a></span><span class="src-gives">Official GreenSock skills: core, timelines, ScrollTrigger, React and performance. Condensed into gsap-scroll.</span><span class="src-meta">★ 17.2k · MIT</span></li>
+      <li><span class="src-n">12</span><span class="src-name"><a href="https://github.com/oso95/scroll-world">Scroll World</a></span><span class="src-gives">One skill that turns a brand into a 3D fly-through landing page scrubbed by scroll (needs paid video-generation credits and ffmpeg). Summarised in gsap-scroll.</span><span class="src-meta">★ 10.5k · MIT</span></li>
+      <li><span class="src-n">13</span><span class="src-name"><a href="https://github.com/DavidHDev/canvas-ui">Canvas UI</a></span><span class="src-gives">35 WebGL and WebGPU effects running over real, clickable HTML, installed through a shadcn registry. Searchable with find_components.</span><span class="src-meta">★ 5.1k · MIT + Commons Clause</span></li>
+      <li><span class="src-n">14</span><span class="src-name"><a href="https://github.com/enesozturk/dimensional-drawing">Dimensional Drawing</a></span><span class="src-gives">Turns a UI component into an Apple-style technical drawing with paddings, gaps and radii. Summarised in dimensional-drawing.</span><span class="src-meta">★ 715 · MIT</span></li>
+<!--sources:end-->
+    </ol>
+  </section>
+
+  <section class="rules" aria-labelledby="rules-title">
+    <div class="section-head">
+      <h2 id="rules-title">The 25 rules it never lets go of.</h2>
+      <p>These ride along in your agent's context the whole session. Everything else in the kit elaborates one of them.</p>
+    </div>
+<!-- taste-ignore-start: the rules quote the patterns they ban -->
+<!--rules:start-->
+    <div class="rule-groups">
+      <div class="rule-group"><h3>Decide before you draw</h3><ol style="--start:0"><li><span><strong>Write the one-line brief first:</strong> who it is for, and the one thing the screen must make them feel or do. If you cannot write it, ask before building.</span></li><li><span><strong>Commit to one direction</strong> (<code>pick_direction</code>) with a named signature move: a type treatment, a layout idea, a material, a motion moment. Generic is what a non-decision looks like.</span></li><li><span><strong>DESIGN.md is law.</strong> If the repo has one, follow it. If it does not, write one (<code>write_design_md</code>) before the second screen, so every later session builds in the same style.</span></li></ol></div>
+      <div class="rule-group"><h3>Type</h3><ol style="--start:3"><li><span><strong>Two families at most</strong> (plus an optional mono). Inter, Roboto, Arial or bare system-ui as the only face reads as &quot;default&quot;; if you keep a neutral sans for UI, pair it with a display face that has a voice, or set it with conviction (tight tracking, big size contrast).</span></li><li><span><strong>Use a modular scale:</strong> about 1.2 for apps, 1.25 to 1.333 for marketing. Display tracking -0.02em to -0.04em; body 0. All-caps only for short functional labels (table headers, tags) at 11 to 12px with +0.06em to +0.1em; never a tiny tracked-caps eyebrow above every heading.</span></li><li><span><strong>Readable text:</strong> body 16 to 18px on the web (13 to 14px only for dense app UI), line-height 1.5 to 1.65 for body and 1.05 to 1.2 for headings, line length 45 to 75 characters. Tabular numerals wherever numbers align.</span></li><li><span><strong>Hierarchy comes from size and weight,</strong> not colour. Three weights at most.</span></li></ol></div>
+      <div class="rule-group"><h3>Colour</h3><ol style="--start:7"><li><span><strong>Tinted neutrals plus one accent.</strong> Give the grey ramp a slight warm or cool hue, and keep the accent to roughly 10% of the screen: primary action, focus, the key datum.</span></li><li><span><strong>No pure #000 on #fff:</strong> use near-black (#111 to #1c1c1c) and an off-white. Text contrast 4.5:1, large text and UI parts 3:1.</span></li><li><span><strong>No purple-to-blue gradients, no gradient-filled headline text, no rainbow glows.</strong> A gradient is fine when it stays in one hue family (a few % of lightness) or is part of the actual brand.</span></li><li><span><strong>Dark mode is not inverted:</strong> raise surfaces with lighter tones instead of shadows, desaturate the accent a little, and use off-white text (about #e6e6e6), not #fff.</span></li></ol></div>
+      <div class="rule-group"><h3>Layout and space</h3><ol style="--start:11"><li><span><strong>4px grid.</strong> Scale 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Section padding 96 to 160px on desktop, 56 to 96px on mobile.</span></li><li><span><strong>Proximity groups things:</strong> the space inside a group is at most half the space between groups.</span></li><li><span><strong>Few alignment edges.</strong> Left-align text by default; centre only short hero lines and single CTAs.</span></li><li><span><strong>Break the template.</strong> Avoid hero, three identical icon cards, logo strip, testimonials, CTA in that order. Vary section anatomy, use asymmetry, and give each screen one oversized element.</span></li><li><span><strong>Contain it:</strong> page content about 1200 to 1280px wide, text columns 600 to 720px.</span></li></ol></div>
+      <div class="rule-group"><h3>Surfaces and components</h3><ol style="--start:16"><li><span><strong>One shape family:</strong> two or three radii, and a nested radius equals the outer radius minus the padding. Separate with borders or with shadows, not both at full strength; shadows are soft, layered, low opacity and tinted toward the background.</span></li><li><span><strong>Icons:</strong> one family, one stroke width (1.5px at 24px), sized to the text they sit beside. Never emoji as UI icons.</span></li><li><span><strong>Every control has hover, focus-visible (2px ring, 2px offset), active (scale 0.97 or one shade darker) and disabled states.</strong> Touch targets are at least 44px.</span></li><li><span><strong>Design the states,</strong> not only the happy path: empty (with a first action), loading (skeletons shaped like the content), error (what happened and how to fix it), success.</span></li></ol></div>
+      <div class="rule-group"><h3>Motion</h3><ol style="--start:20"><li><span><strong>Animate to explain change, not to decorate.</strong> 150 to 250ms for UI and 300 to 500ms for large surfaces; ease-out on enter, for example cubic-bezier(0.23, 1, 0.32, 1); never ease-in for UI; animate transform and opacity only; never <code>transition: all</code>; honour prefers-reduced-motion.</span></li><li><span><strong>One signature motion moment per page.</strong> No bouncing or pulsing CTAs, and no fade-up on every section.</span></li></ol></div>
+      <div class="rule-group"><h3>Copy and content</h3><ol style="--start:22"><li><span><strong>Specific beats clever:</strong> name the user, the job and the number. Banned: &quot;Unlock&quot;, &quot;Elevate&quot;, &quot;Seamless&quot;, &quot;Revolutionize&quot;, &quot;Supercharge&quot;, &quot;cutting-edge&quot;, &quot;In today&#39;s fast-paced world&quot;, and a &quot;Get Started&quot; plus &quot;Learn More&quot; pair.</span></li><li><span><strong>Real content only:</strong> real product screenshots, realistic data, honest proof. No lorem ipsum, no invented logos, stats or testimonials.</span></li></ol></div>
+      <div class="rule-group"><h3>Verify</h3><ol style="--start:24"><li><span><strong>It is not designed until you have looked at it.</strong> Screenshot at 390px and 1440px, squint for a single focal point, run <code>audit_ui</code>, fix, and look again.</span></li></ol></div>
+    </div>
+<!--rules:end-->
+<!-- taste-ignore-end -->
+  </section>
+
+  <section class="guides" id="guides" aria-labelledby="guides-title">
+    <div class="section-head">
+      <h2 id="guides-title">Read the guides.</h2>
+      <p>Each one is also plain Markdown, and <a href="taste.md">taste.md</a> has every guide in a single file. If you'd rather not run an MCP, point your agent at that URL.</p>
+    </div>
+    <ul class="guide-list">
+<!--guides:start-->
+      <li><a href="guides/core.html"><b>Core taste rules</b><span>The 25 rules that matter most, in priority order. Every other guide in this kit elaborates one of them.</span></a></li>
+      <li><a href="guides/workflow.html"><b>How a tasteful build runs</b><span>Condensed from: Impeccable (https://github.com/pbakaus/impeccable), Taste Skill…</span></a></li>
+      <li><a href="guides/anti-slop.html"><b>The AI-UI tells and their fixes</b><span>Condensed from: Impeccable (https://github.com/pbakaus/impeccable), Open Design…</span></a></li>
+      <li><a href="guides/typography.html"><b>Typography</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design…</span></a></li>
+      <li><a href="guides/color.html"><b>Color</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design…</span></a></li>
+      <li><a href="guides/layout-spacing.html"><b>Layout and spacing</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design…</span></a></li>
+      <li><a href="guides/layouts.html"><b>Layouts: page macrostructures</b><span>Condensed from: Hallmark (https://github.com/Nutlope/hallmark)</span></a></li>
+      <li><a href="guides/motion.html"><b>Motion</b><span>Condensed from: emilkowalski/skills (https://github.com/emilkowalski/skills): animate, review-animations,…</span></a></li>
+      <li><a href="guides/gsap-scroll.html"><b>GSAP, Scroll Worlds and WebGL over HTML</b><span>Condensed from: greensock/gsap-skills (https://github.com/greensock/gsap-skills), oso95/scroll-world…</span></a></li>
+      <li><a href="guides/components.html"><b>Animated Components, Used With Taste</b><span>Condensed from: React Bits (https://github.com/DavidHDev/react-bits), Magic UI…</span></a></li>
+      <li><a href="guides/states-accessibility.html"><b>States and accessibility</b><span>Condensed from: Open Design (https://github.com/nexu-io/open-design), Taste Skill…</span></a></li>
+      <li><a href="guides/responsive-mobile.html"><b>Responsive and mobile</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), UI UX Pro Max…</span></a></li>
+      <li><a href="guides/native-feel.html"><b>Native Feel</b><span>Condensed from: emilkowalski/skills (https://github.com/emilkowalski/skills): apple-design, mobile-native,…</span></a></li>
+      <li><a href="guides/dark-mode-dataviz.html"><b>Dark mode and data viz</b><span>Condensed from: Hallmark (https://github.com/Nutlope/hallmark), Taste Skill…</span></a></li>
+      <li><a href="guides/imagery-texture.html"><b>Imagery, icons and texture</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Hallmark…</span></a></li>
+      <li><a href="guides/copy.html"><b>Copy</b><span>Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design…</span></a></li>
+      <li><a href="guides/design-md.html"><b>DESIGN.md, the Design Brief Agents Can Read</b><span>Condensed from: google-labs-code/design.md (https://github.com/google-labs-code/design.md),…</span></a></li>
+      <li><a href="guides/dimensional-drawing.html"><b>Dimensional Drawing</b><span>Condensed from: enesozturk/dimensional-drawing (https://github.com/enesozturk/dimensional-drawing)</span></a></li>
+      <li><a href="guides/review.html"><b>Pre-ship visual review</b><span>Condensed from: Hallmark (https://github.com/Nutlope/hallmark)</span></a></li>
+<!--guides:end-->
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>This page scores <!--count:self-->100<!--/count-->/100 on its own <code>audit_ui</code>. Made by <a href="https://justkamalthings.com">Kamal</a>. MIT licensed. The bundled UI UX Pro Max data is MIT; React Bits and Canvas UI are MIT plus Commons Clause and are only linked, never copied.</p>
+  <p><a href="https://github.com/Kamal007OLica/taste-mcp">Source on GitHub</a> · <a href="llms.txt">llms.txt</a> · <a href="taste.md">taste.md</a></p>
+</footer>
+
+<script id="kb-data" type="application/json">{"audit":{"before":0,"after":100},"demoDirection":"stationery-desk","directions":[{"id":"standfirst-press","name":"Standfirst Press","genre":"editorial","signature":"Condensed 800 grotesk heads over a serif standfirst, separated by a single 4px ink rule: the head, the rule and the standfirst do all the work, no ornament","type":{"display":"Bricolage Grotesque 800, wdth 75 (condensed), opsz 96","body":"Source Serif 4 400 (standfirst and reading), 600 for lead-ins","googleFonts":"family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap"},"palette":{"bg":"#FAF8F3","surface":"#F1EEE6","text":"#16181B","muted":"#5B5E63","border":"#DDD8CD","accent":"#1E7A4C","accentInk":"#FAF8F3","dark":{"bg":"#141614","surface":"#1D201D","text":"#ECEAE3","muted":"#A3A69F","border":"#343833","accent":"#4CC38A","accentInk":"#0F1A14"}},"shape":{"radius":"0 everywhere (square corners)"}},{"id":"morning-broadsheet","name":"Morning Broadsheet","genre":"editorial","signature":"Justified multi-column body under hairline column rules and a double rule masthead; brick red is a signal that never fills a surface","type":{"display":"Zilla Slab 700","body":"Spectral 400, 18px, italic only in running prose","googleFonts":"family=Zilla+Slab:wght@500;700&family=Spectral:ital,wght@0,400;0,600;1,400&family=Libre+Franklin:wght@400;600&display=swap"},"palette":{"bg":"#F1EEE6","surface":"#E8E4DA","text":"#1C1A17","muted":"#5A564F","border":"#CFC9BC","accent":"#9E3524","accentInk":"#F7F4EC","dark":{"bg":"#171513","surface":"#211E1B","text":"#EAE5DA","muted":"#A8A296","border":"#3A3530","accent":"#E0775F","accentInk":"#1A0F0B"}},"shape":{"radius":"0"}},{"id":"swiss-field","name":"Swiss Field","genre":"modern-minimal","signature":"Full-palette posture: ultramarine floods whole fields (30-50% of a screen), one Swiss red #E2231A (dark mode #FF5A4F) marks the single chosen thing; heads hang from column lines, never centred","type":{"display":"Radio Canada Big 700, sentence case","body":"Radio Canada 400 / 500","googleFonts":"family=Radio+Canada+Big:wght@400..700&family=Radio+Canada:wght@400;500&display=swap"},"palette":{"bg":"#FBFBF8","surface":"#F0F0EC","text":"#12151F","muted":"#545966","border":"#D9DAD6","accent":"#1D3FD6","accentInk":"#FBFBF8","dark":{"bg":"#10131C","surface":"#181C28","text":"#F0F1F4","muted":"#A2A8B6","border":"#2C3242","accent":"#7D93FF","accentInk":"#0C1022"}},"shape":{"radius":"0"}},{"id":"keycap-precision","name":"Keycap Precision","genre":"technical","signature":"Buttons are keycaps with a real 3px bottom edge; code runs on a graphite panel (#1B2130) with one syntax tint, never a rainbow","type":{"display":"Familjen Grotesk 600, line-height 1.02","body":"IBM Plex Sans 400 / 500","googleFonts":"family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"},"palette":{"bg":"#F7F9FB","surface":"#EEF2F6","text":"#161D2B","muted":"#536075","border":"#DCE2EA","accent":"#2453D9","accentInk":"#F7F9FB","dark":{"bg":"#10141C","surface":"#171C26","text":"#E6EAF1","muted":"#98A3B5","border":"#283041","accent":"#7EA2FF","accentInk":"#0B1020"}},"shape":{"radius":"6px inputs / 8px panels; cut corners (16px bevel) on panels where corner-shape is supported"}},{"id":"phosphor-shell","name":"Phosphor Shell","genre":"technical","signature":"The hero IS a real command and its real output, typed once; a dim wash of the phosphor marks added/selected lines like a diff","type":{"display":"Martian Mono 600 at wdth 112.5 (wide heads)","body":"Martian Mono 400 at wdth 87.5 (narrow text), 15-16px","googleFonts":"family=Martian+Mono:wdth,wght@75..112.5,300..700&display=swap"},"palette":{"bg":"#F2F5F0","surface":"#E6EBE3","text":"#142017","muted":"#4E5C51","border":"#CBD4C8","accent":"#1C7A3A","accentInk":"#F2F5F0","dark":{"bg":"#0F1411","surface":"#161D18","text":"#D7E4D6","muted":"#8FA191","border":"#26302A","accent":"#7CF29A","accentInk":"#0B140E"}},"shape":{"radius":"0-2px"}},{"id":"dusk-ledger","name":"Dusk Ledger","genre":"modern-minimal","signature":"A real photograph of land at dusk behind the hero with the product in one smoked panel beside the head; apricot #F2A66B (as a fill with ink text; #A65A1C as text in light mode) is reserved for the single 'needs attention' state","type":{"display":"Wix Madefor Display 500 (a quiet weight)","body":"Wix Madefor Text 400 / 500","googleFonts":"family=Wix+Madefor+Display:wght@500;600&family=Wix+Madefor+Text:wght@400;500&family=Geist+Mono:wght@400;500&display=swap"},"palette":{"bg":"#F6F4EF","surface":"#FDFCFA","text":"#171B26","muted":"#575D6B","border":"#DFDBD2","accent":"#4152C9","accentInk":"#FDFCFA","dark":{"bg":"#161A24","surface":"#1E2330","text":"#E9EBF0","muted":"#A2A8B8","border":"#2E3445","accent":"#A9B4FF","accentInk":"#141833"}},"shape":{"radius":"10px panels / 8px inputs / 999px segmented controls"}},{"id":"instrument-panel","name":"Instrument Panel","genre":"technical","signature":"Amber means a person acted, cool blue #3E6FB0 (dark mode #7FA6E0) means an instrument measured: two meanings on one neutral graphite/grey ground, and the one object the tool is known by (the queue, the ledger, the timeline) leads the screen","type":{"display":"Host Grotesk 600 (page titles 24-28px, never fluid)","body":"Host Grotesk 400 / 500, 14px in tables, 16px in forms and prose","googleFonts":"family=Host+Grotesk:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap"},"palette":{"bg":"#F4F5F7","surface":"#FDFDFE","text":"#15181D","muted":"#59606B","border":"#DADDE2","accent":"#A35200","accentInk":"#FFFDF8","dark":{"bg":"#15171B","surface":"#1D2025","text":"#E6E8EB","muted":"#9DA3AD","border":"#2D3138","accent":"#F2A93B","accentInk":"#1A1204"}},"shape":{"radius":"4px inputs / 6px panels"}},{"id":"stationery-desk","name":"Stationery Desk","genre":"modern-minimal","signature":"Records are stationery (sheets, envelopes, index cards lit from the left) and coral is pressed into the stock only for the one 'settled' state (paid, booked, done)","type":{"display":"Rethink Sans 700","body":"Rethink Sans 400 / 500 (one family)","googleFonts":"family=Rethink+Sans:wght@400;500;700&family=Geist+Mono:wght@400&display=swap"},"palette":{"bg":"#F7F4F1","surface":"#FFFDFB","text":"#1F1B19","muted":"#625B56","border":"#E2DCD6","accent":"#C0412A","accentInk":"#FFF9F5","dark":{"bg":"#1A1716","surface":"#24201E","text":"#EFE9E4","muted":"#ABA29B","border":"#3A3431","accent":"#FF8A70","accentInk":"#2A0E07"}},"shape":{"radius":"12px cards / 10px inputs / 999px chips"}},{"id":"lamplit-console","name":"Lamplit Console","genre":"atmospheric","signature":"The product is the picture: a real prompt and a real streamed answer in the hero; warmth rationed to molten brass and one rose verb (#E68FA6 dark, #A8385A light) on a cool violet-black","type":{"display":"Newsreader 400 at opsz 72, set all lowercase, one step larger than usual","body":"Geist 400 / 500","googleFonts":"family=Newsreader:opsz,wght@6..72,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"},"palette":{"bg":"#F6F4F8","surface":"#EEEBF2","text":"#1A1622","muted":"#5D5768","border":"#DCD7E3","accent":"#7A4F0E","accentInk":"#FBF8F2","dark":{"bg":"#15121C","surface":"#1E1A27","text":"#F1EEF5","muted":"#A69FB3","border":"#312B3D","accent":"#E2B04A","accentInk":"#1E1503"}},"shape":{"radius":"12px wells / 999px hairline pills for controls"}},{"id":"midnight-instrument","name":"Midnight Instrument","genre":"atmospheric","signature":"Midnight blue to every edge (no black), photographs treated as moonlight (shadows in the ground's blue, highlights in the ink), expanded-light titles like a film credit","type":{"display":"Mona Sans 300 at wdth 125 (expanded, like film titles)","body":"Mona Sans 400 at wdth 100","googleFonts":"family=Mona+Sans:wdth,wght@75..125,200..900&display=swap"},"palette":{"bg":"#F3F6FA","surface":"#E8EEF5","text":"#0F1A2C","muted":"#4F5D73","border":"#D3DCE7","accent":"#0B63B8","accentInk":"#F3F6FA","dark":{"bg":"#0E1626","surface":"#152036","text":"#E8EEF8","muted":"#9AA9C2","border":"#22304A","accent":"#4DB2FF","accentInk":"#04121F"}},"shape":{"radius":"0-4px, square-cut"}},{"id":"safelight","name":"Safelight","genre":"atmospheric","signature":"Black-and-white photographs printed deeper than a warm-black ground (so they sit as objects), with one amber safelight colour for links and the plate number","type":{"display":"Sofia Sans Extra Condensed 200-300, uppercase hairline capitals","body":"Barlow 400 / 500, 16-17px","googleFonts":"family=Sofia+Sans+Extra+Condensed:wght@200;300;600&family=Barlow:wght@400;500&display=swap"},"palette":{"bg":"#F4F1EC","surface":"#EAE5DD","text":"#1C1814","muted":"#5E574E","border":"#D6CFC4","accent":"#9C5B0B","accentInk":"#FBF7F0","dark":{"bg":"#15120F","surface":"#1E1A16","text":"#EEE8DE","muted":"#A69D90","border":"#332D27","accent":"#E8A23A","accentInk":"#1B1003"}},"shape":{"radius":"0"}},{"id":"slow-light","name":"Slow Light","genre":"organic","signature":"Light-weight tight heads over a machined control that really sets something (a timer, a level, a sound mix), with the hour drawn as slow light behind it; dark mode is the night version of the same page","type":{"display":"Albert Sans 300, upright and tight","body":"Figtree 400 in a soft grey ink, 17px","googleFonts":"family=Albert+Sans:wght@300;400&family=Figtree:wght@400;500&display=swap"},"palette":{"bg":"#FAF8F4","surface":"#F2EFE9","text":"#1E2229","muted":"#5E636B","border":"#E1DDD5","accent":"#1F6F78","accentInk":"#FAF8F4","dark":{"bg":"#11141C","surface":"#191D27","text":"#E7E9EE","muted":"#9EA4B0","border":"#2A2F3B","accent":"#6CC7CF","accentInk":"#0A1A1C"}},"shape":{"radius":"16px cards / 999px controls"}},{"id":"daylight-dose","name":"Daylight Dose","genre":"modern-minimal","signature":"Doses and times set in DM Mono like a pharmacy label inside translucent tinted bands (like a pill organiser); one pharmacy green does every signal","type":{"display":"Schibsted Grotesk 600","body":"Instrument Sans 400 / 500","googleFonts":"family=Schibsted+Grotesk:wght@500;600&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap"},"palette":{"bg":"#FAF9F4","surface":"#F1F0E8","text":"#14211B","muted":"#56615A","border":"#DEDDD3","accent":"#0B7A4B","accentInk":"#FAF9F4","dark":{"bg":"#121814","surface":"#1A221D","text":"#E5ECE7","muted":"#9CA9A1","border":"#2B352F","accent":"#5CD69A","accentInk":"#07170F"}},"shape":{"radius":"14px tinted bands / 12px moulded controls"}},{"id":"cut-paper","name":"Cut Paper","genre":"playful","signature":"Full palette with jobs: pear #CDE85A = action (ink text), blue #2F5BD3 = links (dark mode #8FA8FF), coral #F0624D = one loud moment (fill with ink text), mint = growth; all on grained cream cut paper","type":{"display":"Grandstander 800","body":"Andika 400 / 700 (built for beginning readers: single-storey a and g), 18px","googleFonts":"family=Grandstander:wght@600;800&family=Andika:wght@400;700&display=swap"},"palette":{"bg":"#FBF7E9","surface":"#FFFDF5","text":"#1B2340","muted":"#565C73","border":"#E6DFC8","accent":"#CDE85A","accentInk":"#1B2340","dark":{"bg":"#161A2B","surface":"#1F2438","text":"#F3F0E2","muted":"#A9ADBF","border":"#343A52","accent":"#D4EE6A","accentInk":"#182010"}},"shape":{"radius":"14px cards / 12px controls; one torn paper edge per page"}},{"id":"night-cabinet","name":"Night Cabinet","genre":"playful","signature":"Aubergine CRT ground with two inks taking turns like two players: ember #FF7A2E and acid #C6FF3D (acid is a fill with ink text only); key art or trailer is the hero, store buttons right under the head","type":{"display":"Bungee 400 capitals, RGB split by 1-2px text-shadow on the hero line only","body":"Chivo 400 / 600","googleFonts":"family=Bungee&family=Chivo:wght@400;600&family=Silkscreen&display=swap"},"palette":{"bg":"#F6F1F8","surface":"#ECE3F0","text":"#1E1226","muted":"#5F516A","border":"#DCCFE2","accent":"#B8460F","accentInk":"#FFF7F2","dark":{"bg":"#1C1124","surface":"#28182F","text":"#EFE6F7","muted":"#AE9CBD","border":"#3E2A49","accent":"#FF7A2E","accentInk":"#1C0B02"}},"shape":{"radius":"0-4px"}},{"id":"die-cut-sticker","name":"Die-Cut Sticker","genre":"playful","signature":"Every raised surface is a die-cut sticker: thick white edge on a hard ink offset, filled flat in hot pink #EE4C84 or lime #B8E62E, always with ink #1D1A17 type (never white on pink)","type":{"display":"Bowlby One SC 400 (small caps by design)","body":"Sofia Sans 400 / 600","googleFonts":"family=Bowlby+One+SC&family=Sofia+Sans:wght@400;600;800&display=swap"},"palette":{"bg":"#F8F4EC","surface":"#FFFDF8","text":"#1D1A17","muted":"#5E5850","border":"#DED6C8","accent":"#EE4C84","accentInk":"#1D1A17","dark":{"bg":"#1A1714","surface":"#25211D","text":"#F4EEE4","muted":"#ADA597","border":"#3A342E","accent":"#FF5C8F","accentInk":"#1A0710"}},"shape":{"radius":"16px raised surfaces / 999px controls"}},{"id":"raw-poster","name":"Raw Poster","genre":"brutalist","signature":"A drawn grid of 3px rules with one word or number set huge inside a box as the ornament; acid yellow only ever fills (never text on paper)","type":{"display":"Libre Franklin 900, uppercase","body":"Libre Franklin 400 / 600 (one family)","googleFonts":"family=Libre+Franklin:wght@400;600;900&display=swap"},"palette":{"bg":"#FAFAF5","surface":"#F0F0E8","text":"#121210","muted":"#4F4F49","border":"#121210","accent":"#E4F33A","accentInk":"#121210","dark":{"bg":"#121210","surface":"#1C1C19","text":"#F3F3EC","muted":"#ABABA2","border":"#F3F3EC","accent":"#E4F33A","accentInk":"#121210"}},"shape":{"radius":"0"}},{"id":"fighting-red","name":"Fighting Red","genre":"editorial","signature":"Poster-size caps against a small quiet body; red is spent once per screen (the one action, or one red word in the hero only, stamped as the theme's exception)","type":{"display":"Anton 400 capitals at poster size, leaded tight","body":"Public Sans 400 / 600, quiet, 17px","googleFonts":"family=Anton&family=Public+Sans:wght@400;600&display=swap"},"palette":{"bg":"#F4EFE6","surface":"#EAE3D7","text":"#1A1511","muted":"#5C544B","border":"#D3CABC","accent":"#C8241B","accentInk":"#FBF6EE","dark":{"bg":"#17130F","surface":"#211C17","text":"#F2ECE2","muted":"#ABA396","border":"#3A322A","accent":"#E5352B","accentInk":"#1A0604"}},"shape":{"radius":"0"}},{"id":"oat-and-leaf","name":"Oat & Leaf","genre":"organic","signature":"Every neutral leans green and the produce keeps its true daylight colour; a seasonal table (what is ready now) set in Vollkorn old-style figures","type":{"display":"Vollkorn 600 with old-style figures (font-variant-numeric: oldstyle-nums)","body":"Hanken Grotesk 400 / 500, 17px","googleFonts":"family=Vollkorn:wght@500;600&family=Hanken+Grotesk:wght@400;500&display=swap"},"palette":{"bg":"#F5F2E8","surface":"#ECE8DB","text":"#1B2A1F","muted":"#55614F","border":"#D8D3C2","accent":"#2D7A3A","accentInk":"#F5F2E8","dark":{"bg":"#131A15","surface":"#1B241D","text":"#E9EDE2","muted":"#A1AB9C","border":"#2C372E","accent":"#8BD07A","accentInk":"#0E1A0C"}},"shape":{"radius":"4px"}},{"id":"limewash-atelier","name":"Limewash Atelier","genre":"luxury","signature":"Matted, warm-daylight product prints on limewash paper; one cool slate signal nearly as dark as the umber ink (luxury through restraint, never gold)","type":{"display":"Bodoni Moda 400 at opsz 96 (razor hairlines)","body":"Jost 400 / 500, 16-17px, line-height 1.65","googleFonts":"family=Bodoni+Moda:opsz,wght@6..96,400..500&family=Jost:wght@400;500&display=swap"},"palette":{"bg":"#F3EFE8","surface":"#EAE4DA","text":"#2A2019","muted":"#6A5E53","border":"#D9D1C4","accent":"#34465A","accentInk":"#F3EFE8","dark":{"bg":"#171411","surface":"#201C18","text":"#EDE6DB","muted":"#ACA294","border":"#352F29","accent":"#A9BCD1","accentInk":"#121A24"}},"shape":{"radius":"2px"}},{"id":"proof-sheet","name":"Proof Sheet","genre":"editorial","signature":"The work photographed in true colour inside crop marks, with cadmium orange redlines showing the system (metric guides, clear space): the studio's process is the ornament","type":{"display":"Hedvig Letters Serif 400 (opsz 24)","body":"Geist 400 / 500","googleFonts":"family=Hedvig+Letters+Serif:opsz@12..24&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap"},"palette":{"bg":"#F6F7F8","surface":"#ECEEF0","text":"#161B26","muted":"#565D69","border":"#D8DCE1","accent":"#C24A12","accentInk":"#FFF8F3","dark":{"bg":"#12151C","surface":"#1A1E27","text":"#E9ECF1","muted":"#9EA5B2","border":"#2A303C","accent":"#FF7A3D","accentInk":"#1A0A02"}},"shape":{"radius":"0"}},{"id":"cyanotype","name":"Cyanotype","genre":"technical","signature":"Drenched Prussian-blue sheet where the white line is the only signal; photographs printed as cyanotypes (blue shadows, white highlights) and every figure carries its unit","type":{"display":"Chakra Petch 600, uppercase drafted capitals","body":"IBM Plex Sans 400 / 500","googleFonts":"family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap"},"palette":{"bg":"#F3F6FA","surface":"#E7EDF5","text":"#0F2747","muted":"#4A5D78","border":"#C9D5E5","accent":"#1D4E9E","accentInk":"#F3F6FA","dark":{"bg":"#173A6A","surface":"#1E4479","text":"#F2F6FB","muted":"#C3D2E6","border":"#5C7BA6","accent":"#EAF1FA","accentInk":"#133260"}},"shape":{"radius":"0"}},{"id":"counter-notice","name":"Counter Notice","genre":"modern-minimal","signature":"A black with no hue on white, and one teal that means 'in / open / available': the listings themselves (with real facts in columns) are the page","type":{"display":"Epilogue 700","body":"Epilogue 400 / 500 (one family)","googleFonts":"family=Epilogue:wght@400;500;700&display=swap"},"palette":{"bg":"#FDFDFC","surface":"#F3F3F1","text":"#111111","muted":"#575757","border":"#E0E0DD","accent":"#0A7A78","accentInk":"#FDFDFC","dark":{"bg":"#141414","surface":"#1D1D1C","text":"#EDEDEB","muted":"#A3A3A0","border":"#31312F","accent":"#52CFC6","accentInk":"#062220"}},"shape":{"radius":"6px listings / 999px state pills"}},{"id":"market-stall","name":"Market Stall","genre":"playful","signature":"Drenched forest-green ground (#173D27) to every edge with fruit photographed bright and close as the colour; a price or a day set huge in Gabarito; juicy peach controls","type":{"display":"Gabarito 800 (heads and prices)","body":"Manrope 500, 17px","googleFonts":"family=Gabarito:wght@600;800&family=Manrope:wght@400;500;700&display=swap"},"palette":{"bg":"#F7F3EA","surface":"#FFFDF7","text":"#17321F","muted":"#4E6352","border":"#E2DCCB","accent":"#F49A6C","accentInk":"#2A1408","dark":{"bg":"#173D27","surface":"#1F4A30","text":"#FBF6EC","muted":"#C4D3C4","border":"#2E5E40","accent":"#FFAE84","accentInk":"#2A1408"}},"shape":{"radius":"20px tiles / 999px controls"}}]}</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

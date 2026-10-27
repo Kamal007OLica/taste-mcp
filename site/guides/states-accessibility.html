@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>States and accessibility · Taste MCP</title><meta name="description" content="Condensed from: Open Design (https://github.com/nexu-io/open-design), Taste Skill (https://github.com/Leonxlnx/taste-skill), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="states-accessibility.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="states-accessibility.md">Markdown</a>
+<h1>States and accessibility</h1>
+<blockquote>
+<p>Condensed from: Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<p>Target WCAG 2.2 AA. Shipping only the populated state is the commonest generated-UI failure.</p>
+<h2>Interaction states (every control)</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hover</td>
+<td>One contrast-raising signal (colour step or 1px lift), 120-220ms, inside <code>@media (hover:hover)</code>. No weight or layout change.</td>
+</tr>
+<tr>
+<td>Focus</td>
+<td><code>:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px }</code>, ≥3:1 vs adjacent colours, inset on inputs. Never <code>outline:none</code> without replacement; never animated.</td>
+</tr>
+<tr>
+<td>Pressed</td>
+<td>Feedback within 100ms: darker fill or <code>scale(.97)</code>, no layout shift.</td>
+</tr>
+<tr>
+<td>Disabled</td>
+<td>Native <code>disabled</code> + opacity 0.5-0.6 + <code>cursor:not-allowed</code> + visible reason (&quot;Add a card to publish&quot;). Read-only looks different.</td>
+</tr>
+<tr>
+<td>Loading (button)</td>
+<td>Keep width, spinner + label, block resubmit; announce via polite live region (not <code>aria-busy</code> on the button).</td>
+</tr>
+<tr>
+<td>Selected</td>
+<td>Active fill like the nav pill; distinct from hover and focus.</td>
+</tr>
+</tbody></table>
+<h2>Data states (every list, table, card, form, panel)</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Must contain</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Loading</td>
+<td>Final layout, flat grey bars at real size (24px value → 24px bar), headers shown, no shimmer, no shift. Refresh keeps old values + freshness stamp.</td>
+</tr>
+<tr>
+<td>Empty</td>
+<td>Keep frame and header; sentence + why + one action, spanning the block (<code>grid-column: 1 / -1</code>).</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Inside the failing block, not full-screen: what failed, last good time, Retry. Input preserved.</td>
+</tr>
+<tr>
+<td>Populated</td>
+<td>Real density, totals computed from rows.</td>
+</tr>
+<tr>
+<td>Edge</td>
+<td>200-char titles, missing avatar, 10,000 rows, long URLs (<code>overflow-wrap:anywhere</code>), +30-40% translated strings, RTL.</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Real zero printed (&quot;$0&quot;); missing = grey dash at text size. Counts recompute per filter. Empty charts draw the zero line.</li>
+</ul>
+<p>Loading thresholds:</p>
+<table>
+<thead>
+<tr>
+<th>Duration</th>
+<th>Indicator</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0-300ms</td>
+<td>None</td>
+</tr>
+<tr>
+<td>300ms-2s</td>
+<td>Skeleton or small spinner; once shown, keep ≥300ms (no flash)</td>
+</tr>
+<tr>
+<td>2-10s</td>
+<td>Skeleton matching layout, or labelled spinner (&quot;Loading payments…&quot;)</td>
+</tr>
+<tr>
+<td>10-60s</td>
+<td>Determinate bar + Cancel; &quot;Taking longer than expected&quot; once at 15s</td>
+</tr>
+<tr>
+<td>60s+</td>
+<td>Stop animating; error with Retry/Cancel. Every request has a timeout.</td>
+</tr>
+</tbody></table>
+<p>Match error scope: field, form (summary + per-field), section (panel + Retry), page, app (banner). Retry immediately, then 2s, 4s, 8s; after 3 failures show &quot;Contact support&quot; + copyable error ID.</p>
+<h2>Forms</h2>
+<ul>
+<li>Label above field, 14px/500, 8-10px gap. Placeholder is never the label.</li>
+<li>Inputs 38-44px tall (≥44px touch), 16px font on mobile. 16px between fields, 24px from description to first label.</li>
+<li>Persistent helper text; reserve <code>min-height: 1lh</code> for messages. Mark required fields.</li>
+<li>Right <code>type</code>, <code>autocomplete</code>, <code>name</code>. OTP/ZIP/card: <code>type=&quot;text&quot; inputmode=&quot;numeric&quot; pattern=&quot;[0-9]*&quot;</code>, never <code>type=&quot;number&quot;</code>.</li>
+<li>Timing: no errors while pristine or typing; validate on first blur; once invalid, re-validate on every input so it clears instantly; async checks debounce 250-500ms. Style <code>:user-invalid</code>, never <code>:invalid</code> (red on page load).</li>
+<li>Submit stays enabled until the request starts; then disabled with status. On failure focus the error summary (heading-led, <code>tabindex=&quot;-1&quot;</code>, no <code>role=&quot;alert&quot;</code>) or the first invalid field.</li>
+<li>Never clear input on error, block paste, or add &quot;confirm email&quot; fields. Support password managers and passkeys.</li>
+<li>One save model per view: autosave with a quiet &quot;Saved&quot;, or one Save per panel. Never both.</li>
+</ul>
+<pre><code class="language-html">&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+&lt;input id=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot; required
+  aria-invalid=&quot;true&quot; aria-describedby=&quot;email-hint email-error&quot;&gt;
+&lt;span id=&quot;email-hint&quot;&gt;Used for receipts only.&lt;/span&gt;
+&lt;span id=&quot;email-error&quot; role=&quot;alert&quot;&gt;Email needs an @ and a domain.&lt;/span&gt;
+</code></pre>
+<h2>Touch targets</h2>
+<table>
+<thead>
+<tr>
+<th>Bar</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WCAG 2.5.8 AA (web)</td>
+<td>24×24 CSS px (or 24px spacing circle)</td>
+</tr>
+<tr>
+<td>WCAG 2.5.5 AAA</td>
+<td>44×44 CSS px</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>44×44pt</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>48×48dp</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Ship 44px for touch, 48px under <code>@media (pointer:coarse)</code>, ≥8px between targets. Extend hit areas with padding or <code>::before</code>, not bigger glyphs.</li>
+<li>Marketing buttons 44-52px; app controls 32-40px visual, 44px hit area.</li>
+</ul>
+<h2>Keyboard and focus</h2>
+<ul>
+<li>Native first: <code>&lt;button&gt;</code> for actions, <code>&lt;a href&gt;</code> for navigation. A bare <code>&lt;a&gt;</code> without <code>href</code> is not focusable.</li>
+<li>No <code>tabindex</code> &gt;0; fix DOM order to match visual order.</li>
+<li>Modals trap focus until Esc or close, then return focus to the trigger. Route change: focus <code>&lt;main&gt;</code>.</li>
+<li>Skip link to main. Sticky headers must not hide focus: <code>scroll-padding-top</code> ≥ header height.</li>
+<li>Tooltips: 800-1000ms hover delay, 0 on focus. Drag/swipe always has a button alternative.</li>
+</ul>
+<h2>Semantics</h2>
+<ul>
+<li><code>&lt;html lang&gt;</code>; one <code>h1</code>; no skipped heading levels (visual size and level are independent).</li>
+<li>Landmarks: <code>header nav main aside footer</code>.</li>
+<li><code>alt</code> on content images, <code>alt=&quot;&quot;</code> when decorative or named beside it; <code>aria-label</code> on icon-only buttons; charts get a text summary or table.</li>
+<li>ARIA order: native element → native restyled → APG pattern verbatim. Never invent ARIA (WebAIM 2026: ARIA pages average 59.1 errors vs 42 without).</li>
+<li>Live regions exist in the DOM before content is injected. Toasts: <code>role=&quot;status&quot;</code>, same position every time, 3-5s, pause on hover/focus. Destructive confirms: <code>role=&quot;alertdialog&quot;</code>.</li>
+<li>Colour is never the only signal: add icon, text or sign.</li>
+</ul>
+<h2>Reduced motion</h2>
+<ul>
+<li>Under <code>prefers-reduced-motion: reduce</code> strip translate, scale, rotate, parallax; keep ≤150ms opacity/colour fades. View Transitions need a manual override.</li>
+<li>Content visible without animation. No flashing &gt;3 times per second. Loops &gt;5s need a pause control.</li>
+<li>Durations: 100ms feedback, 150ms state default, 200-300ms entering UI, exits 60-75% of enter, &gt;500ms only cross-screen. Ease-out enter, ease-in exit; M3 standard <code>cubic-bezier(0.2,0,0,1)</code>.</li>
+</ul>
+<h2>Laws of UX, as numbers</h2>
+<table>
+<thead>
+<tr>
+<th>Law</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fitts</td>
+<td>Primary targets big and near; thumb arc on mobile; plus the platform floors above.</td>
+</tr>
+<tr>
+<td>Hick / choice overload</td>
+<td>3-5 visible options per decision; pricing 3-4 tiers, exactly 1 recommended; settings ≤5 groups.</td>
+</tr>
+<tr>
+<td>Jakob</td>
+<td>Keep category conventions (logo top-left links home, cart top-right, settings gear).</td>
+</tr>
+<tr>
+<td>Miller / Cowan</td>
+<td>Working memory ~4 chunks: group fields under headings; persist filters, breadcrumbs.</td>
+</tr>
+<tr>
+<td>Doherty</td>
+<td>Feedback under ~300ms (the popular &quot;400ms&quot; isn&#39;t in the 1982 paper); tap feedback ≤100ms.</td>
+</tr>
+<tr>
+<td>Proximity</td>
+<td>8-12px within groups, 32-48px between.</td>
+</tr>
+<tr>
+<td>Common region</td>
+<td>Enclose only when proximity fails; padding ≥16px.</td>
+</tr>
+<tr>
+<td>Von Restorff</td>
+<td>One item differs (recommended tier, active nav), with a non-colour cue too.</td>
+</tr>
+<tr>
+<td>Serial position</td>
+<td>Key nav items first and last.</td>
+</tr>
+<tr>
+<td>Peak-end</td>
+<td>Celebrate the end of a flow once; keep the middle calm.</td>
+</tr>
+<tr>
+<td>Goal gradient</td>
+<td>&quot;Step 2 of 4&quot; with real progress; never fake pre-progress.</td>
+</tr>
+<tr>
+<td>Postel</td>
+<td>Accept &quot;555-0100&quot;, &quot;5550100&quot;, &quot;(555) 0100&quot;; normalise; output one format.</td>
+</tr>
+</tbody></table>
+<h2>RTL</h2>
+<ul>
+<li><code>&lt;html dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;</code> (both). Mixed blocks: <code>&lt;section dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;</code>. User text: <code>dir=&quot;auto&quot;</code>.</li>
+<li>Logical properties only: <code>margin-inline-start</code>, <code>padding-inline-end</code>, <code>inset-inline-start</code>, <code>text-align:start</code>. Tailwind v4: <code>ms-* me-* ps-* pe-*</code>; v4.2 <code>inset-s-* inset-e-*</code>.</li>
+<li>Mirror: back/forward arrows, nav position, sliders, non-media progress bars, checkbox-label order.</li>
+<li>Don&#39;t mirror: clocks, refresh icons, media controls and scrubbers, charts, logos, photos.</li>
+<li>Phone, IBAN, card, email, URL: <code>&lt;bdi dir=&quot;ltr&quot;&gt;</code> / <code>&lt;input dir=&quot;ltr&quot;&gt;</code>.</li>
+<li>Arabic: no <code>letter-spacing</code>, no italics, body 14-18px at line-height 1.5-1.75. Prototype with real Arabic/Hebrew.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="components.html">← Animated Components, Used With Taste</a><a href="responsive-mobile.html">Responsive and mobile →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("states-accessibility")</code> in the taste MCP.</p></main></body></html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Color · Taste MCP</title><meta name="description" content="Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design (https://github.com/nexu-io/open-design), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="color.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="color.md">Markdown</a>
+<h1>Color</h1>
+<blockquote>
+<p>Condensed from: Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<p>Hex values and ratios below are computed from the OKLCH shown (WCAG 2.x, vs white unless stated).</p>
+<h2>Plan four layers before any CSS</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Share of pixels</th>
+<th>Tokens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Neutrals</td>
+<td>70-90%</td>
+<td><code>--bg --surface --surface-2 --ink --muted --border --rule</code></td>
+</tr>
+<tr>
+<td>Accent (one)</td>
+<td>under 5% of any screen, max 2 visible uses</td>
+<td><code>--accent --accent-ink --focus</code></td>
+</tr>
+<tr>
+<td>Semantic</td>
+<td>0-5%</td>
+<td><code>--positive --negative --warning --info</code> + pill pairs</td>
+</tr>
+<tr>
+<td>Effects</td>
+<td>under 1%</td>
+<td>scrims, one chart fade</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Name tokens by role, never hue (<code>--accent</code>, not <code>--blue-500</code>). A raw hex in a component starts a second palette.</li>
+<li>No greys between roles: quieter text is <code>--muted</code>, quieter panel is <code>--surface</code>.</li>
+<li>Write values in <code>oklch()</code>.</li>
+</ul>
+<h2>Neutrals with a tint</h2>
+<p>Tint every grey toward one anchor hue, chroma 0.004-0.015. Example ramp, hue 250:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>OKLCH</th>
+<th>Hex</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--bg</code></td>
+<td><code>oklch(98.5% .004 250)</code></td>
+<td><code>#f8fafd</code></td>
+<td>Light ground L 97-98.5</td>
+</tr>
+<tr>
+<td><code>--surface</code></td>
+<td><code>oklch(100% 0 0)</code> or <code>oklch(96% .006 250)</code></td>
+<td><code>#fff</code></td>
+<td>2-6 L points from ground</td>
+</tr>
+<tr>
+<td><code>--border</code></td>
+<td><code>oklch(92% .006 250)</code></td>
+<td><code>#e2e5e8</code></td>
+<td>~1.2:1, card edges</td>
+</tr>
+<tr>
+<td><code>--control</code></td>
+<td><code>oklch(88% .008 250)</code></td>
+<td><code>#d4d8dd</code></td>
+<td>Input borders, one step stronger</td>
+</tr>
+<tr>
+<td><code>--muted</code></td>
+<td><code>oklch(54% .012 250)</code></td>
+<td><code>#6a6f76</code></td>
+<td>5.05:1 on white, 4.84:1 on ground</td>
+</tr>
+<tr>
+<td><code>--ink</code></td>
+<td><code>oklch(21% .012 250)</code></td>
+<td><code>#14191e</code></td>
+<td>17.7:1</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Ink L 16-24% on light. Never <code>#000</code> text or <code>#fff</code>/<code>#000</code> grounds unless the direction is a stark two-tone.</li>
+<li>Lightest grey that still passes 4.5:1 on white and <code>#f9fafb</code>: about <code>#6b6b6b</code> (L 53%). L 56% already fails on the ground.</li>
+<li>Warmth = low-chroma stone or bone: <code>oklch(95% .010 75)</code> <code>#f2eee7</code>, ink <code>oklch(22% .010 75)</code> <code>#1d1a16</code>. Chroma under 0.015.</li>
+</ul>
+<h2>The one accent</h2>
+<ul>
+<li>Chroma 0.12-0.22. Hue from the subject (the product&#39;s material, place, brand), not a default.</li>
+<li>Two variants: a text-safe one (≥4.5:1) and a bright fill. Blue example: text <code>oklch(55% .18 255)</code> <code>#026fd7</code> 4.93:1; fill-only <code>oklch(62% .17 255)</code> <code>#3186e9</code> 3.68:1 (fails as small text). Green: text <code>oklch(45% .11 155)</code> <code>#036639</code> 7.05:1.</li>
+<li><code>--accent-ink</code> on the fill: verify ≥4.5:1 (body) or 3:1 (≥24px).</li>
+<li><code>--focus</code>: accent hue, chroma 0.18-0.22, L within 5% of the accent, 3:1 vs adjacent colours.</li>
+<li>Where it goes: the primary action plus one recurring thing (active nav, selected state, the chart&#39;s main series). Not headings, icons, bullets, borders or decorative underlines. Hover and focus rings count toward the budget.</li>
+<li>If a CTA is on screen, links become ink with an underline.</li>
+<li>Neutral buttons are normal: 52% of strong sites use black/white/grey primaries; 12 of 23 studied app screens have no filled primary. Near-black <code>#1d1f20</code> is a valid primary.</li>
+</ul>
+<h2>Postures (declare one)</h2>
+<ul>
+<li><strong>Restrained</strong> (default): rules above.</li>
+<li><strong>Committed</strong>: one colour covers 30-60% via full section fields; accent stays a signal.</li>
+<li><strong>Full palette</strong>: 3-4 named roles (field, signal, seal, ink), each with a job and footprint.</li>
+<li><strong>Drenched</strong>: the ground is the colour; ink and rules derive from it.</li>
+<li>Section fields: change the whole ground per section, hard edge (nothing fades), neighbours differ in lightness not only hue, each field has its own ink. Never <code>--muted</code> grey on a coloured field; use the field&#39;s ink at 70% opacity only if it still passes.</li>
+</ul>
+<h2>Contrast gates</h2>
+<table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Minimum</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Body and UI text</td>
+<td>4.5:1 (target 7:1 for ink on ground)</td>
+</tr>
+<tr>
+<td>Large text (≥24px regular or ≥18.5px bold; 18px regular is NOT large)</td>
+<td>3:1</td>
+</tr>
+<tr>
+<td>Icons, input borders, focus rings, chart marks</td>
+<td>3:1</td>
+</tr>
+<tr>
+<td>Placeholders, disabled labels that carry meaning</td>
+<td>4.5:1 (house rule)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Inclusive thresholds; 2.99:1 fails. Re-measure any text opacity change. Hover and focus raise contrast, never lower it.</li>
+<li>APCA Lc ≥60 for body is a useful parallel design check; WCAG 2.2 AA stays the compliance floor.</li>
+<li>Text over photos: measure at the text&#39;s actual position.</li>
+</ul>
+<h2>Semantic colours</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Text-safe value</th>
+<th>Pill (bg / text)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Positive</td>
+<td><code>oklch(52% .12 150)</code> <code>#287c42</code> 5.2:1</td>
+<td><code>#dcfae5</code> / <code>#04250e</code></td>
+</tr>
+<tr>
+<td>Negative</td>
+<td><code>oklch(55% .19 27)</code> <code>#c9302d</code> 5.3:1</td>
+<td><code>#ffedea</code> / <code>#831c1e</code></td>
+</tr>
+<tr>
+<td>Warning</td>
+<td><code>oklch(50% .11 60)</code> <code>#905211</code> 6.2:1</td>
+<td><code>#fffbeb</code>, border <code>#fde68a</code> / <code>#92400e</code></td>
+</tr>
+<tr>
+<td>Info</td>
+<td><code>oklch(52% .14 250)</code> <code>#116bb5</code> 5.5:1</td>
+<td>tint of the same hue</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Amber as text fails (<code>#e49e22</code> 2.3:1); use it only as a fill or border.</li>
+<li>Never colour alone: pair with icon, sign or word. Never red/green as the only signal.</li>
+<li>Status colour is for status only. Deltas: colour by good/bad direction (rising errors = negative), not up/down; zero or undefined change = grey.</li>
+<li>If the accent is green, <code>--positive</code> IS the accent (no two competing greens).</li>
+<li>A pale notice tint is never a page ground.</li>
+</ul>
+<h2>Banned families (generated look)</h2>
+<ul>
+<li>Indigo/violet accents, esp. Tailwind <code>#6366f1</code> (<code>oklch(58.5% .204 277)</code>).</li>
+<li>Two-stop &quot;trust&quot; gradients: purple→blue, blue→cyan, purple→pink. Cyan on dark.</li>
+<li>Yellow-cream ground (hue 22-62, noticeably saturated) + terracotta/rust/clay accent.</li>
+<li>Neon on dark, glows, chromatic halos, aurora/mesh blobs.</li>
+<li>Navy or slate dark themes and dark saturated sidebars on light apps (0 of 17 studied screens).</li>
+<li>Exception: the brand already owns the colour. Keep it, document it.</li>
+</ul>
+<h2>Gradients that don&#39;t look generated</h2>
+<p>Default: none. Study: gradient fills on 22% of top sites vs 52% of weak; gradient text 2% vs 13%. Allowed:</p>
+<ul>
+<li>Neutral scrim over a photo behind text only: ink/black 35-65%, or a solid block at 40-55%.</li>
+<li>Area under one line chart: flat ≤14% tint, or a fade to transparent over 150-200px.</li>
+<li>Max 3 stops, same hue family (hue shift ≤20°), interpolated in OKLCH: <code>linear-gradient(in oklch, oklch(62% .15 155), oklch(55% .11 165))</code>.</li>
+<li>Never on buttons, text, cards, KPI tiles or empty backgrounds.</li>
+</ul>
+<h2>Surfaces</h2>
+<ul>
+<li>Separate by tone step first; a border or a shadow, never both.</li>
+<li>Shadows only on floating things (menu, popover, dialog). Max one resting shadow: <code>0 1px 2px oklch(20% .01 250 / .05)</code>.</li>
+<li>Elevated surfaces are never darker than their canvas.</li>
+<li>When photos carry the colour, UI stays neutral, ink from the image&#39;s darkest tone. Never wash photos in the brand hue.</li>
+</ul>
+<h2>Dark palette (summary; full rules in dark-mode-dataviz.md)</h2>
+<p>Re-derive, never invert. Ground <code>oklch(16-18% .008-.012 h)</code> (<code>#0f1215</code>), +3% L per elevation level, ink L 93-95% (<code>#e7ecf0</code>), muted L 65-75%, borders L 27-32% or <code>rgba(255,255,255,.08)</code>, accent chroma -0.02 to -0.04 and L +5 to +10 (<code>oklch(70% .14 255)</code> <code>#5fa1f3</code>, 7.3:1 on that ground). Hue never moves. <code>color-scheme: dark</code>.</p>
+<h2>Token block</h2>
+<pre><code class="language-css">:root{
+  --bg: oklch(98.5% .004 250); --surface: oklch(100% 0 0);
+  --border: oklch(92% .006 250); --control: oklch(88% .008 250);
+  --ink: oklch(21% .012 250); --muted: oklch(54% .012 250);
+  --accent: oklch(55% .18 255); --accent-ink: oklch(99% 0 0);
+  --focus: oklch(57% .18 255);
+  --positive: oklch(52% .12 150); --negative: oklch(55% .19 27);
+}
+</code></pre>
+
+<nav class="doc-nav" aria-label="Guides"><a href="typography.html">← Typography</a><a href="layout-spacing.html">Layout and spacing →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("color")</code> in the taste MCP.</p></main></body></html>

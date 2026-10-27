@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dark mode and data viz · Taste MCP</title><meta name="description" content="Condensed from: Hallmark (https://github.com/Nutlope/hallmark), Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design (https://github.com/nexu-io/open-design), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="dark-mode-dataviz.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="dark-mode-dataviz.md">Markdown</a>
+<h1>Dark mode and data viz</h1>
+<blockquote>
+<p>Condensed from: Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>), Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>)</p>
+</blockquote>
+<h2>Part 1: Dark mode</h2>
+<h3>Stance</h3>
+<ul>
+<li>A second designed rendering of one token system, never <code>filter: invert()</code>. Re-derive every token; hue never moves; every contrast pair still passes (fix the derivation, not the requirement).</li>
+<li>Ship dual mode only when asked or already present.</li>
+</ul>
+<h3>Derivation (hex/ratios computed; ground = <code>#0f1215</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Dark rule</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ground</td>
+<td>L 16-18%, chroma 0.008-0.012 on the anchor hue. Never <code>#000</code>.</td>
+<td><code>oklch(18% .008 250)</code> <code>#0f1215</code></td>
+</tr>
+<tr>
+<td>Surfaces</td>
+<td>Lighter by +3% L per level (light mode steps darker)</td>
+<td><code>21%</code> <code>#16191c</code>, <code>24%</code> <code>#1c2023</code>, <code>27%</code> <code>#24272a</code></td>
+</tr>
+<tr>
+<td>Borders</td>
+<td>L 27-32%, check against surface-2 too; or <code>rgba(255,255,255,.08)</code></td>
+<td><code>oklch(32% .008 250)</code> <code>#303337</code></td>
+</tr>
+<tr>
+<td>Ink</td>
+<td>L 92-96%, tinted. Never <code>#fff</code> for body.</td>
+<td><code>oklch(94% .008 250)</code> <code>#e7ecf0</code>, 15.8:1</td>
+</tr>
+<tr>
+<td>Secondary text</td>
+<td>L ~75%</td>
+<td><code>#aaaeb3</code>, 8.5:1</td>
+</tr>
+<tr>
+<td>Meta text</td>
+<td>L ~65%</td>
+<td><code>#8c9094</code>, 5.8:1 on ground, 5.1:1 on surface-2</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>Chroma −0.02 to −0.04, L +5 to +10</td>
+<td>light <code>oklch(55% .18 255)</code> = 3.8:1 here (fails); dark <code>oklch(70% .14 255)</code> <code>#5fa1f3</code> = 7.0:1</td>
+</tr>
+<tr>
+<td>Accent ink / focus</td>
+<td>Re-verify ≥4.5:1 on the new fill; focus ring 3:1 vs both grounds</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>Max two text greys, clearly apart (<code>#b4b4b4</code> + <code>#949494</code>).</li>
+<li>Status: hue on a dark tint of itself: positive <code>#3fc07a</code> on <code>#172a1d</code>, negative <code>#e5566f</code> on <code>#2c1a20</code>.</li>
+<li>Neutral chroma ≤0.012: navy/slate themes, neon, glows and glass read as generated.</li>
+</ul>
+<h3>Dark discipline</h3>
+<ul>
+<li>Elevation = lighter surface or <code>box-shadow: inset 0 0 0 1px var(--border)</code>. No drop shadows (they read as glow). Cards always lighter than canvas.</li>
+<li>All headings one colour (ink). Accent on data or one selected state; active nav by brightness (<code>#bbb</code> → <code>#fff</code>), not a coloured pill.</li>
+<li>Light-on-dark looks heavier: body weight −50 (400 → 350 on variable fonts) or +0.01em tracking, line-height +0.05.</li>
+<li><code>color-scheme: dark</code> so scrollbars and form controls follow.</li>
+<li>Images: never auto-invert per mode; pick photos that hold on dark or set light ones in a surface-2 well.</li>
+<li>Re-measure scrims; define hover, pressed, focus, disabled and borders in both modes.</li>
+</ul>
+<h3>Implementation</h3>
+<pre><code class="language-css">:root{ color-scheme: light dark; /* light tokens */ }
+[data-mode=&quot;dark&quot;]{ /* only re-derived tokens */ }
+@media (prefers-color-scheme: dark){
+  :root:not([data-mode]){ /* same overrides for OS auto mode */ }
+}
+</code></pre>
+<pre><code class="language-html">&lt;script&gt;try{const m=localStorage.getItem(&#39;mode&#39;);if(m)document.documentElement.dataset.mode=m}catch(e){}&lt;/script&gt;
+</code></pre>
+<p>Inline it in <code>&lt;head&gt;</code> before first paint (no wrong-mode flash). Update <code>&lt;meta name=&quot;theme-color&quot;&gt;</code> per mode. Test both modes separately.</p>
+<h2>Part 2: Data viz and dashboards</h2>
+<h3>Pick the form first</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Form</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One value</td>
+<td>Stat: big figure + worded qualifier. Never a one-bar chart</td>
+</tr>
+<tr>
+<td>2-5 values compared</td>
+<td>Stat row, or sorted horizontal bars</td>
+</tr>
+<tr>
+<td>Moving over time?</td>
+<td>One line, straight segments (smoothing invents values)</td>
+</tr>
+<tr>
+<td>How much per period?</td>
+<td>Columns, square or ≤4px top radius at the data end, zero baseline</td>
+</tr>
+<tr>
+<td>Who ranks?</td>
+<td>Sorted horizontal bar list</td>
+</tr>
+<tr>
+<td>Share of a whole</td>
+<td>100% stacked bar with 2px seams, or a thin ring (3-5px stroke) for 3-5 parts. Never pie, fat donut, gauge</td>
+</tr>
+<tr>
+<td>Distribution</td>
+<td>Histogram, equal bins</td>
+</tr>
+<tr>
+<td>More than ~7 categories</td>
+<td>A table</td>
+</tr>
+<tr>
+<td>Progress to target</td>
+<td>Bar at the true ratio, both ends labelled (&quot;12.7k of 20.0k&quot;), no stub at zero</td>
+</tr>
+<tr>
+<td>Forecast</td>
+<td>Dashed after today, end value labelled</td>
+</tr>
+<tr>
+<td>Two units</td>
+<td>Two small charts. Never dual y-axes</td>
+</tr>
+</tbody></table>
+<p>Few numbers → no chart.</p>
+<h3>Construction</h3>
+<ul>
+<li>Plot 112-264px tall (median ~195), aspect 1.8-5.2:1.</li>
+<li>Lines 2px (1-3), no point markers except an 8px hover dot or annotated points.</li>
+<li>Area fill: none (7 of 10 studied charts) or ≤14% flat tint, or fade to transparent over 150-200px.</li>
+<li>Bars ≤24px thick, 2-4px gaps, zero baseline; a zoomed axis says so (&quot;axis starts at 94%&quot;).</li>
+<li>Gridlines: 3-5 horizontal, 1px solid, <code>#e5e5e5</code> on light, <code>#2b2b2b</code> on <code>#111</code>. No y-axis line; the baseline is the one heavier line.</li>
+<li>Y ticks 4-7, round even steps (0/5/10/15%), top tick above the max, integers for counts, 11-12px muted, never larger than the data labels.</li>
+<li>X labels 4-8, never rotated, one regular step. Time on a time scale.</li>
+<li>Annotate any jump &gt;3x the usual change: 1px marker + 12px label naming the cause (&quot;Deploy a3f09c1&quot;). Reference lines (budget, SLO) 1px dashed, labelled at the end.</li>
+<li>No shadows, 3D or gradients in marks. Tooltips: plain box, label + value, keyboard reachable.</li>
+</ul>
+<h3>Colour</h3>
+<ul>
+<li>One hue per chart: the accent on the main series (today, current period), the rest neutral grey.</li>
+<li>Multiple series: a lightness ramp on the accent hue, L steps 12-15%, chroma constant, fixed order (e.g. <code>oklch(40% .13 255)</code>, <code>52%</code>, <code>64%</code>). Context series in muted grey.</li>
+<li>Max 4 hues per screen (6 is a fail). One subject keeps one hue on every chart.</li>
+<li>Text never takes the data colour: labels in ink/muted, series identified by a swatch beside the label.</li>
+<li>Marks ≥3:1 vs background, text ≥4.5:1. Never red/green as the only distinction: add sign, shape, pattern or direct labels.</li>
+<li>Dark: marks re-derive like the accent (chroma down, L up), area fade at half opacity.</li>
+</ul>
+<h3>Legends and labels</h3>
+<ul>
+<li>Single series: no legend; the title or the selector names it.</li>
+<li>Otherwise ≤5 items: 5-8px dot + 12-14px muted label in the card header, or a legend-table (dot, name, value, change). The swatch is the mark, scaled down.</li>
+<li>Small datasets: label values directly.</li>
+</ul>
+<h3>Numbers</h3>
+<ul>
+<li><code>tabular-nums</code>, right-aligned, fixed decimals (money 2, % 1-2, counts 0), locale formatting.</li>
+<li>Deltas 10-15px, never larger than the label; colour by good/bad direction, not up/down; zero or undefined = grey; from zero write &quot;+4 (new)&quot;; state the window (&quot;vs prior 30 days&quot;).</li>
+</ul>
+<h3>Dashboard composition</h3>
+<ul>
+<li>Fewer, truer figures: one answer figure, one supporting chart, one table. The six-gauge KPI wall is the tell.</li>
+<li>KPIs: one container split by 1px dividers, label (12-16px, muted, above) + value 16-40px (median 24). The answer figure 30-36px and ≥1.3x its siblings (18-24px). Nothing ≥48px.</li>
+<li>No icon circles, sparklines or tinted tiles on KPIs. One series per chart; switch metrics with a segmented control.</li>
+<li>Tables: rows 36-53px (median 45); header 12px muted sentence case, no band, no zebra; 1px row rules 3-7% darker than surface; identity column 1/3-1/2 of width.</li>
+<li>Status pills ~20px, 11-12px/500, pale tint + dark same-hue text, one per row.</li>
+<li>Overview lists 2-5 rows + &quot;View all&quot; + total. 1000+ points: aggregate, offer drill-down.</li>
+</ul>
+<h3>States and accessibility</h3>
+<ul>
+<li>Loading: a skeleton the size of the plot. Empty: draw the zero line + one sentence. Error: message + Retry inside the card, never a broken axis.</li>
+<li>Every chart gets a text summary of its insight (<code>aria-label</code> or caption) and a table alternative; sortable tables set <code>aria-sort</code>.</li>
+<li>Interactive marks keyboard-focusable, ≥44px touch areas. No entrance animation under reduced motion.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="native-feel.html">← Native Feel</a><a href="imagery-texture.html">Imagery, icons and texture →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("dark-mode-dataviz")</code> in the taste MCP.</p></main></body></html>

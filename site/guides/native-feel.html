@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Native Feel · Taste MCP</title><meta name="description" content="Condensed from: emilkowalski/skills (https://github.com/emilkowalski/skills): apple-design, mobile-native, animate-expo, write-swift, break-ui, pick-ui-library, ask-sonner">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="native-feel.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="native-feel.md">Markdown</a>
+<h1>Native Feel</h1>
+<blockquote>
+<p>Condensed from: emilkowalski/skills (<a href="https://github.com/emilkowalski/skills">https://github.com/emilkowalski/skills</a>): apple-design, mobile-native, animate-expo, write-swift, break-ui, pick-ui-library, ask-sonner</p>
+</blockquote>
+<h2>Apple-grade interaction</h2>
+<ul>
+<li><strong>Respond on press</strong>: highlight on <code>pointerdown</code>/<code>:active</code>, commit on release. Feedback is continuous during a drag, never only at the end.</li>
+<li><strong>1:1 tracking</strong>: <code>setPointerCapture</code>, keep the grab offset (no snapping to center). ~10px of movement before committing to a direction.</li>
+<li><strong>Interruptible always</strong>: never lock input mid-transition; restart from the live on-screen value; separate X and Y springs.</li>
+<li><strong>Springs</strong> (damping ratio / response): default <code>1.0 / 0.3-0.4</code> (no overshoot); after a flick <code>0.8 / 0.4</code>; sheet <code>0.8 / 0.3</code>. Reanimated: <code>{ duration: 400, dampingRatio: 1 }</code>, sheet <code>{ duration: 300, dampingRatio: 0.8, velocity }</code>, <code>overshootClamping: true</code> at hard edges.</li>
+<li><strong>Velocity handoff</strong>: pass release velocity into the spring. <strong>Project momentum</strong>, then snap to the nearest point:</li>
+</ul>
+<pre><code class="language-js">const project = (v, d = 0.998) =&gt; (v / 1000) * d / (1 - d); // v in px/s
+const rubberband = (over, dim, c = 0.55) =&gt; (over * dim * c) / (dim + c * Math.abs(over));
+</code></pre>
+<ul>
+<li>Decide commit vs cancel from velocity sign, not position. Rubber-band at edges; never a hard wall.</li>
+<li><strong>Hit areas</strong>: 44×44pt iOS, 48dp Android. Grow with <code>hitSlop</code>/padding, not the visual.</li>
+<li><strong>Haptics</strong> (expo-haptics): <code>selectionAsync()</code> for detents/pickers; <code>impactAsync(Light)</code> for snaps/commits; <code>Medium</code> for heavy or destructive; <code>notificationAsync(Success|Error)</code> for outcomes. Same frame as the visual, one per action, never the only feedback.</li>
+<li><strong>Materials</strong>: translucent chrome with content scrolling under it.</li>
+</ul>
+<pre><code class="language-css">.bar { background: rgb(255 255 255 / .6); backdrop-filter: blur(20px) saturate(180%);
+       border-top: 1px solid rgb(255 255 255 / .4); }
+@media (prefers-reduced-transparency: reduce) { .bar { background: #fff; backdrop-filter: none; } }
+</code></pre>
+<p>  Never glass on glass. Bigger surface = more blur + deeper shadow. Modal task: scrim + push background back; parallel panel: no scrim. Fade a blur mask at scroll edges instead of 1px dividers. Text on glass: heavier weight, higher contrast. Materialize (blur + scale), don&#39;t just fade.</p>
+<ul>
+<li><strong>Type</strong>: system font first (<code>system-ui</code>); tracking by size (display <code>-0.02em</code>, body <code>0</code>); line-height ~1.05 display, ~1.5 body; spacing in <code>rem</code> so Dynamic Type scales layout. HIG default sizes (pt): Large Title 34, Title 28/22/20, Headline 17 semibold, Body 17, Callout 16, Subhead 15, Footnote 13, Caption 12/11.</li>
+<li><strong>Sheets</strong>: native first (<code>presentation: &#39;formSheet&#39;</code> in Expo Router). Web: Vaul, or <code>translateY(100%)</code> + <code>cubic-bezier(0.32, 0.72, 0, 1)</code> 500ms. Stacked sheets dim and push back each parent.</li>
+<li><strong>Expo/RN</strong>: Reanimated, not core <code>Animated</code>; <code>Gesture.Pan()</code>, not <code>PanResponder</code>; no <code>setState</code> in gesture/scroll handlers; <code>scheduleOnRN</code> only in <code>onEnd</code>; tabs never slide; navigation uses native stack transitions; judge on a release build on the slowest device; set <code>CADisableMinimumFrameDurationOnPhone</code> for 120fps.</li>
+<li><strong>SwiftUI</strong>: start <code>withAnimation</code> in the synchronous gesture callback (same frame); open a <code>Task</code> only for the slow work after.</li>
+<li><strong>A11y</strong>: honor <code>prefers-reduced-motion</code> (crossfade instead of slide/spring), <code>prefers-reduced-transparency</code>, <code>prefers-contrast: more</code>.</li>
+</ul>
+<h2>Web app that feels installed</h2>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; media=&quot;(prefers-color-scheme: light)&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; media=&quot;(prefers-color-scheme: dark)&quot; content=&quot;#0a0a0a&quot;&gt;
+</code></pre>
+<pre><code class="language-css">html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; overscroll-behavior: none; }
+input, textarea, select { font-size: 16px; }            /* stops iOS zoom */
+button, a, [role=&quot;button&quot;] { touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+.app { height: 100dvh; }  .hero { min-height: 100svh; }
+.sheet-body { overflow-y: auto; overscroll-behavior: contain; padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+.carousel { touch-action: pan-y; }                      /* or scroll-snap-type: x mandatory */
+@media (hover: hover) and (pointer: fine) { /* every :hover rule */ }
+</code></pre>
+<ul>
+<li>Never <code>user-scalable=no</code>; never <code>user-select: none</code> on body. Set <code>inputmode</code>, <code>enterkeyhint</code>, <code>autocapitalize=&quot;none&quot;</code> on code/username fields. <code>theme-color</code> matches the header, not the brand. Test on real hardware (emulation hides sticky hover, tap delay, keyboard, safe areas).</li>
+</ul>
+<h2>Break the UI before shipping</h2>
+<p>Feed realistic worst cases through the same data boundary (fixture/props), behind a dev-only &quot;Demo / Worst case / Empty / One / 1,000 rows&quot; toggle. Check at the real container width, 320px, widest, 200% zoom, dark, RTL, touch.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Names</td>
+<td><code>Aleksandra Wiśniewska-Kowalczyk</code>, <code>Jo</code>, <code>王秀英</code>, <code>نور الهدى</code>, <code>👩🏽‍💻 Priya</code>, missing name</td>
+</tr>
+<tr>
+<td>Unbreakable</td>
+<td><code>bartholomew.fitzgerald@northwind-industries-holdings.example.com</code>, long URLs, UUIDs, <code>Benachrichtigungseinstellungen</code></td>
+</tr>
+<tr>
+<td>Counts</td>
+<td>0, 1 (&quot;1 members&quot;), 1,284, 1,000,000, negative, <code>NaN</code>/<code>null</code>, 142%</td>
+</tr>
+<tr>
+<td>Collections</td>
+<td>empty, one item, page size + 1, 1,000+ rows, one item 10× taller</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>now, future, 3 years ago, timezone day-flip</td>
+</tr>
+<tr>
+<td>Media / states</td>
+<td>404 avatar, panorama image, slow load, loading, API error, partial data, no permission, &quot;You&quot;</td>
+</tr>
+</tbody></table>
+<p>Fixes: <code>flex-shrink: 0</code> on avatars/icons/badges/trailing actions; <code>min-width: 0</code> on text columns (<code>minmax(0, 1fr)</code>); <code>overflow-wrap: anywhere</code> on emails/URLs; <code>align-items: flex-start</code> once text wraps; <code>tabular-nums</code>; <code>Intl.NumberFormat</code>, <code>Intl.PluralRules</code>, <code>Intl.RelativeTimeFormat</code>; initials via <code>Intl.Segmenter</code>; <code>object-fit: cover</code> + <code>aspect-ratio</code>; skeletons sized like real content; virtualize big lists. Wrap identifying text, end-truncate secondary text (with a tooltip), middle-truncate file names, <code>line-clamp</code> previews, never truncate numbers.</p>
+<h2>Pick the library, don&#39;t hand-roll</h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dialog, popover, menu, select</td>
+<td>Base UI (keep Radix/shadcn if already installed)</td>
+</tr>
+<tr>
+<td>⌘K palette</td>
+<td>cmdk</td>
+</tr>
+<tr>
+<td>Toasts</td>
+<td>Sonner: one <code>&lt;Toaster theme=&quot;system&quot; /&gt;</code> at root, <code>toast.promise</code>, <code>toast.custom</code> for design-system toasts</td>
+</tr>
+<tr>
+<td>Drawer / bottom sheet</td>
+<td>Vaul</td>
+</tr>
+<tr>
+<td>OTP input</td>
+<td>input-otp</td>
+</tr>
+<tr>
+<td>Springs, layout, exit</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>Animated numbers</td>
+<td>NumberFlow</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>recharts; Liveline for streaming</td>
+</tr>
+<tr>
+<td>Drag and drop</td>
+<td>dnd kit</td>
+</tr>
+<tr>
+<td>Long lists</td>
+<td>Virtuoso</td>
+</tr>
+<tr>
+<td>State / classes / theme</td>
+<td>zustand / clsx, cva / next-themes</td>
+</tr>
+</tbody></table>
+<p>Check <code>package.json</code> first and don&#39;t churn an existing competitor.</p>
+
+<nav class="doc-nav" aria-label="Guides"><a href="responsive-mobile.html">← Responsive and mobile</a><a href="dark-mode-dataviz.html">Dark mode and data viz →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("native-feel")</code> in the taste MCP.</p></main></body></html>

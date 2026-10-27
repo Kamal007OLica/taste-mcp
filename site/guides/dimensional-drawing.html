@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimensional Drawing · Taste MCP</title><meta name="description" content="Condensed from: enesozturk/dimensional-drawing (https://github.com/enesozturk/dimensional-drawing)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="dimensional-drawing.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="dimensional-drawing.md">Markdown</a>
+<h1>Dimensional Drawing</h1>
+<blockquote>
+<p>Condensed from: enesozturk/dimensional-drawing (<a href="https://github.com/enesozturk/dimensional-drawing">https://github.com/enesozturk/dimensional-drawing</a>)</p>
+</blockquote>
+<h2>What it is</h2>
+<p>A one-page, Apple-accessory-style technical drawing of a UI component (or physical product): paddings, gaps, radii, layers and viewport placement, labeled as variables. It documents architecture, not copy, so it stays true when text changes. Output: one self-contained HTML file (title block + one SVG sheet). Use for component specs, anatomy docs, handoff, or a &quot;how it&#39;s built&quot; portfolio visual.</p>
+<h2>How to ask</h2>
+<ul>
+<li>&quot;Make a dimensional drawing of <code>Card</code> in <code>src/components/Card.tsx</code>&quot; or &quot;Draw the anatomy of the settings dialog, same style as the examples.&quot;</li>
+<li>Point at real source (file, Storybook story, URL, screenshot). Measure by rendering in Playwright, waiting for fonts, walking the box tree (<code>getBoundingClientRect</code> + <code>getComputedStyle</code>: padding, gap, radius, border, min-height), and grepping every instance so values reflect the system.</li>
+<li>Reply in one or two sentences: what was drawn, which <code>[TBD]</code> values the team must define.</li>
+</ul>
+<h2>House rules</h2>
+<ol>
+<li><strong>Monochrome</strong>: black on white, grays only (<code>#111</code>, <code>#444</code>, <code>#7a7a7a</code>, <code>#d0d0d0</code>, <code>#e6e6e6</code>, <code>#f3f3f3</code>). Distinguish by line weight, dash, hatch, light fill.</li>
+<li><strong>Slots, not content</strong>: lead box with an X, <code>TITLE SLOT · FLEX</code>, <code>ACTION · HUG</code>, <code>CONTENT SLOT · FILL</code>. HUG = sized by content, FLEX = remaining space, FILL = parent width.</li>
+<li><strong>Variables, not numbers</strong>: every dimension is a code; tables give code, name, value; derived values show formula and result (<code>H1 header-min = 2·S1 + H3 = 64</code>, <code>R2 = R1 - B - S6 = 11</code>).</li>
+<li><strong>Unbranded</strong>: neutral IDs like <code>UI-CARD-001</code>.</li>
+<li><strong>Never invent</strong>: unknowns are <code>[TBD]</code>, drawn as proportional schematics.</li>
+</ol>
+<p>Codes: <code>S#</code> spacing (S1 container pad, S2 inner pad, S3 stack gap, S6 inner inset) · <code>H#</code> heights · <code>Z#</code> squares · <code>I#</code> icon · <code>B</code> border · <code>W</code> width range · <code>R#</code> radii (R1 container, R2 inner, R3 control, R4 pill = h/2) · <code>Y, BL, SP, E1-E3</code> shadow envelope · <code>T1</code> touch min · <code>V1</code> viewport margin.</p>
+<h2>Sheet layout</h2>
+<ul>
+<li><strong>Title block (HTML)</strong>: 1.2px frame, radius 16, 0.8px cell rules, caps Arimo/Helvetica; cells for title, DWG NO., REV, UNITS, SCALE, SOURCE; <code>NOTES: (UNLESS OTHERWISE SPECIFIED)</code>; a row of 6-7 key variables.</li>
+<li><strong>SVG sheet</strong>: <code>viewBox=&quot;0 0 1700 1060&quot;</code>, <code>min-width: 1100px</code> inside <code>overflow-x: auto</code>. Notes top-left with boxed <code>[1]</code> numbers echoed on the drawing; plan view top-center at ~1:1 with chain dims on all sides, radius callouts, dash-dot centerlines, dashed detail circles; exploded axonometric layer stack bottom-left (canvas → scrim → shadow → container → slots); bottom row of details (nested corner, radius arcs at 2:1); variable tables in the right column.</li>
+<li>Dialogs add viewport placement and scrim; buttons/inputs add 2-4:1 details, states, hit area vs drawn height.</li>
+</ul>
+<h2>Line and label spec</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object outline</td>
+<td>1.6px</td>
+</tr>
+<tr>
+<td>Dimension line</td>
+<td>0.7px, 7px filled arrows</td>
+</tr>
+<tr>
+<td>Extension line</td>
+<td>0.55px, 3px gap, 5px overshoot</td>
+</tr>
+<tr>
+<td>Dim text</td>
+<td>11px, white <code>paint-order: stroke</code> knockout</td>
+</tr>
+<tr>
+<td>Labels / view titles</td>
+<td>9px caps letter-spaced / 12px caps + 9.5px subtitle</td>
+</tr>
+<tr>
+<td>Slot / envelope / keep-out</td>
+<td>dashed <code>4 3</code> / dash-dot / 45° hatch</td>
+</tr>
+</tbody></table>
+<p>Exploded projection: <code>matrix(.94s, .17s, -.34s, .47s, tx, ty - z)</code>. Before delivering: every code is in a table, formulas sum, no non-gray hex, render at 1800px and fix overlaps.</p>
+<h2>Motion variant (~11 s film)</h2>
+<p>A pen draws the sheet while a camera moves; <code>render(t)</code> is a pure function of time, 1920×1080, 60fps.</p>
+<ol>
+<li>0-2.3s: ~4.4× close-up on the header as it draws.</li>
+<li>2.3-4.2s: log-zoom back to ~1.7× while the plan and dims draw.</li>
+<li>4.2-7.2s: layers lift into the exploded view, strokes first, fills after (no white flash).</li>
+<li>7.2-9.2s: out to the full sheet; notes, tables, details draw in 0.3-0.5s bursts.</li>
+<li>Hold with a slow push.</li>
+</ol>
+<p>Strokes animate <code>stroke-dashoffset</code> 1 → 0 on <code>pathLength=1</code>; dashed lines and text fade. Ease-in-out for camera and strokes, ease-out for fades, no bounce, no color. Runs in Claude&#39;s Motion artifact or headless via Playwright + ffmpeg.</p>
+
+<nav class="doc-nav" aria-label="Guides"><a href="design-md.html">← DESIGN.md, the Design Brief Agents Can Read</a><a href="review.html">Pre-ship visual review →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("dimensional-drawing")</code> in the taste MCP.</p></main></body></html>

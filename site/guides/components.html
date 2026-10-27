@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Animated Components, Used With Taste · Taste MCP</title><meta name="description" content="Condensed from: React Bits (https://github.com/DavidHDev/react-bits), Magic UI (https://github.com/magicuidesign/magicui), Canvas UI (https://github.com/DavidHDev/canvas-ui)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="components.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="components.md">Markdown</a>
+<h1>Animated Components, Used With Taste</h1>
+<blockquote>
+<p>Condensed from: React Bits (<a href="https://github.com/DavidHDev/react-bits">https://github.com/DavidHDev/react-bits</a>), Magic UI (<a href="https://github.com/magicuidesign/magicui">https://github.com/magicuidesign/magicui</a>), Canvas UI (<a href="https://github.com/DavidHDev/canvas-ui">https://github.com/DavidHDev/canvas-ui</a>)</p>
+</blockquote>
+<p><code>components.json</code> lists 331 installable components: React Bits 218 (text-animations 33, animations 38, components 48, micro 35, backgrounds 64), Magic UI 78, Canvas UI 35. Every entry carries an exact install command, docs URL and npm deps. Search it by <code>tags</code> and <code>category</code>, then read <code>tasteNote</code>.</p>
+<h2>Decision guide</h2>
+<ol>
+<li><strong>Animate only with a job.</strong> Motion should explain (state change, cause and effect, hierarchy) or set the first impression. If you cannot name the job, ship it static.</li>
+<li><strong>One hero effect per page.</strong> Choose one signature moment (animated headline, shader background or 3D object); everything else stays quiet. Magic UI&#39;s own guardrail: no more than two high-motion effects in one viewport.</li>
+<li><strong>Backgrounds must not fight content.</strong> Slow, low contrast, tinted toward the brand palette. Put a scrim or radial mask under text and check 4.5:1 contrast against the brightest frame. No cursor-reactive backgrounds behind forms or long reading.</li>
+<li><strong>Text effects belong on headlines only.</strong> Animate words or lines, not characters, finish in about a second, and end on plain, selectable, screen-reader-visible text.</li>
+<li><strong>Cursor effects are for portfolios and brand pages,</strong> never apps, dashboards or checkout. Never hide the system cursor where people fill forms.</li>
+<li><strong>Be consistent.</strong> Pick one entrance (for example Blur Fade) and one CTA treatment and reuse them site-wide.</li>
+<li><strong>The React Bits <code>micro</code> category is the safe zone.</strong> Those pieces improve UX (Hold Button for destructive actions, Code Slots for OTP, Warm Tooltip for toolbars) and rarely read as gimmicks.</li>
+</ol>
+<h2>Performance and reduced motion</h2>
+<ul>
+<li>Shader backgrounds (raw WebGL2, <code>ogl</code>, <code>three</code>, <code>vgpu</code>) cost GPU and battery. Allow one live canvas per viewport, lazy-load anything below the fold (dynamic import, <code>ssr: false</code> in Next.js), pause offscreen, cap device pixel ratio at 2.</li>
+<li><code>three</code>-based entries (Lanyard, Hyperspeed, Model Viewer, Blob Cursor, Paper Crumple, Color Bends, every Canvas UI <code>*-object</code>) add a large bundle; prefer zero-dep or <code>ogl</code> alternatives when they look similar.</li>
+<li>Honor <code>prefers-reduced-motion</code>: many sources check it, but verify, and render the final state (static text, still gradient or poster).</li>
+<li>On touch devices (<code>pointer: coarse</code>) disable cursor-driven effects and cut particle counts.</li>
+<li>Canvas UI&#39;s HTML-in-canvas effects reach full quality only in Chromium with the <code>canvas-draw-element</code> flag or an origin-trial token; other browsers get a GPU overlay fallback. Its 3D object effects work everywhere. WebGPU builds need Chrome or Edge 113+, Safari 26+ or Firefox 141+.</li>
+</ul>
+<h2>Install variants</h2>
+<p>All three registries are listed in the shadcn public index, so namespaced commands work after <code>npx shadcn@latest init</code>. Swap <code>npx</code> for <code>pnpm dlx</code>, <code>yarn</code> or <code>bun x --bun</code> as needed.</p>
+<ul>
+<li><strong>React Bits:</strong> <code>npx shadcn@latest add @react-bits/&lt;Name&gt;-&lt;LANG&gt;-&lt;STYLE&gt;</code>. <code>Name</code> is PascalCase (SplitText; ASCII Text is <code>ASCIIText</code>), <code>LANG</code> is <code>JS</code> or <code>TS</code>, <code>STYLE</code> is <code>CSS</code> or <code>TW</code>, so every component has four variants. The catalog uses <code>TS-TW</code>. Alternatives: <code>npx shadcn@latest add https://reactbits.dev/r/SplitText-TS-TW.json</code> or <code>npx jsrepo@latest add https://reactbits.dev/r/SplitText-TS-TW</code>. For MCP browsing add <code>&quot;registries&quot;: {&quot;@react-bits&quot;: &quot;https://reactbits.dev/r/{name}.json&quot;}</code> to <code>components.json</code>.</li>
+<li><strong>Magic UI:</strong> <code>npx shadcn@latest add @magicui/&lt;slug&gt;</code> (several slugs in one command is fine). Needs Tailwind v4; Tailwind v3 projects use the legacy docs at v3.magicui.design. Import from <code>@/components/ui/&lt;slug&gt;</code>. Manual installs must also copy the keyframes the docs list.</li>
+<li><strong>Canvas UI:</strong> <code>npx shadcn@latest add @canvas-ui/&lt;slug&gt;-&lt;framework&gt;</code> where framework is <code>react</code>, <code>vue</code>, <code>svelte</code>, <code>solid</code>, <code>preact</code> or <code>vanilla</code>; append <code>-webgpu</code> for the WebGPU build (adds <code>vgpu</code>). Files land in <code>components/canvasui/</code>. Most effects wrap content: <code>&lt;Liquid&gt;&lt;Page /&gt;&lt;/Liquid&gt;</code>, and the page stays clickable.</li>
+<li>Agents can browse all three through <code>npx shadcn@latest mcp init --client claude</code>.</li>
+</ul>
+<h2>License</h2>
+<ul>
+<li><strong>React Bits and Canvas UI: MIT + Commons Clause.</strong> Free in any app, site or product, commercial included. You may not sell, sublicense or redistribute the components themselves (alone, in a bundle, or ported), so no reselling them as a UI kit or template pack.</li>
+<li><strong>Magic UI: MIT.</strong></li>
+</ul>
+<h2>Twenty picks by job</h2>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Pick (library/slug)</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hero headline</td>
+<td>react-bits/split-text</td>
+<td>Words or lines, one pass</td>
+</tr>
+<tr>
+<td>Hero headline, softer</td>
+<td>react-bits/blur-text</td>
+<td>Calm focus pull</td>
+</tr>
+<tr>
+<td>Rotating value prop</td>
+<td>magic-ui/word-rotate</td>
+<td>Three to five words</td>
+</tr>
+<tr>
+<td>Announcement pill</td>
+<td>magic-ui/animated-shiny-text</td>
+<td>Sits above the H1</td>
+</tr>
+<tr>
+<td>Key phrase emphasis</td>
+<td>magic-ui/highlighter</td>
+<td>One phrase per section</td>
+</tr>
+<tr>
+<td>Logo cloud</td>
+<td>magic-ui/marquee</td>
+<td>Monochrome logos, edge fade</td>
+</tr>
+<tr>
+<td>Logo cloud, alt</td>
+<td>react-bits/logo-loop</td>
+<td>Pauses on hover</td>
+</tr>
+<tr>
+<td>Testimonials</td>
+<td>magic-ui/marquee + magic-ui/tweet-card</td>
+<td>Vertical columns work well</td>
+</tr>
+<tr>
+<td>Social proof by CTA</td>
+<td>magic-ui/avatar-circles</td>
+<td>Pair with a count</td>
+</tr>
+<tr>
+<td>Primary CTA</td>
+<td>magic-ui/shimmer-button</td>
+<td>One per page</td>
+</tr>
+<tr>
+<td>CTA polish</td>
+<td>react-bits/magnet</td>
+<td>Low strength only</td>
+</tr>
+<tr>
+<td>Hero background</td>
+<td>react-bits/aurora</td>
+<td>Brand-tinted, slow</td>
+</tr>
+<tr>
+<td>Quiet background</td>
+<td>magic-ui/grid-pattern</td>
+<td>With a radial mask</td>
+</tr>
+<tr>
+<td>Textured gradient</td>
+<td>react-bits/grainient</td>
+<td>Muted colors</td>
+</tr>
+<tr>
+<td>Number stats</td>
+<td>magic-ui/number-ticker</td>
+<td>Trigger once in view</td>
+</tr>
+<tr>
+<td>Prices and live metrics</td>
+<td>react-bits/counter</td>
+<td>Odometer roll</td>
+</tr>
+<tr>
+<td>Feature cards</td>
+<td>magic-ui/magic-card</td>
+<td>Or react-bits/spotlight-card</td>
+</tr>
+<tr>
+<td>Feature layout</td>
+<td>magic-ui/bento-grid</td>
+<td>Deliberate size rhythm</td>
+</tr>
+<tr>
+<td>Dock</td>
+<td>magic-ui/dock</td>
+<td>App-like portfolios only</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>react-bits/target-cursor</td>
+<td>Portfolio pages only</td>
+</tr>
+</tbody></table>
+<p>Section entrances: magic-ui/blur-fade or react-bits/animated-content. Integrations: magic-ui/animated-beam. Product demo: magic-ui/hero-video-dialog, magic-ui/safari, magic-ui/terminal. One spectacle hero: canvas-ui/glass-object with your logo SVG.</p>
+
+<nav class="doc-nav" aria-label="Guides"><a href="gsap-scroll.html">← GSAP, Scroll Worlds and WebGL over HTML</a><a href="states-accessibility.html">States and accessibility →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("components")</code> in the taste MCP.</p></main></body></html>

@@ -1,0 +1,17 @@
+Taste MCP: design judgment condensed from 14 open-source design repos (Impeccable, Hallmark, Taste Skill, UI UX Pro Max, Emil Kowalski's skills, GSAP skills, Google DESIGN.md, awesome-design-md, Open Design, React Bits, Magic UI, Canvas UI, Scroll World, Dimensional Drawing).
+
+Whenever a task builds, restyles or reviews UI (web page, app screen, component, dashboard, mobile view, email, slide):
+1. BEFORE writing UI code, call taste_brief (task, surface, stack). If the repo has a DESIGN.md, obey it; otherwise call pick_direction, commit to one direction, and save write_design_md output as DESIGN.md.
+2. AFTER writing UI code, run audit_ui on the changed files and fix every high and medium finding. If you can take screenshots, check 390px and 1440px against get_guide("review").
+
+Always, even without calling a tool:
+- One art direction with one signature move. Generic is a non-decision.
+- Two typefaces max; never Inter/Roboto/Arial alone by default. Modular scale; display tracking -0.02 to -0.04em; body 16px+, line-height 1.5-1.65, 45-75 characters per line.
+- Tinted neutrals plus one accent on about 10% of the screen. No purple-blue gradients, no gradient headline text, no pure #000 on #fff. Text contrast 4.5:1.
+- 4px spacing grid; more space between groups than inside them. Left-align by default. Vary section anatomy; never hero + three identical icon cards.
+- 2-3 radii; one icon family at one stroke width; no emoji icons. Every control has hover, focus-visible, active, disabled; touch targets 44px+. Design empty, loading and error states.
+- Motion 150-250ms, ease-out cubic-bezier(0.23,1,0.32,1), transform/opacity only; never transition-all or ease-in; honour prefers-reduced-motion; no bouncing or pulsing CTAs.
+- Copy uses specific nouns and numbers; never "Unlock", "Elevate", "Seamless", "Revolutionize", "Supercharge". No lorem ipsum, invented logos, stats or testimonials.
+- Use find_components for ONE signature effect per page, not decoration everywhere.
+
+Deeper: get_guide(topic), search_design_db, get_brand_reference. Prompts: design, critique, polish.

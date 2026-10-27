@@ -1,0 +1,590 @@
+[
+  {
+    "slug": "1win",
+    "name": "1win",
+    "category": "consumer-tech",
+    "vibe": "near-black casino UI, vivid green CTAs, dense game-tile rails in heavy Inter",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/1win/DESIGN.md"
+  },
+  {
+    "slug": "airbnb",
+    "name": "Airbnb",
+    "category": "ecommerce",
+    "vibe": "warm white marketplace, coral CTAs, photo-led cards and soft friendly type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/airbnb/DESIGN.md"
+  },
+  {
+    "slug": "airtable",
+    "name": "Airtable",
+    "category": "design-tools",
+    "vibe": "sober white editorial pages punctuated by bold full-bleed color cards",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/airtable/DESIGN.md"
+  },
+  {
+    "slug": "aljazeera",
+    "name": "Al Jazeera",
+    "category": "media",
+    "vibe": "flat white newspaper, dense Roboto headlines, orange signature, live-red badges",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/aljazeera/DESIGN.md"
+  },
+  {
+    "slug": "apple",
+    "name": "Apple",
+    "category": "consumer-tech",
+    "vibe": "gallery-like product tiles, generous whitespace, SF Pro, a single action blue",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/apple/DESIGN.md"
+  },
+  {
+    "slug": "binance",
+    "name": "Binance",
+    "category": "fintech",
+    "vibe": "near-black trading floor with signature yellow CTAs and a confident custom sans",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/binance/DESIGN.md"
+  },
+  {
+    "slug": "bmw",
+    "name": "BMW",
+    "category": "automotive",
+    "vibe": "settled corporate automotive on light canvas, BMW blue CTAs, heavy and light type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/bmw/DESIGN.md"
+  },
+  {
+    "slug": "bmw-m",
+    "name": "BMW M",
+    "category": "automotive",
+    "vibe": "near-black motorsport stage, uppercase white display, sparing M tricolor stripe",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/bmw-m/DESIGN.md"
+  },
+  {
+    "slug": "bugatti",
+    "name": "Bugatti",
+    "category": "automotive",
+    "vibe": "cinema-black austerity, letterspaced uppercase, photography as the only color",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/bugatti/DESIGN.md"
+  },
+  {
+    "slug": "cal",
+    "name": "Cal.com",
+    "category": "productivity",
+    "vibe": "friendly white scheduling SaaS, black CTAs, geometric display, soft rounded cards",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/cal/DESIGN.md"
+  },
+  {
+    "slug": "claude",
+    "name": "Claude",
+    "category": "ai",
+    "vibe": "warm cream editorial canvas, serif headlines, coral accents, humanist AI tone",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/claude/DESIGN.md"
+  },
+  {
+    "slug": "clay",
+    "name": "Clay",
+    "category": "design-tools",
+    "vibe": "white canvas with saturated single-color cards and claymation 3D illustrations",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/clay/DESIGN.md"
+  },
+  {
+    "slug": "clickhouse",
+    "name": "ClickHouse",
+    "category": "backend-devops",
+    "vibe": "pure black database brand with electric yellow CTAs and stat numbers",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/clickhouse/DESIGN.md"
+  },
+  {
+    "slug": "cohere",
+    "name": "Cohere",
+    "category": "ai",
+    "vibe": "stark white enterprise AI with deep green-black bands and mineral surfaces",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/cohere/DESIGN.md"
+  },
+  {
+    "slug": "coinbase",
+    "name": "Coinbase",
+    "category": "fintech",
+    "vibe": "pure white institutional finance, one confident blue, light-weight display type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/coinbase/DESIGN.md"
+  },
+  {
+    "slug": "composio",
+    "name": "Composio",
+    "category": "backend-devops",
+    "vibe": "near-black developer brand, deep electric blue accent, terminal-style mockups",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/composio/DESIGN.md"
+  },
+  {
+    "slug": "cursor",
+    "name": "Cursor",
+    "category": "dev-tools",
+    "vibe": "warm cream editorial canvas, light display type, single orange accent",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/cursor/DESIGN.md"
+  },
+  {
+    "slug": "dell-1996",
+    "name": "Dell (1996)",
+    "category": "retro",
+    "vibe": "1996 catalog web: black frame, flat color ribbons, chunky type, GIF stickers",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/dell-1996/DESIGN.md"
+  },
+  {
+    "slug": "dji",
+    "name": "DJI",
+    "category": "consumer-tech",
+    "vibe": "white product showroom, square photo tiles, engineering-blue pills, tight Open Sans",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/dji/DESIGN.md"
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "ai",
+    "vibe": "off-white print-magazine calm, light serif display, drifting pastel gradient orbs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/elevenlabs/DESIGN.md"
+  },
+  {
+    "slug": "expo",
+    "name": "Expo",
+    "category": "dev-tools",
+    "vibe": "pure white infrastructure brand, black CTAs, faint sky-blue hero wash",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/expo/DESIGN.md"
+  },
+  {
+    "slug": "ferrari",
+    "name": "Ferrari",
+    "category": "automotive",
+    "vibe": "near-black cinematic editorial with scarce racing-red accents",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/ferrari/DESIGN.md"
+  },
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "category": "design-tools",
+    "vibe": "monochrome editorial frame interrupted by oversized pastel color blocks",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/figma/DESIGN.md"
+  },
+  {
+    "slug": "framer",
+    "name": "Framer",
+    "category": "design-tools",
+    "vibe": "pure black artboard, tight white display type, vivid gradient spotlights",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/framer/DESIGN.md"
+  },
+  {
+    "slug": "hashicorp",
+    "name": "HashiCorp",
+    "category": "backend-devops",
+    "vibe": "black enterprise canvas with per-product accent colors as identity tokens",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/hashicorp/DESIGN.md"
+  },
+  {
+    "slug": "hp",
+    "name": "HP",
+    "category": "consumer-tech",
+    "vibe": "white-paper enterprise-consumer look, electric blue CTAs, geometric sans, blue chevrons",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/hp/DESIGN.md"
+  },
+  {
+    "slug": "ibm",
+    "name": "IBM",
+    "category": "enterprise",
+    "vibe": "Carbon-style flat squares, white surfaces, light Plex display, one IBM blue",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/ibm/DESIGN.md"
+  },
+  {
+    "slug": "intercom",
+    "name": "Intercom",
+    "category": "productivity",
+    "vibe": "soft cream editorial, charcoal geometric sans, hairline tiles, orange for AI",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/intercom/DESIGN.md"
+  },
+  {
+    "slug": "jobright",
+    "name": "Jobright",
+    "category": "ai",
+    "vibe": "energetic mint green on black and white, condensed headlines, pill CTAs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/jobright/DESIGN.md"
+  },
+  {
+    "slug": "kraken",
+    "name": "Kraken",
+    "category": "fintech",
+    "vibe": "clean white crypto exchange with commanding purple and bold display type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/kraken/DESIGN.md"
+  },
+  {
+    "slug": "lamborghini",
+    "name": "Lamborghini",
+    "category": "automotive",
+    "vibe": "true-black cathedral where white type and gold accents emerge from darkness",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/lamborghini/DESIGN.md"
+  },
+  {
+    "slug": "linear.app",
+    "name": "Linear",
+    "category": "productivity",
+    "vibe": "near-black, precise product canvas with one lavender accent and tight display type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/linear.app/DESIGN.md"
+  },
+  {
+    "slug": "lovable",
+    "name": "Lovable",
+    "category": "dev-tools",
+    "vibe": "warm parchment canvas, near-black type, approachable notebook-like restraint",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/lovable/DESIGN.md"
+  },
+  {
+    "slug": "mastercard",
+    "name": "Mastercard",
+    "category": "fintech",
+    "vibe": "warm putty-cream editorial, signal orange, oversized pill and circle shapes",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mastercard/DESIGN.md"
+  },
+  {
+    "slug": "mercury",
+    "name": "Mercury",
+    "category": "fintech",
+    "vibe": "ink-violet night homepage, pale product pages, indigo pills, light custom sans",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mercury/DESIGN.md"
+  },
+  {
+    "slug": "meta",
+    "name": "Meta",
+    "category": "ecommerce",
+    "vibe": "white commerce canvas, full-bleed product photos, black and cobalt CTAs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/meta/DESIGN.md"
+  },
+  {
+    "slug": "minimax",
+    "name": "MiniMax",
+    "category": "ai",
+    "vibe": "stark white AI brand, black pills, vivid gradient cards per model release",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/minimax/DESIGN.md"
+  },
+  {
+    "slug": "mintlify",
+    "name": "Mintlify",
+    "category": "productivity",
+    "vibe": "sky-gradient marketing heroes over dense docs, black pills, green accents",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mintlify/DESIGN.md"
+  },
+  {
+    "slug": "miro",
+    "name": "Miro",
+    "category": "design-tools",
+    "vibe": "white canvas, canary yellow brand, sticky-note pastel tints, black pills",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/miro/DESIGN.md"
+  },
+  {
+    "slug": "mistral.ai",
+    "name": "Mistral AI",
+    "category": "ai",
+    "vibe": "warm sunset gradients over cream, orange CTAs, elegant near-serif display",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mistral.ai/DESIGN.md"
+  },
+  {
+    "slug": "mongodb",
+    "name": "MongoDB",
+    "category": "backend-devops",
+    "vibe": "deep teal hero bands with bright green pills over white docs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mongodb/DESIGN.md"
+  },
+  {
+    "slug": "mydealz",
+    "name": "mydealz",
+    "category": "ecommerce",
+    "vibe": "dense white-card deal feed, brand green, hot and cold vote pill",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/mydealz/DESIGN.md"
+  },
+  {
+    "slug": "nerdwallet",
+    "name": "NerdWallet",
+    "category": "fintech",
+    "vibe": "deep spruce green with mint washes, near-square corners, dense comparison tables",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/nerdwallet/DESIGN.md"
+  },
+  {
+    "slug": "nike",
+    "name": "Nike",
+    "category": "ecommerce",
+    "vibe": "monochrome retail chrome, towering uppercase Futura over campaign photography",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/nike/DESIGN.md"
+  },
+  {
+    "slug": "nintendo-2001",
+    "name": "Nintendo.com (2001)",
+    "category": "retro",
+    "vibe": "Y2K console chrome: beveled periwinkle metal, amber nav, outlined display type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/nintendo-2001/DESIGN.md"
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "category": "productivity",
+    "vibe": "navy hero with sticky-note dots, purple pill CTA, pastel feature cards",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/notion/DESIGN.md"
+  },
+  {
+    "slug": "nvidia",
+    "name": "NVIDIA",
+    "category": "consumer-tech",
+    "vibe": "black and white chapters, saturated green accent, sharp 2px corners",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/nvidia/DESIGN.md"
+  },
+  {
+    "slug": "ollama",
+    "name": "Ollama",
+    "category": "ai",
+    "vibe": "README-minimal white page, one black pill, terminal snippet, llama doodle",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/ollama/DESIGN.md"
+  },
+  {
+    "slug": "opencode.ai",
+    "name": "OpenCode AI",
+    "category": "ai",
+    "vibe": "everything in Berkeley Mono on warm cream, manpage-like and terminal-native",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/opencode.ai/DESIGN.md"
+  },
+  {
+    "slug": "oracle",
+    "name": "Oracle",
+    "category": "enterprise",
+    "vibe": "warm neutral grey ladder, charcoal actions, red reserved for the wordmark",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/oracle/DESIGN.md"
+  },
+  {
+    "slug": "oura",
+    "name": "Oura",
+    "category": "consumer-tech",
+    "vibe": "warm paper wellness, editorial serif, earthy accents, one action blue",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/oura/DESIGN.md"
+  },
+  {
+    "slug": "pinterest",
+    "name": "Pinterest",
+    "category": "media",
+    "vibe": "warm cream chrome, red CTA, masonry pin grid, image-first discovery",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/pinterest/DESIGN.md"
+  },
+  {
+    "slug": "playstation",
+    "name": "PlayStation",
+    "category": "consumer-tech",
+    "vibe": "alternating black, white and blue chapters paced like a console launch trailer",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/playstation/DESIGN.md"
+  },
+  {
+    "slug": "posthog",
+    "name": "PostHog",
+    "category": "backend-devops",
+    "vibe": "warm cream dev blog, olive ink, hedgehog doodles, yellow-orange CTA",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/posthog/DESIGN.md"
+  },
+  {
+    "slug": "raycast",
+    "name": "Raycast",
+    "category": "dev-tools",
+    "vibe": "near-black in-product chrome, hairline borders, command-palette cards, white pill",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/raycast/DESIGN.md"
+  },
+  {
+    "slug": "renault",
+    "name": "Renault",
+    "category": "automotive",
+    "vibe": "black and white automotive, sunlight yellow accent, proprietary display, square corners",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/renault/DESIGN.md"
+  },
+  {
+    "slug": "replicate",
+    "name": "Replicate",
+    "category": "ai",
+    "vibe": "cream lab-notebook aesthetic, huge display type, hot-orange accent",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/replicate/DESIGN.md"
+  },
+  {
+    "slug": "resend",
+    "name": "Resend",
+    "category": "productivity",
+    "vibe": "near-black developer brand with oversized editorial serif headlines",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/resend/DESIGN.md"
+  },
+  {
+    "slug": "revolut",
+    "name": "Revolut",
+    "category": "fintech",
+    "vibe": "black canvas, cobalt violet, huge display headlines, saturated product colors",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/revolut/DESIGN.md"
+  },
+  {
+    "slug": "runwayml",
+    "name": "Runway",
+    "category": "ai",
+    "vibe": "cinematic dark film-reel layout where full-bleed imagery is the interface",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/runwayml/DESIGN.md"
+  },
+  {
+    "slug": "sanity",
+    "name": "Sanity",
+    "category": "backend-devops",
+    "vibe": "near-black nocturnal command center, huge display type, mono eyebrows, coral CTA",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/sanity/DESIGN.md"
+  },
+  {
+    "slug": "sap",
+    "name": "SAP",
+    "category": "enterprise",
+    "vibe": "quiet white application frame, two greys, one blue, flat bands",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/sap/DESIGN.md"
+  },
+  {
+    "slug": "sentry",
+    "name": "Sentry",
+    "category": "backend-devops",
+    "vibe": "deep purple midnight canvas, lime accents, playful illustrated personality",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/sentry/DESIGN.md"
+  },
+  {
+    "slug": "shopify",
+    "name": "Shopify",
+    "category": "ecommerce",
+    "vibe": "cinematic near-black heroes with thin giant type, cream-mint transactional pages",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/shopify/DESIGN.md"
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "category": "productivity",
+    "vibe": "deep aubergine brand, cream-lavender gradients, pastel product composites, pill CTAs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/slack/DESIGN.md"
+  },
+  {
+    "slug": "spacex",
+    "name": "SpaceX",
+    "category": "consumer-tech",
+    "vibe": "pure black, full-bleed rocket photography, uppercase condensed type, ghost pill buttons",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/spacex/DESIGN.md"
+  },
+  {
+    "slug": "spotify",
+    "name": "Spotify",
+    "category": "media",
+    "vibe": "near-black content-first player where album art supplies the color",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/spotify/DESIGN.md"
+  },
+  {
+    "slug": "starbucks",
+    "name": "Starbucks",
+    "category": "ecommerce",
+    "vibe": "warm cream retail flagship anchored by layered deep greens",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/starbucks/DESIGN.md"
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "category": "fintech",
+    "vibe": "deep navy and electric indigo, gradient mesh heroes, thin elegant type",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/stripe/DESIGN.md"
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "category": "backend-devops",
+    "vibe": "white and near-black technical minimalism with a single emerald CTA",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/supabase/DESIGN.md"
+  },
+  {
+    "slug": "superhuman",
+    "name": "Superhuman",
+    "category": "dev-tools",
+    "vibe": "editorial indigo hero with violet sky, quiet white body, tight heavy sans",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/superhuman/DESIGN.md"
+  },
+  {
+    "slug": "tesla",
+    "name": "Tesla",
+    "category": "automotive",
+    "vibe": "radical subtraction, full-viewport car photography, almost no interface",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/tesla/DESIGN.md"
+  },
+  {
+    "slug": "theverge",
+    "name": "The Verge",
+    "category": "media",
+    "vibe": "near-black canvas, brutal heavy headlines, acid mint and ultraviolet accents",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/theverge/DESIGN.md"
+  },
+  {
+    "slug": "together.ai",
+    "name": "Together AI",
+    "category": "ai",
+    "vibe": "near-black bands with orange-magenta gradient, white research pages, mono eyebrows",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/together.ai/DESIGN.md"
+  },
+  {
+    "slug": "uber",
+    "name": "Uber",
+    "category": "consumer-tech",
+    "vibe": "black and white duet, geometric sans, pill-shaped interactive elements everywhere",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/uber/DESIGN.md"
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "category": "dev-tools",
+    "vibe": "black and white precision, Geist type, multicolor mesh gradient at hero scale",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/vercel/DESIGN.md"
+  },
+  {
+    "slug": "vodafone",
+    "name": "Vodafone",
+    "category": "consumer-tech",
+    "vibe": "massive heavy uppercase over photography, scarlet red CTAs, clean white bands",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/vodafone/DESIGN.md"
+  },
+  {
+    "slug": "voltagent",
+    "name": "VoltAgent",
+    "category": "ai",
+    "vibe": "void-black developer canvas with one electric green accent and code mockups",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/voltagent/DESIGN.md"
+  },
+  {
+    "slug": "warp",
+    "name": "Warp",
+    "category": "dev-tools",
+    "vibe": "warm charcoal terminal brand, clean Inter, occasional serif italic, understated CTAs",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/warp/DESIGN.md"
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "category": "design-tools",
+    "vibe": "near-black and white with a five-color accent system and restrained weights",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/webflow/DESIGN.md"
+  },
+  {
+    "slug": "wired",
+    "name": "WIRED",
+    "category": "media",
+    "vibe": "black-on-white magazine broadsheet, tall narrow display serif, minimal chrome",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/wired/DESIGN.md"
+  },
+  {
+    "slug": "wise",
+    "name": "Wise",
+    "category": "fintech",
+    "vibe": "very heavy black display type, lime green accent, sage neutrals, rounded cards",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/wise/DESIGN.md"
+  },
+  {
+    "slug": "x.ai",
+    "name": "xAI",
+    "category": "ai",
+    "vibe": "near-black cosmic minimalism, white pill outlines, dusk gradients, mono captions",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/x.ai/DESIGN.md"
+  },
+  {
+    "slug": "zapier",
+    "name": "Zapier",
+    "category": "productivity",
+    "vibe": "warm cream, coffee-brown ink, saturated orange CTA, confident display face",
+    "raw": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/zapier/DESIGN.md"
+  }
+]

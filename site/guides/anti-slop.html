@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The AI-UI tells and their fixes · Taste MCP</title><meta name="description" content="Condensed from: Impeccable (https://github.com/pbakaus/impeccable), Open Design (https://github.com/nexu-io/open-design), Taste Skill (https://github.com/Leonxlnx/taste-skill), Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="anti-slop.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="anti-slop.md">Markdown</a>
+<h1>The AI-UI tells and their fixes</h1>
+<blockquote>
+<p>Condensed from: Impeccable (<a href="https://github.com/pbakaus/impeccable">https://github.com/pbakaus/impeccable</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<p>A tell is a default produced without a reason; a pinned brief or DESIGN.md can earn any back except (ban) items. Removing tells is not enough: fill the gap with a product-specific idea, real content and imagery. Machine checks: <code>detectors.json</code>.</p>
+<h2>The 10 worst offenders</h2>
+<ol>
+<li>Purple/indigo-to-blue gradients (<code>from-purple-500 to-blue-500</code>, <code>#6366f1</code>) · gradient-clipped headline text.</li>
+<li>Inter/Roboto/Poppins as the only voice · tiny tracked-caps eyebrow above every heading.</li>
+<li>Three equal cards of rounded icon tile + heading + blurb · thick coloured <code>border-left</code> on rounded cards.</li>
+<li>Emoji as icons (🚀 ✨ ⚡) · glow shadows, blurred orbs and glass panels as decoration.</li>
+<li>Buzzword copy (unlock, seamless, elevate) with invented proof (&quot;10,000+ happy customers&quot;, ★★★★★) · &quot;Get started&quot; + &quot;Learn more&quot;.</li>
+</ol>
+<h2>Typography</h2>
+<ul>
+<li><strong>Default face</strong> (Inter, Roboto, Poppins, Montserrat, Space Grotesk, Plus Jakarta Sans, DM Sans, Outfit, Geist; the &quot;tasteful&quot; wave: Fraunces, Playfair, Instrument Serif, Newsreader) → you stopped looking → <strong>Fix:</strong> pick a face from the subject&#39;s world; max 2 families; h1/h2 via <code>var(--font-display)</code>, never bare <code>system-ui</code>. Operate/Read surfaces may use a tuned system stack on purpose.</li>
+<li><strong>Gradient text</strong> (ban) → decoration in place of hierarchy → <strong>Fix:</strong> solid ink; emphasis by size or weight.</li>
+<li><strong>Flat scale</strong> (steps under 1.25×, 9 near-equal sizes, bold everywhere) → nothing leads → <strong>Fix:</strong> ratio 1.2-1.25, 5-6 sizes; body→headline jump ≥3×; ≤3 sizes above the fold; weights 400 read / 500-550 UI / 600 headings.</li>
+<li><strong>Eyebrow / kicker</strong> (ban): tiny uppercase tracked label or pill over a heading → the default SaaS section opener → <strong>Fix:</strong> delete it; fold real info into the heading.</li>
+<li><strong>Accented word</strong>: one word in italic serif, colour or gradient inside a roman heading → <strong>Fix:</strong> set the head one way; use a line break or a second line at a second size.</li>
+<li><strong>Sentence-size display headline</strong> (3-4 lines at text-6xl+) → eats the viewport → <strong>Fix:</strong> ~5-word title, max 2 lines, rest in a lede; display max 6rem.</li>
+<li><strong>Tracking extremes</strong> → <strong>Fix:</strong> body 0; caps labels 0.06-0.1em; 32px+ heads -0.01 to -0.02em; 48px+ display -0.02 to -0.03em; floor -0.04em. CJK: tracking 0, display leading 1.3-1.4.</li>
+<li><strong>Tiny text</strong> → <strong>Fix:</strong> body 16px (15-18), small 13-14px, caption 12px; nothing functional under 11px.</li>
+<li><strong>Unbounded measure, tight leading, justified text</strong> → <strong>Fix:</strong> prose 45-75ch (<code>max-width: 65ch</code>); body leading 1.5-1.65, display 1.0-1.2; <code>text-wrap: balance</code> on heads, <code>pretty</code> on body; left-aligned.</li>
+<li><strong>Mono as costume</strong> for labels/meta → <strong>Fix:</strong> mono only for code, data, measurements; <code>font-variant-numeric: tabular-nums</code> for figures.</li>
+</ul>
+<h2>Color</h2>
+<ul>
+<li><strong>AI palette</strong>: violet/indigo gradients, blue→cyan two-stop &quot;trust&quot; gradient, neon cyan on near-black → <strong>Fix:</strong> one anchor hue mixed in OKLCH for this product; flat fills.</li>
+<li><strong>Framework default accent</strong> (<code>#6366f1</code>, <code>#4f46e5</code>, <code>bg-indigo-600</code>, Tailwind blue-500) → <strong>Fix:</strong> <code>var(--accent)</code> from DESIGN.md.</li>
+<li><strong>Accent flood</strong> → an accent in ten places means nothing → <strong>Fix:</strong> neutrals 70-90% of pixels, one accent 5-10% (≤2 visible uses per screen), semantic 0-5%, effects under 1%.</li>
+<li><strong>Pure #000 / #fff</strong> → vibration, framework feel → <strong>Fix:</strong> dark bg <code>#0f0f0f</code> + fg <code>#f0f0f0</code>; light bg <code>#fafafa</code> + fg <code>#111</code>; or OKLCH chroma ≥0.005 toward the anchor hue.</li>
+<li><strong>Gray text on colour</strong> → washed out, fails contrast → <strong>Fix:</strong> darker shade of the surface hue or near-white; body 4.5:1, large text/UI/focus 3:1.</li>
+<li><strong>Cream + serif + terracotta</strong> (<code>#faf9f5</code> + <code>#d97757</code>) → the third-wave &quot;warm editorial&quot; fix became the look → <strong>Fix:</strong> move one axis: accent first, paper second, display face last.</li>
+<li><strong>Glow</strong>: zero-offset coloured shadows, radial halos, blurred orbs → <strong>Fix:</strong> depth by a lightness step or neutral offset shadow (<code>0 1px 2px</code> + <code>0 8px 24px</code> at 6-16% black).</li>
+<li><strong>Theme by category</strong> (&quot;dev tool = dark&quot;) or inverted dark mode → <strong>Fix:</strong> one sentence of physical use scene decides light/dark; design dark elevation explicitly; dark borders <code>rgba(255,255,255,.08)</code>.</li>
+</ul>
+<h2>Layout &amp; composition</h2>
+<ul>
+<li><strong>Template skeleton</strong> (hero → logos → 3 features → testimonial → pricing → FAQ → CTA) → <strong>Fix:</strong> order by the argument; add one non-stock section (inline demo, comparison vs status quo).</li>
+<li><strong>Three equal cards</strong> as structure → <strong>Fix:</strong> use the real count; lead item large, rest as list or table; vary widths and heights.</li>
+<li><strong>Everything centred</strong> (over ~70%) → no shared edge → <strong>Fix:</strong> left-anchor on 2-3 reused x-positions; one centred moment.</li>
+<li><strong>Monotonous spacing</strong> → <strong>Fix:</strong> 4px-based scale; tight inside groups; section gaps ≥120px at 1440 and varied; space above a heading ≥2× space below.</li>
+<li><strong>Same layout every section</strong> (name each in one word; a repeat in a row is the template) → <strong>Fix:</strong> vary composition per section.</li>
+<li><strong>Hero misfit</strong>: <code>h-screen</code>, headline + lede + action + visual not all visible at 1280×800, &gt;80 words per screen, dead band &gt;160px → <strong>Fix:</strong> <code>min-h-svh</code>; headline, one sentence, actions, visual.</li>
+<li><strong>Index numbering</strong> (01 / 02 / 03, &quot;Step 02&quot;) → <strong>Fix:</strong> order by position and scale; <code>&lt;ol&gt;</code> for real sequences.</li>
+</ul>
+<h2>Components &amp; surfaces</h2>
+<ul>
+<li><strong>Icon tile above heading</strong> (<code>h-12 w-12 rounded-xl bg-*-100</code>) → the universal feature card → <strong>Fix:</strong> icon inline beside the heading, or none.</li>
+<li><strong>Side-stripe border</strong> (ban): <code>border-left</code> ≥2px on rounded cards/alerts → <strong>Fix:</strong> tinted background, icon + label, or full 1px border.</li>
+<li><strong>Nested cards</strong> (ban) → <strong>Fix:</strong> one containment layer; separate with space, type, dividers.</li>
+<li><strong>Cards everywhere / ghost card</strong> (rounded-2xl + shadow-xl on all; 1px border + wide shadow) → <strong>Fix:</strong> declare elevation once, edge OR shadow; nothing at rest wears a shadow; card radius 12-16px.</li>
+<li><strong>Glass by default</strong> → <strong>Fix:</strong> one sticky bar may blur; cards opaque, one tone step from the ground.</li>
+<li><strong>Hero-metric template</strong> (big number, small label, stat row) → <strong>Fix:</strong> pair each real figure with the sentence that says what it means.</li>
+<li><strong>Fake product</strong> (styled-div dashboards, traffic-light chrome, device frames) → <strong>Fix:</strong> real screenshot or live component in a plain <code>&lt;figure&gt;</code>.</li>
+<li><strong>AI chrome</strong>: wordmark/links/button nav with hairline, 4-column footer, closing email sign-up, modal by reflex → <strong>Fix:</strong> decide each for this product; end on what the visitor came to do.</li>
+</ul>
+<h2>Icons &amp; imagery</h2>
+<ul>
+<li><strong>Emoji or unicode glyphs as icons</strong> (ban), two icon libraries → <strong>Fix:</strong> one library, 1.5-1.8px stroke, <code>currentColor</code>; decorative SVG gets <code>aria-hidden=&quot;true&quot;</code>.</li>
+<li><strong>Placeholder imagery</strong>: grey boxes, picsum/placehold.co, pravatar faces, empty <code>src</code> → <strong>Fix:</strong> real verified photos (one decisive photo beats five); reserve space with <code>aspect-ratio</code>.</li>
+<li><strong>Drawn illustration and decorative backgrounds</strong>: SVG scenes from primitives, sketchy SVG, grain, grid/stripe/blob backgrounds → <strong>Fix:</strong> photograph, the product itself, or type at scale; SVG for geometry and diagrams.</li>
+<li><strong>Type-only marketing page</strong> → reads unfinished → <strong>Fix:</strong> show the subject in ≥4 real pictures.</li>
+</ul>
+<h2>Copy</h2>
+<ul>
+<li><strong>Buzzwords</strong> (unlock, unleash, supercharge, seamless, elevate, empower, revolutionize, cutting-edge, next-gen, world-class, all-in-one, effortless, streamline) → <strong>Fix:</strong> the specific verb and noun.</li>
+<li><strong>Filler openers</strong> (&quot;In today&#39;s fast-paced world&quot;, &quot;Built for the modern team&quot;) → <strong>Fix:</strong> start with the claim.</li>
+<li><strong>Manufactured cadence</strong> (&quot;Not a tool. A teammate.&quot;, &quot;X. No Y.&quot; repeated, threes everywhere) → <strong>Fix:</strong> say it once, plainly; use the count the content has.</li>
+<li><strong>Generic CTAs</strong> (Get started, Learn more, Book a demo, Submit, glued arrows) → <strong>Fix:</strong> name the action: &quot;Start tracking&quot;, &quot;See the plans&quot;.</li>
+<li><strong>Invented proof</strong> (user counts, 10× claims, 99.99% uptime, logo walls, ★★★★★) → <strong>Fix:</strong> sourced proof, or show the product working; label samples.</li>
+<li><strong>Placeholders</strong> (lorem ipsum, &quot;Feature one&quot;, Jane Doe, Acme, Sarah Chen) → <strong>Fix:</strong> plausible full-density content, listed for the client to confirm.</li>
+<li><strong>Furniture text</strong> (&quot;Field notes&quot;, &quot;Quietly trusted by&quot;, &quot;Scroll to explore&quot;, &quot;Available for work&quot;, &quot;Est. 2024&quot;, A · B · C strings, &quot;X theater&quot;) → <strong>Fix:</strong> plain section names; delete.</li>
+<li><strong>Em-dash habit</strong> (more than ~4 per page) → <strong>Fix:</strong> full stops, commas, colons.</li>
+</ul>
+<h2>Motion</h2>
+<ul>
+<li><strong>Fade-up on every block</strong>, staggered hero entrances, hover lift on every card → <strong>Fix:</strong> one authored focal moment; content visible by default; reveal once, ≤900ms; one hover signal per element.</li>
+<li><strong>Bounce/elastic/overshoot</strong> (<code>animate-bounce</code>, <code>cubic-bezier(.34,1.56,.64,1)</code>), ease-in or <code>scale(0)</code> entrances → <strong>Fix:</strong> <code>cubic-bezier(0.16,1,0.3,1)</code> from scale 0.95-0.98 + opacity 0.</li>
+<li><strong>Arbitrary durations</strong> → <strong>Fix:</strong> feedback 100-150ms, state 150-300ms, overlays 200-300ms, view transitions 300-500ms, focal entrance 500-800ms; exits faster; frequent hovers ≤200ms; mobile 20-30% shorter.</li>
+<li><strong><code>transition: all</code></strong>, animating width/height/top/left/margin → <strong>Fix:</strong> name properties; transform, opacity, bounded blur/clip-path/mask.</li>
+<li><strong>Meaningless loops</strong>: pulsing dots and CTAs, marquees, typewriter heads, custom cursors, preloaders → <strong>Fix:</strong> static; pulse only for live data; pause control past 5s.</li>
+<li><strong>No reduced-motion path</strong> → <strong>Fix:</strong> <code>prefers-reduced-motion: reduce</code> drops translate/scale/parallax, keeps opacity/colour state changes.</li>
+<li><strong>Hidden at rest</strong> (<code>.reveal{opacity:0}</code> waiting on JS) → <strong>Fix:</strong> hide only under <code>.js</code>, or animate from visible with <code>@starting-style</code>.</li>
+</ul>
+<h2>Interaction &amp; states</h2>
+<ul>
+<li><strong>Happy path only</strong> → <strong>Fix:</strong> default, hover, focus, active, disabled, loading, error, success, empty; errors name the problem and the recovery.</li>
+<li><strong>Loading by availability</strong> → <strong>Fix:</strong> under 300ms nothing; 0.3-2s subtle spinner; 2-10s layout skeleton or labelled spinner; 10s+ determinate bar + cancel; stop at 60s with retry.</li>
+<li><strong>Blank empty state</strong> (&quot;No data&quot;) → <strong>Fix:</strong> headline + one value sentence + primary action; no-results echoes the query.</li>
+<li><strong>Focus removed</strong> (<code>outline-none</code>, ring fades in) → <strong>Fix:</strong> <code>:focus-visible</code> ring ≥2px at ≥3:1, instant.</li>
+<li><strong><code>&lt;div onClick&gt;</code></strong>, <code>&lt;a&gt;</code> without href → <strong>Fix:</strong> <code>&lt;button&gt;</code> / <code>&lt;a href&gt;</code>.</li>
+<li><strong>Targets and controls</strong> → <strong>Fix:</strong> ≥24×24px (AA), aim 44×44; marketing controls 44-52px tall, app 32-40px with hit expansion; inputs and buttons share height.</li>
+<li><strong>Raw browser defaults</strong> (selection, caret, scrollbars, underline offset), fake success messages → <strong>Fix:</strong> theme them from the palette; no success state until the form is wired.</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="workflow.html">← How a tasteful build runs</a><a href="typography.html">Typography →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("anti-slop")</code> in the taste MCP.</p></main></body></html>

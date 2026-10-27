@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Responsive and mobile · Taste MCP</title><meta name="description" content="Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), Hallmark (https://github.com/Nutlope/hallmark), Open Design (https://github.com/nexu-io/open-design)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="responsive-mobile.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="responsive-mobile.md">Markdown</a>
+<h1>Responsive and mobile</h1>
+<blockquote>
+<p>Condensed from: Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>)</p>
+</blockquote>
+<h2>Approach</h2>
+<ul>
+<li>Mobile-first CSS: base styles for 320-390px, <code>min-width</code> queries upward.</li>
+<li>The 390px screen is its own composition: re-author line breaks, re-crop to portrait, one dominant thing on screen 1.</li>
+<li>Faultless from 320 to 1920px; never horizontal page scroll.</li>
+<li>Test at 320, 375, 390, 414, 768, 1024, 1280, 1440, 1920, plus landscape and the largest system text size.</li>
+</ul>
+<h2>Breakpoints</h2>
+<p>Two shared breakpoints in <code>rem</code> (they follow the user&#39;s font size); add a third only where content breaks.</p>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Gutter</th>
+<th>Section gap</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;40rem (640px)</td>
+<td>16-20px</td>
+<td>56-112px</td>
+<td>Display steps down, captions go inline, one column</td>
+</tr>
+<tr>
+<td>40-60rem (960px)</td>
+<td>24px</td>
+<td>80-120px</td>
+<td>Grids → 1-2 columns, sticky panes unstick, sidebars fold</td>
+</tr>
+<tr>
+<td>≥60rem</td>
+<td>16-32px marketing, 24-40px app</td>
+<td>120-240px</td>
+<td>Full grid; cap layout ~1760-1920px</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Apps: treat 641-1100px (tablet) as its own band: sidebar folds to a top bar, tables keep 4-5 columns with secondary fields as sublines, two panels stack once either drops under ~340px.</li>
+<li>Capability, not width: <code>@media (hover:hover)</code> for hover styles, <code>@media (pointer:coarse)</code> for 48px targets.</li>
+<li>Never <code>px</code> breakpoints, user-agent sniffing, or hover-only interactions.</li>
+</ul>
+<h2>Fluid type with clamp()</h2>
+<p><code>font-size: clamp(MIN, INTERCEPT + SLOPE·vw, MAX)</code> where <code>SLOPE = (max−min) / (maxViewport−minViewport) × 100</code> and <code>INTERCEPT = min − SLOPE/100 × minViewport</code>.</p>
+<pre><code class="language-css">/* 32px @390 → 64px @1440 */
+--step-head: clamp(2rem, 1.257rem + 3.048vw, 4rem);
+/* body 16px @390 → 18px @1440 */
+--step-body: clamp(1rem, .954rem + .19vw, 1.125rem);
+/* poster display, full at 1440, held at 1920 */
+--step-display: clamp(3rem, 1rem + 9vw, 9rem);
+</code></pre>
+<ul>
+<li>Always keep a <code>rem</code> term so browser zoom still scales text (WCAG 1.4.4). Never <code>font-size: 5vw</code> alone.</li>
+<li><code>clamp()</code> for sizes that change continuously; media queries for layouts that change discretely.</li>
+<li>Phone hero 32-48px (study median 40px); hero headline ≤2 lines at 390px means ≤~32 characters at 44px.</li>
+<li>Body ≥16px on mobile (smaller inputs trigger iOS zoom); labels ≥14px, sublines ≥12px; line length 35-60 characters.</li>
+</ul>
+<h2>Units, viewport, safe areas</h2>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, viewport-fit=cover&quot;&gt;
+</code></pre>
+<ul>
+<li>Never <code>maximum-scale=1</code> or <code>user-scalable=no</code>.</li>
+<li>Heights meeting browser chrome: <code>min-height: 100dvh</code> (or <code>svh</code>), never <code>100vh</code> on a hero. Widths: <code>width:100%</code>, never <code>100vw</code> (scrollbar overflow).</li>
+<li><code>overflow-x: clip</code>, not <code>hidden</code> (keeps <code>position: sticky</code> working).</li>
+<li>Fold insets into tokens: <code>--gutter: max(16px, env(safe-area-inset-left))</code>.</li>
+<li>Bottom bars: <code>padding-bottom: calc(12px + env(safe-area-inset-bottom))</code>; sticky headers: <code>top: env(safe-area-inset-top)</code>.</li>
+<li>Content under fixed bars gets matching <code>padding</code> / <code>scroll-padding</code> so nothing hides beneath them.</li>
+<li>Native: SafeAreaView (RN), <code>WindowInsets</code> (Compose), safe-area insets (SwiftUI).</li>
+</ul>
+<h2>Touch and thumb zone</h2>
+<ul>
+<li>Targets 44pt iOS / 48dp Android / 44px web touch, ≥8px apart. Inputs ≥44px tall.</li>
+<li>Primary and frequent actions in the bottom third (tab bar, bottom CTA bar, sheet actions). Top corners are the hardest reach: put rare actions there.</li>
+<li>Destructive actions away from the thumb arc, separated from primary ones. A floating button only if it&#39;s the one primary action and covers nothing.</li>
+<li>Press feedback within 100ms; <code>touch-action: manipulation</code> on controls.</li>
+<li>Horizontal swipe only for carousels; never fight system back. Gesture actions also get a visible button.</li>
+<li>Mobile motion 20-30% shorter than desktop. Never hijack touch scrolling.</li>
+</ul>
+<h2>Navigation patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Marketing phone</td>
+<td>One row: wordmark + one action + a &quot;Menu&quot; text button opening a full-screen sheet. ≤3 links: move them to the footer.</td>
+</tr>
+<tr>
+<td>App phone, 3-5 destinations</td>
+<td>Bottom tab bar, icon + label always, ~56px + safe-area inset, active state by colour/weight.</td>
+</tr>
+<tr>
+<td>App phone, many destinations</td>
+<td>48px top bar with the screen name, menu button → full-screen sheet (nav, workspace switcher, account), ≤1 action.</td>
+</tr>
+<tr>
+<td>≥1024px app</td>
+<td>Labelled sidebar 224-240px; an icon rail becomes the bottom bar on phones.</td>
+</tr>
+</tbody></table>
+<ul>
+<li>A sidebar taking &gt;30% of a phone&#39;s width fails. Never mix tab bar + sidebar + bottom nav at one level.</li>
+<li>Back restores scroll, filters and input. Every key screen has a deep link/URL.</li>
+<li>Tabs and segmented controls scroll sideways in their own row, never the page. A segmented control is as wide as its options; full width only under ~480px.</li>
+<li>Sheets: visible close + swipe-down; confirm before discarding unsaved input.</li>
+</ul>
+<h2>App screen patterns on a phone</h2>
+<ul>
+<li>Title stays (20-24px). Header actions collapse into a kebab, except the one primary.</li>
+<li>Filters collapse to one row of chips or a &quot;Filters&quot; sheet. The first list row starts in the top 60% of the screen.</li>
+<li>KPIs: a 2-column grid (even count after any full-width lead) or a label-left/value-right list. Never 4 squeezed columns.</li>
+<li>Max one row of controls above a chart. Charts full width, 160-200px tall, 3-4 x labels, legend dots above; y ticks in their own lane, never on the line.</li>
+<li>Tables become two-line rows below ~640px: identity + key number on line 1, other fields in 13px muted on line 2 (&quot;fra1 · 1m 38s&quot;), action at right. Fields move, never vanish. A table that must stay a table scrolls inside its own frame with the first column pinned.</li>
+<li>List + detail: one pane at a time; choosing a row pushes detail; back returns to the same scroll position.</li>
+<li>Right rail moves under the main column or into a tab. Settings: label column stacks above its panel.</li>
+<li>Blocks carrying an action move up, as a one-line summary (&quot;5 items low · Review&quot;), not below 20 orders.</li>
+<li>Row actions: text actions or one compact trailing button, plus one filled bulk action (&quot;Approve 3&quot;). Never a stack of 44px grey buttons.</li>
+<li>Virtualize lists over 50 items; persist state between tabs.</li>
+</ul>
+<h2>Marketing page patterns on a phone</h2>
+<ul>
+<li>Margins 16-20px; body 16-18px; one dominant element on screen 1 (a 20vw desktop wordmark may become 26vw over two lines).</li>
+<li>Splits put the picture first, full width. Full-bleed images re-crop to portrait via <code>&lt;picture&gt;</code> or per-breakpoint <code>object-position</code>.</li>
+<li>Phones carry more picture, not less: ~27% of the first phone screen vs ~17% on desktop.</li>
+<li>Horizontal gallery: one card at 75-80% width with the next one peeking.</li>
+<li>Fixed elements never cover content at any scroll position.</li>
+</ul>
+<h2>Clickable text never wraps</h2>
+<p>Buttons, primary nav links and CTAs stay one line from 320 to 1920px. In order:</p>
+<ol>
+<li>Shorten the label (&quot;Read the documentation&quot; → &quot;Read the docs&quot;).</li>
+<li><code>white-space: nowrap</code> on the control; let the row reflow.</li>
+<li>Collapse the row: links that no longer fit go behind the menu.</li>
+</ol>
+<p>Chips and tags: <code>flex: none; white-space: nowrap</code>; the collection wraps, or overflows into an operable <code>+3</code> disclosure.</p>
+<h2>Images and strings</h2>
+<ul>
+<li><code>srcset</code> with <code>w</code> descriptors and real <code>sizes</code>; <code>width</code>/<code>height</code> on every <code>&lt;img&gt;</code>; <code>loading=&quot;lazy&quot;</code> below the fold, never on the LCP image.</li>
+<li>Strings 30-40% longer after translation; logical properties for RTL; locale-aware numbers and dates.</li>
+<li>Support Dynamic Type / font scaling without truncation; prefer wrapping, and give truncated labels a full-value path (tooltip or expand).</li>
+</ul>
+
+<nav class="doc-nav" aria-label="Guides"><a href="states-accessibility.html">← States and accessibility</a><a href="native-feel.html">Native Feel →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("responsive-mobile")</code> in the taste MCP.</p></main></body></html>

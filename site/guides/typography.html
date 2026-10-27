@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Typography · Taste MCP</title><meta name="description" content="Condensed from: Taste Skill (https://github.com/Leonxlnx/taste-skill), Open Design (https://github.com/nexu-io/open-design), UI UX Pro Max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), Hallmark (https://github.com/Nutlope/hallmark)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="typography.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="typography.md">Markdown</a>
+<h1>Typography</h1>
+<blockquote>
+<p>Condensed from: Taste Skill (<a href="https://github.com/Leonxlnx/taste-skill">https://github.com/Leonxlnx/taste-skill</a>), Open Design (<a href="https://github.com/nexu-io/open-design">https://github.com/nexu-io/open-design</a>), UI UX Pro Max (<a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">https://github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>), Hallmark (<a href="https://github.com/Nutlope/hallmark">https://github.com/Nutlope/hallmark</a>)</p>
+</blockquote>
+<h2>Faces</h2>
+<ul>
+<li>Max 2 families (display + body), or 1 family at 2-3 weights. One family is normal: 31% of strong studied sites use one.</li>
+<li>Optional outlier with exactly one job: the wordmark, code/IDs, or one headline figure. Never a third face for labels, quotes or numbers.</li>
+<li>Never mix two faces inside one headline. Never style one word differently (italic, serif, colour, highlight).</li>
+<li>Generated defaults (use only if the brand already does): Inter, Roboto, Open Sans, Lato, Poppins, Montserrat, Raleway, Nunito, Work Sans, DM Sans, Plus Jakarta Sans, Source Sans, bare <code>system-ui</code> on headings; Merriweather/Lora/Georgia as body serif.</li>
+<li>Saturated (need a stated reason): Playfair Display, Cormorant Garamond, Fraunces, Instrument Serif, DM Serif Display, Space Grotesk, Bebas Neue, Unbounded, Geist, Mona Sans.</li>
+<li>Pick by setting the real headline in 2-3 candidates; judge shape, not reputation.</li>
+<li>Pair by structural contrast (serif display + grotesk body, or wide/condensed display + neutral body), similar x-height, same-build fallback (grotesk → <code>system-ui</code>, serif → Georgia).</li>
+</ul>
+<h2>Scale per surface</h2>
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Sizes</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Marketing</td>
+<td>small 13-14, body 17-19, lead 20-26, head 32-64, display 48-144</td>
+<td>Max 5 sizes. Display ≥4x body (study median 4.3, top sites 4.7). Hero median 72px / 5vw; top sites 6-8.4vw.</td>
+</tr>
+<tr>
+<td>Editorial</td>
+<td>caption 12-13, body 17-20, deck 18-24, pull quote 28-40, display 56-96</td>
+<td>Display/deck ratio ≥1.5x.</td>
+</tr>
+<tr>
+<td>App / dashboard</td>
+<td>12 / 14 / 16 / 20 / 24 (or 12/14/18/24)</td>
+<td>Ratio 1.2-1.25. Title 20-28px (never &gt;32), KPI 24-30, body 13-14, meta 12, floor 11. Nothing ≥48px.</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>body 16-18, hero 32-48 (median 40), H2 24-28</td>
+<td>Body never &lt;16px (iOS input zoom).</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Near sizes (16, 18, 20, 24, 28, 32) read as mush; merge sizes that look almost equal. Max 3 levels above the fold.</li>
+</ul>
+<pre><code class="language-css">:root{
+  --step-small: clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:  clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:  clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:  clamp(2rem,1.3rem + 3.2vw,4rem);
+  --step-display: clamp(3rem,1rem + 9vw,9rem);
+}
+</code></pre>
+<h2>Leading and measure</h2>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Line-height</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Display ≥48px</td>
+<td>0.9-1.05 (tighter as it grows; 1.2 looks inherited)</td>
+</tr>
+<tr>
+<td>Headings 24-48px</td>
+<td>1.05-1.2</td>
+</tr>
+<tr>
+<td>Lead 20-26px</td>
+<td>1.3-1.4</td>
+</tr>
+<tr>
+<td>Body 15-19px</td>
+<td>1.5-1.6; long reading 1.6-1.7</td>
+</tr>
+<tr>
+<td>Small ≤14px</td>
+<td>1.45-1.5</td>
+</tr>
+<tr>
+<td>App 14px / 16px text</td>
+<td>20px / 24px</td>
+</tr>
+<tr>
+<td>CJK</td>
+<td>display 1.3-1.4, body 1.7-1.8</td>
+</tr>
+<tr>
+<td>Arabic body</td>
+<td>1.5-1.75</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Caps on one line: 0.9. Caps that can wrap: ≥1.0. Below 1.0, check descender/ascender collisions.</li>
+<li>Body measure 45-75ch (default <code>max-width: 65ch</code>); editorial 60-70ch; phone 35-60ch; lead 40ch.</li>
+<li>Heading measure on the element: <code>h1</code> 14-20ch, <code>h2</code> 30ch, <code>h3</code> 40ch.</li>
+</ul>
+<h2>Tracking by size</h2>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>letter-spacing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Body 14-18px</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Small 11-13px</td>
+<td>+0.01 to +0.02em</td>
+</tr>
+<tr>
+<td>Labels, buttons</td>
+<td>0 to +0.02em</td>
+</tr>
+<tr>
+<td>Caps labels (≤3 words)</td>
+<td>+0.06 to +0.1em (required)</td>
+</tr>
+<tr>
+<td>24-32px</td>
+<td>-0.01em</td>
+</tr>
+<tr>
+<td>32-48px</td>
+<td>-0.01 to -0.02em</td>
+</tr>
+<tr>
+<td>48-96px</td>
+<td>-0.02 to -0.04em</td>
+</tr>
+<tr>
+<td>96px+</td>
+<td>-0.03 to -0.05em</td>
+</tr>
+<tr>
+<td>Condensed or very heavy display</td>
+<td>0 to -0.015em</td>
+</tr>
+<tr>
+<td>Caps display</td>
+<td>0 to +0.03em</td>
+</tr>
+<tr>
+<td>CJK, Arabic, Persian, Urdu</td>
+<td>always 0</td>
+</tr>
+</tbody></table>
+<p>Tracking scales with size: a value right at 120px chokes 32px. Set it per step.</p>
+<h2>Weights</h2>
+<ul>
+<li>Max 3 weights across the page. Jump, don&#39;t step: 400 + 600, or 300 + 700. A 400/500/600/700/800 ladder reads as default.</li>
+<li>Roles: read 400, emphasize 500, announce 600. 700 does one job per screen (money, title).</li>
+<li>Big type does not need bold: 48% of studied heroes are regular weight. Editorial display: light or regular.</li>
+<li>On dark grounds drop one step (400 → 350 on variable fonts) or add +0.01em.</li>
+<li>Secondary text = same face, muted colour; not a lighter weight, not &lt;13px (app meta floor 11-12px).</li>
+<li><code>font-synthesis: none</code>. Never change weight on hover (line reflows).</li>
+</ul>
+<h2>Numerals</h2>
+<ul>
+<li><code>font-variant-numeric: tabular-nums</code> on tables, prices, KPIs, timers, counters, anything that updates. Verify the face has <code>tnum</code> (digit widths must change); if not, switch face.</li>
+<li>Right-align numeric columns. Lining figures in UI; <code>oldstyle-nums</code> suits serif prose.</li>
+<li>Non-breaking space between number and unit (<code>10&amp;nbsp;MB</code>). Monospace only for IDs, keys, code.</li>
+</ul>
+<h2>Setting details</h2>
+<ul>
+<li><code>text-wrap: balance</code> on headings, <code>pretty</code> on paragraphs. Author breaks with <code>&lt;br&gt;</code> only between phrases; check at 375px.</li>
+<li>Display starting with O, C, A, T, W: <code>margin-left: -0.05em</code> (optical alignment).</li>
+<li>Links: <code>text-underline-offset: .18em; text-decoration-thickness: .07em</code>.</li>
+<li>Space above a heading ≥2x space below. Never justify. No centred paragraph over 3 lines. No caps run over 3 words.</li>
+<li>No text-shadow, stroke or gradient fill on type. <code>hyphens: none</code> on headings.</li>
+</ul>
+<h2>Loading</h2>
+<pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/fonts/display-700.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
+</code></pre>
+<ul>
+<li>Only weights used (2-3), <code>display=swap</code>. Prefer variable fonts.</li>
+<li>Preload only 1-2 critical files (hero display + body regular), never every variant.</li>
+<li>Self-hosted <code>@font-face</code>: <code>font-display: swap</code> (<code>optional</code> for body when CLS matters), <code>unicode-range</code> subsets (latin, latin-ext), metric-matched fallback via <code>size-adjust</code>, <code>ascent-override</code>, <code>descent-override</code>, <code>line-gap-override</code> so the swap doesn&#39;t shift layout.</li>
+<li>Single display word: Google <code>&amp;text=Wordmark</code> subsets to those glyphs. Frameworks: <code>next/font</code> handles subsetting and fallback metrics.</li>
+<li>Fontshare faces: <code>https://api.fontshare.com/v2/css?f[]=&lt;family&gt;@&lt;weights&gt;&amp;display=swap</code>.</li>
+<li>Verify in a screenshot that the face rendered, not the fallback.</li>
+</ul>
+<h2>Vetted pairings (Google Fonts unless noted)</h2>
+<table>
+<thead>
+<tr>
+<th>Display / Body</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Newsreader / Hanken Grotesk</td>
+<td>Content products, newsletters, editorial SaaS</td>
+</tr>
+<tr>
+<td>Gloock / Figtree</td>
+<td>Confident consumer brands, food, retail</td>
+</tr>
+<tr>
+<td>EB Garamond / IBM Plex Sans</td>
+<td>Law, publishing, archives, foundations</td>
+</tr>
+<tr>
+<td>Libre Bodoni / Public Sans</td>
+<td>Fashion, magazines, galleries</td>
+</tr>
+<tr>
+<td>Archivo (wdth 112-125) / Archivo</td>
+<td>Events, sport, logistics; one family, width carries display</td>
+</tr>
+<tr>
+<td>Barlow Condensed / Barlow</td>
+<td>Fitness, sports data, transit</td>
+</tr>
+<tr>
+<td>IBM Plex Sans / IBM Plex Mono</td>
+<td>Developer tools, fintech, infrastructure</td>
+</tr>
+<tr>
+<td>Onest / JetBrains Mono</td>
+<td>Dev tools, APIs, CLIs (mono for code and IDs only)</td>
+</tr>
+<tr>
+<td>Hanken Grotesk alone</td>
+<td>Dense app UI, admin, dashboards</td>
+</tr>
+<tr>
+<td>Literata / Sofia Sans</td>
+<td>Reading apps, long-form, knowledge tools</td>
+</tr>
+<tr>
+<td>Source Serif 4 / Chivo</td>
+<td>Reports, research, policy</td>
+</tr>
+<tr>
+<td>Crimson Pro / Atkinson Hyperlegible</td>
+<td>Universities, academic, accessibility-first</td>
+</tr>
+<tr>
+<td>Atkinson Hyperlegible alone</td>
+<td>Government, health, low-vision audiences</td>
+</tr>
+<tr>
+<td>Alegreya / Alegreya Sans</td>
+<td>Books, culture, humanities (superfamily)</td>
+</tr>
+<tr>
+<td>Hepta Slab / Figtree</td>
+<td>Civic, utility, outdoor and hardware brands</td>
+</tr>
+<tr>
+<td>Castoro / Manrope</td>
+<td>Hotels, wellness, hospitality</td>
+</tr>
+<tr>
+<td>Noto Serif JP or SC / Noto Sans JP or SC</td>
+<td>CJK products</td>
+</tr>
+<tr>
+<td>Noto Naskh Arabic / Noto Sans Arabic</td>
+<td>Arabic and bilingual RTL</td>
+</tr>
+<tr>
+<td>System serif: <code>Charter, &quot;Bitstream Charter&quot;, &quot;Sitka Text&quot;, Cambria, serif</code></td>
+<td>Zero-load editorial and docs</td>
+</tr>
+<tr>
+<td>System mono: <code>ui-monospace, &quot;SF Mono&quot;, Menlo, Consolas, monospace</code></td>
+<td>Code blocks only</td>
+</tr>
+</tbody></table>
+
+<nav class="doc-nav" aria-label="Guides"><a href="anti-slop.html">← The AI-UI tells and their fixes</a><a href="color.html">Color →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("typography")</code> in the taste MCP.</p></main></body></html>

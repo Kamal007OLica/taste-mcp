@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DESIGN.md, the Design Brief Agents Can Read · Taste MCP</title><meta name="description" content="Condensed from: google-labs-code/design.md (https://github.com/google-labs-code/design.md), VoltAgent/awesome-design-md (https://github.com/VoltAgent/awesome-design-md)">
+<meta name="color-scheme" content="light dark"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/site.css">
+<link rel="alternate" type="text/markdown" href="design-md.md"></head>
+<body><main class="doc"><a class="back" href="../#guides">← taste</a><a class="raw" href="design-md.md">Markdown</a>
+<h1>DESIGN.md, the Design Brief Agents Can Read</h1>
+<blockquote>
+<p>Condensed from: google-labs-code/design.md (<a href="https://github.com/google-labs-code/design.md">https://github.com/google-labs-code/design.md</a>), VoltAgent/awesome-design-md (<a href="https://github.com/VoltAgent/awesome-design-md">https://github.com/VoltAgent/awesome-design-md</a>)</p>
+</blockquote>
+<h2>Purpose</h2>
+<p>DESIGN.md is a plain-text design system for coding agents, introduced by Google Stitch (spec version <code>alpha</code>). <code>AGENTS.md</code> says how to build a project; <code>DESIGN.md</code> says how it should look and feel. It has two layers: YAML tokens, which are the exact normative values, and markdown prose, which explains why they exist and when to use them.</p>
+<p>The prose carries the design. A specific reference (&quot;a printed graduate seminar handout&quot;) beats adjectives (&quot;modern, clean, premium&quot;) because a named object brings its own negative constraints: a handout has no glow, gradient or hero. Add a short, intentional Do&#39;s and Don&#39;ts list; a long one means the reference was too vague.</p>
+<h2>File anatomy</h2>
+<ol>
+<li><strong>Tokens.</strong> Either YAML front matter fenced by lines containing exactly <code>---</code> at the top of the file, or fenced <code>yaml</code> code blocks inside the matching sections, or both. All blocks merge into one tree; each top-level key may appear only once (a duplicate rejects the file).</li>
+<li><strong>Optional <code># Title</code>.</strong> Not parsed as a section.</li>
+<li><strong><code>##</code> sections.</strong> Any may be omitted, but those present must keep this order:<ol>
+<li>Overview (alias: Brand &amp; Style)</li>
+<li>Colors</li>
+<li>Typography</li>
+<li>Layout (alias: Layout &amp; Spacing)</li>
+<li>Elevation &amp; Depth (alias: Elevation)</li>
+<li>Shapes</li>
+<li>Components</li>
+<li>Do&#39;s and Don&#39;ts</li>
+</ol>
+</li>
+</ol>
+<p>Unknown sections (Motion, Iconography, Responsive Behavior, Voice) are preserved and ignored by the order check. A duplicated section heading rejects the file.</p>
+<h2>Token schema</h2>
+<pre><code class="language-yaml">version: alpha            # optional
+name: &lt;string&gt;
+description: &lt;string&gt;     # optional
+omitted: [spacing]        # optional; or {section, reason} objects
+colors:      {&lt;name&gt;: &lt;Color&gt;}
+typography:  {&lt;name&gt;: &lt;Typography&gt;}
+rounded:     {&lt;level&gt;: &lt;Dimension&gt;}
+spacing:     {&lt;level&gt;: &lt;Dimension | number&gt;}
+components:  {&lt;component&gt;: {&lt;property&gt;: &lt;value | &quot;{token.ref}&quot;&gt;}}
+</code></pre>
+<ul>
+<li><strong>Color:</strong> any CSS color (hex, <code>rgb()</code>, <code>hsl()</code>, <code>oklch()</code>, <code>color-mix()</code>, named). Hex is recommended. Values convert to sRGB for contrast checks.</li>
+<li><strong>Dimension:</strong> number plus <code>px</code>, <code>em</code> or <code>rem</code>.</li>
+<li><strong>Typography:</strong> <code>fontFamily</code>, <code>fontSize</code>, <code>fontWeight</code> (number), <code>lineHeight</code> (dimension or unitless multiplier, unitless preferred), <code>letterSpacing</code>, <code>fontFeature</code>, <code>fontVariation</code>.</li>
+<li><strong>Reference:</strong> <code>{colors.primary}</code>. Must resolve to a primitive, except inside <code>components</code>, where <code>{typography.label-md}</code> is allowed.</li>
+<li><strong>Component properties:</strong> <code>backgroundColor</code>, <code>textColor</code>, <code>typography</code>, <code>rounded</code>, <code>padding</code>, <code>size</code>, <code>height</code>, <code>width</code>. States are sibling keys: <code>button-primary</code>, <code>button-primary-hover</code>, <code>button-primary-active</code>.</li>
+<li><strong>Recommended names:</strong> colors <code>primary</code>, <code>secondary</code>, <code>tertiary</code>, <code>neutral</code>, <code>surface</code>, <code>on-surface</code>, <code>error</code>; typography <code>headline-display</code>, <code>headline-lg</code>, <code>headline-md</code>, <code>body-lg</code>, <code>body-md</code>, <code>body-sm</code>, <code>label-lg</code>, <code>label-md</code>, <code>label-sm</code>; rounded <code>none</code>, <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>full</code>.</li>
+<li>Custom top-level keys (for example <code>motion:</code>) are allowed and stay silent unless they look like a typo of a known key.</li>
+</ul>
+<h2>How an agent should read and obey it</h2>
+<ol>
+<li>Read the whole file before writing UI. A project DESIGN.md outranks generic taste defaults; accessibility outranks both.</li>
+<li>Use token values verbatim. Map them to CSS variables or the Tailwind theme (<code>export --format css-tailwind</code>) instead of retyping hex codes. Never invent a new color, font or radius.</li>
+<li>Obey role rules in the prose (&quot;accent appears only on the primary action&quot;) as strictly as the tokens.</li>
+<li>Treat Do&#39;s and Don&#39;ts as hard constraints.</li>
+<li>When something is undefined, extrapolate from the Overview reference, not from your habits.</li>
+<li>Follow unknown sections such as Motion or Responsive Behavior too.</li>
+<li>If you change the design, update DESIGN.md in the same change and lint it.</li>
+</ol>
+<h2>The CLI and linter</h2>
+<p>Package <code>@google/design.md</code> (Node 18+). Output is JSON by default; <code>-</code> reads stdin.</p>
+<ul>
+<li><code>npx @google/design.md lint DESIGN.md</code> prints <code>findings</code> plus a <code>summary</code>; exits 1 on errors.</li>
+<li><code>npx @google/design.md diff DESIGN.md DESIGN-v2.md</code> reports token adds, removals and modifications; exits 1 on regression.</li>
+<li><code>npx @google/design.md export --format css-tailwind DESIGN.md &gt; theme.css</code> (also <code>json-tailwind</code> for Tailwind v3, <code>dtcg</code> for W3C tokens).</li>
+<li><code>npx @google/design.md spec --rules</code> prints the spec for prompt injection.</li>
+<li>On Windows: <code>npx -p @google/design.md designmd lint DESIGN.md</code>.</li>
+<li>In code: <code>import { lint } from &#39;@google/design.md/linter&#39;</code>.</li>
+</ul>
+<p>The eleven rules:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Severity</th>
+<th>Flags</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>broken-ref</td>
+<td>error</td>
+<td><code>{token}</code> references that resolve to nothing</td>
+</tr>
+<tr>
+<td>missing-primary</td>
+<td>warning</td>
+<td>colors exist but no <code>primary</code></td>
+</tr>
+<tr>
+<td>contrast-ratio</td>
+<td>warning</td>
+<td>component text/background pairs below 4.5:1</td>
+</tr>
+<tr>
+<td>orphaned-tokens</td>
+<td>warning</td>
+<td>color families no component references</td>
+</tr>
+<tr>
+<td>missing-typography</td>
+<td>warning</td>
+<td>colors but no typography (agents fall back to default fonts)</td>
+</tr>
+<tr>
+<td>section-order</td>
+<td>warning</td>
+<td>known sections out of canonical order</td>
+</tr>
+<tr>
+<td>unknown-key</td>
+<td>warning</td>
+<td>likely typos such as <code>colours:</code></td>
+</tr>
+<tr>
+<td>token-like-ignored</td>
+<td>warning</td>
+<td>unknown key holding token-like values</td>
+</tr>
+<tr>
+<td>token-summary</td>
+<td>info</td>
+<td>token counts per group</td>
+</tr>
+<tr>
+<td>missing-sections</td>
+<td>info</td>
+<td>spacing or rounded absent while other tokens exist</td>
+</tr>
+<tr>
+<td>omitted-rules</td>
+<td>info</td>
+<td>invalid or redundant <code>omitted</code> entries</td>
+</tr>
+</tbody></table>
+<h2>Brand files from awesome-design-md</h2>
+<p>The collection holds 84 brand files at <code>design-md/&lt;slug&gt;/DESIGN.md</code> (listed in <code>brands.json</code>). Drop one into the repo root and ask the agent to build in that style.</p>
+<pre><code class="language-bash">curl -o DESIGN.md https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/linear.app/DESIGN.md
+</code></pre>
+<p>74 files follow Google&#39;s format (front matter tokens, standard sections, plus extras like Responsive Behavior, Iteration Guide and Known Gaps). Ten older ones (kraken, lamborghini, lovable, mastercard, runwayml, sanity, spotify, starbucks, tesla, theverge) use a nine-section legacy layout with no front matter (Visual Theme &amp; Atmosphere through Agent Prompt Guide), so the linter finds no tokens; read their prose and tables instead.</p>
+<p><strong>Ethics.</strong> Borrow structure and principles, not identity. Learn the restraint, single-accent discipline, type-scale ratios, spacing rhythm and surface ladder. Do not ship the brand&#39;s logo, wordmark, product names, copy, proprietary fonts or signature color as your primary. Shift the accent hue, swap licensed faces for open ones (Inter, Geist, IBM Plex, Public Sans), and write your own Overview reference. If a visitor could mistake the page for the brand, it went too far. The collection disclaims ownership and labels many files inspired interpretations.</p>
+<h2>Template</h2>
+<pre><code class="language-markdown">---
+version: alpha
+name: &lt;Project&gt;
+description: &lt;one sentence naming a specific reference, e.g. a 1970s field guide&gt;
+colors:
+  primary: &quot;#2F5D50&quot;
+  on-primary: &quot;#FFFFFF&quot;
+  neutral: &quot;#F6F3EE&quot;
+  surface: &quot;#FFFFFF&quot;
+  on-surface: &quot;#1C1B19&quot;
+  secondary: &quot;#6B6760&quot;
+  error: &quot;#B3261E&quot;
+typography:
+  headline-display:
+    fontFamily: &lt;Display face&gt;
+    fontSize: 56px
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: &lt;Display face&gt;
+    fontSize: 28px
+    fontWeight: 600
+    lineHeight: 1.2
+  body-md:
+    fontFamily: &lt;Text face&gt;
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.6
+  label-md:
+    fontFamily: &lt;Text face&gt;
+    fontSize: 14px
+    fontWeight: 500
+    lineHeight: 1.2
+rounded:
+  sm: 4px
+  md: 8px
+  lg: 16px
+  full: 9999px
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 32px
+  xl: 64px
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.label-md}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: 12px
+  card:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: 24px
+  caption:
+    backgroundColor: &quot;{colors.neutral}&quot;
+    textColor: &quot;{colors.secondary}&quot;
+  alert-error:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.error}&quot;
+---
+
+## Overview
+&lt;The reference, the audience, the feeling, the density. Three to five sentences.&gt;
+
+## Colors
+- **Primary {colors.primary}:** &lt;role; where it may and may not appear&gt;
+- **Neutral {colors.neutral}:** &lt;page canvas&gt;
+
+## Typography
+&lt;Faces, scale ratio, casing, weights in use.&gt;
+
+## Layout
+&lt;Grid or flow model, max width, spacing rhythm.&gt;
+
+## Elevation &amp; Depth
+&lt;Shadows, borders or tonal layers.&gt;
+
+## Shapes
+&lt;Radius logic.&gt;
+
+## Components
+&lt;Buttons, inputs, cards, nav: states and sizing.&gt;
+
+## Do&#39;s and Don&#39;ts
+- **Do** &lt;the rule that protects the character&gt;
+- **Don&#39;t** &lt;the most tempting wrong move&gt;
+
+## Motion
+&lt;Durations, easing, what never animates, reduced-motion behavior.&gt;
+</code></pre>
+
+<nav class="doc-nav" aria-label="Guides"><a href="copy.html">← Copy</a><a href="dimensional-drawing.html">Dimensional Drawing →</a></nav>
+<p class="fineprint">Read by your agent through <code>get_guide("design-md")</code> in the taste MCP.</p></main></body></html>
