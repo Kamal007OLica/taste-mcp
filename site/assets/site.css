@@ -9,8 +9,6 @@
   --accent: #b8391b;
   --accent-ink: #fff8f0;
   --code: #e9e4d8;
-  --field-mark: rgba(26, 25, 21, 0.13);
-  --lamp: #faf7f0;
   --serif: "Gloock", "Iowan Old Style", Georgia, serif;
   --sans: "Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -30,8 +28,6 @@
     --accent: #ff7a57;
     --accent-ink: #1a0d08;
     --code: #24221f;
-    --field-mark: rgba(235, 231, 222, 0.09);
-    --lamp: #221d17;
     color-scheme: dark;
   }
 }
@@ -40,7 +36,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: radial-gradient(130% 90% at 50% -12%, var(--lamp) 0%, var(--bg) 62%) fixed, var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font: 400 17px/1.6 var(--sans);
   -webkit-font-smoothing: antialiased;
@@ -53,18 +49,34 @@ code { font: 500 0.86em/1.4 var(--mono); background: var(--code); padding: 0.12e
 .skip { position: absolute; left: -10000px; }
 .skip:focus { left: var(--gutter); top: 12px; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 10; }
 
-/* Backdrop: the swatch field (assets/field.js) under a fine paper grain */
-.field { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-body::before {
-  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05;
+/* Backdrop: the marbled endpaper (assets/endpaper.js), under a fine paper grain. The reading
+   sections sit on a sheet of paper that slides over it; the hero and the footer show it. */
+.endpaper { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 260ms var(--ease); }
+.endpaper.is-ready { opacity: 1; }
+body::after, .sheet::before {
+  content: ""; pointer-events: none; opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-@media (prefers-color-scheme: dark) { body::before { opacity: 0.09; } }
+body::after { position: fixed; inset: 0; z-index: 0; }
 .top, main, .foot { position: relative; z-index: 1; }
-.field-note { font-size: 13px; color: var(--muted); margin: 32px 0 0; max-width: 34rem; }
+.sheet { position: relative; isolation: isolate; background: var(--bg); box-shadow: 0 -1px 0 var(--line-strong), 0 -20px 40px -28px rgba(26, 25, 21, 0.28), 0 1px 0 var(--line-strong), 0 20px 40px -28px rgba(26, 25, 21, 0.28); }
+.sheet::before { position: absolute; inset: 0; z-index: -1; }
+@media (prefers-color-scheme: dark) {
+  body::after, .sheet::before { opacity: 0.09; }
+  .sheet { box-shadow: 0 -1px 0 var(--line-strong), 0 -20px 40px -28px rgba(0, 0, 0, 0.7), 0 1px 0 var(--line-strong), 0 20px 40px -28px rgba(0, 0, 0, 0.7); }
+}
+.field-note { font-size: 14px; color: var(--muted); margin: 32px 0 0; max-width: 34rem; }
+.field-note[data-pending] { visibility: hidden; }
+.remarble {
+  appearance: none; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--ink);
+  text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 0.2em; text-decoration-thickness: 1px;
+  transition: text-decoration-color 160ms var(--ease);
+}
+.remarble:hover { text-decoration-color: var(--accent); }
+@media (hover: none), (prefers-reduced-motion: reduce) { .fine-only { display: none; } }
 
 /* Shell */
-.top, main > section, .foot { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.top, main > section, .sheet > section, .foot { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
 .top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 20px; }
 .mark { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font: 400 24px/1 var(--serif); letter-spacing: -0.01em; }
 .top nav { display: flex; gap: clamp(16px, 2.4vw, 32px); font-size: 15px; }
@@ -105,7 +117,8 @@ body::before {
 @media (max-width: 560px) { .cmd pre { padding: 16px 16px 64px; } .cmd .copy { top: auto; bottom: 12px; } }
 
 /* Sections */
-main > section:not(.hero) { padding-block: clamp(72px, 10vw, 144px); border-top: 1px solid var(--line); }
+.sheet > section { padding-block: clamp(72px, 10vw, 144px); }
+.sheet > section + section { border-top: 1px solid var(--line); }
 .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
 .section-head h2 { font: 400 clamp(36px, 4.6vw, 60px)/1.02 var(--serif); letter-spacing: -0.02em; margin: 0; max-width: 14ch; }
 .section-head p { margin: 0; color: var(--muted); max-width: 34rem; }
@@ -236,8 +249,8 @@ main > section:not(.hero) { padding-block: clamp(72px, 10vw, 144px); border-top:
 .guide-list a:hover b { color: var(--accent); }
 .guide-list span { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 4px; }
 
-.foot { padding-block: 48px 64px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-.foot p { margin: 0 0 8px; max-width: 48rem; }
+.foot { padding-block: 56px clamp(96px, 16vh, 168px); color: var(--muted); font-size: 14px; }
+.foot p { margin: 0 0 8px; max-width: 40rem; }
 
 /* Guide pages */
 .doc { width: 100%; max-width: calc(44rem + 2 * var(--gutter)); margin: 0 auto; padding: clamp(32px, 6vw, 72px) var(--gutter) 96px; }
