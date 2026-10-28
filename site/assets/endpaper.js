@@ -263,6 +263,7 @@
   let W = 0, H = 0, dpr = 1, raf = 0, start = 0, ready = false;
   function size() {
     W = innerWidth; H = innerHeight;
+    edged = !!sheet && sheet.getBoundingClientRect().width < document.documentElement.clientWidth - 1;
     // Cap the backing store near 6.5M pixels; past that, CSS scales the canvas up.
     const scale = Math.min(devicePixelRatio || 1, 2, Math.sqrt(6.5e6 / (W * H)));
     canvas.width = Math.round(W * scale); canvas.height = Math.round(H * scale);
@@ -287,8 +288,12 @@
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
 
-  // Draw only while the endpaper shows: above the first section or behind the footer.
+  // Draw only while the endpaper shows: above the first section, behind the footer, or down the
+  // sheet's edges wherever the sheet is narrower than the window.
   const showing = new Set([document.body]); // assume it shows until the observer first reports
+  const sheet = document.querySelector('.sheet');
+  let edged = false;
+  const shows = () => edged || showing.size > 0;
   function frame(now) {
     raf = 0;
     if (!ready) return;
@@ -305,12 +310,12 @@
     const live = t < buildEnd || strokes.length > 0;
     draw(t, now, live);
     canvas.classList.add('is-ready');
-    if (live && showing.size) raf = requestAnimationFrame(frame);
+    if (live && shows()) raf = requestAnimationFrame(frame);
   }
   const kick = () => { if (!raf && ready) raf = requestAnimationFrame(frame); };
 
   addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse' || reduce.matches || !fine.matches || !showing.size) { tracking = false; return; }
+    if (e.pointerType !== 'mouse' || reduce.matches || !fine.matches || !shows()) { tracking = false; return; }
     const over = e.target instanceof Element && e.target.closest('.sheet, .install');
     if (tracking && !over) { dx += e.clientX - px; dy += e.clientY - py; }
     px = e.clientX; py = e.clientY; tracking = true;
